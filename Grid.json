@@ -1,0 +1,295 @@
+{
+    "graph": [
+        {
+            "author": " Mahmoud",
+            "cards": [
+                {
+                    "active": true,
+                    "cardid": "248fb086-7b6c-11ec-ba7b-fa163e7d893d",
+                    "component_id": "f05e4d3a-53c1-11e8-b0ea-784f435179ea",
+                    "config": null,
+                    "constraints": [
+                        {
+                            "card_id": "248fb086-7b6c-11ec-ba7b-fa163e7d893d",
+                            "constraintid": "f8c2f99b-d8aa-4e81-ae43-e15d8b827a79",
+                            "nodes": [],
+                            "uniquetoallinstances": false
+                        },
+                        {
+                            "card_id": "248fb086-7b6c-11ec-ba7b-fa163e7d893d",
+                            "constraintid": "aabd8463-01c2-421d-a3ab-ec930ac56017",
+                            "nodes": [],
+                            "uniquetoallinstances": false
+                        }
+                    ],
+                    "cssclass": null,
+                    "description": null,
+                    "graph_id": "ba97b9df-7b6a-11ec-ba7b-fa163e7d893d",
+                    "helpenabled": false,
+                    "helptext": null,
+                    "helptitle": null,
+                    "instructions": null,
+                    "is_editable": true,
+                    "name": "Geometry",
+                    "nodegroup_id": "248fb084-7b6c-11ec-ba7b-fa163e7d893d",
+                    "sortorder": null,
+                    "visible": true
+                },
+                {
+                    "active": true,
+                    "cardid": "ff7793f4-7b6b-11ec-ba7b-fa163e7d893d",
+                    "component_id": "f05e4d3a-53c1-11e8-b0ea-784f435179ea",
+                    "config": null,
+                    "constraints": [
+                        {
+                            "card_id": "ff7793f4-7b6b-11ec-ba7b-fa163e7d893d",
+                            "constraintid": "bd6f8d6b-7ef8-4789-9d55-06fb39ee20d8",
+                            "nodes": [],
+                            "uniquetoallinstances": false
+                        },
+                        {
+                            "card_id": "ff7793f4-7b6b-11ec-ba7b-fa163e7d893d",
+                            "constraintid": "3c71fb4f-2531-4de6-85fc-0fa72ad29206",
+                            "nodes": [
+                                "ff7793f2-7b6b-11ec-ba7b-fa163e7d893d"
+                            ],
+                            "uniquetoallinstances": true
+                        }
+                    ],
+                    "cssclass": null,
+                    "description": null,
+                    "graph_id": "ba97b9df-7b6a-11ec-ba7b-fa163e7d893d",
+                    "helpenabled": false,
+                    "helptext": null,
+                    "helptitle": null,
+                    "instructions": null,
+                    "is_editable": true,
+                    "name": "MAEASaM ID",
+                    "nodegroup_id": "ff7793f2-7b6b-11ec-ba7b-fa163e7d893d",
+                    "sortorder": null,
+                    "visible": true
+                }
+            ],
+            "cards_x_nodes_x_widgets": [
+                {
+                    "card_id": "ff7793f4-7b6b-11ec-ba7b-fa163e7d893d",
+                    "config": {
+                        "defaultValue": "",
+                        "label": "MAEASaM ID",
+                        "maxLength": null,
+                        "placeholder": "Enter text",
+                        "uneditable": false,
+                        "width": "100%"
+                    },
+                    "id": "1aa62410-7b6c-11ec-ba7b-fa163e7d893d",
+                    "label": "MAEASaM ID",
+                    "node_id": "ff7793f2-7b6b-11ec-ba7b-fa163e7d893d",
+                    "sortorder": 0,
+                    "visible": true,
+                    "widget_id": "10000000-0000-0000-0000-000000000001"
+                },
+                {
+                    "card_id": "248fb086-7b6c-11ec-ba7b-fa163e7d893d",
+                    "config": {
+                        "basemap": "streets",
+                        "bearing": 0,
+                        "centerX": 0,
+                        "centerY": 0,
+                        "defaultValue": "",
+                        "defaultValueType": "",
+                        "featureColor": "#FF0000",
+                        "featureLineWidth": 1,
+                        "featurePointSize": 3,
+                        "geocodePlaceholder": "Search",
+                        "geocodeProvider": "10000000-0000-0000-0000-010000000000",
+                        "geocoderVisible": true,
+                        "geometryTypes": [
+                            {
+                                "id": "Point",
+                                "text": "Point"
+                            },
+                            {
+                                "id": "Line",
+                                "text": "Line"
+                            },
+                            {
+                                "id": "Polygon",
+                                "text": "Polygon"
+                            }
+                        ],
+                        "label": "Geometry",
+                        "maxZoom": 20,
+                        "minZoom": 0,
+                        "overlayConfigs": [],
+                        "overlayOpacity": 0,
+                        "pitch": 0,
+                        "rerender": true,
+                        "zoom": 0
+                    },
+                    "id": "73ceed56-7b6c-11ec-ba7b-fa163e7d893d",
+                    "label": "Geometry",
+                    "node_id": "248fb084-7b6c-11ec-ba7b-fa163e7d893d",
+                    "sortorder": 0,
+                    "visible": true,
+                    "widget_id": "10000000-0000-0000-0000-000000000007"
+                }
+            ],
+            "color": "#31c9e7",
+            "config": {},
+            "deploymentdate": null,
+            "deploymentfile": null,
+            "description": "",
+            "edges": [
+                {
+                    "description": null,
+                    "domainnode_id": "ba97b9de-7b6a-11ec-ba7b-fa163e7d893d",
+                    "edgeid": "248fb087-7b6c-11ec-ba7b-fa163e7d893d",
+                    "graph_id": "ba97b9df-7b6a-11ec-ba7b-fa163e7d893d",
+                    "name": null,
+                    "ontologyproperty": "http://www.ics.forth.gr/isl/CRMdig/L54_is_same-as",
+                    "rangenode_id": "248fb084-7b6c-11ec-ba7b-fa163e7d893d"
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "ba97b9de-7b6a-11ec-ba7b-fa163e7d893d",
+                    "edgeid": "ff7793f5-7b6b-11ec-ba7b-fa163e7d893d",
+                    "graph_id": "ba97b9df-7b6a-11ec-ba7b-fa163e7d893d",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by",
+                    "rangenode_id": "ff7793f2-7b6b-11ec-ba7b-fa163e7d893d"
+                }
+            ],
+            "functions_x_graphs": [],
+            "graphid": "ba97b9df-7b6a-11ec-ba7b-fa163e7d893d",
+            "iconclass": "fa fa-square-o",
+            "is_editable": true,
+            "isactive": true,
+            "isresource": true,
+            "jsonldcontext": null,
+            "name": "Grid",
+            "nodegroups": [
+                {
+                    "cardinality": "1",
+                    "legacygroupid": null,
+                    "nodegroupid": "248fb084-7b6c-11ec-ba7b-fa163e7d893d",
+                    "parentnodegroup_id": null
+                },
+                {
+                    "cardinality": "1",
+                    "legacygroupid": null,
+                    "nodegroupid": "ff7793f2-7b6b-11ec-ba7b-fa163e7d893d",
+                    "parentnodegroup_id": null
+                }
+            ],
+            "nodes": [
+                {
+                    "config": {
+                        "addToMap": false,
+                        "advancedStyle": "",
+                        "advancedStyling": false,
+                        "clusterDistance": 20,
+                        "clusterMaxZoom": 5,
+                        "clusterMinPoints": 3,
+                        "fillColor": "rgba(130, 130, 130, 0.5)",
+                        "haloRadius": 4,
+                        "haloWeight": 4,
+                        "layerActivated": true,
+                        "layerIcon": "",
+                        "layerLegend": "",
+                        "layerName": "",
+                        "lineColor": "rgba(130, 130, 130, 0.7)",
+                        "lineHaloColor": "rgba(200, 200, 200, 0.5)",
+                        "outlineColor": "rgba(200, 200, 200, 0.7)",
+                        "outlineWeight": 2,
+                        "pointColor": "rgba(130, 130, 130, 0.7)",
+                        "pointHaloColor": "rgba(200, 200, 200, 0.5)",
+                        "radius": 2,
+                        "simplification": 0.3,
+                        "weight": 2
+                    },
+                    "datatype": "geojson-feature-collection",
+                    "description": null,
+                    "exportable": true,
+                    "fieldname": "geom",
+                    "graph_id": "ba97b9df-7b6a-11ec-ba7b-fa163e7d893d",
+                    "is_collector": true,
+                    "isrequired": true,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "Geometry",
+                    "nodegroup_id": "248fb084-7b6c-11ec-ba7b-fa163e7d893d",
+                    "nodeid": "248fb084-7b6c-11ec-ba7b-fa163e7d893d",
+                    "ontologyclass": "http://www.ics.forth.gr/isl/CRMgeo/SP15_Geometry",
+                    "parentproperty": "http://www.ics.forth.gr/isl/CRMdig/L54_is_same-as",
+                    "sortorder": 0
+                },
+                {
+                    "config": null,
+                    "datatype": "semantic",
+                    "description": "",
+                    "exportable": false,
+                    "fieldname": null,
+                    "graph_id": "ba97b9df-7b6a-11ec-ba7b-fa163e7d893d",
+                    "is_collector": false,
+                    "isrequired": false,
+                    "issearchable": true,
+                    "istopnode": true,
+                    "name": "Grid",
+                    "nodegroup_id": null,
+                    "nodeid": "ba97b9de-7b6a-11ec-ba7b-fa163e7d893d",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E53_Place",
+                    "parentproperty": "",
+                    "sortorder": 0
+                },
+                {
+                    "config": null,
+                    "datatype": "string",
+                    "description": null,
+                    "exportable": true,
+                    "fieldname": null,
+                    "graph_id": "ba97b9df-7b6a-11ec-ba7b-fa163e7d893d",
+                    "is_collector": true,
+                    "isrequired": true,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "MAEASaM ID",
+                    "nodegroup_id": "ff7793f2-7b6b-11ec-ba7b-fa163e7d893d",
+                    "nodeid": "ff7793f2-7b6b-11ec-ba7b-fa163e7d893d",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E42_Identifier",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by",
+                    "sortorder": 0
+                }
+            ],
+            "ontology_id": "e6e8db47-2ccf-11e6-927e-b8f6b115d7dd",
+            "relatable_resource_model_ids": [],
+            "resource_2_resource_constraints": [],
+            "root": {
+                "config": null,
+                "datatype": "semantic",
+                "description": "",
+                "exportable": false,
+                "fieldname": null,
+                "graph_id": "ba97b9df-7b6a-11ec-ba7b-fa163e7d893d",
+                "is_collector": false,
+                "isrequired": false,
+                "issearchable": true,
+                "istopnode": true,
+                "name": "Grid",
+                "nodegroup_id": null,
+                "nodeid": "ba97b9de-7b6a-11ec-ba7b-fa163e7d893d",
+                "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E53_Place",
+                "sortorder": 0
+            },
+            "slug": null,
+            "subtitle": "Describes the project's remote sensing grid system ",
+            "template_id": "50000000-0000-0000-0000-000000000001",
+            "version": ""
+        }
+    ],
+    "metadata": {
+        "db": "PostgreSQL 12.14 (Ubuntu 12.14-1.pgdg18.04+1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0, 64-bit",
+        "git hash": "fatal: detected dubious ownership in repository at '/opt/projects/arches'",
+        "os": "Linux",
+        "os version": "4.15.0-212-generic"
+    }
+}
