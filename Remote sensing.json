@@ -1049,7 +1049,7 @@
                 },
                 {
                     "config": {
-                        "rdmCollection": null
+                        "rdmCollection": "2ef3d684-f7d6-4123-9a18-f607e3456e86"
                     },
                     "datatype": "concept-list",
                     "description": "Which measurement unit was used",
@@ -1069,7 +1069,7 @@
                 },
                 {
                     "config": {
-                        "rdmCollection": null
+                        "rdmCollection": "fe60ac34-2bf2-4a22-ac5a-f3c2436df847"
                     },
                     "datatype": "concept-list",
                     "description": "How severe is the impact of the identified impactor on the site?",
@@ -1116,7 +1116,7 @@
                 },
                 {
                     "config": {
-                        "rdmCollection": null
+                        "rdmCollection": "fe60ac34-2bf2-4a22-ac5a-f3c2436df847"
                     },
                     "datatype": "concept-list",
                     "description": "To what degree are these threats affecting the site",
@@ -1156,7 +1156,7 @@
                 },
                 {
                     "config": {
-                        "rdmCollection": "9891113a-47dc-42d6-b5d8-2e32adc095db"
+                        "rdmCollection": "2dc3a398-c95d-45a2-bfbc-9c2207b1132e"
                     },
                     "datatype": "concept-list",
                     "description": "What is the climatic zone in which the site is located",
@@ -1257,7 +1257,7 @@
                 },
                 {
                     "config": {
-                        "rdmCollection": null
+                        "rdmCollection": "fe60ac34-2bf2-4a22-ac5a-f3c2436df847"
                     },
                     "datatype": "concept-list",
                     "description": "The probability/likelihood of the identified threat/s affecting the site. ",
@@ -1333,7 +1333,7 @@
                 },
                 {
                     "config": {
-                        "rdmCollection": null
+                        "rdmCollection": "5c7eb9fb-531e-4a81-9aac-efbfde2e7f24"
                     },
                     "datatype": "concept-list",
                     "description": "Has the existence of this site or its interpretation been verified by ground observations or surveys.",
@@ -1353,7 +1353,7 @@
                 },
                 {
                     "config": {
-                        "rdmCollection": null
+                        "rdmCollection": "974e2282-5a02-4c1e-8811-e5b9ef67a571"
                     },
                     "datatype": "concept-list",
                     "description": "What was the survey method used",
@@ -1530,7 +1530,7 @@
                 },
                 {
                     "config": {
-                        "rdmCollection": null
+                        "rdmCollection": "55a6d59d-a734-4f8b-8a89-13e30fbfcb6a"
                     },
                     "datatype": "concept-list",
                     "description": "What is the overal state or condition in which the site is currently to be found",
@@ -1550,7 +1550,7 @@
                 },
                 {
                     "config": {
-                        "rdmCollection": null
+                        "rdmCollection": "a23c1e01-cd7c-467f-8db6-774079603dfa"
                     },
                     "datatype": "concept-list",
                     "description": "To what extent has the disturbance affected the site",
@@ -1608,7 +1608,7 @@
                 },
                 {
                     "config": {
-                        "rdmCollection": null
+                        "rdmCollection": "65d67714-55e5-4deb-8c52-c1bc6fcdc27e"
                     },
                     "datatype": "concept-list",
                     "description": "What is the land use or land cover that is present in the area, at the time of recording, in which the site is located.",
@@ -1628,7 +1628,7 @@
                 },
                 {
                     "config": {
-                        "rdmCollection": null
+                        "rdmCollection": "63bbc878-e7da-44e4-adcd-42cbf0993f22"
                     },
                     "datatype": "concept-list",
                     "description": "What type of image analysis method was used ",
@@ -1648,7 +1648,7 @@
                 },
                 {
                     "config": {
-                        "rdmCollection": null
+                        "rdmCollection": "2cd5d1a1-5e13-4944-8060-56b5ec8b1f06"
                     },
                     "datatype": "concept-list",
                     "description": "What is the overall geometric shape (such as circular rectangular, oval etc) of the site.",
@@ -1789,7 +1789,7 @@
                 },
                 {
                     "config": {
-                        "rdmCollection": null
+                        "rdmCollection": "190077a4-8727-463a-9987-c8c8a282c2aa"
                     },
                     "datatype": "concept-list",
                     "description": "What type of measurement is used",
@@ -1809,7 +1809,7 @@
                 },
                 {
                     "config": {
-                        "rdmCollection": null
+                        "rdmCollection": "49ffba51-989a-4c6c-a797-f792b410234a"
                     },
                     "datatype": "concept-list",
                     "description": "What activaties are undergoing at or around the site that has a negative physical aspect on the site?",
@@ -1829,7 +1829,7 @@
                 },
                 {
                     "config": {
-                        "rdmCollection": "c24c2608-beb1-4219-8890-df73f3b8b346"
+                        "rdmCollection": "a4e1d411-a6b1-4e1d-aa5a-737eef14753f"
                     },
                     "datatype": "concept-list",
                     "description": "Based on the evidence that is visible on the imagery, wat interpretation can be made of the nature or function of the visible features.  ",
@@ -1909,7 +1909,7 @@
                 },
                 {
                     "config": {
-                        "rdmCollection": null
+                        "rdmCollection": "7f75f7e4-4be4-476b-9326-4c0d6c1493ce"
                     },
                     "datatype": "concept-list",
                     "description": "The physical features that can be seen on satellite/arial/multispectral or hyperspectral images that can be used to identify an area on the landscape as possibly being archaeological in origins. ",
@@ -1929,7 +1929,7 @@
                 },
                 {
                     "config": {
-                        "rdmCollection": null
+                        "rdmCollection": "24aa6ae8-512e-4216-b60a-d7963e4397e1"
                     },
                     "datatype": "concept-list",
                     "description": "What type of image was used",
@@ -1949,7 +1949,7 @@
                 },
                 {
                     "config": {
-                        "rdmCollection": null
+                        "rdmCollection": "417656cd-8944-4899-95de-904cb4ee7fa9"
                     },
                     "datatype": "concept-list",
                     "description": "What type of physical threats is the site facing",
