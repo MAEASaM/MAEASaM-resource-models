@@ -1,0 +1,172 @@
+{
+  "style": {
+    "font-family": "sans-serif",
+    "background-color": "#ffffff",
+    "background-image": "",
+    "background-size": "100%",
+    "node-color": "#ffffff",
+    "border-width": 4,
+    "border-color": "#000000",
+    "radius": 50,
+    "node-padding": 5,
+    "node-margin": 2,
+    "outside-position": "auto",
+    "node-icon-image": "",
+    "node-background-image": "",
+    "icon-position": "inside",
+    "icon-size": 64,
+    "caption-position": "inside",
+    "caption-max-width": 200,
+    "caption-color": "#000000",
+    "caption-font-size": 50,
+    "caption-font-weight": "normal",
+    "label-position": "inside",
+    "label-display": "pill",
+    "label-color": "#000000",
+    "label-background-color": "#ffffff",
+    "label-border-color": "#000000",
+    "label-border-width": 4,
+    "label-font-size": 40,
+    "label-padding": 5,
+    "label-margin": 4,
+    "directionality": "directed",
+    "detail-position": "inline",
+    "detail-orientation": "parallel",
+    "arrow-width": 5,
+    "arrow-color": "#000000",
+    "margin-start": 5,
+    "margin-end": 5,
+    "margin-peer": 20,
+    "attachment-start": "normal",
+    "attachment-end": "normal",
+    "relationship-icon-image": "",
+    "type-color": "#000000",
+    "type-background-color": "#ffffff",
+    "type-border-color": "#000000",
+    "type-border-width": 0,
+    "type-font-size": 16,
+    "type-padding": 5,
+    "property-position": "outside",
+    "property-alignment": "colon",
+    "property-color": "#000000",
+    "property-font-size": 16,
+    "property-font-weight": "normal"
+  },
+  "nodes": [
+    {
+      "id": "n20",
+      "position": {
+        "x": 527.8337912935983,
+        "y": 1380.8245514016774
+      },
+      "caption": "Model",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": ""
+      }
+    },
+    {
+      "id": "n21",
+      "position": {
+        "x": 679.6491137340079,
+        "y": 1380.8245514016774
+      },
+      "caption": "Geometry",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#cccccc"
+      }
+    },
+    {
+      "id": "n22",
+      "position": {
+        "x": 831.4644361744174,
+        "y": 1380.8245514016774
+      },
+      "caption": "String",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FFFF00"
+      }
+    },
+    {
+      "id": "n27",
+      "position": {
+        "x": 527.8337912935983,
+        "y": 1195.8988635740793
+      },
+      "caption": "Grid  model",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n28",
+      "position": {
+        "x": 527.8337912935983,
+        "y": 751.0295251423233
+      },
+      "caption": "MAEASaM ID E42 Identifier",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FFFF00"
+      }
+    },
+    {
+      "id": "n29",
+      "position": {
+        "x": 842.4039172406663,
+        "y": 881.3287376270115
+      },
+      "caption": "Grid square E42 Identifier",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FFFF00"
+      }
+    },
+    {
+      "id": "n30",
+      "position": {
+        "x": 972.7031297253543,
+        "y": 1195.8988635740793
+      },
+      "caption": "Geometry E53 Place",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#cccccc"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "n21",
+      "fromId": "n27",
+      "toId": "n28",
+      "type": "p1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n22",
+      "fromId": "n27",
+      "toId": "n29",
+      "type": "p1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n23",
+      "fromId": "n27",
+      "toId": "n30",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    }
+  ]
+}

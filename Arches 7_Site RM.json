@@ -1,0 +1,3331 @@
+{
+  "style": {
+    "font-family": "sans-serif",
+    "background-color": "#ffffff",
+    "background-image": "",
+    "background-size": "100%",
+    "node-color": "#ffffff",
+    "border-width": 4,
+    "border-color": "#000000",
+    "radius": 50,
+    "node-padding": 5,
+    "node-margin": 2,
+    "outside-position": "auto",
+    "node-icon-image": "",
+    "node-background-image": "",
+    "icon-position": "inside",
+    "icon-size": 64,
+    "caption-position": "inside",
+    "caption-max-width": 200,
+    "caption-color": "#000000",
+    "caption-font-size": 50,
+    "caption-font-weight": "normal",
+    "label-position": "inside",
+    "label-display": "pill",
+    "label-color": "#000000",
+    "label-background-color": "#ffffff",
+    "label-border-color": "#000000",
+    "label-border-width": 4,
+    "label-font-size": 40,
+    "label-padding": 5,
+    "label-margin": 4,
+    "directionality": "directed",
+    "detail-position": "inline",
+    "detail-orientation": "parallel",
+    "arrow-width": 5,
+    "arrow-color": "#000000",
+    "margin-start": 5,
+    "margin-end": 5,
+    "margin-peer": 20,
+    "attachment-start": "normal",
+    "attachment-end": "normal",
+    "relationship-icon-image": "",
+    "type-color": "#000000",
+    "type-background-color": "#ffffff",
+    "type-border-color": "#000000",
+    "type-border-width": 0,
+    "type-font-size": 16,
+    "type-padding": 5,
+    "property-position": "outside",
+    "property-alignment": "colon",
+    "property-color": "#000000",
+    "property-font-size": 16,
+    "property-font-weight": "normal"
+  },
+  "nodes": [
+    {
+      "id": "n0",
+      "position": {
+        "x": 2.1086994428343214e-65,
+        "y": -46.87472507694568
+      },
+      "caption": "Site",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n1",
+      "position": {
+        "x": -40.88730219663208,
+        "y": -387.68160748869366
+      },
+      "caption": "E42 Identifier MAEASaM ID",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00",
+        "border-color": "#000000"
+      }
+    },
+    {
+      "id": "n2",
+      "position": {
+        "x": 105.89474167795984,
+        "y": -373.38262125266124
+      },
+      "caption": "E41 Appellation Name",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n5",
+      "position": {
+        "x": 266.230957584702,
+        "y": -263.53616558647957
+      },
+      "caption": "E42 Identifier Associated ID",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n8",
+      "position": {
+        "x": 455.5299445355042,
+        "y": -680.8110789671911
+      },
+      "caption": "E1 CRM Entity Site summary",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n18",
+      "position": {
+        "x": 1142.0345798983358,
+        "y": -612.4334885970752
+      },
+      "caption": "E53 Place Geometry",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n19",
+      "position": {
+        "x": 340.71828305304183,
+        "y": -88.49388140574423
+      },
+      "caption": "E53 Place Location",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n20",
+      "position": {
+        "x": 294.14415872408074,
+        "y": 130.04422944358177
+      },
+      "caption": "E17 Man made thing Site description",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n37",
+      "position": {
+        "x": 99.76869301634812,
+        "y": 281.5568666951361
+      },
+      "caption": "Surface materials",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n38",
+      "position": {
+        "x": 618.4665100276918,
+        "y": 571.591784950746
+      },
+      "caption": "E71 Man MAde Thing Site feature",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n39",
+      "position": {
+        "x": 835.5116398823991,
+        "y": 211.81804187391097
+      },
+      "caption": "E39 Actor Landowner ",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n40",
+      "position": {
+        "x": 153.13744858879565,
+        "y": -662.6388138903262
+      },
+      "caption": "E41 AppelationName value",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n41",
+      "position": {
+        "x": 294.14415872408074,
+        "y": -598.0227230094418
+      },
+      "caption": "E55 Type Name type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n42",
+      "position": {
+        "x": 455.5299445355042,
+        "y": -511.69962479782237
+      },
+      "caption": "E42 Identifier Associated ID value",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n43",
+      "position": {
+        "x": 543.5257817747016,
+        "y": -406.80789840833455
+      },
+      "caption": "E55 Type Associated ID type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n44",
+      "position": {
+        "x": 171.82763609720607,
+        "y": -866.2201132622356
+      },
+      "caption": "E55 Type Site type summary",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n45",
+      "position": {
+        "x": 465.9393444057957,
+        "y": -942.7609895277908
+      },
+      "caption": "E50 Date Designation date from",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fa28ff"
+      }
+    },
+    {
+      "id": "n46",
+      "position": {
+        "x": 341.0240686707182,
+        "y": -999.7968375895448
+      },
+      "caption": "E55 Type Designation",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n47",
+      "position": {
+        "x": 634.2096715833331,
+        "y": -872.6434703678074
+      },
+      "caption": "E55 Type Summary site description",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n48",
+      "position": {
+        "x": 584.9878541477334,
+        "y": -1000.3889570968414
+      },
+      "caption": "E50 Date Designation date to",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fa28ff"
+      }
+    },
+    {
+      "id": "n49",
+      "position": {
+        "x": 754.1384305389387,
+        "y": -853.2127687435806
+      },
+      "caption": "E55 Type Summary chronology",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n50",
+      "position": {
+        "x": 711.9845154611721,
+        "y": -735.1908941535031
+      },
+      "caption": "E55 Type Summary find",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n57",
+      "position": {
+        "x": 294.14415872408074,
+        "y": -887.4042525872195
+      },
+      "caption": "E55 Type Origin of site data",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n58",
+      "position": {
+        "x": 793.0497840104808,
+        "y": -650.0886478748072
+      },
+      "caption": "E55 Type Verification status",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n61",
+      "position": {
+        "x": 904.3595165197061,
+        "y": -986.438222371529
+      },
+      "caption": "E53 Place Geometry qualifier",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n62",
+      "position": {
+        "x": 1061.8382422362536,
+        "y": -921.0587697980651
+      },
+      "caption": "E53 Place MAEASaM geometry",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#cccccc"
+      }
+    },
+    {
+      "id": "n63",
+      "position": {
+        "x": 1169.127810997711,
+        "y": -1058.6008752501953
+      },
+      "caption": "E55 Type Geometry status",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n64",
+      "position": {
+        "x": 1280.0239641271348,
+        "y": -921.0587697980651
+      },
+      "caption": "E94 Space Primitive Coordinates (Latitude:Y)",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n65",
+      "position": {
+        "x": 1425.6641702371537,
+        "y": -957.9094437206024
+      },
+      "caption": "E94 Space Primitive Coordinates (Longitude:X)",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n66",
+      "position": {
+        "x": 1411.2265684177667,
+        "y": -816.9482989976624
+      },
+      "caption": "E94 Space Primitive Datum",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n67",
+      "position": {
+        "x": 1556.2165630468862,
+        "y": -780.5187792069702
+      },
+      "caption": "E94 Space Primitive Ellipsoid",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n68",
+      "position": {
+        "x": 1476.354874927567,
+        "y": -662.6388138903262
+      },
+      "caption": "E94 Space Primitive Coordinate system",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n69",
+      "position": {
+        "x": 1587.6829601841775,
+        "y": -577.8372282083473
+      },
+      "caption": "E94 Space Primitive EPSG",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n70",
+      "position": {
+        "x": 1449.5202352660128,
+        "y": -511.69962479782237
+      },
+      "caption": "E55 Type Geometry recording method",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n72",
+      "position": {
+        "x": 1519.730307841031,
+        "y": -373.38262125266124
+      },
+      "caption": "E73 Information Object Geometry information source",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00ff00"
+      }
+    },
+    {
+      "id": "n73",
+      "position": {
+        "x": 1381.0854472427498,
+        "y": -373.38262125266124
+      },
+      "caption": "E17 Type Assignment Visible on satellite images",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n74",
+      "position": {
+        "x": 1363.6022764595316,
+        "y": -228.66698083708025
+      },
+      "caption": "E17 Type Assignment Geometry location certainty",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n75",
+      "position": {
+        "x": 1240.1854335972055,
+        "y": -291.9491607736652
+      },
+      "caption": "E17 Type Assignment Geometry extent certainty",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n76",
+      "position": {
+        "x": 1097.4864576888256,
+        "y": -291.9491607736652
+      },
+      "caption": "E62 String Geometry notes and editorial comments",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n77",
+      "position": {
+        "x": 957.1935416754525,
+        "y": -344.93727522469857
+      },
+      "caption": "E17 Type Assignment Geometry currentness",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n78",
+      "position": {
+        "x": 703.0074018563148,
+        "y": -311.1423557674941
+      },
+      "caption": "E45 Address Address",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n79",
+      "position": {
+        "x": 688.1245671232589,
+        "y": -194.96540698144534
+      },
+      "caption": "E48 Place name Administrative division",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00ff00"
+      }
+    },
+    {
+      "id": "n80",
+      "position": {
+        "x": 765.4835841619681,
+        "y": -108.49857367306089
+      },
+      "caption": "E45 Address Nearest village",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n81",
+      "position": {
+        "x": 688.1245671232589,
+        "y": -22.031740364676352
+      },
+      "caption": "E62 String Direction to site",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n82",
+      "position": {
+        "x": 737.682389837656,
+        "y": 83.22683898952693
+      },
+      "caption": "E42 Identifier Related map",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00ff00"
+      }
+    },
+    {
+      "id": "n83",
+      "position": {
+        "x": 1121.378891830498,
+        "y": -46.87472507694568
+      },
+      "caption": "E55 Type Ownership type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n84",
+      "position": {
+        "x": 1184.0923854433559,
+        "y": 47.095556362017305
+      },
+      "caption": "E41 Appellation Landowner name",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n85",
+      "position": {
+        "x": 1222.3413370390604,
+        "y": 160.90224880174398
+      },
+      "caption": "E51 Contact point Landowner contacts",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n86",
+      "position": {
+        "x": 1219.3946023840404,
+        "y": 281.5568666951361
+      },
+      "caption": "E50 Date Start date",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fa28ff"
+      }
+    },
+    {
+      "id": "n87",
+      "position": {
+        "x": 1169.127810997711,
+        "y": 405.0595585813903
+      },
+      "caption": "E50 Date End date",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fa28ff"
+      }
+    },
+    {
+      "id": "n88",
+      "position": {
+        "x": 634.2096715833331,
+        "y": 236.0453543319032
+      },
+      "caption": "E55 Type Site descriptive type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n89",
+      "position": {
+        "x": 688.1245671232589,
+        "y": 357.5089242882859
+      },
+      "caption": "E62 String Comments on source description of site",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n90",
+      "position": {
+        "x": 527.7214290133613,
+        "y": 357.5089242882859
+      },
+      "caption": "E55 Type Site descriptive type certainty",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n91",
+      "position": {
+        "x": 957.1935416754525,
+        "y": 538.6344573263565
+      },
+      "caption": "E1 CRM Entity Relationship to site",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n92",
+      "position": {
+        "x": 939.2693868308435,
+        "y": 695.9351847573446
+      },
+      "caption": "E55 Type Site feature name type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n93",
+      "position": {
+        "x": 869.4687517335177,
+        "y": 806.90783093846
+      },
+      "caption": "E41 Appellation Site feature name",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n94",
+      "position": {
+        "x": 765.4835841619681,
+        "y": 882.6572873029652
+      },
+      "caption": "E55 Type Site feature descriptive type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n95",
+      "position": {
+        "x": 634.2096715833331,
+        "y": 915.2892095917736
+      },
+      "caption": "E53 Place Site feature geometry",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#cccccc"
+      }
+    },
+    {
+      "id": "n96",
+      "position": {
+        "x": 405.6042340039445,
+        "y": 486.88964682400007
+      },
+      "caption": "E55 Type Surface material type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n97",
+      "position": {
+        "x": 381.2325597552322,
+        "y": 624.0222690830689
+      },
+      "caption": "E55 Type Surface material collection type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n98",
+      "position": {
+        "x": 246.0115644787356,
+        "y": 592.0953105737794
+      },
+      "caption": "E55 Type Density of materials",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n99",
+      "position": {
+        "x": 192.57866858964252,
+        "y": 715.0205543858324
+      },
+      "caption": "E60 Number Quantity of specimens collected",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fcc400"
+      }
+    },
+    {
+      "id": "n100",
+      "position": {
+        "x": 76.56199684035272,
+        "y": 624.0222690830689
+      },
+      "caption": "E48 Place name Surface materials location",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n101",
+      "position": {
+        "x": -46.16601846066112,
+        "y": 661.9035185374202
+      },
+      "caption": "E42 Identifier Accession number",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n102",
+      "position": {
+        "x": -136.90986126467538,
+        "y": 765.2370556062007
+      },
+      "caption": "E19 Physical Object Excavation materials\t",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n103",
+      "position": {
+        "x": 192.57866858964252,
+        "y": 861.079218030708
+      },
+      "caption": "E55 Type Excavation material type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n104",
+      "position": {
+        "x": 105.89474167795984,
+        "y": 1007.7124898127088
+      },
+      "caption": "E55 Type Excavation material collection type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n105",
+      "position": {
+        "x": -69.16154629795372,
+        "y": 1091.4980908110988
+      },
+      "caption": "E55 Type Excavation density of materials",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n106",
+      "position": {
+        "x": -269.6147116094776,
+        "y": 1070.8929404976348
+      },
+      "caption": "E60 Number Quantity of specimens collected",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fcc400"
+      }
+    },
+    {
+      "id": "n107",
+      "position": {
+        "x": -409.34832114415406,
+        "y": 957.1051948380697
+      },
+      "caption": "E48 Place name Excavation materials location",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n108",
+      "position": {
+        "x": -467.51482758703804,
+        "y": 806.90783093846
+      },
+      "caption": "E42 Identifier Accession number",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n109",
+      "position": {
+        "x": -212.87333262170912,
+        "y": 222.39474374315813
+      },
+      "caption": "E58 Measurement Unit Measurements",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n110",
+      "position": {
+        "x": -209.0766050468296,
+        "y": 601.5730546593865
+      },
+      "caption": "E54 Dimension Site dimension from publication (in hectares)",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fcc400"
+      }
+    },
+    {
+      "id": "n111",
+      "position": {
+        "x": -317.6324759114515,
+        "y": 661.9035185374202
+      },
+      "caption": "E54 Dimension Site dimension in Google Earth (in hectares)",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fcc400"
+      }
+    },
+    {
+      "id": "n112",
+      "position": {
+        "x": -359.0325783447571,
+        "y": 538.6344573263565
+      },
+      "caption": "E54 Dimension Area observed by remote sensing (size range)",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n113",
+      "position": {
+        "x": -491.9552536874036,
+        "y": 571.591784950746
+      },
+      "caption": "E54 Dimension Area observed by remote sensing (shape)",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n114",
+      "position": {
+        "x": -462.4646875361188,
+        "y": 424.30595380392225
+      },
+      "caption": "E60 Number Elevation measurement value (m)",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fcc400"
+      }
+    },
+    {
+      "id": "n115",
+      "position": {
+        "x": -581.5436952709324,
+        "y": 376.02764204710854
+      },
+      "caption": "E55 Type Elevation measurement type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n117",
+      "position": {
+        "x": -782.7731409784824,
+        "y": 405.0595585813903
+      },
+      "caption": "E1 CRM Entity Relationships",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n118",
+      "position": {
+        "x": -648.1109390627296,
+        "y": 695.9351847573446
+      },
+      "caption": "E55 Type Relationship type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n119",
+      "position": {
+        "x": -801.2160425755168,
+        "y": 715.0205543858324
+      },
+      "caption": "E42 Identifier Connected to",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00ff00"
+      }
+    },
+    {
+      "id": "n120",
+      "position": {
+        "x": -1032.5651899997233,
+        "y": 424.30595380392225
+      },
+      "caption": "E54 Period Chronology",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n121",
+      "position": {
+        "x": -979.3218575380091,
+        "y": 715.0205543858324
+      },
+      "caption": "E55 Type Chronology name",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00ff00"
+      }
+    },
+    {
+      "id": "n122",
+      "position": {
+        "x": -1079.5164129747288,
+        "y": 806.90783093846
+      },
+      "caption": "E62 String Comments on chronology",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n123",
+      "position": {
+        "x": -1149.0443397853414,
+        "y": 695.9351847573446
+      },
+      "caption": "E55 Type Chronology certainty",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n124",
+      "position": {
+        "x": -1675.4520557409528,
+        "y": 571.591784950746
+      },
+      "caption": "E50 Date Absolute dates",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n125",
+      "position": {
+        "x": -1297.8422555203215,
+        "y": 571.591784950746
+      },
+      "caption": "E42 Identifier Dated find ID",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n126",
+      "position": {
+        "x": -1390.8766264030098,
+        "y": 682.4674380933994
+      },
+      "caption": "E55 Type Dated find type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n127",
+      "position": {
+        "x": -1408.441605362446,
+        "y": 838.6022353292531
+      },
+      "caption": "E62 String Dated find description",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n128",
+      "position": {
+        "x": -1578.119576416428,
+        "y": 861.079218030708
+      },
+      "caption": "E55 Type Dating method",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n129",
+      "position": {
+        "x": -1705.9605646448508,
+        "y": 947.9671190351232
+      },
+      "caption": "E16 Measurement Uncalibrated date",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n130",
+      "position": {
+        "x": -1808.286289348531,
+        "y": 846.603878911306
+      },
+      "caption": "E16 Measurement Standard deviation",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n131",
+      "position": {
+        "x": -1954.406002418932,
+        "y": 826.0988710121057
+      },
+      "caption": "E42 Identifier Laboratory date ID",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n132",
+      "position": {
+        "x": -1954.406002418932,
+        "y": 695.9351847573446
+      },
+      "caption": "E62 String Stratigraphic level or context",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n133",
+      "position": {
+        "x": -2051.869755496588,
+        "y": 601.5730546593865
+      },
+      "caption": "E16 Measurement Calibration",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fcc400"
+      }
+    },
+    {
+      "id": "n134",
+      "position": {
+        "x": -1974.8461448124401,
+        "y": 511.26132107271235
+      },
+      "caption": "E62 String Calibrated range",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n135",
+      "position": {
+        "x": -1998.475007298626,
+        "y": 376.02764204710854
+      },
+      "caption": "E50 Date Find start date",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fa28ff"
+      }
+    },
+    {
+      "id": "n136",
+      "position": {
+        "x": -1880.6160213441003,
+        "y": 281.5568666951361
+      },
+      "caption": "E50 Date Find end date",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fa28ff"
+      }
+    },
+    {
+      "id": "n137",
+      "position": {
+        "x": -1705.9605646448508,
+        "y": 217.64018165728925
+      },
+      "caption": "E62 String Comment on find",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n138",
+      "position": {
+        "x": -1390.8766264030098,
+        "y": 281.5568666951361
+      },
+      "caption": "E1 CRM EntityEnvironmental description or settings",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n139",
+      "position": {
+        "x": -1628.5767057364965,
+        "y": -78.28552605433907
+      },
+      "caption": "E55 Type Land use land cover",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n140",
+      "position": {
+        "x": -1518.7598190659442,
+        "y": -144.2048024693771
+      },
+      "caption": "E55 Type Geomorphology",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n141",
+      "position": {
+        "x": -1390.8766264030098,
+        "y": -162.99584097338953
+      },
+      "caption": "E55 Type Geology",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n142",
+      "position": {
+        "x": -1282.846703962901,
+        "y": -130.9662161816649
+      },
+      "caption": "E55 Type Vegetation ",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n143",
+      "position": {
+        "x": -1175.245068337631,
+        "y": -91.92794758933888
+      },
+      "caption": "E55 Type Soil type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n144",
+      "position": {
+        "x": -1075.842443768877,
+        "y": -5.843936749530371
+      },
+      "caption": "E50 Date Environmental description date",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fa28ff"
+      }
+    },
+    {
+      "id": "n145",
+      "position": {
+        "x": -1002.8699579161255,
+        "y": 104.64846311208126
+      },
+      "caption": "E62 String General notes",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n146",
+      "position": {
+        "x": -310.9359973393862,
+        "y": -801.7829358093957
+      },
+      "caption": "E14 Condition Assessment Site condition",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n147",
+      "position": {
+        "x": -332.60603220564576,
+        "y": -1171.3696052006594
+      },
+      "caption": "E55 Type Basis of condition assessment",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n148",
+      "position": {
+        "x": -241.95305676319052,
+        "y": -1076.7445868134798
+      },
+      "caption": "E50 Date Date of image used for condition assessment",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fa28ff"
+      }
+    },
+    {
+      "id": "n149",
+      "position": {
+        "x": -110.48331512556405,
+        "y": -1148.9771659171943
+      },
+      "caption": "E55 Type Disturbance cause",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n150",
+      "position": {
+        "x": -110.48331512556405,
+        "y": -1002.2356180232176
+      },
+      "caption": "E55 Type Disturbance effect",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n151",
+      "position": {
+        "x": 36.75833993419775,
+        "y": -1001.366900733298
+      },
+      "caption": "E55 Type Extent of impact",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n152",
+      "position": {
+        "x": -35.97434633530145,
+        "y": -870.7658763855912
+      },
+      "caption": "E55 Type Severity of impact",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n153",
+      "position": {
+        "x": 9.68515363497454,
+        "y": -745.5830032211086
+      },
+      "caption": "E62 String Recommendation for management of disturbance",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n154",
+      "position": {
+        "x": -46.16601846066112,
+        "y": -612.4334885970752
+      },
+      "caption": "E62 String Condition comments",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n155",
+      "position": {
+        "x": -409.34832114415406,
+        "y": -1040.7140081624943
+      },
+      "caption": "E39 Actor  Condition assessor name",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00ff00"
+      }
+    },
+    {
+      "id": "n156",
+      "position": {
+        "x": -563.373555440545,
+        "y": -1072.5950032339406
+      },
+      "caption": "E50 Date Condition assessment date",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fa28ff"
+      }
+    },
+    {
+      "id": "n157",
+      "position": {
+        "x": -626.4586788848192,
+        "y": -957.9094437206024
+      },
+      "caption": "E3 Condition state Overall sie condition",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n158",
+      "position": {
+        "x": -874.2908407173508,
+        "y": -1105.5197089044982
+      },
+      "caption": "E14 Condition Assessment Potential threats",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n159",
+      "position": {
+        "x": -588.359882096297,
+        "y": -1270.6020248340112
+      },
+      "caption": "E62 String Threat comments",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n160",
+      "position": {
+        "x": -688.9889308129052,
+        "y": -1378.7812801441632
+      },
+      "caption": "E55 Type Basis of threat assessment",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n161",
+      "position": {
+        "x": -826.7246321291375,
+        "y": -1432.2399867128242
+      },
+      "caption": "E50 Date Threat assessment date",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fa28ff"
+      }
+    },
+    {
+      "id": "n162",
+      "position": {
+        "x": -987.2348027346351,
+        "y": -1415.7653302667427
+      },
+      "caption": "E39 Actor Threat assessor name",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00ff00"
+      }
+    },
+    {
+      "id": "n163",
+      "position": {
+        "x": -1107.7524908128285,
+        "y": -1338.9813589999758
+      },
+      "caption": "E62 String Recommendation for management of threat",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n164",
+      "position": {
+        "x": -1184.5364620795945,
+        "y": -1218.463670921782
+      },
+      "caption": "E55 Type Probability of threat affecting site",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n165",
+      "position": {
+        "x": -1203.199150857507,
+        "y": -1076.7445868134798
+      },
+      "caption": "E55 Type Threat severity",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n166",
+      "position": {
+        "x": -1160.2217993384045,
+        "y": -940.4373929749852
+      },
+      "caption": "E55 Type Threat type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n167",
+      "position": {
+        "x": -491.9552536874036,
+        "y": -406.80789840833455
+      },
+      "caption": "E7 Activety Research history",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n168",
+      "position": {
+        "x": -677.5748671783873,
+        "y": -756.2612963424626
+      },
+      "caption": "E62 String Associated information",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n169",
+      "position": {
+        "x": -775.801920630572,
+        "y": -663.6712701481447
+      },
+      "caption": "E50 Date Date of activity",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fa28ff"
+      }
+    },
+    {
+      "id": "n170",
+      "position": {
+        "x": -843.282568451186,
+        "y": -558.8501293086999
+      },
+      "caption": "E39 Actor Researcher",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n171",
+      "position": {
+        "x": -873.5056174800808,
+        "y": -437.90519677918286
+      },
+      "caption": "E55 Type Type of activity",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n173",
+      "position": {
+        "x": -1705.9605646448508,
+        "y": -534.8342094410193
+      },
+      "caption": "E 82 Actor Appellation Recorder",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n175",
+      "position": {
+        "x": -734.7671120826669,
+        "y": -108.49857367306089
+      },
+      "caption": "E62 String Comment",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n176",
+      "position": {
+        "x": -874.2908407173508,
+        "y": -22.031740364676352
+      },
+      "caption": "E31 Document Associated document",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n177",
+      "position": {
+        "x": -731.3342559461997,
+        "y": 47.095556362017305
+      },
+      "caption": "E331 Document Source",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00ff00"
+      }
+    },
+    {
+      "id": "n178",
+      "position": {
+        "x": -1705.9605646448508,
+        "y": -344.93727522469857
+      },
+      "caption": "E1 CRM Entity Intangible heritage",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n179",
+      "position": {
+        "x": -2074.541696776989,
+        "y": -311.1423557674941
+      },
+      "caption": "E50 Date Date of interview or recording",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fa28ff"
+      }
+    },
+    {
+      "id": "n180",
+      "position": {
+        "x": -2050.645255772672,
+        "y": -194.96540698144534
+      },
+      "caption": "E41 Appellation Name of informant",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n181",
+      "position": {
+        "x": -1974.8461448124401,
+        "y": -82.25944528811607
+      },
+      "caption": "E62 String Associated events",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n182",
+      "position": {
+        "x": -1860.486338128737,
+        "y": -2.2699688013108243
+      },
+      "caption": "E62 String Associated oral histories and/or traditions",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n183",
+      "position": {
+        "x": -1300.7240226293998,
+        "y": -511.69962479782237
+      },
+      "caption": "E1 CRM Entity Resource version control",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n184",
+      "position": {
+        "x": -1004.5251227118636,
+        "y": -639.5042292471293
+      },
+      "caption": "E62 String Nodes modified",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n185",
+      "position": {
+        "x": -1251.3983626550312,
+        "y": -780.5187792069702
+      },
+      "caption": "E50 Date Resource last modified at",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fa28ff"
+      }
+    },
+    {
+      "id": "n186",
+      "position": {
+        "x": -1113.733356857677,
+        "y": -735.1908941535031
+      },
+      "caption": "E39 Actor  Name of the recorder",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00ff00"
+      }
+    },
+    {
+      "id": "n187",
+      "position": {
+        "x": -1390.8766264030098,
+        "y": -802.9955001212726
+      },
+      "caption": "E50 Date Resource created at",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fa28ff"
+      }
+    },
+    {
+      "id": "n188",
+      "position": {
+        "x": -1548.6573975606934,
+        "y": -800.857840550113
+      },
+      "caption": "E50 Date Date for the recording in Arches",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fa28ff"
+      }
+    },
+    {
+      "id": "n189",
+      "position": {
+        "x": -1705.9605646448508,
+        "y": -843.8857564087918
+      },
+      "caption": "E50 Date Recorded on",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fa28ff"
+      }
+    },
+    {
+      "id": "n190",
+      "position": {
+        "x": -1860.486338128737,
+        "y": -802.48070019399
+      },
+      "caption": "E55 Type Recordingy activity type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n191",
+      "position": {
+        "x": -1958.7999193940332,
+        "y": -680.8110789671911
+      },
+      "caption": "E39 Actor Recorder role type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00ff00"
+      }
+    },
+    {
+      "id": "n192",
+      "position": {
+        "x": -1997.9143036971946,
+        "y": -534.8342094410193
+      },
+      "caption": "E82 Actor Appellation Recorder name",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00ff00"
+      }
+    },
+    {
+      "id": "n193",
+      "position": {
+        "x": -1454.8248744636717,
+        "y": 1158.0525193946119
+      },
+      "caption": "Semantic",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n194",
+      "position": {
+        "x": -1329.7220539673574,
+        "y": 1158.0525193946119
+      },
+      "caption": "String",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ffff00"
+      }
+    },
+    {
+      "id": "n195",
+      "position": {
+        "x": -1204.6192334710431,
+        "y": 1158.0525193946119
+      },
+      "caption": "Controlled",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#ff0000"
+      }
+    },
+    {
+      "id": "n196",
+      "position": {
+        "x": -1079.5164129747288,
+        "y": 1158.0525193946119
+      },
+      "caption": "Relationship",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00ff00"
+      }
+    },
+    {
+      "id": "n197",
+      "position": {
+        "x": -959.5927041469719,
+        "y": 1158.0525193946119
+      },
+      "caption": "Number",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#fcc400"
+      }
+    },
+    {
+      "id": "n198",
+      "position": {
+        "x": -1579.927694959986,
+        "y": 1158.0525193946119
+      },
+      "caption": "Model",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n199",
+      "position": {
+        "x": -839.6689953192149,
+        "y": 1158.0525193946119
+      },
+      "caption": "Geometry",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#cccccc"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "id": "n0",
+      "fromId": "n0",
+      "toId": "n1",
+      "type": "P1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n1",
+      "fromId": "n0",
+      "toId": "n2",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n4",
+      "fromId": "n0",
+      "toId": "n5",
+      "type": "P1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n7",
+      "fromId": "n0",
+      "toId": "n8",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n17",
+      "fromId": "n0",
+      "toId": "n18",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n18",
+      "fromId": "n0",
+      "toId": "n19",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n19",
+      "fromId": "n0",
+      "toId": "n20",
+      "type": "P130 shows features of",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n36",
+      "fromId": "n0",
+      "toId": "n37",
+      "type": "P130 show features of",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n37",
+      "fromId": "n0",
+      "toId": "n38",
+      "type": "P130 shows feature of",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n38",
+      "fromId": "n0",
+      "toId": "n39",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n39",
+      "fromId": "n2",
+      "toId": "n40",
+      "type": "P1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n40",
+      "fromId": "n2",
+      "toId": "n41",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n41",
+      "fromId": "n5",
+      "toId": "n42",
+      "type": "P1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n42",
+      "fromId": "n5",
+      "toId": "n43",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n43",
+      "fromId": "n8",
+      "toId": "n44",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n44",
+      "fromId": "n8",
+      "toId": "n45",
+      "type": "L54 same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n45",
+      "fromId": "n8",
+      "toId": "n46",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n46",
+      "fromId": "n8",
+      "toId": "n47",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n47",
+      "fromId": "n8",
+      "toId": "n48",
+      "type": "L54 same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n48",
+      "fromId": "n8",
+      "toId": "n49",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n49",
+      "fromId": "n8",
+      "toId": "n50",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n56",
+      "fromId": "n8",
+      "toId": "n57",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n57",
+      "fromId": "n8",
+      "toId": "n58",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n60",
+      "fromId": "n18",
+      "toId": "n61",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n61",
+      "fromId": "n18",
+      "toId": "n62",
+      "type": "P82 falls within",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n62",
+      "fromId": "n18",
+      "toId": "n63",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n63",
+      "fromId": "n18",
+      "toId": "n64",
+      "type": "P168 place is defined by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n64",
+      "fromId": "n18",
+      "toId": "n65",
+      "type": "P168 place is defined by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n65",
+      "fromId": "n18",
+      "toId": "n66",
+      "type": "P168 place is defined by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n66",
+      "fromId": "n18",
+      "toId": "n67",
+      "type": "P168 place is defined by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n67",
+      "fromId": "n18",
+      "toId": "n68",
+      "type": "P168 place is defined by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n68",
+      "fromId": "n18",
+      "toId": "n69",
+      "type": "P168 place is defined by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n69",
+      "fromId": "n18",
+      "toId": "n70",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n71",
+      "fromId": "n18",
+      "toId": "n72",
+      "type": "P67 is referred to by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n72",
+      "fromId": "n18",
+      "toId": "n73",
+      "type": "P140 was attributed by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n73",
+      "fromId": "n18",
+      "toId": "n74",
+      "type": "P140 was attributed by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n74",
+      "fromId": "n18",
+      "toId": "n75",
+      "type": "P140 was attributed by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n75",
+      "fromId": "n18",
+      "toId": "n76",
+      "type": "P3 has note",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n76",
+      "fromId": "n18",
+      "toId": "n77",
+      "type": "P140 was attributed by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n77",
+      "fromId": "n19",
+      "toId": "n78",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n78",
+      "fromId": "n19",
+      "toId": "n79",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n79",
+      "fromId": "n19",
+      "toId": "n80",
+      "type": "P1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n80",
+      "fromId": "n19",
+      "toId": "n81",
+      "type": "P3 has note",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n81",
+      "fromId": "n19",
+      "toId": "n82",
+      "type": "P1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n82",
+      "fromId": "n39",
+      "toId": "n83",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n83",
+      "fromId": "n39",
+      "toId": "n84",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n84",
+      "fromId": "n39",
+      "toId": "n85",
+      "type": "P76 has contact point",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n85",
+      "fromId": "n39",
+      "toId": "n86",
+      "type": "L33 is maker of",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n86",
+      "fromId": "n39",
+      "toId": "n87",
+      "type": "L33 is maker of",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n87",
+      "fromId": "n20",
+      "toId": "n88",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n88",
+      "fromId": "n20",
+      "toId": "n89",
+      "type": "L47 has comment",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n89",
+      "fromId": "n20",
+      "toId": "n90",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n90",
+      "fromId": "n38",
+      "toId": "n91",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n91",
+      "fromId": "n38",
+      "toId": "n92",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n92",
+      "fromId": "n38",
+      "toId": "n93",
+      "type": "P1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n93",
+      "fromId": "n38",
+      "toId": "n94",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n94",
+      "fromId": "n38",
+      "toId": "n95",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n95",
+      "fromId": "n37",
+      "toId": "n96",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n96",
+      "fromId": "n37",
+      "toId": "n97",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n97",
+      "fromId": "n37",
+      "toId": "n98",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n98",
+      "fromId": "n37",
+      "toId": "n99",
+      "type": "P57 has number of parts",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n99",
+      "fromId": "n37",
+      "toId": "n100",
+      "type": "P156 occupies",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n100",
+      "fromId": "n37",
+      "toId": "n101",
+      "type": "P1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n101",
+      "fromId": "n0",
+      "toId": "n102",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n102",
+      "fromId": "n102",
+      "toId": "n103",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n103",
+      "fromId": "n102",
+      "toId": "n104",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n104",
+      "fromId": "n102",
+      "toId": "n105",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n105",
+      "fromId": "n102",
+      "toId": "n106",
+      "type": "P57 has number of parts",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n106",
+      "fromId": "n102",
+      "toId": "n107",
+      "type": "P156 occupies",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n107",
+      "fromId": "n102",
+      "toId": "n108",
+      "type": "P1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n108",
+      "fromId": "n0",
+      "toId": "n109",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n109",
+      "fromId": "n109",
+      "toId": "n110",
+      "type": "P43 has dimension",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n110",
+      "fromId": "n109",
+      "toId": "n111",
+      "type": "P43 has dimension",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n111",
+      "fromId": "n109",
+      "toId": "n112",
+      "type": "",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n112",
+      "fromId": "n109",
+      "toId": "n113",
+      "type": "P43 has dimension",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n113",
+      "fromId": "n109",
+      "toId": "n114",
+      "type": "P3 has note",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n114",
+      "fromId": "n109",
+      "toId": "n115",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n116",
+      "fromId": "n0",
+      "toId": "n117",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n117",
+      "fromId": "n117",
+      "toId": "n118",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n118",
+      "fromId": "n117",
+      "toId": "n119",
+      "type": "P1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n119",
+      "fromId": "n0",
+      "toId": "n120",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n120",
+      "fromId": "n120",
+      "toId": "n121",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n121",
+      "fromId": "n120",
+      "toId": "n122",
+      "type": "L47 has comment",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n122",
+      "fromId": "n120",
+      "toId": "n123",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n123",
+      "fromId": "n0",
+      "toId": "n124",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n124",
+      "fromId": "n124",
+      "toId": "n125",
+      "type": "P1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n125",
+      "fromId": "n124",
+      "toId": "n126",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n126",
+      "fromId": "n124",
+      "toId": "n127",
+      "type": "P3 has note",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n127",
+      "fromId": "n124",
+      "toId": "n128",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n128",
+      "fromId": "n124",
+      "toId": "n129",
+      "type": "P39 was measured by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n129",
+      "fromId": "n124",
+      "toId": "n130",
+      "type": "P39 was measured by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n130",
+      "fromId": "n124",
+      "toId": "n131",
+      "type": "P1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n131",
+      "fromId": "n124",
+      "toId": "n132",
+      "type": "P3 has note",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n132",
+      "fromId": "n124",
+      "toId": "n133",
+      "type": "P39 was measured by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n133",
+      "fromId": "n124",
+      "toId": "n134",
+      "type": "L47 has comment",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n134",
+      "fromId": "n124",
+      "toId": "n135",
+      "type": "P1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n135",
+      "fromId": "n124",
+      "toId": "n136",
+      "type": "P1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n136",
+      "fromId": "n124",
+      "toId": "n137",
+      "type": "L47 has comment",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n137",
+      "fromId": "n0",
+      "toId": "n138",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n138",
+      "fromId": "n138",
+      "toId": "n139",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n139",
+      "fromId": "n138",
+      "toId": "n140",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n140",
+      "fromId": "n138",
+      "toId": "n141",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n141",
+      "fromId": "n138",
+      "toId": "n142",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n142",
+      "fromId": "n138",
+      "toId": "n143",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n143",
+      "fromId": "n138",
+      "toId": "n144",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n144",
+      "fromId": "n138",
+      "toId": "n145",
+      "type": "P3 has note",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n145",
+      "fromId": "n0",
+      "toId": "n146",
+      "type": "P140 was attributed by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n146",
+      "fromId": "n146",
+      "toId": "n147",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n147",
+      "fromId": "n146",
+      "toId": "n148",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n148",
+      "fromId": "n146",
+      "toId": "n149",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n149",
+      "fromId": "n146",
+      "toId": "n150",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n150",
+      "fromId": "n146",
+      "toId": "n151",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n151",
+      "fromId": "n146",
+      "toId": "n152",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n152",
+      "fromId": "n146",
+      "toId": "n153",
+      "type": "P3 has note",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n153",
+      "fromId": "n146",
+      "toId": "n154",
+      "type": "L47 has comment",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n154",
+      "fromId": "n146",
+      "toId": "n155",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n155",
+      "fromId": "n146",
+      "toId": "n156",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n156",
+      "fromId": "n146",
+      "toId": "n157",
+      "type": "P118 overlaps in time with",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n157",
+      "fromId": "n0",
+      "toId": "n158",
+      "type": "P140 was attributed by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n158",
+      "fromId": "n158",
+      "toId": "n159",
+      "type": "L47 has comment",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n159",
+      "fromId": "n158",
+      "toId": "n160",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n160",
+      "fromId": "n158",
+      "toId": "n161",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n161",
+      "fromId": "n158",
+      "toId": "n162",
+      "type": "P140 assigned attribute by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n162",
+      "fromId": "n158",
+      "toId": "n163",
+      "type": "L47 has comment",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n163",
+      "fromId": "n158",
+      "toId": "n164",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n164",
+      "fromId": "n158",
+      "toId": "n165",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n165",
+      "fromId": "n158",
+      "toId": "n166",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n166",
+      "fromId": "n0",
+      "toId": "n167",
+      "type": "P16 was used for",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n167",
+      "fromId": "n167",
+      "toId": "n168",
+      "type": "P3 has note",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n168",
+      "fromId": "n167",
+      "toId": "n169",
+      "type": "P12 occured in the pressence of",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n169",
+      "fromId": "n167",
+      "toId": "n170",
+      "type": "P12 occured in the pressence of",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n170",
+      "fromId": "n167",
+      "toId": "n171",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n172",
+      "fromId": "n0",
+      "toId": "n173",
+      "type": "P1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n174",
+      "fromId": "n0",
+      "toId": "n175",
+      "type": "L47 has comment",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n175",
+      "fromId": "n0",
+      "toId": "n176",
+      "type": "P67 is referred to by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n176",
+      "fromId": "n0",
+      "toId": "n177",
+      "type": "P67 is referred to by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n177",
+      "fromId": "n0",
+      "toId": "n178",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n178",
+      "fromId": "n178",
+      "toId": "n179",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n179",
+      "fromId": "n178",
+      "toId": "n180",
+      "type": "P1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n180",
+      "fromId": "n178",
+      "toId": "n181",
+      "type": "P3 has note",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n181",
+      "fromId": "n178",
+      "toId": "n182",
+      "type": "P3 has note",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n182",
+      "fromId": "n0",
+      "toId": "n183",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n183",
+      "fromId": "n183",
+      "toId": "n184",
+      "type": "P3 has note",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n184",
+      "fromId": "n183",
+      "toId": "n185",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n185",
+      "fromId": "n183",
+      "toId": "n186",
+      "type": "P1 is identified by",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n186",
+      "fromId": "n183",
+      "toId": "n187",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n187",
+      "fromId": "n173",
+      "toId": "n188",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n188",
+      "fromId": "n173",
+      "toId": "n189",
+      "type": "L54 is same as",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n189",
+      "fromId": "n173",
+      "toId": "n190",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n190",
+      "fromId": "n173",
+      "toId": "n191",
+      "type": "P2 has type",
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n191",
+      "fromId": "n173",
+      "toId": "n192",
+      "type": "P1 is identified by",
+      "properties": {},
+      "style": {}
+    }
+  ]
+}

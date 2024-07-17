@@ -1,0 +1,364 @@
+{
+  "style": {
+    "font-family": "sans-serif",
+    "background-color": "#ffffff",
+    "background-image": "",
+    "background-size": "100%",
+    "node-color": "#ffffff",
+    "border-width": 4,
+    "border-color": "#000000",
+    "radius": 50,
+    "node-padding": 5,
+    "node-margin": 2,
+    "outside-position": "auto",
+    "node-icon-image": "",
+    "node-background-image": "",
+    "icon-position": "inside",
+    "icon-size": 64,
+    "caption-position": "inside",
+    "caption-max-width": 200,
+    "caption-color": "#000000",
+    "caption-font-size": 50,
+    "caption-font-weight": "normal",
+    "label-position": "inside",
+    "label-display": "pill",
+    "label-color": "#000000",
+    "label-background-color": "#ffffff",
+    "label-border-color": "#000000",
+    "label-border-width": 4,
+    "label-font-size": 40,
+    "label-padding": 5,
+    "label-margin": 4,
+    "directionality": "directed",
+    "detail-position": "inline",
+    "detail-orientation": "parallel",
+    "arrow-width": 5,
+    "arrow-color": "#000000",
+    "margin-start": 5,
+    "margin-end": 5,
+    "margin-peer": 20,
+    "attachment-start": "normal",
+    "attachment-end": "normal",
+    "relationship-icon-image": "",
+    "type-color": "#000000",
+    "type-background-color": "#ffffff",
+    "type-border-color": "#000000",
+    "type-border-width": 0,
+    "type-font-size": 16,
+    "type-padding": 5,
+    "property-position": "outside",
+    "property-alignment": "colon",
+    "property-color": "#000000",
+    "property-font-size": 16,
+    "property-font-weight": "normal"
+  },
+  "nodes": [
+    {
+      "id": "n0",
+      "position": {
+        "x": 1402.1020249507912,
+        "y": 1078.3077150073427
+      },
+      "caption": "Model",
+      "style": {},
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n1",
+      "position": {
+        "x": 882.8069250165595,
+        "y": 696.8077150073428
+      },
+      "caption": "Admin model",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n2",
+      "position": {
+        "x": 882.8069250165595,
+        "y": 315.30771500734284
+      },
+      "caption": "MAEASaM ID E42 Identifier",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FFFF00"
+      }
+    },
+    {
+      "id": "n3",
+      "position": {
+        "x": 1073.5569250165595,
+        "y": 366.41902346357955
+      },
+      "caption": "Name E41 Appellation",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n4",
+      "position": {
+        "x": 1073.5569250165595,
+        "y": -15.080976536420508
+      },
+      "caption": "Name E41 Appellation",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FFFF00"
+      }
+    },
+    {
+      "id": "n5",
+      "position": {
+        "x": 1213.1956165603228,
+        "y": 11.393269716128543
+      },
+      "caption": "Name type E55 Type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FF0000"
+      }
+    },
+    {
+      "id": "n6",
+      "position": {
+        "x": 1213.1956165603228,
+        "y": 506.05771500734284
+      },
+      "caption": "Level E55 Type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n7",
+      "position": {
+        "x": 1508.8969442880352,
+        "y": 265.0121284888008
+      },
+      "caption": "Official division E55 Type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FF0000"
+      }
+    },
+    {
+      "id": "n8",
+      "position": {
+        "x": 1587.9669241320378,
+        "y": 434.72247111635306
+      },
+      "caption": "Level E41 Appellation",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FF0000"
+      }
+    },
+    {
+      "id": "n9",
+      "position": {
+        "x": 1264.3069250165595,
+        "y": 696.8077150073428
+      },
+      "caption": "Geometry E53 Place",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#cccccc"
+      }
+    },
+    {
+      "id": "n10",
+      "position": {
+        "x": 1164.8366985498458,
+        "y": 953.7152019374892
+      },
+      "caption": "Description E62 String",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FFFF00"
+      }
+    },
+    {
+      "id": "n11",
+      "position": {
+        "x": 882.8069304113561,
+        "y": 1078.3077150073427
+      },
+      "caption": "Comment E62 String",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FFFF00"
+      }
+    },
+    {
+      "id": "n12",
+      "position": {
+        "x": 1343.3181620392274,
+        "y": 96.65778644091165
+      },
+      "caption": "Part of E41 Appellation",
+      "style": {
+        "node-color": "#00ff00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n13",
+      "position": {
+        "x": 1534.0070380338007,
+        "y": 1078.3077150073427
+      },
+      "caption": "Semantic",
+      "style": {
+        "node-color": "#00FFFF"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n14",
+      "position": {
+        "x": 1665.91205111681,
+        "y": 1078.3077150073427
+      },
+      "caption": "Controlled",
+      "style": {
+        "node-color": "#FF0000"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n15",
+      "position": {
+        "x": 1797.8170641998195,
+        "y": 1078.3077150073427
+      },
+      "caption": "String",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n16",
+      "position": {
+        "x": 1929.7220772828289,
+        "y": 1078.3077150073427
+      },
+      "caption": "Relatsionship",
+      "style": {
+        "node-color": "#00ff00"
+      },
+      "labels": [],
+      "properties": {}
+    }
+  ],
+  "relationships": [
+    {
+      "id": "n0",
+      "type": "P1 is identified by",
+      "style": {},
+      "properties": {},
+      "fromId": "n1",
+      "toId": "n2"
+    },
+    {
+      "id": "n1",
+      "type": "P1 is identified by",
+      "style": {},
+      "properties": {},
+      "fromId": "n1",
+      "toId": "n3"
+    },
+    {
+      "id": "n2",
+      "type": "P1 is identified by",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n4"
+    },
+    {
+      "id": "n3",
+      "type": "P2 has type",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n5"
+    },
+    {
+      "id": "n4",
+      "type": "P2 has type",
+      "style": {},
+      "properties": {},
+      "fromId": "n1",
+      "toId": "n6"
+    },
+    {
+      "id": "n5",
+      "type": "P2 has type",
+      "style": {},
+      "properties": {},
+      "fromId": "n6",
+      "toId": "n7"
+    },
+    {
+      "id": "n6",
+      "type": "P106 forms part of",
+      "style": {},
+      "properties": {},
+      "fromId": "n6",
+      "toId": "n8"
+    },
+    {
+      "id": "n7",
+      "type": "L54 is same as",
+      "style": {},
+      "properties": {},
+      "fromId": "n1",
+      "toId": "n9"
+    },
+    {
+      "id": "n8",
+      "type": "P3 has note",
+      "style": {},
+      "properties": {},
+      "fromId": "n1",
+      "toId": "n10"
+    },
+    {
+      "id": "n9",
+      "type": "P3 has note",
+      "style": {},
+      "properties": {},
+      "fromId": "n1",
+      "toId": "n11"
+    },
+    {
+      "id": "n10",
+      "type": "P1 is identified by",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n12"
+    }
+  ]
+}

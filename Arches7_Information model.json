@@ -1,0 +1,1189 @@
+{
+  "style": {
+    "font-family": "sans-serif",
+    "background-color": "#ffffff",
+    "background-image": "",
+    "background-size": "100%",
+    "node-color": "#ffffff",
+    "border-width": 4,
+    "border-color": "#000000",
+    "radius": 50,
+    "node-padding": 5,
+    "node-margin": 2,
+    "outside-position": "auto",
+    "node-icon-image": "",
+    "node-background-image": "",
+    "icon-position": "inside",
+    "icon-size": 64,
+    "caption-position": "inside",
+    "caption-max-width": 200,
+    "caption-color": "#000000",
+    "caption-font-size": 50,
+    "caption-font-weight": "normal",
+    "label-position": "inside",
+    "label-display": "pill",
+    "label-color": "#000000",
+    "label-background-color": "#ffffff",
+    "label-border-color": "#000000",
+    "label-border-width": 4,
+    "label-font-size": 40,
+    "label-padding": 5,
+    "label-margin": 4,
+    "directionality": "directed",
+    "detail-position": "inline",
+    "detail-orientation": "parallel",
+    "arrow-width": 5,
+    "arrow-color": "#000000",
+    "margin-start": 5,
+    "margin-end": 5,
+    "margin-peer": 20,
+    "attachment-start": "normal",
+    "attachment-end": "normal",
+    "relationship-icon-image": "",
+    "type-color": "#000000",
+    "type-background-color": "#ffffff",
+    "type-border-color": "#000000",
+    "type-border-width": 0,
+    "type-font-size": 16,
+    "type-padding": 5,
+    "property-position": "outside",
+    "property-alignment": "colon",
+    "property-color": "#000000",
+    "property-font-size": 16,
+    "property-font-weight": "normal"
+  },
+  "nodes": [
+    {
+      "id": "n1",
+      "position": {
+        "x": 630.266695285741,
+        "y": 681.3294046296563
+      },
+      "caption": "Info Model",
+      "labels": [],
+      "properties": {},
+      "style": {}
+    },
+    {
+      "id": "n2",
+      "position": {
+        "x": 896.4034359140227,
+        "y": 415.1926640013746
+      },
+      "caption": "MAEASaM ID E42 Identifier",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FFFF00"
+      }
+    },
+    {
+      "id": "n4",
+      "position": {
+        "x": 1195.9614505885595,
+        "y": 59.02674674070465
+      },
+      "caption": "Title of resource E35 Title",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FFFF00"
+      }
+    },
+    {
+      "id": "n5",
+      "position": {
+        "x": 1284.338477176344,
+        "y": 180.96136671698622
+      },
+      "caption": "Author E39 Actor",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FFFF00"
+      }
+    },
+    {
+      "id": "n6",
+      "position": {
+        "x": 978.0139821027608,
+        "y": 536.3729042186657
+      },
+      "caption": "Resource type E55 Type",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FF0000"
+      }
+    },
+    {
+      "id": "n7",
+      "position": {
+        "x": 1190.417585494875,
+        "y": 594.5965500790086
+      },
+      "caption": "Publication information E31 Document",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n8",
+      "position": {
+        "x": 1410.7757257108663,
+        "y": 106.42850654424768
+      },
+      "caption": "Publisher E39 Actor",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FFFF00"
+      }
+    },
+    {
+      "id": "n9",
+      "position": {
+        "x": 1436.514327558167,
+        "y": 249.12355206757258
+      },
+      "caption": "Year of publication E50 Date",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FF00FF"
+      }
+    },
+    {
+      "id": "n10",
+      "position": {
+        "x": 1574.0448048872988,
+        "y": 249.12355206757258
+      },
+      "caption": "Book or journal information E35 Title",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FFFF00"
+      }
+    },
+    {
+      "id": "n11",
+      "position": {
+        "x": 1557.7544868631994,
+        "y": 382.51449119072345
+      },
+      "caption": "Book or journal edition E73 Information object",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FFFF00"
+      }
+    },
+    {
+      "id": "n12",
+      "position": {
+        "x": 1682.2956532180135,
+        "y": 437.82473403184997
+      },
+      "caption": "DOI E42 Identifier",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FFFF00"
+      }
+    },
+    {
+      "id": "n13",
+      "position": {
+        "x": 1612.6543491259959,
+        "y": 554.2070186693292
+      },
+      "caption": "ISBN/ISSN E42 Identifier",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FFFF00"
+      }
+    },
+    {
+      "id": "n14",
+      "position": {
+        "x": 1612.6543491259959,
+        "y": 740.5769861431321
+      },
+      "caption": "URL E51 Contact Point",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#990000",
+        "caption-color": "#FFFFFF"
+      }
+    },
+    {
+      "id": "n25",
+      "position": {
+        "x": 785.6436545882901,
+        "y": 338.52402260891745
+      },
+      "caption": "Resource version control E50 Date",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#00FFFF"
+      }
+    },
+    {
+      "id": "n26",
+      "position": {
+        "x": 823.2467345371584,
+        "y": 1.3132895292368403
+      },
+      "caption": "Resource created at E50 date",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FF00FF"
+      }
+    },
+    {
+      "id": "n27",
+      "position": {
+        "x": 978.0139821027608,
+        "y": 59.02674674070465
+      },
+      "caption": "Resource last modified at E50 Date",
+      "labels": [],
+      "properties": {},
+      "style": {
+        "node-color": "#FF00FF"
+      }
+    },
+    {
+      "id": "n28",
+      "position": {
+        "x": 1703.2033976929893,
+        "y": 654.3639878866737
+      },
+      "caption": "Page numbers E60 Number",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n29",
+      "position": {
+        "x": 1177.0924375161726,
+        "y": 830.5715417583064
+      },
+      "caption": "Collection E31 Document",
+      "style": {
+        "node-color": "#00FFFF"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n30",
+      "position": {
+        "x": 1551.3633771231157,
+        "y": 873.7204266307551
+      },
+      "caption": "Project name E41 Appellation",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n31",
+      "position": {
+        "x": 1617.7409540699964,
+        "y": 985.4300933473613
+      },
+      "caption": "Name of collection E35 Title",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n32",
+      "position": {
+        "x": 1496.5007947649638,
+        "y": 1030.368598342302
+      },
+      "caption": "Subject E35 Title",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n33",
+      "position": {
+        "x": 1496.5007947649638,
+        "y": 1171.3509241466395
+      },
+      "caption": "Format E55 Type",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n34",
+      "position": {
+        "x": 1365.4674375161726,
+        "y": 1156.8466126340936
+      },
+      "caption": "Date E50 Date",
+      "style": {
+        "node-color": "#FF00FF"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n35",
+      "position": {
+        "x": 1303.12805934777,
+        "y": 1280.3129209651402
+      },
+      "caption": "Contributors E39 Actor",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n36",
+      "position": {
+        "x": 1190.417585494875,
+        "y": 1207.0858216088332
+      },
+      "caption": "Collection publisher E74 Group",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n37",
+      "position": {
+        "x": 1076.5532355306061,
+        "y": 1286.6901173561982
+      },
+      "caption": "Developed or maintained by E39 Actor",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n38",
+      "position": {
+        "x": 1016.4376055345563,
+        "y": 1171.3509241466395
+      },
+      "caption": "Source E31 Document",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n39",
+      "position": {
+        "x": 873.6562952532744,
+        "y": 1185.6472994635537
+      },
+      "caption": "Language E56 Language",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n40",
+      "position": {
+        "x": 878.1628522050203,
+        "y": 1059.878466044736
+      },
+      "caption": "Description E62 String",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n41",
+      "position": {
+        "x": 473.57623735274797,
+        "y": 1226.0676062029793
+      },
+      "caption": "Map E31 Document",
+      "style": {
+        "node-color": "#00FFFF"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n42",
+      "position": {
+        "x": 820.884355141985,
+        "y": 1372.0732013618504
+      },
+      "caption": "Map series code E42 Identifier",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n43",
+      "position": {
+        "x": 836.2284339533437,
+        "y": 1511.1565075567478
+      },
+      "caption": "Map title E35 Title",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n44",
+      "position": {
+        "x": 695.1942634703507,
+        "y": 1530.7412233734467
+      },
+      "caption": "Map type E55 Type",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n45",
+      "position": {
+        "x": 618.9069541864721,
+        "y": 1663.8703929905141
+      },
+      "caption": "Cartographer E39 Actor",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n46",
+      "position": {
+        "x": 491.015682406263,
+        "y": 1602.9554581003936
+      },
+      "caption": "Date of ground survey used to compile map E50 Date",
+      "style": {
+        "node-color": "#FF00FF"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n47",
+      "position": {
+        "x": 365.89172987796303,
+        "y": 1674.6167609499798
+      },
+      "caption": "Map creation date E50 Date",
+      "style": {
+        "node-color": "#FF00FF"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n48",
+      "position": {
+        "x": 307.4696998335749,
+        "y": 1564.8259350231187
+      },
+      "caption": "Map scale E60 Number",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n49",
+      "position": {
+        "x": 179.90420514543212,
+        "y": 1582.013562523341
+      },
+      "caption": "Map publisher E74 Group",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n50",
+      "position": {
+        "x": 165.3747257793798,
+        "y": 1442.7526097539635
+      },
+      "caption": " Location E53 Place",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n51",
+      "position": {
+        "x": 40.0065161499092,
+        "y": 1383.5782224497214
+      },
+      "caption": "Projection E94 Space Primitive",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n52",
+      "position": {
+        "x": 99.13024111741947,
+        "y": 1267.6699907900606
+      },
+      "caption": "Datum E94 Space Primitive",
+      "style": {
+        "node-color": "#FF0000"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n53",
+      "position": {
+        "x": 15.103113527904071,
+        "y": 1175.1294858546082
+      },
+      "caption": "Coordinate system E94 Space Primitive",
+      "style": {
+        "node-color": "#FF0000"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n54",
+      "position": {
+        "x": 126.26811956351045,
+        "y": 1080.062011044108
+      },
+      "caption": "Ellipsoid E94 Space Primitive",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n55",
+      "position": {
+        "x": 254.48294257698228,
+        "y": 654.3639878866737
+      },
+      "caption": "Location of hard copy E53 Place",
+      "style": {
+        "node-color": "#cccccc"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n56",
+      "position": {
+        "x": 308.4742855915095,
+        "y": 486.1188145284918
+      },
+      "caption": "Location of digital copy consulted E53 Place",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n57",
+      "position": {
+        "x": 436.17086497001316,
+        "y": 358.8633783904363
+      },
+      "caption": "Comment E62 String",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n58",
+      "position": {
+        "x": 274.23832996205783,
+        "y": 803.4004188361869
+      },
+      "caption": "Sheet history E62 String",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n59",
+      "position": {
+        "x": 352.2338822907159,
+        "y": 935.5700728911947
+      },
+      "caption": "Copywright E30 Right",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n60",
+      "position": {
+        "x": 31.816646391264555,
+        "y": 1839.8945986358374
+      },
+      "caption": "Model",
+      "style": {},
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n61",
+      "position": {
+        "x": 176.73446687864907,
+        "y": 1839.8945986358374
+      },
+      "caption": "Semantic",
+      "style": {
+        "node-color": "#00FFFF"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n62",
+      "position": {
+        "x": 110.92404075215245,
+        "y": 940.9787048492107
+      },
+      "caption": "EPSG E94 Space Primitive",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n63",
+      "position": {
+        "x": 608.3986800229068,
+        "y": 305.59103909729623
+      },
+      "caption": "Recorder E39 Actor",
+      "style": {
+        "node-color": "#00ff00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n64",
+      "position": {
+        "x": 321.6522873660336,
+        "y": 1839.8945986358374
+      },
+      "caption": "Controlled",
+      "style": {
+        "node-color": "#FF0000"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n65",
+      "position": {
+        "x": 466.5701078534181,
+        "y": 1839.8945986358374
+      },
+      "caption": "String",
+      "style": {
+        "node-color": "#FFFF00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n66",
+      "position": {
+        "x": 611.4879283408027,
+        "y": 1839.8945986358374
+      },
+      "caption": "Date",
+      "style": {
+        "node-color": "#FF00FF"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n67",
+      "position": {
+        "x": 756.4057488281873,
+        "y": 1839.8945986358374
+      },
+      "caption": "Relatsionship",
+      "style": {
+        "node-color": "#00ff00"
+      },
+      "labels": [],
+      "properties": {}
+    },
+    {
+      "id": "n68",
+      "position": {
+        "x": 901.3235693155718,
+        "y": 1839.8945986358374
+      },
+      "caption": "URL",
+      "style": {
+        "node-color": "#990000"
+      },
+      "labels": [],
+      "properties": {}
+    }
+  ],
+  "relationships": [
+    {
+      "id": "n0",
+      "type": "P1 is identified by",
+      "style": {},
+      "properties": {},
+      "fromId": "n1",
+      "toId": "n2"
+    },
+    {
+      "id": "n4",
+      "type": "P150 defines typical part of",
+      "style": {},
+      "properties": {},
+      "fromId": "n1",
+      "toId": "n6"
+    },
+    {
+      "id": "n5",
+      "type": "P70 documents",
+      "style": {},
+      "properties": {},
+      "fromId": "n1",
+      "toId": "n7"
+    },
+    {
+      "id": "n6",
+      "type": "P131 is identified by",
+      "style": {},
+      "properties": {},
+      "fromId": "n7",
+      "toId": "n8"
+    },
+    {
+      "id": "n7",
+      "type": "P1 is identified by",
+      "style": {},
+      "properties": {},
+      "fromId": "n7",
+      "toId": "n9"
+    },
+    {
+      "id": "n8",
+      "type": "P1 is identified by",
+      "style": {},
+      "properties": {},
+      "fromId": "n7",
+      "toId": "n10"
+    },
+    {
+      "id": "n9",
+      "type": "P1 is identified by",
+      "style": {},
+      "properties": {},
+      "fromId": "n7",
+      "toId": "n11"
+    },
+    {
+      "id": "n10",
+      "type": "P1 is identified by",
+      "style": {},
+      "properties": {},
+      "fromId": "n7",
+      "toId": "n12"
+    },
+    {
+      "id": "n11",
+      "type": "P1 is identified by",
+      "style": {},
+      "properties": {},
+      "fromId": "n7",
+      "toId": "n13"
+    },
+    {
+      "id": "n12",
+      "type": "P1 is identified by",
+      "style": {},
+      "properties": {},
+      "fromId": "n7",
+      "toId": "n14"
+    },
+    {
+      "id": "n23",
+      "type": "P1 is identified by",
+      "style": {},
+      "properties": {},
+      "fromId": "n1",
+      "toId": "n25"
+    },
+    {
+      "id": "n24",
+      "type": "P1 is identified by",
+      "style": {},
+      "properties": {},
+      "fromId": "n25",
+      "toId": "n26"
+    },
+    {
+      "id": "n25",
+      "type": "P1 is identified by",
+      "style": {},
+      "properties": {},
+      "fromId": "n25",
+      "toId": "n27"
+    },
+    {
+      "id": "n26",
+      "type": "P102 has title",
+      "style": {},
+      "properties": {},
+      "fromId": "n7",
+      "toId": "n4"
+    },
+    {
+      "id": "n27",
+      "type": "L33 has maker",
+      "style": {},
+      "properties": {},
+      "fromId": "n7",
+      "toId": "n5"
+    },
+    {
+      "id": "n28",
+      "type": "P3 has note",
+      "style": {},
+      "properties": {},
+      "fromId": "n7",
+      "toId": "n28"
+    },
+    {
+      "id": "n29",
+      "type": "P70 documents",
+      "style": {},
+      "properties": {},
+      "fromId": "n1",
+      "toId": "n29"
+    },
+    {
+      "id": "n30",
+      "type": "P1 is identified by",
+      "style": {},
+      "properties": {},
+      "fromId": "n29",
+      "toId": "n30"
+    },
+    {
+      "id": "n31",
+      "type": "P102 has title",
+      "style": {},
+      "properties": {},
+      "fromId": "n29",
+      "toId": "n31"
+    },
+    {
+      "id": "n32",
+      "type": "P1129 is about",
+      "style": {},
+      "properties": {},
+      "fromId": "n29",
+      "toId": "n32"
+    },
+    {
+      "id": "n33",
+      "type": "P2 has type",
+      "style": {},
+      "properties": {},
+      "fromId": "n29",
+      "toId": "n33"
+    },
+    {
+      "id": "n34",
+      "type": "L54 is same as",
+      "style": {},
+      "properties": {},
+      "fromId": "n29",
+      "toId": "n34"
+    },
+    {
+      "id": "n35",
+      "type": "L33 has maker",
+      "style": {},
+      "properties": {},
+      "fromId": "n29",
+      "toId": "n35"
+    },
+    {
+      "id": "n36",
+      "type": "L33 has maker",
+      "style": {},
+      "properties": {},
+      "fromId": "n29",
+      "toId": "n36"
+    },
+    {
+      "id": "n37",
+      "type": "L33 has maker",
+      "style": {},
+      "properties": {},
+      "fromId": "n29",
+      "toId": "n37"
+    },
+    {
+      "id": "n38",
+      "type": "P165 is incoporated in",
+      "style": {},
+      "properties": {},
+      "fromId": "n29",
+      "toId": "n38"
+    },
+    {
+      "id": "n39",
+      "type": "P2 has type",
+      "style": {},
+      "properties": {},
+      "fromId": "n29",
+      "toId": "n39"
+    },
+    {
+      "id": "n40",
+      "type": "P3 has note",
+      "style": {},
+      "properties": {},
+      "fromId": "n29",
+      "toId": "n40"
+    },
+    {
+      "id": "n41",
+      "type": "P67 is referred to by",
+      "style": {},
+      "properties": {},
+      "fromId": "n1",
+      "toId": "n41"
+    },
+    {
+      "id": "n42",
+      "type": "P1 is identified by",
+      "style": {},
+      "properties": {},
+      "fromId": "n41",
+      "toId": "n42"
+    },
+    {
+      "id": "n43",
+      "type": "P102 has title",
+      "style": {},
+      "properties": {},
+      "fromId": "n41",
+      "toId": "n43"
+    },
+    {
+      "id": "n44",
+      "type": "P2 has type",
+      "style": {},
+      "properties": {},
+      "fromId": "n41",
+      "toId": "n44"
+    },
+    {
+      "id": "n45",
+      "type": "L33 has maker",
+      "style": {},
+      "properties": {},
+      "fromId": "n41",
+      "toId": "n45"
+    },
+    {
+      "id": "n46",
+      "type": "L54 is same as",
+      "style": {},
+      "properties": {},
+      "fromId": "n41",
+      "toId": "n46"
+    },
+    {
+      "id": "n47",
+      "type": "L54 is same as",
+      "style": {},
+      "properties": {},
+      "fromId": "n41",
+      "toId": "n47"
+    },
+    {
+      "id": "n48",
+      "type": "P3 has note",
+      "style": {},
+      "properties": {},
+      "fromId": "n41",
+      "toId": "n48"
+    },
+    {
+      "id": "n49",
+      "type": "L33 has maker",
+      "style": {},
+      "properties": {},
+      "fromId": "n41",
+      "toId": "n49"
+    },
+    {
+      "id": "n50",
+      "type": "L54 is same as",
+      "style": {},
+      "properties": {},
+      "fromId": "n41",
+      "toId": "n50"
+    },
+    {
+      "id": "n51",
+      "type": "P3 has note",
+      "style": {},
+      "properties": {},
+      "fromId": "n41",
+      "toId": "n51"
+    },
+    {
+      "id": "n52",
+      "type": "P3 has note",
+      "style": {},
+      "properties": {},
+      "fromId": "n41",
+      "toId": "n52"
+    },
+    {
+      "id": "n53",
+      "type": "P3 has note",
+      "style": {},
+      "properties": {},
+      "fromId": "n41",
+      "toId": "n53"
+    },
+    {
+      "id": "n54",
+      "type": "P3 has note",
+      "style": {},
+      "properties": {},
+      "fromId": "n41",
+      "toId": "n54"
+    },
+    {
+      "id": "n55",
+      "type": "L54 is same as",
+      "style": {},
+      "properties": {},
+      "fromId": "n1",
+      "toId": "n55"
+    },
+    {
+      "id": "n56",
+      "type": "L54 is same as",
+      "style": {},
+      "properties": {},
+      "fromId": "n1",
+      "toId": "n56"
+    },
+    {
+      "id": "n57",
+      "type": "P3 has note",
+      "style": {},
+      "properties": {},
+      "fromId": "n1",
+      "toId": "n57"
+    },
+    {
+      "id": "n58",
+      "type": "P3 has note",
+      "style": {},
+      "properties": {},
+      "fromId": "n1",
+      "toId": "n58"
+    },
+    {
+      "id": "n59",
+      "type": "P129 is subject of",
+      "style": {},
+      "properties": {},
+      "fromId": "n1",
+      "toId": "n59"
+    },
+    {
+      "id": "n60",
+      "type": "P3 has note",
+      "style": {},
+      "properties": {},
+      "fromId": "n41",
+      "toId": "n62"
+    },
+    {
+      "id": "n61",
+      "type": "L54 is same as",
+      "style": {},
+      "properties": {},
+      "fromId": "n1",
+      "toId": "n63"
+    }
+  ]
+}
