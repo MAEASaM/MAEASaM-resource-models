@@ -543,8 +543,8 @@
                     "config": {
                         "descriptor_types": {
                             "description": {
-                                "nodegroup_id": "30265a34-c592-11ee-9b1a-c753c4d77ff1",
-                                "string_template": "<Description>"
+                                "nodegroup_id": "95d51f48-c590-11ee-9b1a-c753c4d77ff1",
+                                "string_template": "<MAEASaM ID>"
                             },
                             "map_popup": {
                                 "nodegroup_id": "",
@@ -828,7 +828,7 @@
                 {
                     "alias": "official_division",
                     "config": {
-                        "rdmCollection": "d3a10291-209d-4bc2-b60f-06bbbc4c5943"
+                        "rdmCollection": "95619e73-a091-4514-8719-6ceac4e81c11"
                     },
                     "datatype": "concept-list",
                     "description": null,
@@ -851,7 +851,7 @@
                 {
                     "alias": "name_type",
                     "config": {
-                        "rdmCollection": "cd792292-097e-4133-8a02-0a055d9b350a"
+                        "rdmCollection": "617b1c0d-90a9-4846-ae0b-cb92fb7b046e"
                     },
                     "datatype": "concept-list",
                     "description": null,
@@ -897,7 +897,7 @@
                 {
                     "alias": "administrative_level",
                     "config": {
-                        "rdmCollection": "6af99462-9eef-4fa1-ae19-69753fb99a70"
+                        "rdmCollection": "6453b2eb-de64-497c-8588-3d3bc780c467"
                     },
                     "datatype": "concept-list",
                     "description": null,
@@ -922,13 +922,17 @@
             "publication": {
                 "graph_id": "809f0b43-a066-482f-bd2c-e62bc51e04cb",
                 "notes": null,
-                "publicationid": "e2e0133c-57e5-11f0-b131-00505683efec",
-                "published_time": "2025-07-03T08:15:31.394Z"
+                "publicationid": "21d246ea-6160-11f0-9572-00505683efec",
+                "published_time": "2025-07-15T09:43:16.066Z"
             },
             "relatable_resource_model_ids": [
-                "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                "15bb7d39-f1f1-44f5-bcf5-37029ff5f53e",
+                "b7e00ac2-e780-4d95-97da-7e54420ec7f3",
                 "1f714ffb-809f-48eb-a4c5-d214369619ce",
-                "15bb7d39-f1f1-44f5-bcf5-37029ff5f53e"
+                "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                "809f0b43-a066-482f-bd2c-e62bc51e04cb",
+                "809f0b43-a066-482f-bd2c-e62bc51e04cb",
+                "e5f7355e-b5d7-4cc1-b2a6-b333820d2054"
             ],
             "resource_2_resource_constraints": [],
             "root": {
@@ -962,9 +966,9 @@
         }
     ],
     "metadata": {
-        "db": "PostgreSQL 16.9 (Ubuntu 16.9-1.pgdg24.04+1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, 64-bit",
+        "db": "PostgreSQL 16.10 (Ubuntu 16.10-1.pgdg24.04+1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, 64-bit",
         "git hash": "fatal: not a git repository (or any of the parent directories): .git",
         "os": "Linux",
-        "os version": "6.8.0-63-generic"
+        "os version": "6.8.0-85-generic"
     }
 }

@@ -244,6 +244,28 @@
                     "widget_id": "10000000-0000-0000-0000-000000000012"
                 },
                 {
+                    "card_id": "38431e26-b6c8-498a-830d-f647b6f65074",
+                    "config": {
+                        "defaultValue": "",
+                        "i18n_properties": [
+                            "placeholder"
+                        ],
+                        "label": "Actor type",
+                        "options": [],
+                        "placeholder": {
+                            "en": "Select an option"
+                        }
+                    },
+                    "id": "95baf694-7070-481f-9164-6a5a83b04b8e",
+                    "label": {
+                        "en": "Actor type"
+                    },
+                    "node_id": "e1d62f2a-eb5d-11ee-863e-21b2c24047e5",
+                    "sortorder": null,
+                    "visible": true,
+                    "widget_id": "10000000-0000-0000-0000-000000000012"
+                },
+                {
                     "card_id": "359788c6-c7f7-45b4-a3da-a82e795a72e2",
                     "config": {
                         "defaultValue": {
@@ -273,6 +295,28 @@
                     "widget_id": "10000000-0000-0000-0000-000000000001"
                 },
                 {
+                    "card_id": "38431e26-b6c8-498a-830d-f647b6f65074",
+                    "config": {
+                        "defaultValue": "",
+                        "i18n_properties": [
+                            "placeholder"
+                        ],
+                        "label": "Name type",
+                        "options": [],
+                        "placeholder": {
+                            "en": "Select an option"
+                        }
+                    },
+                    "id": "9935b38c-5ea2-4340-9d77-a1a1b43cfdf5",
+                    "label": {
+                        "en": "Name type"
+                    },
+                    "node_id": "ac5f6578-eb5d-11ee-863e-21b2c24047e5",
+                    "sortorder": null,
+                    "visible": true,
+                    "widget_id": "10000000-0000-0000-0000-000000000012"
+                },
+                {
                     "card_id": "f2d904e3-904b-4ad3-a369-8ef3c403e7c5",
                     "config": {
                         "defaultValue": {
@@ -298,6 +342,35 @@
                     },
                     "node_id": "76496f44-eb65-11ee-863e-21b2c24047e5",
                     "sortorder": 0,
+                    "visible": true,
+                    "widget_id": "10000000-0000-0000-0000-000000000001"
+                },
+                {
+                    "card_id": "38431e26-b6c8-498a-830d-f647b6f65074",
+                    "config": {
+                        "defaultValue": {
+                            "en": {
+                                "direction": "ltr",
+                                "value": ""
+                            }
+                        },
+                        "i18n_properties": [
+                            "placeholder"
+                        ],
+                        "label": "Name",
+                        "maxLength": null,
+                        "placeholder": {
+                            "en": "Enter text"
+                        },
+                        "uneditable": false,
+                        "width": "100%%"
+                    },
+                    "id": "f5074de8-2b14-41fc-a4ed-c05a3c698ef9",
+                    "label": {
+                        "en": "Name"
+                    },
+                    "node_id": "7a308f8c-eb5d-11ee-863e-21b2c24047e5",
+                    "sortorder": null,
                     "visible": true,
                     "widget_id": "10000000-0000-0000-0000-000000000001"
                 },
@@ -752,16 +825,7 @@
                 {
                     "alias": "associated_with",
                     "config": {
-                        "graphs": [
-                            {
-                                "graphid": "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",
-                                "inverseRelationshipConcept": null,
-                                "name": "Actor",
-                                "relationshipCollection": null,
-                                "relationshipConcept": null,
-                                "useOntologyRelationship": false
-                            }
-                        ],
+                        "graphs": [],
                         "searchDsl": "",
                         "searchString": ""
                     },
@@ -855,7 +919,7 @@
                 {
                     "alias": "nature_of_association",
                     "config": {
-                        "rdmCollection": "76b8f61d-a3c2-4ae5-9cd5-fe191d947653"
+                        "rdmCollection": "3aa482aa-cbd3-4cef-bab3-0a042e76c4da"
                     },
                     "datatype": "concept-list",
                     "description": null,
@@ -901,7 +965,7 @@
                 {
                     "alias": "name_type",
                     "config": {
-                        "rdmCollection": "cd792292-097e-4133-8a02-0a055d9b350a"
+                        "rdmCollection": "617b1c0d-90a9-4846-ae0b-cb92fb7b046e"
                     },
                     "datatype": "concept-list",
                     "description": "The type of Name described via the previous \"Name value\" attribute - e.g. Primary, Official, Alternative. Controlled by a Thesaurus (uses the main site Thesaurus for Name types). An entry can have multiple name values with different name types - e.g. a person may have a Primary name they are referred to as and an Alternative name.",
@@ -1051,7 +1115,7 @@
                 {
                     "alias": "actor_type",
                     "config": {
-                        "rdmCollection": "ddd6d181-c935-4f74-928c-d01f26360270"
+                        "rdmCollection": "b73c4d10-7b8a-49e1-aecd-442b2ff302b2"
                     },
                     "datatype": "concept-list",
                     "description": "The Type of Actor which this resource represents - e.g. a member of the MAEASaM team (a type of person), or a Museum (a type of institution). Controlled by a hierarchical Thesaurus (only certain values valid)",
@@ -1099,15 +1163,17 @@
             "publication": {
                 "graph_id": "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",
                 "notes": null,
-                "publicationid": "e1376bb3-58be-11f0-a23a-00505683efec",
-                "published_time": "2025-07-04T10:08:49.402Z"
+                "publicationid": "d7c2fe41-72b3-11f0-af72-00505683efec",
+                "published_time": "2025-08-06T10:55:19.307Z"
             },
             "relatable_resource_model_ids": [
+                "15bb7d39-f1f1-44f5-bcf5-37029ff5f53e",
+                "b7e00ac2-e780-4d95-97da-7e54420ec7f3",
                 "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",
-                "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
                 "1f714ffb-809f-48eb-a4c5-d214369619ce",
-                "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",
-                "15bb7d39-f1f1-44f5-bcf5-37029ff5f53e"
+                "809f0b43-a066-482f-bd2c-e62bc51e04cb",
+                "298517a4-4a2c-4b42-864f-b52e44afc9f2",
+                "e5f7355e-b5d7-4cc1-b2a6-b333820d2054"
             ],
             "resource_2_resource_constraints": [],
             "root": {
@@ -1141,9 +1207,9 @@
         }
     ],
     "metadata": {
-        "db": "PostgreSQL 16.9 (Ubuntu 16.9-1.pgdg24.04+1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, 64-bit",
+        "db": "PostgreSQL 16.10 (Ubuntu 16.10-1.pgdg24.04+1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0, 64-bit",
         "git hash": "fatal: not a git repository (or any of the parent directories): .git",
         "os": "Linux",
-        "os version": "6.8.0-63-generic"
+        "os version": "6.8.0-85-generic"
     }
 }
