@@ -825,9 +825,14 @@
                 {
                     "alias": "associated_with",
                     "config": {
-                        "graphs": [],
-                        "searchDsl": "",
-                        "searchString": ""
+                        "graphs": [
+                            {
+                                "graphid": "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",
+                                "useOntologyRelationship": false
+                            }
+                        ],
+                        "searchString": "name",
+                        "searchDsl": ""
                     },
                     "datatype": "resource-instance-list",
                     "description": null,
