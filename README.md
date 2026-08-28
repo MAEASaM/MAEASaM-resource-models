@@ -1,8 +1,20 @@
 # MAEASaM Resource Models
 
-This repository contains JSON resource models for the MAEASaM (Mapping Africa's Endangered Archaeological Sites and Monuments) project, designed for use with the Arches platform. These models define the core data structures for representing archaeological sites, actors, chronology, information, remote sensing, and administrative boundaries within the MAEASaM Arches instance.
+This repository contains the resources required to set up and populate the MAEASaM (Mapping Africa's Endangered Archaeological Sites and Monuments) Arches instance. It includes:
 
-## Usage
+- **Templates** - CSV schemas for data entry
+- **Guidelines** - written documentation and PDF guidance on how to complete the schemas
+- **Thesaurus** - JSON files containing thesauri and collections
+- **JSON Resource Models** - ready-to-ingest JSON structures for each resource model
+- **Datasets** - default and initial setup datasets for each resource model
+
+These resources define the core data structures used to represent archaeological sites, actors, chronology, information, maps, grids, remote sensing data, and administrative boundaries within the MAEASaM Arches instance.
+
+## How to Set Up
+
+The datasets and resource models must be ingested into Arches in a specific order. It is important to follow the setup sequence because some resource models and datasets are interdependent and rely on resources created during earlier steps.
+
+Follow the setup instructions in the order provided to ensure that all dependencies are correctly established before ingesting the related datasets.
 
 ### Importing Resource Models into Arches
 
