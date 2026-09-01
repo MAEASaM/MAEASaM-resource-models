@@ -1,0 +1,63 @@
+{
+  "input_instructions": {
+    "Concept list": "Please write the term exactly as recorded in the \"{collection}\" controlled vocabulary.",
+    "String": "Please enter the information as free text.",
+    "Resource instance model": "Please write the MAEASaM ID of the relevant record from the \"{collection}\" resource instance.",
+    "Date": "Please enter the date using the Extended Date/Time Format (EDTF) standard. See the EDTF specification for guidance: https://www.loc.gov/standards/datetime/"
+  },
+
+  "cardinality_definitions": {
+    "1": "Only one",
+    "0..1": "Optional, maximum 1",
+    "1..n": "Minimum 1, can be many",
+    "0..n": "Optional, can be many"
+  },
+
+  "necessity_definitions": {
+    "Mandatory": "Mandatory to add a value in this field.",
+    "Strongly recommended": "Not mandatory but good to use to provide context.",
+    "Optional": "Not mandatory, non-essential.",
+    "Mandatory if (x)": "Mandatory only when the condition specified in x is met. For example, for the metadata field \"Digitised Date\", Mandatory if (Is Digitised) means that this field must be completed when \"Is Digitised\" is true. If \"Is Digitised\" is false, the field is considered Optional."
+  },
+
+  "operational_info_definitions": {
+    "Primary Key": "Key value of the table, MAEASaM ID. Each table has only one.",
+    "Foreign Key": "Key value of another related table (resource instance) represented in this table.",
+    "Derived": "Values which can be created by deriving from a related table (resource instance).",
+    "Auto-Populated": "Automatically created values by the database, such as uploader or upload/modified date."
+  },
+
+  "cardinality_values": [
+    "1",
+    "0..1",
+    "1..n",
+    "0..n"
+  ],
+
+  "necessity_values": [
+    "Mandatory",
+    "Strongly recommended",
+    "Optional",
+    "Mandatory if (x)"
+  ],
+
+  "operational_info_types": [
+    "Primary Key",
+    "Foreign Key",
+    "Derived",
+    "Auto-Populated"
+  ],
+
+  "languages": {
+    "Metadata": [
+      "Fr",
+      "Ar",
+      "Pt"
+    ],
+    "Definition": [
+      "Fr",
+      "Ar",
+      "Pt"
+    ]
+  }
+}
