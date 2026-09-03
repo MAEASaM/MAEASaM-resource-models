@@ -1,9 +1,13 @@
 {
   "input_instructions": {
-    "Concept list": "Please write the term exactly as recorded in the \"{collection}\" controlled vocabulary.",
+    "Concept-list": "Please write the term exactly as recorded in the \"{collection}\" controlled vocabulary.",
     "String": "Please enter the information as free text.",
-    "Resource instance model": "Please write the MAEASaM ID of the relevant record from the \"{collection}\" resource instance.",
-    "Date": "Please enter the date using the Extended Date/Time Format (EDTF) standard. See the EDTF specification for guidance: https://www.loc.gov/standards/datetime/"
+    "Resource-Instance-List": "Please write the MAEASaM ID of the relevant record from the \"{collection}\" resource instance.",
+    "Date": "Please enter the date using the Extended Date/Time Format (EDTF) standard. See the EDTF specification for guidance: https://www.loc.gov/standards/datetime/",
+    "Boolean": "Please enter either \"Yes\" or \"No\" as the value.",
+    "Auto-Populated": "This field is automatically populated by the system. Leave this field blank.",
+    "GeoJSON-feature-collection": "Please provide the geometry as coordinates in Well-Known Text (WKT) format.",
+    "Number": "Please enter a numeric value only (no units or additional text)."
   },
 
   "cardinality_definitions": {
@@ -17,14 +21,17 @@
     "Mandatory": "Mandatory to add a value in this field.",
     "Strongly recommended": "Not mandatory but good to use to provide context.",
     "Optional": "Not mandatory, non-essential.",
-    "Mandatory if (x)": "Mandatory only when the condition specified in x is met. For example, for the metadata field \"Digitised Date\", Mandatory if (Is Digitised) means that this field must be completed when \"Is Digitised\" is true. If \"Is Digitised\" is false, the field is considered Optional."
+    "Mandatory if (x)": "Mandatory only when the condition specified in x is met. For example, for the metadata field \"Digitised Date\", Mandatory if (Is Digitised) means that this field must be completed when \"Is Digitised\" is true. If \"Is Digitised\" is false, the field is considered Optional.",
+    "Mandatory if applicable": "Mandatory only when the field is relevant to this particular resource; otherwise it does not need a value.",
+    "If applicable": "Fill in only when the information exists or applies to this resource; otherwise leave blank."
   },
 
   "operational_info_definitions": {
     "Primary Key": "Key value of the table, MAEASaM ID. Each table has only one.",
     "Foreign Key": "Key value of another related table (resource instance) represented in this table.",
     "Derived": "Values which can be created by deriving from a related table (resource instance).",
-    "Auto-Populated": "Automatically created values by the database, such as uploader or upload/modified date."
+    "Auto-Populated": "Automatically created values by the database, such as uploader or upload/modified date.",
+    "N/A": "A regular, directly-entered field that is not a key, not derived from another table, and not auto-populated by the system."
   },
 
   "cardinality_values": [
@@ -38,14 +45,71 @@
     "Mandatory",
     "Strongly recommended",
     "Optional",
-    "Mandatory if (x)"
+    "Mandatory if (x)",
+    "Mandatory if applicable",
+    "If applicable"
   ],
 
   "operational_info_types": [
     "Primary Key",
     "Foreign Key",
     "Derived",
-    "Auto-Populated"
+    "Auto-Populated",
+    "N/A"
+  ],
+
+  "operational_info_rules": [
+    "If Data type is Resource-Instance-List, operational information is usually \"Foreign Key\" — unless the value is actually derived from the linked resource, in which case it is \"Derived\". Not an absolute rule; check the field's meaning.",
+    "If Metadata name is MAEASaM ID, operational information is \"Primary Key\".",
+    "If Metadata name is one of \"Resource created at\", \"Resource last modified at\" (or \"Resource creation at\" / \"Resource modified at\"), \"Uploader name\", \"Upload date\", or \"Nodes modified\", operational information is \"Auto-Populated\"."
+  ],
+
+  "dublin_core_basic_elements": [
+    "Title",
+    "Creator",
+    "Subject",
+    "Description",
+    "Publisher",
+    "Contributor",
+    "Date",
+    "Type",
+    "Format",
+    "Identifier",
+    "Source",
+    "Language",
+    "Relation",
+    "Coverage",
+    "Rights"
+  ],
+
+  "dublin_core_terms_in_use": [
+    "http://purl.org/dc/terms/contributor",
+    "http://purl.org/dc/terms/created",
+    "http://purl.org/dc/terms/date",
+    "http://purl.org/dc/terms/dateSubmitted",
+    "http://purl.org/dc/terms/description",
+    "http://purl.org/dc/terms/identifier",
+    "http://purl.org/dc/terms/modified",
+    "http://purl.org/dc/terms/publisher",
+    "http://purl.org/dc/terms/relation",
+    "http://purl.org/dc/terms/spatial",
+    "http://purl.org/dc/terms/temporal",
+    "http://purl.org/dc/terms/title",
+    "http://purl.org/dc/terms/type"
+  ],
+
+  "data_type_values": [
+    "String",
+    "Semantic",
+    "GeoJSON-feature-collection",
+    "Date",
+    "Resource-Instance-List",
+    "Number",
+    "Concept-list",
+    "Node",
+    "URL",
+    "Boolean",
+    "File-list"
   ],
 
   "languages": {
