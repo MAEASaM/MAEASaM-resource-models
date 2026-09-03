@@ -1,6 +1,6 @@
-﻿Arches terminology,Universal terminology,User form,,,,,,,,,,,,
-CIDOC CRM Semantic Node Class,CIDOC CRM Class,,E42 Identifier,E41 Appellation,,,,E55 Type,E53 Place,E62 String,E62 String,E66 Formation,,
-CIDOC CRM Node Class,CIDOC CRM Class,,E42 Identifier,E41 Appellation,E55 Type,E41 Appellation,E41 Appellation,E55 Type,E53 Place,E62 String,E62 String,E82 Actor Appellation,E50 Date,E50 Date
+﻿Arches terminology,Universal terminology,User form,1,2,3,4,5,6,7,8,9,10,11,12
+CIDOC CRM Semantic Node Class,CIDOC CRM Semantic Node Class,,E42 Identifier,E41 Appellation,,,,E55 Type,E53 Place,E62 String,E62 String,E66 Formation,,
+CIDOC CRM Node Class,CIDOC CRM Node Class,,E42 Identifier,E41 Appellation,E55 Type,E41 Appellation,E41 Appellation,E55 Type,E53 Place,E62 String,E62 String,E82 Actor Appellation,E50 Date,E50 Date
 CIDOC CRM Scope note,CIDOC CRM Scope note,,"This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them
 uniquely and permanently within the context of one or more organisations. Such codes are often known
 as inventory numbers, registration codes, etc. and are typically composed of alphanumeric sequences.
@@ -84,21 +84,22 @@ linking the E82 Actor Appellation to an instance of either E21 Person or E74 Gro
 If this is not possible, the distinction can be made through the use of the P2 has type mechanism.","This class comprises specific forms of E49 Time Appellation.
 Dates may vary in their degree of precision.","This class comprises specific forms of E49 Time Appellation.
 Dates may vary in their degree of precision."
-Semantic Node,Group,Group,Identifier,Name,,,,Administrative area level,Geometry,Description,Comment,Arches upload details,,
-Language 1: en (node),Metadata (en),Metadata (en),MAEASaM ID,Administrative area name,Name type,Part of,Country,Administrative level,Geometry (WKT),Description,Comment,Uploader name,Upload date,Resource last modified at
-Language 2: fr (node),Metadata (fr),Metadata (fr),MAEASaM ID,,Type de nom,,,,Géométrie (WKT),Description,Commentaire,,,
-Language 3: ar (node),Metadata (ar),Metadata (ar),MAEASaM ID,,,,,,,,,,,
-Language 4: pt (node),Metadata (pt),Metadata (pt),MAEASaM ID,,,,,,,,,,,
-Node Type,Data Type,Data Type,String,String,Concept-list,Resource-instance-list,String,Concept-list,GeoJSON-feature-collection,String,String,String,EDTF,EDTF
-Collection:,Collection,Collection,,,Name type (cv),Administrative (rm),,Administrative area level (cv),,,,,,
-Mandatory,Necessity,Necessity,Mandatory,Mandatory,Mandatory,Mandatory if applicable,Mandatory,Mandatory,(Still to be decided if it will be added),If applicable,If applicable,Mandatory,Mandatory,Mandatory
-Required,Cardinality,Cardinality,1,1,1,0..n,1,1,1..n,0..n,0..n,1,1,1
-,DC Equivalent,,,,,,,,,,,,,
-,Operational Info,,N/A,N/A,N/A,Primary and Foreign key,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
-MAEASaM Scope Note 1: en,Definition (en),Definition (en),Unique ID give to each resource entered.,This node captures the name of the relevant administrative area.,"This node indicates what type of name attribution is being applied. For example, is the the pramiary name, addtional or histroical.","This node indicates if the relevant admistative area is part of another adminisative area. Generally, level 1 will be linked to level 0 and level 2 to level 1.","This node indicates in which country the administaive area is located. For level 0, this should match the value in the name node.",In this node captured the administative level of which the relevant administative area forms part of.,The geometric exstent of the administative area. oordinates should be provided in Well-known Text (WKT) format.,Provide a discription of the administative area.,"This node captures any addtional information that is regarded as important to record, but does not have a specific node dedicated for it recording.",The name of the individual that uplaoded the grid square instance ot Arches. This is a required field,The date on which the grid square instance was added to Arches. This is a required field,The date of the latest modification that has been made to the relevant grid square instance in Arches. This is a required field
-MAEASaM Scope Note 2: fr,Definition (fr),Definition (fr),Identifiant unique attribué à chaque ressource saisie.,,,,,,,,,,,
-MAEASaM Scope Note 2: ar,Definition (ar),Definition (ar),,,,,,,,,,,,
-MAEASaM Scope Note 2: pt,Definition (pt),Definition (pt),,,,,,,,,,,,
+Semantic Node (card),Group,Group,Identifier,Name,,,,Administrative area level,Geometry,Description,Comment,Arches upload details,,
+Node (En),Metadata (En),Metadata (En),MAEASaM ID,Administrative area name,Name type,Part of,Country,Administrative level,Geometry (WKT),Description,Comment,Uploader name,Upload date,Resource last modified at
+Node (Fr),Metadata (Fr),Metadata (Fr),MAEASaM ID,,Type de nom,,,,Géométrie (WKT),Description,Commentaire,,,
+Node (Ar),Metadata (Ar),Metadata (Ar),MAEASaM ID,,,,,,,,,,,
+Node (Pt),Metadata (Pt),Metadata (Pt),MAEASaM ID,,,,,,,,,,,
+Data Type,Data Type,Data Type,String,String,Concept-list,Resource-Instance-List,String,Concept-list,GeoJSON-feature-collection,String,String,String,Date,Date
+Collection,Collection,Collection,N/A,N/A,Name type (cv),Administrative (rm),N/A,Administrative area level (cv),N/A,N/A,N/A,N/A,N/A,N/A
+,Necessity,Necessity,Mandatory,Mandatory,Mandatory,Mandatory if applicable,Mandatory,Mandatory,(Still to be decided if it will be added),If applicable,If applicable,Mandatory,Mandatory,Mandatory
+,Cardinality,Cardinality,1,1,1,0..n,1,1,1..n,0..n,0..n,1,1,1
+,Dublin Core Equivalent,Dublin Core Equivalent,http://purl.org/dc/terms/identifier,http://purl.org/dc/terms/title,http://purl.org/dc/terms/type,N/A,N/A,N/A,http://purl.org/dc/terms/spatial,http://purl.org/dc/terms/description,http://purl.org/dc/terms/description,N/A,http://purl.org/dc/terms/dateSubmitted,http://purl.org/dc/terms/modified
+,Operational Info,Operational Info,Primary Key,N/A,N/A,Foreign Key,N/A,N/A,N/A,N/A,N/A,Auto-Populated,Auto-Populated,Auto-Populated
+MAEASaM Scope Note (En),Definition (En),Definition (En),Unique ID give to each resource entered.,This node captures the name of the relevant administrative area.,"This node indicates what type of name attribution is being applied. For example, is the the pramiary name, addtional or histroical.","This node indicates if the relevant admistative area is part of another adminisative area. Generally, level 1 will be linked to level 0 and level 2 to level 1.","This node indicates in which country the administaive area is located. For level 0, this should match the value in the name node.",In this node captured the administative level of which the relevant administative area forms part of.,The geometric exstent of the administative area. oordinates should be provided in Well-known Text (WKT) format.,Provide a discription of the administative area.,"This node captures any addtional information that is regarded as important to record, but does not have a specific node dedicated for it recording.",The name of the individual that uplaoded the grid square instance ot Arches. This is a required field,The date on which the grid square instance was added to Arches. This is a required field,The date of the latest modification that has been made to the relevant grid square instance in Arches. This is a required field
+,Input Instructions (En),Input Instructions (En),Please enter the information as free text.,Please enter the information as free text.,"Please write the term exactly as recorded in the ""Name type (cv)"" controlled vocabulary.","Please write the MAEASaM ID of the relevant record from the ""Administrative (rm)"" resource instance.",Please enter the information as free text.,"Please write the term exactly as recorded in the ""Administrative area level (cv)"" controlled vocabulary.",Please provide the geometry as coordinates in Well-Known Text (WKT) format.,Please enter the information as free text.,Please enter the information as free text.,This field is automatically populated by the system. Leave this field blank.,This field is automatically populated by the system. Leave this field blank.,This field is automatically populated by the system. Leave this field blank.
+MAEASaM Scope Note (Fr),Definition (Fr),Definition (Fr),Identifiant unique attribué à chaque ressource saisie.,,,,,,,,,,,
+MAEASaM Scope  Note (Ar),Definition (Ar),Definition (Ar),,,,,,,,,,,,
+MAEASaM Scope  Note (Pt),Definition (Pt),Definition (Pt),,,,,,,,,,,,
 Example 1,Example 1,Example 1,ADMN-ZWE-000000001,Zimbabwe,Primary name,,Zimbabwe,Level 0,,Remember to avoid special characters as far as possible.,Remember to avoid special characters as far as possible.,Renier Hendrik van der Merwe,2026-03-03,2026-03-03
 Example 2,Example 2,Example 2,ADMN-ZWE-000000002,Bulawayo,Primary name,ADMN-ZWE-000000001,Zimbabwe,Level 1,,Remember to avoid special characters as far as possible.,Remember to avoid special characters as far as possible.,Renier Hendrik van der Merwe,2026-03-03,2026-03-03
 ,,,,,,,,,,,,,,
