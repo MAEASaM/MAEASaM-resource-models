@@ -12,6 +12,7 @@
     "Date": "Please enter the date using the Extended Date/Time Format (EDTF) standard. See the EDTF specification for guidance: https://www.loc.gov/standards/datetime/",
     "Boolean": "Please enter either \"Yes\" or \"No\" as the value.",
     "Auto-Populated": "This field is automatically populated by the system. Leave this field blank.",
+    "Derived": "This field is automatically derived from the linked resource record(s). Leave this field blank.",
     "GeoJSON-feature-collection": "Please provide the geometry as coordinates in Well-Known Text (WKT) format.",
     "Number": "Please enter a numeric value only (no units or additional text)."
   },

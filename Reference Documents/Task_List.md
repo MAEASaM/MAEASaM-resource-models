@@ -8,6 +8,7 @@ A running list of concrete, actionable items found while standardizing the metad
 
 | # | Status | Task | Category | Notes |
 |---|---|---|---|---|
+| 49 |  | **Admin dataset is missing** — `Datasets/` only contains an Info dataset (`20260827_InfoDataset_uuidRel_OU.csv`); no real/exported Administrative data exists to validate the Admin template or Resource Model against. | Resource Model / Data | Flagged by the user 2026-09-08 while reviewing Grid's dependency on Admin (Grid's related-resource fields need real Map/Site/Admin data to check the "Derived" auto-population design against). |
 | 5 |  | Site has no Metadata Template and no Guideline at all | Template / Guideline | Biggest single gap — 158 JSON nodes, 136 fillable, nothing documented |
 | 7 |  | RS: "Threat type" and "Threat severity" both reference the same vocabulary, `Disturbance cause (cv)` | Collection / data quality | Looks like a possible copy-paste slip; needs a human call, not silently changed |
 | 8 |  | Admin: "Geometry (WKT)" Necessity value is literally the placeholder text `(Still to be decided if it will be added)` | Necessity | A real unresolved decision left by whoever filled the template — needs an actual answer |
