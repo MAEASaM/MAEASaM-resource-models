@@ -1,4 +1,10 @@
 {
+  "identifier_concepts": {
+    "MAEASaM ID": "The human-readable business-key identifier (e.g. RS-SEN-00000001) manually entered by data recorders. This is the field present in every Metadata Template, described as 'Primary Key' in Operational Info — but that label is at the conceptual/business level, not Arches' actual storage mechanism (see resourceinstanceid below).",
+    "Arches resourceinstanceid": "The UUID Arches assigns automatically to every resource instance in every model (e.g. b42c81bf-1493-417d-993d-24862c11d545). It is not a node in any graph and does not need a template field — it's an intrinsic, system-level attribute of the resource record, confirmed present in real exports (Datasets/*.csv 'uuid' column) and used internally for map layers and Resource-Instance-List relationships. Foreign Key references between resources are actually stored via this UUID, not the MAEASaM ID string.",
+    "ARK Identifier": "STATUS: under consideration, not yet implemented. A globally resolvable, citable persistent identifier (Archival Resource Key scheme) the project is considering for long-term external citation of resources — distinct from both MAEASaM ID and resourceinstanceid above. Needs a NAAN registration decision, a target field/node, and a minting workflow before it can be added to any template. See Task_List.md."
+  },
+
   "input_instructions": {
     "Concept-list": "Please write the term exactly as recorded in the \"{collection}\" controlled vocabulary.",
     "String": "Please enter the information as free text.",
@@ -56,6 +62,21 @@
     "Derived",
     "Auto-Populated",
     "N/A"
+  ],
+
+  "spreadsheet_formatting_rules": [
+    "Use 12 point font size for all characters.",
+    "Use Calibri font for all characters.",
+    "Use bold only for the row labels in the first 3 columns (Arches terminology / Universal terminology / User form). The rest of the page should be written in normal (non-bold) weight.",
+    "Use wrap text for all cells.",
+    "Use All Borders for every cell.",
+    "Use the colour legend (matching the Data Type Legend) for every row down to and including the Collection row; rows below that are not colour-coded."
+  ],
+
+  "collection_notation_rules": [
+    "In the Collection row, if the relationship is to a controlled vocabulary (Concept-list data type), write it as \"Name of Vocab (cv)\", e.g. \"Resource Type (cv)\".",
+    "In the Collection row, if the relationship is to a resource model (Resource-Instance-List data type), write it as \"Name of Model (rm)\", e.g. \"Actor (rm)\".",
+    "If the data type is neither Concept-list nor Resource-Instance-List, the Collection cell is not applicable — write \"N/A\" rather than leaving it blank."
   ],
 
   "operational_info_rules": [
