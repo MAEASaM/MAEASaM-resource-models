@@ -12,6 +12,7 @@
     "Date": "Please enter the date using the Extended Date/Time Format (EDTF) standard. See the EDTF specification for guidance: https://www.loc.gov/standards/datetime/",
     "Boolean": "Please enter either \"Yes\" or \"No\" as the value.",
     "Auto-Populated": "This field is automatically populated by the system. Leave this field blank.",
+    "Derived": "This field is automatically derived from the linked resource record(s). Leave this field blank.",
     "GeoJSON-feature-collection": "Please provide the geometry as coordinates in Well-Known Text (WKT) format.",
     "Number": "Please enter a numeric value only (no units or additional text)."
   },
@@ -103,21 +104,38 @@
     "Rights"
   ],
 
-  "dublin_core_terms_in_use": [
-    "http://purl.org/dc/terms/contributor",
-    "http://purl.org/dc/terms/created",
-    "http://purl.org/dc/terms/date",
-    "http://purl.org/dc/terms/dateSubmitted",
-    "http://purl.org/dc/terms/description",
-    "http://purl.org/dc/terms/identifier",
-    "http://purl.org/dc/terms/modified",
-    "http://purl.org/dc/terms/publisher",
-    "http://purl.org/dc/terms/relation",
-    "http://purl.org/dc/terms/spatial",
-    "http://purl.org/dc/terms/temporal",
-    "http://purl.org/dc/terms/title",
-    "http://purl.org/dc/terms/type"
-  ],
+  "dublin_core_terms_in_use": {
+    "_note": "Canonical form is the full http://purl.org/dc/terms/<name> URI - not the short dcterms:<name> prefix, and not a dublincore.org spec-page URL (both formats existed in Map/Chronology until 2026-09-07 and were normalized to this form). Full DCMI Metadata Terms vocabulary (all 137 terms, not just these currently-used ones) is in Reference Documents/dublin_core_terms_full.json - check there before assigning an unused term to a field currently marked 'No direct equivalent'. When a field genuinely has no Dublin Core mapping, the Dublin Core Equivalent cell reads 'No direct equivalent' - not 'N/A' (standardized 2026-09-07; 'N/A' remains correct in other columns like Collection/Operational Info, just not this one).",
+    "terms": [
+      "http://purl.org/dc/terms/accessRights",
+      "http://purl.org/dc/terms/bibliographicCitation",
+      "http://purl.org/dc/terms/contributor",
+      "http://purl.org/dc/terms/coverage",
+      "http://purl.org/dc/terms/created",
+      "http://purl.org/dc/terms/creator",
+      "http://purl.org/dc/terms/date",
+      "http://purl.org/dc/terms/dateSubmitted",
+      "http://purl.org/dc/terms/description",
+      "http://purl.org/dc/terms/extent",
+      "http://purl.org/dc/terms/format",
+      "http://purl.org/dc/terms/hasVersion",
+      "http://purl.org/dc/terms/identifier",
+      "http://purl.org/dc/terms/isPartOf",
+      "http://purl.org/dc/terms/language",
+      "http://purl.org/dc/terms/license",
+      "http://purl.org/dc/terms/modified",
+      "http://purl.org/dc/terms/provenance",
+      "http://purl.org/dc/terms/publisher",
+      "http://purl.org/dc/terms/relation",
+      "http://purl.org/dc/terms/rights",
+      "http://purl.org/dc/terms/rightsHolder",
+      "http://purl.org/dc/terms/source",
+      "http://purl.org/dc/terms/spatial",
+      "http://purl.org/dc/terms/temporal",
+      "http://purl.org/dc/terms/title",
+      "http://purl.org/dc/terms/type"
+    ]
+  },
 
   "data_type_values": [
     "String",
