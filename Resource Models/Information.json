@@ -287,22 +287,9 @@
                 {
                     "card_id": "b9ea9ef5-56f5-4e77-b346-2ba274621e3b",
                     "config": {
-                        "defaultValue": {
-                            "en": {
-                                "direction": "ltr",
-                                "value": ""
-                            }
-                        },
-                        "i18n_properties": [
-                            "placeholder"
-                        ],
+                        "defaultValue": "",
                         "label": "Year of publication",
-                        "maxLength": null,
-                        "placeholder": {
-                            "en": "Enter text"
-                        },
-                        "uneditable": false,
-                        "width": "100%"
+                        "placeholder": "Enter date"
                     },
                     "id": "411b9444-08c5-45b7-a04d-64c70841e6ca",
                     "label": {
@@ -312,7 +299,7 @@
                     "sortorder": 3,
                     "source_identifier_id": null,
                     "visible": true,
-                    "widget_id": "10000000-0000-0000-0000-000000000001"
+                    "widget_id": "adfd15ce-dbab-11e7-86d1-0fcf08612b27"
                 },
                 {
                     "card_id": "b9ea9ef5-56f5-4e77-b346-2ba274621e3b",
@@ -1378,9 +1365,15 @@
                 {
                     "alias": "year_of_publication",
                     "config": {
-                        "dateFormat": "YYYY-MM-DD"
+                        "fuzzy_day_padding": 1,
+                        "fuzzy_month_padding": 1,
+                        "fuzzy_season_padding": 12,
+                        "fuzzy_year_padding": 1,
+                        "multiplier_if_approximate": 1,
+                        "multiplier_if_both": 1,
+                        "multiplier_if_uncertain": 1
                     },
-                    "datatype": "string",
+                    "datatype": "edtf",
                     "description": null,
                     "exportable": false,
                     "fieldname": null,
