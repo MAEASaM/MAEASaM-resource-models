@@ -9,12 +9,19 @@
     "Concept-list": "Please write the term exactly as recorded in the \"{collection}\" controlled vocabulary.",
     "String": "Please enter the information as free text.",
     "Resource-Instance-List": "Please write the MAEASaM ID of the relevant record from the \"{collection}\" resource instance.",
-    "Date": "Please enter the date using the Extended Date/Time Format (EDTF) standard. See the EDTF specification for guidance: https://www.loc.gov/standards/datetime/",
+    "Date": "Please enter the date in ISO format (YYYY-MM-DD).",
+    "EDTF": "Please enter the date using the Extended Date/Time Format (EDTF) standard. See the EDTF specification for guidance: https://www.loc.gov/standards/datetime/ Note: avoid the combined uncertain+approximate qualifier (%) - a known Arches issue currently drops it on save (see known_issues below). The single '?' (uncertain) and '~' (approximate) qualifiers work correctly.",
     "Boolean": "Please enter either \"Yes\" or \"No\" as the value.",
     "Auto-Populated": "This field is automatically populated by the system. Leave this field blank.",
     "Derived": "This field is automatically derived from the linked resource record(s). Leave this field blank.",
     "GeoJSON-feature-collection": "Please provide the geometry as coordinates in Well-Known Text (WKT) format.",
-    "Number": "Please enter a numeric value only (no units or additional text)."
+    "Number": "Please enter a numeric value only (no units or additional text).",
+    "URL": "Please enter a complete, valid web address (URL), including the http:// or https:// prefix."
+  },
+
+  "input_instructions_csv": {
+    "_comment": "Shorter, cell-ready versions of the entries above, used when the full input_instructions text reads as too long/verbose inside an actual spreadsheet cell. Only entries that intentionally diverge from input_instructions are listed here; anything not listed uses the full text as-is.",
+    "EDTF": "Please enter the date using the Extended Date/Time Format (EDTF) standard (https://www.loc.gov/standards/datetime/). Avoid the combined '%' qualifier - a known Arches issue drops it on save; '?' and '~' alone work fine."
   },
 
   "cardinality_definitions": {
@@ -142,6 +149,7 @@
     "Semantic",
     "GeoJSON-feature-collection",
     "Date",
+    "EDTF",
     "Resource-Instance-List",
     "Number",
     "Concept-list",
@@ -162,5 +170,18 @@
       "Ar",
       "Pt"
     ]
-  }
+  },
+
+  "known_issues": [
+    {
+      "date_found": "2026-09-08",
+      "title": "Arches EDTF datatype silently drops the combined uncertain+approximate qualifier (%)",
+      "affects": "Any node with Arches datatype 'edtf' (project Data Type 'EDTF' as of 2026-09-09 - previously filed under 'Date' before the two were split, see data_type_values)",
+      "description": "Reproduced in Arches 8.1.4 (local test instance): entering a value with the EDTF Level 1 combined uncertain+approximate qualifier, e.g. '2004-06-11%', and saving the tile silently strips the '%' on save - the stored/displayed value becomes '2004-06-11' with no error or warning. Root cause: Arches' EDTFDataType.transform_value_for_tile() (arches/app/datatypes/datatypes.py) re-serializes the input through the third-party 'edtf' Python library (ExtendedDateFormat in arches/app/utils/date_utils.py) via str(parsed_edtf), and that library's string serialization does not round-trip the combined '%' qualifier.",
+      "confirmed_working": "The single qualifiers '?' (uncertain) and '~' (approximate) round-trip correctly on their own, e.g. '1984?' and '2004-06~' are saved and displayed unchanged. Only the combined '%' form is affected.",
+      "workaround": "Avoid the combined '%' qualifier. If a value is both uncertain and approximate, prefer expressing it with '?' or '~' alone, or note the ambiguity in a free-text field, until this is fixed upstream.",
+      "upstream_issue": "Not filed - project decided (2026-09-08) to work around it internally rather than report it upstream for now. The workaround (avoid combined '%') is folded into the 'Date' input_instructions entry above.",
+      "project_decision": "2026-09-08: proceeding with EDTF adoption for Date-type fields despite this issue - the '?' and '~' qualifiers alone cover most real uncertainty/approximation cases. Combined '%' is flagged as unsupported for now in the Input Instructions."
+    }
+  ]
 }

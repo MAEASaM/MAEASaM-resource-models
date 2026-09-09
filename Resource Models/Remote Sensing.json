@@ -673,13 +673,9 @@
                 {
                     "card_id": "29e6a3e8-7207-43fe-a343-f9645cf9fb51",
                     "config": {
-                        "dateFormat": "YYYY-MM-DD",
                         "defaultValue": "",
                         "label": "Assessment date",
-                        "maxDate": false,
-                        "minDate": false,
-                        "placeholder": "Enter date",
-                        "viewMode": "days"
+                        "placeholder": "Enter date"
                     },
                     "id": "542a01e0-826a-41a1-b4a6-89ccda2df2d4",
                     "label": {
@@ -688,7 +684,7 @@
                     "node_id": "1b010d4e-f0e3-11ee-b0a7-493e03c8740a",
                     "sortorder": 0,
                     "visible": true,
-                    "widget_id": "10000000-0000-0000-0000-000000000004"
+                    "widget_id": "adfd15ce-dbab-11e7-86d1-0fcf08612b27"
                 },
                 {
                     "card_id": "29e6a3e8-7207-43fe-a343-f9645cf9fb51",
@@ -1003,13 +999,9 @@
                 {
                     "card_id": "29e6a3e8-7207-43fe-a343-f9645cf9fb51",
                     "config": {
-                        "dateFormat": "YYYY-MM-DD",
                         "defaultValue": "",
                         "label": "Date of image used",
-                        "maxDate": false,
-                        "minDate": false,
-                        "placeholder": "Enter date",
-                        "viewMode": "days"
+                        "placeholder": "Enter date"
                     },
                     "id": "8effb9b5-292b-464e-a687-7312482bf09a",
                     "label": {
@@ -1018,18 +1010,14 @@
                     "node_id": "953ded32-6908-11ef-ba90-4b5560e246ab",
                     "sortorder": 1,
                     "visible": true,
-                    "widget_id": "10000000-0000-0000-0000-000000000004"
+                    "widget_id": "adfd15ce-dbab-11e7-86d1-0fcf08612b27"
                 },
                 {
                     "card_id": "30d143ed-761e-4214-9e29-c3d78baff42f",
                     "config": {
-                        "dateFormat": "YYYY-MM-DD",
                         "defaultValue": "",
                         "label": "Survey date",
-                        "maxDate": false,
-                        "minDate": false,
-                        "placeholder": "Enter date",
-                        "viewMode": "days"
+                        "placeholder": "Enter date"
                     },
                     "id": "903bd4e2-26d7-4f4b-8a3a-dc3bb2580432",
                     "label": {
@@ -1038,7 +1026,7 @@
                     "node_id": "0b65af94-f0dd-11ee-b0a7-493e03c8740a",
                     "sortorder": 1,
                     "visible": true,
-                    "widget_id": "10000000-0000-0000-0000-000000000004"
+                    "widget_id": "adfd15ce-dbab-11e7-86d1-0fcf08612b27"
                 },
                 {
                     "card_id": "30d143ed-761e-4214-9e29-c3d78baff42f",
@@ -1064,13 +1052,9 @@
                 {
                     "card_id": "4ae324ef-eb15-4f04-bf03-bf1d406351ed",
                     "config": {
-                        "dateFormat": "YYYY-MM-DD",
                         "defaultValue": "",
                         "label": "Activity date",
-                        "maxDate": false,
-                        "minDate": false,
-                        "placeholder": "Enter date",
-                        "viewMode": "days"
+                        "placeholder": "Enter date"
                     },
                     "id": "92de7ce0-104d-4daf-959d-b012b43e9e4f",
                     "label": {
@@ -1079,18 +1063,14 @@
                     "node_id": "d33995f8-2c1e-11f0-b476-00505683efec",
                     "sortorder": 1,
                     "visible": true,
-                    "widget_id": "10000000-0000-0000-0000-000000000004"
+                    "widget_id": "adfd15ce-dbab-11e7-86d1-0fcf08612b27"
                 },
                 {
                     "card_id": "d0e7c4c6-f0e5-489e-a8cb-8ad313d1c6de",
                     "config": {
-                        "dateFormat": "YYYY-MM-DD",
                         "defaultValue": "",
                         "label": "Threat assessment date",
-                        "maxDate": false,
-                        "minDate": false,
-                        "placeholder": "Enter date",
-                        "viewMode": "days"
+                        "placeholder": "Enter date"
                     },
                     "id": "97a40040-068f-4c88-9803-c512ec449a76",
                     "label": {
@@ -1099,7 +1079,7 @@
                     "node_id": "cc214254-6908-11ef-ba90-4b5560e246ab",
                     "sortorder": 0,
                     "visible": true,
-                    "widget_id": "10000000-0000-0000-0000-000000000004"
+                    "widget_id": "adfd15ce-dbab-11e7-86d1-0fcf08612b27"
                 },
                 {
                     "card_id": "d0e7c4c6-f0e5-489e-a8cb-8ad313d1c6de",
@@ -2356,10 +2336,15 @@
                 {
                     "alias": "survey_date",
                     "config": {
-                        "dateFormat": "YYYY-MM-DD",
-                        "rdmCollection": null
+                        "fuzzy_day_padding": 1,
+                        "fuzzy_month_padding": 1,
+                        "fuzzy_season_padding": 12,
+                        "fuzzy_year_padding": 1,
+                        "multiplier_if_approximate": 1,
+                        "multiplier_if_both": 1,
+                        "multiplier_if_uncertain": 1
                     },
-                    "datatype": "date",
+                    "datatype": "edtf",
                     "description": null,
                     "exportable": true,
                     "fieldname": "SurDate",
@@ -2426,9 +2411,15 @@
                 {
                     "alias": "assessment_date",
                     "config": {
-                        "dateFormat": "YYYY-MM-DD"
+                        "fuzzy_day_padding": 1,
+                        "fuzzy_month_padding": 1,
+                        "fuzzy_season_padding": 12,
+                        "fuzzy_year_padding": 1,
+                        "multiplier_if_approximate": 1,
+                        "multiplier_if_both": 1,
+                        "multiplier_if_uncertain": 1
                     },
-                    "datatype": "date",
+                    "datatype": "edtf",
                     "description": null,
                     "exportable": true,
                     "fieldname": "AssesDate",
@@ -3104,9 +3095,15 @@
                 {
                     "alias": "date_of_image_used",
                     "config": {
-                        "dateFormat": "YYYY-MM-DD"
+                        "fuzzy_day_padding": 1,
+                        "fuzzy_month_padding": 1,
+                        "fuzzy_season_padding": 12,
+                        "fuzzy_year_padding": 1,
+                        "multiplier_if_approximate": 1,
+                        "multiplier_if_both": 1,
+                        "multiplier_if_uncertain": 1
                     },
-                    "datatype": "date",
+                    "datatype": "edtf",
                     "description": null,
                     "exportable": true,
                     "fieldname": "DateImgUse",
@@ -3483,9 +3480,15 @@
                 {
                     "alias": "threat_assessment_date",
                     "config": {
-                        "dateFormat": "YYYY-MM-DD"
+                        "fuzzy_day_padding": 1,
+                        "fuzzy_month_padding": 1,
+                        "fuzzy_season_padding": 12,
+                        "fuzzy_year_padding": 1,
+                        "multiplier_if_approximate": 1,
+                        "multiplier_if_both": 1,
+                        "multiplier_if_uncertain": 1
                     },
-                    "datatype": "date",
+                    "datatype": "edtf",
                     "description": null,
                     "exportable": true,
                     "fieldname": "ThrtAssDat",
@@ -3575,9 +3578,15 @@
                 {
                     "alias": "activity_date",
                     "config": {
-                        "dateFormat": "YYYY-MM-DD"
+                        "fuzzy_day_padding": 1,
+                        "fuzzy_month_padding": 1,
+                        "fuzzy_season_padding": 12,
+                        "fuzzy_year_padding": 1,
+                        "multiplier_if_approximate": 1,
+                        "multiplier_if_both": 1,
+                        "multiplier_if_uncertain": 1
                     },
-                    "datatype": "date",
+                    "datatype": "edtf",
                     "description": null,
                     "exportable": false,
                     "fieldname": null,
