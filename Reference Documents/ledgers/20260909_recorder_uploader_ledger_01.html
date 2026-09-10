@@ -1,0 +1,602 @@
+<title>Recorder & Uploader Ledger</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper: #ede7d8;
+    --paper-raised: #f7f3e7;
+    --ink: #262218;
+    --ink-soft: #6f6852;
+    --rule: #cdbd9a;
+    --accent: #2f4a5c;
+    --accent-ink: #eef2ee;
+    --brass: #8a6a34;
+    --ok: #3f6b46;
+    --ok-bg: #e3ecdf;
+    --warn: #9c5a1e;
+    --warn-bg: #f3e3cd;
+    --shadow: rgba(38,34,24,0.14);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper: #1c1a15;
+      --paper-raised: #262319;
+      --ink: #ece4d0;
+      --ink-soft: #a89d84;
+      --rule: #4a4330;
+      --accent: #7fa8bd;
+      --accent-ink: #14202a;
+      --brass: #c9a568;
+      --ok: #7fb489;
+      --ok-bg: #24352a;
+      --warn: #d99a55;
+      --warn-bg: #3a2d1c;
+      --shadow: rgba(0,0,0,0.45);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper: #1c1a15;
+    --paper-raised: #262319;
+    --ink: #ece4d0;
+    --ink-soft: #a89d84;
+    --rule: #4a4330;
+    --accent: #7fa8bd;
+    --accent-ink: #14202a;
+    --brass: #c9a568;
+    --ok: #7fb489;
+    --ok-bg: #24352a;
+    --warn: #d99a55;
+    --warn-bg: #3a2d1c;
+    --shadow: rgba(0,0,0,0.45);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap{ max-width: 980px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .eyebrow{
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 0 0 10px;
+  }
+  h1{
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    line-height: 1.08;
+    margin: 0 0 14px;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+  .lede{
+    max-width: 62ch;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    margin: 0 0 8px;
+  }
+  .lede strong{ color: var(--ink); font-weight: 600; }
+
+  header.page{
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 28px;
+    margin-bottom: 40px;
+  }
+
+  .legend{
+    display:flex; gap:18px; flex-wrap:wrap;
+    margin-top: 18px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.74rem;
+    color: var(--ink-soft);
+  }
+  .legend span{ display:inline-flex; align-items:center; gap:7px; }
+  .dot{ width:8px; height:8px; border-radius:50%; display:inline-block; }
+  .dot.ok{ background: var(--ok); }
+  .dot.warn{ background: var(--warn); }
+
+  .group{ margin-bottom: 46px; }
+  .group-head{
+    display:flex; align-items:baseline; justify-content:space-between;
+    gap: 16px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    border-radius: 8px 8px 0 0;
+    padding: 14px 20px;
+  }
+  .group-head h2{
+    font-family:"Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.32rem;
+    margin: 0;
+    letter-spacing: -0.005em;
+  }
+  .group-head .role{
+    font-size: 0.86rem;
+    opacity: 0.86;
+    margin-top: 3px;
+    font-family: "IBM Plex Sans", sans-serif;
+  }
+  .group-head .count{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    opacity: 0.86;
+    align-self: flex-start;
+    padding-top: 4px;
+  }
+
+  .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 20px;
+    box-shadow: 0 1px 0 var(--rule) inset;
+  }
+
+  .card{
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 16px 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+  }
+  .card-top{
+    display:flex; align-items:flex-start; justify-content:space-between; gap: 10px;
+  }
+  .field-name{
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: var(--ink);
+  }
+  .chip{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 100px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .chip.ok{ color: var(--ok); background: var(--ok-bg); }
+  .chip.warn{ color: var(--warn); background: var(--warn-bg); }
+
+  .spec{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 8px 14px;
+    padding: 10px 0;
+    border-top: 1px dashed var(--rule);
+    border-bottom: 1px dashed var(--rule);
+  }
+  .spec div{ min-width:0; }
+  .spec .k{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.64rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--brass);
+    display:block;
+  }
+  .spec .v{
+    font-size: 0.86rem;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: break-word;
+  }
+
+  .def{ font-size: 0.9rem; color: var(--ink); }
+  .def em{ color: var(--ink-soft); font-style: normal; }
+
+  .note code{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.82em;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0 4px;
+  }
+
+  .note{
+    font-size: 0.82rem;
+    padding: 8px 10px;
+    border-left: 3px solid var(--warn);
+    background: var(--warn-bg);
+    color: var(--ink);
+    border-radius: 0 4px 4px 0;
+  }
+  .note.ok{ border-left-color: var(--ok); background: var(--ok-bg); }
+
+  details{ margin-top: 2px; }
+  summary{
+    cursor: pointer;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+    list-style: none;
+    display:flex; align-items:center; gap:6px;
+  }
+  summary::-webkit-details-marker{ display:none; }
+  summary::before{
+    content: "▸";
+    display:inline-block;
+    transition: transform 0.15s ease;
+    font-size: 0.7rem;
+  }
+  details[open] summary::before{ transform: rotate(90deg); }
+
+  .model-table{
+    margin-top: 10px;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.78rem;
+  }
+  .model-table-wrap{ overflow-x:auto; }
+  .model-table th, .model-table td{
+    text-align:left;
+    padding: 5px 8px;
+    border-bottom: 1px solid var(--rule);
+    white-space: nowrap;
+  }
+  .model-table th{
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 0.64rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--brass);
+    font-weight: 500;
+  }
+  .model-table td.model{ font-weight: 600; }
+  .model-table td.absent{ color: var(--ink-soft); font-style: italic; }
+  .model-table td.flag{ color: var(--warn); }
+
+  .revlog{ margin-top: 6px; }
+  .revlog h2{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 0 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .revlog ol{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .revlog li{
+    display: grid;
+    grid-template-columns: 34px 88px 1fr;
+    gap: 14px;
+    align-items: baseline;
+    font-size: 0.86rem;
+  }
+  .revlog .rv{
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1px 0;
+    text-align: center;
+    font-size: 0.74rem;
+  }
+  .revlog .rd{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .revlog .rt{ color: var(--ink); }
+  .revlog .rt code{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.88em;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0 4px;
+  }
+  .revlog li:not(:last-child){
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--rule);
+  }
+  @media (max-width: 560px){
+    .revlog li{ grid-template-columns: 34px 1fr; }
+    .revlog .rd{ grid-column: 2; order: 2; }
+    .revlog .rt{ grid-column: 1 / -1; order: 3; }
+  }
+
+  footer{
+    margin-top: 44px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+  footer code{
+    font-family:"IBM Plex Mono", monospace;
+    background: var(--paper-raised);
+    padding: 1px 5px;
+    border-radius: 3px;
+    border: 1px solid var(--rule);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    summary::before{ transition:none; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="page">
+    <p class="eyebrow">MAEASaM &middot; Metadata Standardization &middot; 2026-09-09</p>
+    <h1>Recorder &amp; Uploader Ledger</h1>
+    <p class="lede">Two roles get confused across the 7 resource models: the <strong>recorder</strong>, who compiled the data itself, and the <strong>uploader</strong>, who entered the record into Arches. This is the field-by-field spec for both, with what's settled and what still needs a look.</p>
+    <div class="legend">
+      <span><i class="dot ok"></i> Approved &mdash; canonical text agreed</span>
+      <span><i class="dot warn"></i> Open question &mdash; needs a decision</span>
+    </div>
+  </header>
+
+  <section class="group">
+    <div class="group-head">
+      <div>
+        <h2>Recording details</h2>
+        <div class="role">Who recorded the data, and when</div>
+      </div>
+      <div class="count">3 FIELDS</div>
+    </div>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-top">
+          <span class="field-name">Recorder</span>
+          <span class="chip warn">Open question</span>
+        </div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Resource&#8209;Instance&#8209;List</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1..n</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">contributor</span></div>
+          <div><span class="k">Op. Info</span><span class="v">Foreign Key</span></div>
+        </div>
+        <p class="def">This node records the name of the individual responsible for creating the resource record.</p>
+        <p class="note ok">Datatype settled and applied (2026&#8209;09&#8209;09): Grid, Map and Chronology now link to Actor via Resource&#8209;Instance&#8209;List, matching RS/Info. Cardinality standardized to <code>1..n</code> everywhere &mdash; the list widget already lets one card hold several recorders, so this just documents that multiple people can share credit.</p>
+        <p class="note">Still open: which of the three field&#8209;name variants becomes canonical &mdash; <em>Recorder</em> / <em>Name of recorder</em> / <em>Name of the recorder</em>. Not a call to make solo &mdash; for the team.</p>
+        <details>
+          <summary>Per&#8209;model detail (7)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>Field name</th><th>Type</th><th>Necessity</th><th>Card.</th></tr></thead>
+            <tbody>
+              <tr><td class="model">RS</td><td>Name of the recorder</td><td>Resource-Instance-List</td><td>Mandatory</td><td>1..n</td></tr>
+              <tr><td class="model">Info</td><td>Recorder</td><td>Resource-Instance-List</td><td>Mandatory</td><td>1..n</td></tr>
+              <tr><td class="model">Chronology</td><td>Name of recorder</td><td>Resource-Instance-List</td><td>Mandatory</td><td>1..n</td></tr>
+              <tr><td class="model">Grid</td><td>Recorder</td><td>Resource-Instance-List</td><td>Mandatory</td><td>1..n</td></tr>
+              <tr><td class="model">Map</td><td>Recorder</td><td>Resource-Instance-List</td><td>Mandatory</td><td>1..n</td></tr>
+              <tr><td class="model">Actor</td><td>Recorder</td><td class="flag">String (draft, not yet imported)</td><td>Mandatory</td><td>1</td></tr>
+              <tr><td class="model">Admin</td><td colspan="4" class="absent">not present in this model</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="field-name">Comment</span>
+          <span class="chip warn">Open question</span>
+        </div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">String</span></div>
+          <div><span class="k">Necessity</span><span class="v">Optional</span></div>
+          <div><span class="k">Cardinality</span><span class="v">0..n</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">description</span></div>
+          <div><span class="k">Op. Info</span><span class="v">N/A</span></div>
+        </div>
+        <p class="def">A general free text node in which any additional information relevant to this resource can be recorded, if the recorder feels it should be documented.</p>
+        <p class="note">Necessity disagrees model to model (tracked separately, Task_List&nbsp;#47) &mdash; not resolved by this ledger.</p>
+        <details>
+          <summary>Per&#8209;model detail (3)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>Field name</th><th>Type</th><th>Necessity</th><th>Card.</th></tr></thead>
+            <tbody>
+              <tr><td class="model">Grid</td><td>Comment</td><td>String</td><td>Optional</td><td>0..n</td></tr>
+              <tr><td class="model">Map</td><td>Comment</td><td>String</td><td class="flag">Mandatory</td><td class="flag">1</td></tr>
+              <tr><td class="model">Actor</td><td>Comment</td><td>String (draft)</td><td>Optional</td><td>0..n</td></tr>
+              <tr><td class="model">RS / Chronology / Info / Admin</td><td colspan="4" class="absent">not part of this group</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="field-name">Resource created at</span>
+          <span class="chip warn">Open question</span>
+        </div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Date</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">created</span></div>
+          <div><span class="k">Op. Info</span><span class="v">Auto&#8209;Populated</span></div>
+        </div>
+        <p class="def">This node records the date on which the resource record was created in the database.</p>
+        <p class="note"><strong>Sits oddly in this group:</strong> it's Auto&#8209;Populated, same as <em>Upload date</em> below &mdash; the two may be the same system timestamp recorded twice under different names in Grid/Map. Worth settling before this group ships.</p>
+        <details>
+          <summary>Per&#8209;model detail (6)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>Field name</th><th>Necessity</th><th>Card.</th></tr></thead>
+            <tbody>
+              <tr><td class="model">RS</td><td>Resource created at</td><td>Mandatory</td><td>1</td></tr>
+              <tr><td class="model">Chronology</td><td class="flag">Resource creation at</td><td>Mandatory</td><td>1</td></tr>
+              <tr><td class="model">Info</td><td>Resource created at</td><td>Mandatory</td><td>1</td></tr>
+              <tr><td class="model">Grid</td><td>Resource created at</td><td>Mandatory</td><td>1</td></tr>
+              <tr><td class="model">Map</td><td>Resource created at</td><td>Mandatory</td><td>1</td></tr>
+              <tr><td class="model">Actor</td><td>Resource created at</td><td>Mandatory</td><td>1</td></tr>
+              <tr><td class="model">Admin</td><td colspan="3" class="absent">not present in this model</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="group-head">
+      <div>
+        <h2>Upload details</h2>
+        <div class="role">Who entered the record into Arches, and when</div>
+      </div>
+      <div class="count">3 FIELDS</div>
+    </div>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-top">
+          <span class="field-name">Uploader name</span>
+          <span class="chip ok">Approved</span>
+        </div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">String</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">contributor</span></div>
+          <div><span class="k">Op. Info</span><span class="v">Auto&#8209;Populated</span></div>
+        </div>
+        <p class="def">This node records the name of the individual that uploaded this resource record to Arches.</p>
+        <p class="note ok">Consistent everywhere it exists. Admin and Map's copies of this definition literally say &ldquo;grid square instance&rdquo;, copy&#8209;pasted from Grid &mdash; a wording fix, not a design decision.</p>
+        <details>
+          <summary>Per&#8209;model detail (4)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>Field name</th><th>Definition wording</th></tr></thead>
+            <tbody>
+              <tr><td class="model">Actor</td><td>Uploader name</td><td>clean</td></tr>
+              <tr><td class="model">Admin</td><td>Uploader name</td><td class="flag">says &ldquo;grid square instance&rdquo;</td></tr>
+              <tr><td class="model">Grid</td><td>Uploader name</td><td>clean (correct for Grid)</td></tr>
+              <tr><td class="model">Map</td><td class="flag">Uploader Name</td><td class="flag">says &ldquo;grid square instance&rdquo;</td></tr>
+              <tr><td class="model">RS / Chronology / Info</td><td colspan="2" class="absent">not part of this group</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="field-name">Upload date</span>
+          <span class="chip ok">Approved</span>
+        </div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Date</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">dateSubmitted</span></div>
+          <div><span class="k">Op. Info</span><span class="v">Auto&#8209;Populated</span></div>
+        </div>
+        <p class="def">This node records the date on which this resource record was added to Arches.</p>
+        <p class="note ok">Consistent everywhere it exists &mdash; see the paired note on <em>Resource created at</em> though.</p>
+        <details>
+          <summary>Per&#8209;model detail (4)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>Field name</th></tr></thead>
+            <tbody>
+              <tr><td class="model">Actor</td><td>Upload date</td></tr>
+              <tr><td class="model">Admin</td><td>Upload date</td></tr>
+              <tr><td class="model">Grid</td><td>Upload date</td></tr>
+              <tr><td class="model">Map</td><td class="flag">Upload Date</td></tr>
+              <tr><td class="model">RS / Chronology / Info</td><td class="absent">not part of this group</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="field-name">Resource last modified at</span>
+          <span class="chip ok">Approved</span>
+        </div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Date</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">modified</span></div>
+          <div><span class="k">Op. Info</span><span class="v">Auto&#8209;Populated</span></div>
+        </div>
+        <p class="def">This node records the most recent date on which the resource record was modified.</p>
+        <p class="note ok">Present in every model. Info sets it to &ldquo;Strongly recommended&rdquo; / 0..1 instead of Mandatory / 1 &mdash; minor, worth a quick check.</p>
+        <details>
+          <summary>Per&#8209;model detail (7)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>Field name</th><th>Necessity</th><th>Card.</th></tr></thead>
+            <tbody>
+              <tr><td class="model">RS</td><td>Resource last modified at</td><td>Mandatory</td><td>1</td></tr>
+              <tr><td class="model">Chronology</td><td class="flag">Resource modified at</td><td>Mandatory</td><td>1</td></tr>
+              <tr><td class="model">Info</td><td>Resource last modified at</td><td class="flag">Strongly recommended</td><td class="flag">0..1</td></tr>
+              <tr><td class="model">Actor</td><td>Resource last modified at</td><td>Mandatory</td><td>1</td></tr>
+              <tr><td class="model">Admin</td><td>Resource last modified at</td><td>Mandatory</td><td>1</td></tr>
+              <tr><td class="model">Grid</td><td>Resource last modified at</td><td>Mandatory</td><td>1</td></tr>
+              <tr><td class="model">Map</td><td>Resource last modified at</td><td>Mandatory</td><td>1</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="revlog">
+    <h2>Revision log</h2>
+    <ol>
+      <li>
+        <span class="rv">v2</span>
+        <span class="rd">2026&#8209;09&#8209;09</span>
+        <span class="rt">Recorder converted to Resource&#8209;Instance&#8209;List in Grid, Map and Chronology (was plain text / a CSV&ndash;JSON bug). Cardinality standardized to <code>1..n</code> across all five Recorder fields, resolving Info's Mandatory/<code>0..1</code> contradiction along the way. Field&#8209;name variant left open, moved to the team question list.</span>
+      </li>
+      <li>
+        <span class="rv">v1</span>
+        <span class="rd">2026&#8209;09&#8209;09</span>
+        <span class="rt">First draft: Recording details and Upload details defined as the two canonical groups, with a per&#8209;model audit of Recorder, Comment, Resource created at, Uploader name, Upload date and Resource last modified at.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    Source: <code>Recording_details_and_Upload_details_Reference.csv</code> &middot; tracked as <code>Task_List.md</code> #46 / #55 &middot; full writeup in <code>Metadata_Inconsistencies.md</code>.
+  </footer>
+</div>
