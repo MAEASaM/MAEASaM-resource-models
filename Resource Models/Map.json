@@ -2351,7 +2351,7 @@
                         "en": ""
                     },
                     "datatype": "string",
-                    "description": "",
+                    "description": "A unique identifier assigned to each resource. Format: [3-letter country code]-MAP-6-digit number (e.g. KEN-MAP-000001).",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",

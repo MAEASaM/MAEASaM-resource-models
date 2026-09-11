@@ -994,7 +994,7 @@
                     "alias": "maeasam_id",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
+                    "description": "A unique identifier assigned to each resource. Format: ADMN-[3-letter country code]-9-digit number (e.g. ADMN-ZWE-000000001).",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "809f0b43-a066-482f-bd2c-e62bc51e04cb",

@@ -24,9 +24,14 @@ Follow the setup instructions in the order provided to ensure that all dependenc
 2. **Access Arches Management Console:**
    - Log in to your Arches instance with admin privileges.
 
-3. **Import Models:**
+3. **Import Models in Order:**
    - Navigate to the *Resource Models* section.
-   - Use the "Import" function to upload each JSON file (e.g., `Actor.json`, `Site.json`, etc.).
+   - Use the "Import" function to upload each JSON file, **in this order**, since later models reference earlier ones (e.g. via Resource-Instance-List fields like Recorder/Uploader linking to Actor):
+     1. `Actor.json`
+     2. `Information.json`
+     3. `Administrative Model.json`
+     4. `Grid.json`
+     5. `Map.json`
    - Follow the prompts to complete the import process for each model.
 
 4. **Verify Models:**
