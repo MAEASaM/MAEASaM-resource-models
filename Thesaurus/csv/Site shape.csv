@@ -1,0 +1,20 @@
+Hierarchy 1 en,Hierarchy 1 ar,Hierarchy 1 description en,Hierarchy 1 description ar
+Circular,دائري,An enclosed site which is round in shape,ملمح ذو شكل دائري مغلق
+Curvilinear,منحنى,A linear site which curves,ملمح طولي على شكل منحنى
+Irregular,غير منتظم,An enclosed or unenclosed site with no identifiable geometric form,ملمح ذو شكل مغلق أو مفتوح، ليس له شكل هندسي محدد
+Point,نقطة,For use only on sites which consist of a single very small findspot which is too small to be recognised on satellite imagery under normal circumstances. e.g. an isolated stone tool with no other objects or features around,
+Polygonal,كثير الأضلع,"An enclosed site with 4+ straight sides, not arranged at right angles (e.g. trapezoid, pentagon, hexagon etc.)",ملمح ذو شكل هندسي مغلق له أربعة أضلاع مستقيمة أو أكثر، ولا ترتبط بزاويا قائمة (مثل الشكل شبه المنحرف، والخماسي الأضلاع، والسداسي الأضلاع، الخ)
+Rectangular/Square,مستطيل/ مربع,An enclosed site with 4 straight sides arranged at right angles,ملمح ذو شكل هندسي مغلق له أربعة أضلاع مستقيمة بينها بزوايا قائمة
+Rectilinear,مستقيم الجوانب,An enclosed or unenclosed site which is formed of straight sides sitting at more or less right angles,ملمح ذو شكل هندسي مغلق أو مفتوح، يتكون من جوانب إلى حد ما مستقيمة بينها زوايا قائمة
+Semi-circular,شبه دائري,An enclosed site with one straight side and one curved/rounded side (e.g. D-shaped),ملمح ذو شكل مغلق أحد أضلاعه مستقيم، والضلع الآخر منحني أو شبه دائري (مثل حرف D الإنجليزي)
+Straight,مستقيم,A linear site which does not curve or bend,ملمح طولي مستقيم بدون منحنيات
+Sub-circular,شبه دائري,"An enclosed site which is rounded in shape, but not necessarily circular",ملمح ذو شكل دائري مغلق، ولكن ليس بالضرورة أن يكون دائرة
+Sub-rectangular,شبه مستطيل,An enclosed site which is rectangular in overall shape but with rounded corners or edges,ملمح على شكل مستطيل مغلق بصورة عامة، ولكن أركانه أو بعض جوانبه بها انحناءات
+Triangular,مثلث,An enclosed site of 3 straight sides.,ملمح على شكل مثلث مغلق يتكون من ثلاثة أضلاع مستقيمة
+User defined,محدد بمعرفة المستخدم,"Any shape which has been drawn to define the edge of area which is being treated as a single 'site' by the researcher for no other reason than the geographical proximity of site visible on the imagery (e.g. a large area which contains 1000s of cairns, pendants, and small enclosures, when you have no reason to believe that the individual site are necessarily related functionally or chronologically, but where we do not want to/cannot enter individual records, for reasons of time. If you use this category, your 'Certainty' for 'Site size/extent' should always be 'Negligible'.","أي شكل يتم رسمه لتحديد حدود منطقة يتم التعامل معه ك""موقع"" بواسطة الباحث ليس لأي سبب سوى التقارب الجيولوجي بين الموارد التراثية المرئية على الصور (مثل: منطقة كبيرة تشمل آلاف أكوام الحجارة، أو القلائد، أو الأشكال المغلقة الصغيرة، عندما لا يكون هناك سبب للاعتقاد بأن الموارد المنفردة مرتبطة بشكل وظيفي أو تاريخي (كرونولوجي)، ولكننا لا نريد، أو لا نستطيع إدخال تسجيلات مستقلة، بسبب ضيق الوقت. فإن استخدمت هذا التصنيف فيجب أن تكون ""مدى التأكد"" لكل من حجم ومدى الموقع ""تافه"""
+Winding,ملتوي,"A linear site which does not follow a regular/straight, and may incorporate bends and/or curves",ملميح طولي ليس له شكل منتظم أو مستقيم، وقد يشمل منحنيات
+Zigzag,متعرج,A linear heritage resource which bends in alternating directions at intervals,ملمح طولي ينحني في إتجاهات متعاكسة في بعض أجزائه
+Unknown,غير محدد,Unknown,غير معلوم
+Not assessed,,,
+Uncertain,,,
+Not visible,,,

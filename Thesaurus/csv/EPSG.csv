@@ -1,0 +1,17 @@
+Hierarchy 1 en,Hierarchy 1 description en
+4326,A global geographic coordinate reference system using latitude and longitude on the WGS 84 ellipsoid (the standard for GPS)  https://epsg.io/4326
+7012,"Clarke 1880 (RGS) Ellipsoid An ellipsoid definition based on the 1880 Clarke model, using the Royal Geographic Society values—common in older regional datums https://epsg.io/20935"
+7013,"Another variant of the Clarke 1880 ellipsoid, used primarily in Arc-based mapping systems. https://epsg.io/20935?utm_source"
+20935,"EPSG:20935 — Arc 1950 / UTM zone 35S
+A projected coordinate system using the Arc 1950 datum and UTM Zone 35 South—employed in southern Africa (Botswana, Zambia, Zimbabwe)."
+21036,"Arc 1960 / UTM zone 36S
+Based on the Arc 1960 datum with UTM Zone 36 South—covering parts of Kenya, Tanzania, and Uganda.
+https://epsg.io/21036?utm_source"
+32628,"WGS 84 / UTM zone 28N
+A UTM projection for the northern hemisphere Zone 28N, covering west Africa from 18°W to 12°W, including Morocco, Senegal, and others.https://epsg.io/32628?utm_source"
+32736,"WGS 84 / UTM zone 36S
+A UTM projection for the southern hemisphere Zone 36S, used in East and Southern Africa (e.g., enya. Malawi. Mozambique. Rwanda. South Africa. Tanzania. Uganda. Zambia. Zimbabwe) https://epsg.io/32736?utm_source"
+27701,"WGS 84 / Equi7 Africa
+A continent-wide azimuthal equidistant projection designed for raster/mapping across Africa and the Arabian Peninsula https://epsg.io/27701"
+32734,"Area of use: Between 18°E and 24°E, southern hemisphere between 80°S and equator, onshore and offshore. Angola. Botswana. Democratic Republic of the Congo (Zaire). Namibia. South Africa. Zambia. https://epsg.io/?q=32734"
+Unknown,

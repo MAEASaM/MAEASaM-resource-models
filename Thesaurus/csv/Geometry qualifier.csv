@@ -1,0 +1,14 @@
+Hierarchy 1 en,Hierarchy 1 fr,Hierarchy 1 ar
+Point,Point,نقطة
+Polygon,Polygone,مضلع
+Central point,Point central,النقطة المركزية
+Outer boundary,Bordure extérieure,الحدود الخارجية
+Uncertain,Incertaine,غير مؤكد
+Official buffer ,,منطقة عازلة رسمية
+Official boundary,,الحدود الرسمية
+Centroid,,مركز
+Core area,,المنطقة الأساسية
+Nomination buffer polygon,,مضلع المنطقة العازلة للترشيح
+Nomination polygon,,مضلع الترشيح
+Line,,خط
+Boundary line,,خط الحدود

@@ -1,0 +1,13 @@
+Hierarchy 1 en,Hierarchy 1 alternative en ,Hierarchy 1 description en,Hierarchy 1 description fr
+Community organisation,Community member,An individual or organisation that represents a specific community,Une personne ou une organisation qui représente une communauté spécifique
+Land owner,,An individual or organisation that owns land on which a heritage site is located,Un individu ou une organisation qui possède un terrain sur lequel se trouve un site patrimonial
+Staff member,,"This actor works as an employee at the actor (usually an institution) listed under ""Association"". A counterpart to ""Employer of"".","Cet acteur travaille en tant qu'employé auprès de l'acteur (généralement une institution) mentionné sous ""Association"". Contrepartie de ""Employeur de""."
+Former staff member,,,
+Employer,,"This actor (usually an institution) employs the actor listed under ""Association"". A counterpart to ""Employed by"".","Cet acteur (généralement une institution) emploie l'acteur mentionné sous ""Association"". Contrepartie de ""Employé par""."
+Employee,,,
+Affiliated with,Associated with,The actor is affiliated with the project but does not work at a partner institution,L'acteur est affilié au projet mais ne travaille pas dans une institution partenaire.
+Project institution,,An institution that forms part of the MAEASaM project,Une institution qui fait partie du projet MAEASaM
+Affiliated institution,,"An institution that is affiliated with the MAEASaM project, but does not form part of the project","Une institution affiliée au projet MAEASaM, mais qui ne fait pas partie du projet"
+Former Affiliated institution,,,
+No information,,,
+Other,,,

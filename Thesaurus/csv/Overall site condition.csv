@@ -1,0 +1,15 @@
+Hierarchy 1 en,Hierarchy 1 alternative en ,Hierarchy 1 description en
+Intact,Intact,
+Partially damaged ,Partiellement ,(-50%)
+Moderately damaged,Moyennement ,(+50%)
+Heavily damaged,,
+Completely destroyed,Entièrement ,
+Unknown,Inconnu,
+Unassessed,,
+Good ,Undisturbed/ Excellent/Good,The overall condition of the attributes is good.
+Low,Fair,"The overall condition of the attributes is stable, although there are reasons for caution."
+Concern,Poor,"Serious threats are developing which could negatively impact, or are already negatively impacting, some of the attributes, and which may contribute to their loss if not addressed urgently. "
+Critical,Very bad,Loss of attributes or serious concerns about the state of conservation of attributes.
+Not assessed,,
+Not visible,,
+Uncertain,,

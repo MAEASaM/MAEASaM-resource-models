@@ -1,0 +1,4 @@
+Hierarchy 1 en
+"Cartesian 2D. Axes: easting, northing (E,N). Orientations: east, north. UoM: meters"
+"Ellipsoidal 2D. Axes: latitude, longitude. Orientations: north, east. UoM: degree"
+"Ellipsoidal 2D. Axes: latitude, longitude. orientations: north, east. UoM: DMS"

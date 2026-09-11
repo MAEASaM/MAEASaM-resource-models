@@ -1,0 +1,20 @@
+Hierarchy 1 en,Hierarchy 2 en,Hierarchy 3 en
+Verified,,
+,Ground-truthing/assessment,
+,,Differential GPS
+,,Handheld GPS
+,,Total station
+,,Phone/tablet built-in GPS
+,Remote sensing,
+,,Bing imagery inspection
+,,Google Earth imagery inspection
+,,Aerial photography inspection
+,,Other remotely sensed imagery inspection
+,,OSL dataset
+,Legacy data,
+,,Legacy document 
+,,Legacy map 
+,,Georeferencing of legacy map
+,,Reprojecting of legacy map
+,,Reprojecting of legacy coordinates
+Not verified,,
