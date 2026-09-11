@@ -1,6 +1,6 @@
 ﻿Arches terminology,Universal terminology,User form,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24
-CIDOC CRM Semantic Node Class,CIDOC CRM Semantic Node Class,,E42 Identifier,,,,E53 Place,,E73 Information object,,,,,,,,,,,,E66 Formation,,,E66 Formation,,
-CIDOC CRM Node Class,CIDOC CRM Node Class,,E42 Identifier,E42 Identifier,E42 Identifier,E42 Identifier,E53 Place,E17 Type Assignment,E17 Type Assignment,E84 Information Carrier,E60 Number,E53 Place,E60 Number,E53 Place,E60 Number,,,,,,E39 Actor,E62 String,E50 Date,E82 Actor Appellation,E50 Date,E50 Date
+CIDOC CRM Semantic Node Class,CIDOC CRM Semantic Node Class,,E42 Identifier,,,,E53 Place,,E73 Information object,,,,,,,E30 Right,,,,,E66 Formation,,,E66 Formation,,
+CIDOC CRM Node Class,CIDOC CRM Node Class,,E42 Identifier,E42 Identifier,E42 Identifier,E42 Identifier,E53 Place,E17 Type Assignment,E17 Type Assignment,E84 Information Carrier,E60 Number,E53 Place,E60 Number,E53 Place,E60 Number,E55 Type,E55 Type,E1 CRM Entity,E62 String,E62 String,E39 Actor,E62 String,E50 Date,E82 Actor Appellation,E50 Date,E50 Date
 CIDOC CRM Scope note,CIDOC CRM Scope note,,"This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them
 uniquely and permanently within the context of one or more organisations. Such codes are often known
 as inventory numbers, registration codes, etc. and are typically composed of alphanumeric sequences.
@@ -89,7 +89,11 @@ Numbers are fundamentally distinct from identifiers in continua, such as instanc
 Spatial Coordinate, even though their encoding may be similar. Instances of E60 Number can be
 combined with each other in algebraic operations to yield other instances of E60 Number, e.g., 1+1=2.
 Identifiers in continua may be combined with numbers expressing distances to yield new identifiers,
-e.g., 1924-01-31 + 2 days = 1924-02-02. Cf. E54 Dimension",,,,,,"This class comprises any sort of name, number, code or symbol characteristically used to identify an E39 Actor.
+e.g., 1924-01-31 + 2 days = 1924-02-02. Cf. E54 Dimension",This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CRM classes.,This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CRM classes.,"This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model. It is an abstract concept providing for three general properties: 1. Identification by name or appellation, and in particular by a preferred identifier 2. Classification by type, allowing further refinement of the specific subclass an instance belongs to 3. Attachment of free text for the expression of anything not captured by formal properties With the exception of E59 Primitive Value, all other classes within the CRM are directly or indirectly specialisations of E1 CRM Entity.","This class comprises the instances of E59 Primitive Values used for documentation such as free text
+strings, bitmaps, vector graphics, etc.
+E62 String is not further elaborated upon within the mode","This class comprises the instances of E59 Primitive Values used for documentation such as free text
+strings, bitmaps, vector graphics, etc.
+E62 String is not further elaborated upon within the mode","This class comprises any sort of name, number, code or symbol characteristically used to identify an E39 Actor.
 An E39 Actor will typically have more than one E82 Actor Appellation, and instances of E82 Actor
 Appellation in turn may have alternative representations. The distinction between corporate and
 personal names, which is particularly important in library applications, should be made by explicitly
