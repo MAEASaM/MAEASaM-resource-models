@@ -2577,7 +2577,7 @@
                         "en": ""
                     },
                     "datatype": "string",
-                    "description": null,
+                    "description": "A unique identifier assigned to each resource. Format: RS-[3-letter country code]-8-digit number (e.g. RS-SEN-00000001).",
                     "exportable": true,
                     "fieldname": "MAEASaMID",
                     "graph_id": "15bb7d39-f1f1-44f5-bcf5-37029ff5f53e",

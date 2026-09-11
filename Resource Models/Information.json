@@ -86,33 +86,6 @@
                 },
                 {
                     "active": true,
-                    "cardid": "2074e9ee-890d-472b-9fb1-bd5136c8564f",
-                    "component_id": "f05e4d3a-53c1-11e8-b0ea-784f435179ea",
-                    "config": null,
-                    "constraints": [],
-                    "cssclass": null,
-                    "description": null,
-                    "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
-                    "helpenabled": false,
-                    "helptext": {
-                        "en": ""
-                    },
-                    "helptitle": {
-                        "en": ""
-                    },
-                    "instructions": {
-                        "en": ""
-                    },
-                    "name": {
-                        "en": "Comment"
-                    },
-                    "nodegroup_id": "91e04036-3eb5-11ef-88ef-7362afac6bb7",
-                    "sortorder": 4,
-                    "source_identifier_id": null,
-                    "visible": true
-                },
-                {
-                    "active": true,
                     "cardid": "b9ea9ef5-56f5-4e77-b346-2ba274621e3b",
                     "component_id": "f05e4d3a-53c1-11e8-b0ea-784f435179ea",
                     "config": null,
@@ -380,7 +353,7 @@
                     "widget_id": "10000000-0000-0000-0000-000000000004"
                 },
                 {
-                    "card_id": "2074e9ee-890d-472b-9fb1-bd5136c8564f",
+                    "card_id": "df5f04be-c678-4100-8eb3-b1b02697c04d",
                     "config": {
                         "defaultValue": {
                             "en": {
@@ -502,18 +475,22 @@
                 {
                     "card_id": "b9ea9ef5-56f5-4e77-b346-2ba274621e3b",
                     "config": {
+                        "defaultValue": {
+                            "en": {
+                                "direction": "ltr",
+                                "value": ""
+                            }
+                        },
                         "i18n_properties": [
-                            "url_label_placeholder",
-                            "url_placeholder"
+                            "placeholder"
                         ],
                         "label": "URL",
-                        "link_color": "#0055a0",
-                        "url_label_placeholder": {
-                            "en": "Enter URL Label... "
+                        "maxLength": null,
+                        "placeholder": {
+                            "en": "Enter text"
                         },
-                        "url_placeholder": {
-                            "en": "Enter URL... "
-                        }
+                        "uneditable": false,
+                        "width": "100%"
                     },
                     "id": "9b0dff52-dce2-42d4-a33e-92d612020c6f",
                     "label": {
@@ -523,7 +500,7 @@
                     "sortorder": 11,
                     "source_identifier_id": null,
                     "visible": true,
-                    "widget_id": "ca0c43ff-af73-4349-bafd-53ff9f22eebd"
+                    "widget_id": "10000000-0000-0000-0000-000000000001"
                 },
                 {
                     "card_id": "b9ea9ef5-56f5-4e77-b346-2ba274621e3b",
@@ -832,32 +809,12 @@
                 },
                 {
                     "description": null,
-                    "domainnode_id": "0e00b5aa-f167-437f-9b79-74cb99734946",
-                    "edgeid": "7bc706ea-6f7a-44aa-bbcd-dbf680beaa48",
-                    "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
-                    "name": null,
-                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by",
-                    "rangenode_id": "35624675-457b-4d24-8fdc-149cc0c52355",
-                    "source_identifier_id": null
-                },
-                {
-                    "description": null,
                     "domainnode_id": "1b6e9028-ca71-11ee-9b1a-c753c4d77ff1",
                     "edgeid": "87656b0d-783a-4cdb-ba5b-3777f15733bf",
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
                     "name": null,
                     "ontologyproperty": "http://www.ics.forth.gr/isl/CRMdig/L54_is_same-as",
                     "rangenode_id": "5e74ae19-b188-4bd4-a5c5-7e8df2a6da94",
-                    "source_identifier_id": null
-                },
-                {
-                    "description": null,
-                    "domainnode_id": "1b6e9028-ca71-11ee-9b1a-c753c4d77ff1",
-                    "edgeid": "8c4157b3-ce84-4e7f-8a7a-0b04bbe68925",
-                    "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
-                    "name": null,
-                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
-                    "rangenode_id": "91e04036-3eb5-11ef-88ef-7362afac6bb7",
                     "source_identifier_id": null
                 },
                 {
@@ -1019,6 +976,36 @@
                     "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P92_brought_into_existence",
                     "rangenode_id": "583dc4d8-8868-4832-aac9-edacba66049d",
                     "source_identifier_id": null
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "a6f08210-3eb5-11ef-88ef-7362afac6bb7",
+                    "edgeid": "c271270e-b704-4fee-8e38-c8ac80cc202d",
+                    "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
+                    "rangenode_id": "91e04036-3eb5-11ef-88ef-7362afac6bb7",
+                    "source_identifier_id": null
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "0e00b5aa-f167-437f-9b79-74cb99734946",
+                    "edgeid": "98730d02-dea2-4317-9623-5f62e846bbbd",
+                    "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by",
+                    "rangenode_id": "629b8acf-f9dd-4367-b221-fc08efbae752",
+                    "source_identifier_id": null
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "5e74ae19-b188-4bd4-a5c5-7e8df2a6da94",
+                    "edgeid": "ffa5741b-80bd-4ede-9690-08fc519fe194",
+                    "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
+                    "name": null,
+                    "ontologyproperty": "http://www.ics.forth.gr/isl/CRMdig/L54_is_same-as",
+                    "rangenode_id": "e928a803-01c4-4964-b5ad-dac7fe6b003f",
+                    "source_identifier_id": null
                 }
             ],
             "functions_x_graphs": [
@@ -1080,13 +1067,6 @@
                 },
                 {
                     "cardinality": "1",
-                    "grouping_node_id": "91e04036-3eb5-11ef-88ef-7362afac6bb7",
-                    "legacygroupid": null,
-                    "nodegroupid": "91e04036-3eb5-11ef-88ef-7362afac6bb7",
-                    "parentnodegroup_id": null
-                },
-                {
-                    "cardinality": "1",
                     "grouping_node_id": "a07c69b8-5593-4e98-bd66-cd4571706cd8",
                     "legacygroupid": null,
                     "nodegroupid": "a07c69b8-5593-4e98-bd66-cd4571706cd8",
@@ -1120,7 +1100,7 @@
                         "dateFormat": "YYYY-MM-DD"
                     },
                     "datatype": "string",
-                    "description": null,
+                    "description": "Digital Object Identifier, a unique alphanumeric string assigned to a resource for persistent identification and access online.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
@@ -1145,7 +1125,7 @@
                         "dateFormat": "YYYY-MM-DD"
                     },
                     "datatype": "string",
-                    "description": null,
+                    "description": "The name of the book or journal in which this resource was published, if applicable (e.g. the journal title for an article, or the book title for a chapter).",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
@@ -1168,7 +1148,7 @@
                     "alias": "publisher",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
+                    "description": "An individual or organization responsible for producing, distributing, and managing the dissemination of content such as books, magazines, newspapers, digital media, and other forms of information.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
@@ -1216,7 +1196,7 @@
                         "dateFormat": "YYYY-MM-DD"
                     },
                     "datatype": "string",
-                    "description": null,
+                    "description": "International Standard Book Number (ISBN), a unique identifier for books.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
@@ -1266,7 +1246,7 @@
                         "dateFormat": "YYYY-MM-DD"
                     },
                     "datatype": "string",
-                    "description": null,
+                    "description": "The page range within the book or journal where this resource can be found (e.g. 12-34).",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
@@ -1291,7 +1271,7 @@
                         "dateFormat": "YYYY-MM-DD"
                     },
                     "datatype": "string",
-                    "description": null,
+                    "description": "The volume number of the journal or book series in which this resource was published, if applicable.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
@@ -1337,7 +1317,7 @@
                     "alias": "maeasam_id",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
+                    "description": "A unique identifier assigned to each resource. Format: INFO-8-digit number (e.g. INFO-00000004).",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
@@ -1350,29 +1330,6 @@
                     "name": "MAEASaM ID",
                     "nodegroup_id": "0e00b5aa-f167-437f-9b79-74cb99734946",
                     "nodeid": "2e42e56e-6c98-42f0-853d-eaf42b8fda00",
-                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E42_Identifier",
-                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by",
-                    "sortorder": 0,
-                    "source_identifier_id": null,
-                    "sourcebranchpublication_id": null
-                },
-                {
-                    "alias": "zotero_key",
-                    "config": {},
-                    "datatype": "semantic",
-                    "description": null,
-                    "exportable": false,
-                    "fieldname": null,
-                    "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
-                    "hascustomalias": false,
-                    "is_collector": false,
-                    "is_immutable": false,
-                    "isrequired": false,
-                    "issearchable": true,
-                    "istopnode": false,
-                    "name": "Zotero Key",
-                    "nodegroup_id": "0e00b5aa-f167-437f-9b79-74cb99734946",
-                    "nodeid": "35624675-457b-4d24-8fdc-149cc0c52355",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E42_Identifier",
                     "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by",
                     "sortorder": 0,
@@ -1406,7 +1363,7 @@
                     "alias": "title_of_resource",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
+                    "description": "The title of the publication.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
@@ -1437,7 +1394,7 @@
                         "multiplier_if_uncertain": 1
                     },
                     "datatype": "edtf",
-                    "description": null,
+                    "description": "The specific year in which the resource was officially released.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
@@ -1459,8 +1416,8 @@
                 {
                     "alias": "url",
                     "config": {},
-                    "datatype": "url",
-                    "description": null,
+                    "datatype": "string",
+                    "description": "A web link to an online version of the resource, if one is available.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
@@ -1496,7 +1453,7 @@
                     "issearchable": true,
                     "istopnode": false,
                     "name": "Comment",
-                    "nodegroup_id": "91e04036-3eb5-11ef-88ef-7362afac6bb7",
+                    "nodegroup_id": "a6f08210-3eb5-11ef-88ef-7362afac6bb7",
                     "nodeid": "91e04036-3eb5-11ef-88ef-7362afac6bb7",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
                     "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
@@ -1510,7 +1467,7 @@
                         "rdmCollection": "57c662b1-9343-40da-a3a8-1a4fd9306716"
                     },
                     "datatype": "concept-list",
-                    "description": null,
+                    "description": "Indicates whether the resource is a publication, collection, or a map.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
@@ -1594,7 +1551,7 @@
                         "rdmCollection": "a30c58bb-23ad-44ba-b213-2d4dc56fd0dd"
                     },
                     "datatype": "concept-list",
-                    "description": null,
+                    "description": "The language used for the intellectual content of the resource.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
@@ -1644,7 +1601,7 @@
                         "dateFormat": "YYYY-MM-DD"
                     },
                     "datatype": "string",
-                    "description": null,
+                    "description": "The version or form of the book that has been published.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
@@ -1694,7 +1651,7 @@
                         "dateFormat": "YYYY-MM-DD"
                     },
                     "datatype": "string",
-                    "description": null,
+                    "description": "A short summary or abstract of the resource's content.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
@@ -1742,7 +1699,7 @@
                     "alias": "copyright",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
+                    "description": "A statement about copyright or other rights and restrictions associated with the resource, or a hyperlink to such a statement.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
@@ -1765,7 +1722,7 @@
                     "alias": "issn",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
+                    "description": "International Standard Serial Number (ISSN), a unique identifier for serial publications.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
@@ -1788,7 +1745,7 @@
                     "alias": "author",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
+                    "description": "The name of the writer of the publication.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
@@ -1887,6 +1844,52 @@
                     "nodeid": "583dc4d8-8868-4832-aac9-edacba66049d",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E50_Date",
                     "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P92_brought_into_existence",
+                    "sortorder": 0,
+                    "source_identifier_id": null,
+                    "sourcebranchpublication_id": null
+                },
+                {
+                    "alias": "zotero_key",
+                    "config": {},
+                    "datatype": "string",
+                    "description": "The unique identifier (key) assigned to this reference by Zotero, used to track or sync the record with the Zotero reference management library.",
+                    "exportable": true,
+                    "fieldname": null,
+                    "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
+                    "hascustomalias": false,
+                    "is_collector": false,
+                    "is_immutable": false,
+                    "isrequired": false,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "Zotero Key",
+                    "nodegroup_id": "0e00b5aa-f167-437f-9b79-74cb99734946",
+                    "nodeid": "629b8acf-f9dd-4367-b221-fc08efbae752",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E42_Identifier",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by",
+                    "sortorder": 0,
+                    "source_identifier_id": null,
+                    "sourcebranchpublication_id": null
+                },
+                {
+                    "alias": "apa_reference",
+                    "config": {},
+                    "datatype": "string",
+                    "description": "The complete reference for the resource, formatted according to the American Psychological Association (APA) citation style.",
+                    "exportable": true,
+                    "fieldname": null,
+                    "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
+                    "hascustomalias": false,
+                    "is_collector": false,
+                    "is_immutable": false,
+                    "isrequired": false,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "APA Reference",
+                    "nodegroup_id": "5e74ae19-b188-4bd4-a5c5-7e8df2a6da94",
+                    "nodeid": "e928a803-01c4-4964-b5ad-dac7fe6b003f",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E30_Right",
+                    "parentproperty": "http://www.ics.forth.gr/isl/CRMdig/L54_is_same-as",
                     "sortorder": 0,
                     "source_identifier_id": null,
                     "sourcebranchpublication_id": null

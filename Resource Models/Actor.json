@@ -830,7 +830,7 @@
                     "alias": "maeasam_id",
                     "config": {},
                     "datatype": "string",
-                    "description": "Unique ID given to each resource entered.",
+                    "description": "A unique identifier assigned to each resource. Format: ACT-9-digit number (e.g. ACT-000000003).",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",

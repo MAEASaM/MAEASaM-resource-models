@@ -182,6 +182,16 @@
       "workaround": "Avoid the combined '%' qualifier. If a value is both uncertain and approximate, prefer expressing it with '?' or '~' alone, or note the ambiguity in a free-text field, until this is fixed upstream.",
       "upstream_issue": "Not filed - project decided (2026-09-08) to work around it internally rather than report it upstream for now. The workaround (avoid combined '%') is folded into the 'Date' input_instructions entry above.",
       "project_decision": "2026-09-08: proceeding with EDTF adoption for Date-type fields despite this issue - the '?' and '~' qualifiers alone cover most real uncertainty/approximation cases. Combined '%' is flagged as unsupported for now in the Input Instructions."
+    },
+    {
+      "date_found": "2026-09-10",
+      "title": "Arches URL datatype crashes on bulk-import of blank cells",
+      "affects": "Any node with Arches datatype 'url' (project Data Type 'URL'), when bulk-loaded from Excel/CSV via Arches' business-data importer, if the source column has empty cells for some rows.",
+      "description": "URLDataType.transform_value_for_tile() (arches/app/datatypes/url.py) wraps a plain string in {\"url\": value, \"url_label\": \"\"}, but the bulk-load pipeline reads blank spreadsheet cells as pandas NaN (a float), not an empty string or None. json.loads(nan) and ast.literal_eval(nan) both raise, so transform_value_for_tile falls through to its except BaseException branch and returns {\"url\": nan, \"url_label\": \"\"}. In validate(), value.get(\"url\") is the NaN float, which is truthy in Python, so URLDataType tries self.URL_REGEX.match(nan) - re.match() requires a string, so this raises an uncaught TypeError (not the FailRegexURLMatch the method actually catches), crashing the import instead of producing a normal validation error.",
+      "confirmed_working": "Not independently reproduced against a live traceback this session - diagnosed by reading arches/app/datatypes/url.py against the reported symptom (import failing specifically on blank cells in a URL column). Rows with an actual URL string import fine.",
+      "workaround": "For fields sourced from data where many rows legitimately have no URL (e.g. a Zotero export), use Data Type 'String' instead of 'URL'. The CIDOC ontologyclass/edge stays valid either way (Arches datatype and CIDOC ontologyclass are independent) - only the storage/widget type and the loss of the URL_REGEX format check and the separate url_label sub-field change.",
+      "upstream_issue": "Not filed - same approach as the EDTF issue above, worked around at the project level.",
+      "project_decision": "2026-09-10: Info's 'URL' field (Zotero import, DOI/Url present for most records but not all) switched from Data Type 'URL' to 'String'. Chronology's 'Digital provenance' field still uses Data Type 'URL' and was not changed - revisit if it is ever bulk-loaded from a source with blank values for that field."
     }
   ]
 }

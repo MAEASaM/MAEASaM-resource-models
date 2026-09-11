@@ -975,7 +975,7 @@
                     "alias": "maeasam_id",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
+                    "description": "A unique identifier assigned to each resource. Format: CHRN-8-digit number (e.g. CHRN-00000001).",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",

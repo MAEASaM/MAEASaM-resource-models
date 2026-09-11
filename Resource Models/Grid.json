@@ -944,7 +944,7 @@
                     "alias": "maeasam_id",
                     "config": {},
                     "datatype": "string",
-                    "description": "A unique ID given to each resource entered. This is a required field",
+                    "description": "A unique identifier assigned to each resource. Format: GRID-9-digit number (e.g. GRID-000016993).",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
