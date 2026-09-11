@@ -1,0 +1,706 @@
+<title>Metadata Field Log</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#F2F4EC;
+    --surface:#FBFCF8;
+    --surface-raised:#FFFFFF;
+    --ink:#1D231D;
+    --ink-soft:#57604F;
+    --ink-faint:#899080;
+    --line:#DADFCE;
+    --line-strong:#C2C9B3;
+    --accent:#3E6259;
+    --accent-ink:#25423A;
+    --accent-soft:#DCE6DC;
+    --ochre:#96692A;
+    --ochre-soft:#EEE2C9;
+    --red:#A23A2C;
+    --red-soft:#F3DAD3;
+    --green:#3E7A52;
+    --green-soft:#DCEBDF;
+    --amber:#96692A;
+    --amber-soft:#EEE2C9;
+    --shadow: 0 1px 2px rgba(30,35,25,0.06), 0 6px 20px -8px rgba(30,35,25,0.12);
+    --font-display:"Newsreader", "Iowan Old Style", Georgia, serif;
+    --font-body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    --font-mono:"IBM Plex Mono", "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#12160F;
+      --surface:#181D15;
+      --surface-raised:#1E241A;
+      --ink:#E7EBDD;
+      --ink-soft:#AEB79E;
+      --ink-faint:#6D7663;
+      --line:#2B3225;
+      --line-strong:#3A4332;
+      --accent:#8FC0AE;
+      --accent-ink:#BEE0D2;
+      --accent-soft:#233129;
+      --ochre:#D8AE6C;
+      --ochre-soft:#332A18;
+      --red:#E2897A;
+      --red-soft:#3A2521;
+      --green:#8CCB9E;
+      --green-soft:#20302A;
+      --amber:#D8AE6C;
+      --amber-soft:#332A18;
+      --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px -10px rgba(0,0,0,0.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#12160F;
+    --surface:#181D15;
+    --surface-raised:#1E241A;
+    --ink:#E7EBDD;
+    --ink-soft:#AEB79E;
+    --ink-faint:#6D7663;
+    --line:#2B3225;
+    --line-strong:#3A4332;
+    --accent:#8FC0AE;
+    --accent-ink:#BEE0D2;
+    --accent-soft:#233129;
+    --ochre:#D8AE6C;
+    --ochre-soft:#332A18;
+    --red:#E2897A;
+    --red-soft:#3A2521;
+    --green:#8CCB9E;
+    --green-soft:#20302A;
+    --amber:#D8AE6C;
+    --amber-soft:#332A18;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px -10px rgba(0,0,0,0.6);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:15px;
+    line-height:1.55;
+  }
+  ::selection{ background:var(--accent-soft); }
+
+  a{ color:var(--accent-ink); }
+
+  .skip{ position:absolute; left:-9999px; }
+
+  header.top{
+    position:sticky; top:0; z-index:20;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+  }
+  .top-inner{
+    max-width:1040px; margin:0 auto;
+    padding:22px 28px 0;
+  }
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:11px; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--ink-faint);
+    display:flex; align-items:center; gap:8px;
+  }
+  .eyebrow .dot{ width:5px; height:5px; border-radius:50%; background:var(--accent); }
+  h1.title{
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:clamp(28px,3.4vw,38px);
+    letter-spacing:-.01em;
+    margin:4px 0 16px;
+    text-wrap:balance;
+  }
+  nav.tabs{
+    display:flex; gap:4px; margin-top:2px;
+  }
+  nav.tabs button{
+    appearance:none; border:none; background:none; cursor:pointer;
+    font-family:var(--font-body); font-weight:500; font-size:14px;
+    color:var(--ink-soft);
+    padding:10px 6px 12px;
+    border-bottom:2px solid transparent;
+    display:flex; align-items:center; gap:8px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  nav.tabs button .count{
+    font-family:var(--font-mono); font-size:11px;
+    color:var(--ink-faint);
+    background:var(--surface-raised);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:1px 7px;
+  }
+  nav.tabs button + button{ margin-left:18px; }
+  nav.tabs button:hover{ color:var(--ink); }
+  nav.tabs button:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:4px; }
+  nav.tabs button[aria-selected="true"]{
+    color:var(--ink); border-bottom-color:var(--accent);
+  }
+  nav.tabs button[aria-selected="true"] .count{
+    color:var(--accent-ink); border-color:var(--accent); background:var(--accent-soft);
+  }
+
+  main{ max-width:1040px; margin:0 auto; padding:28px 28px 90px; }
+  section.panel[hidden]{ display:none; }
+
+  /* ---------- shared bits ---------- */
+  .pill{
+    display:inline-flex; align-items:center; gap:5px;
+    font-family:var(--font-mono); font-size:11px; font-weight:500;
+    letter-spacing:.02em;
+    padding:2px 8px; border-radius:20px;
+    white-space:nowrap;
+  }
+  .pill::before{ content:""; width:6px; height:6px; border-radius:50%; flex:none; }
+  .pill.open{ color:var(--red); background:var(--red-soft); }
+  .pill.open::before{ background:var(--red); }
+  .pill.progress{ color:var(--amber); background:var(--amber-soft); }
+  .pill.progress::before{ background:var(--amber); }
+  .pill.solved{ color:var(--green); background:var(--green-soft); }
+  .pill.solved::before{ background:var(--green); }
+
+  .tag{
+    font-family:var(--font-mono); font-size:10.5px; letter-spacing:.03em; text-transform:uppercase;
+    color:var(--ink-soft); background:var(--surface-raised);
+    border:1px solid var(--line);
+    padding:2px 7px; border-radius:5px; white-space:nowrap;
+  }
+  .badge-imp{
+    font-family:var(--font-mono); font-size:10.5px; letter-spacing:.03em; text-transform:uppercase;
+    padding:2px 7px; border-radius:5px; white-space:nowrap; border:1px solid transparent;
+  }
+  .badge-imp.high{ color:var(--red); border-color:var(--red); }
+  .badge-imp.low{ color:var(--ink-faint); border-color:var(--line-strong); }
+
+  code{
+    font-family:var(--font-mono); font-size:.92em;
+    background:var(--surface-raised); border:1px solid var(--line);
+    padding:0 4px; border-radius:4px;
+  }
+  strong{ font-weight:600; color:var(--ink); }
+
+  /* ---------- Tasks tab ---------- */
+  .stat-strip{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line);
+    border-radius:10px; overflow:hidden; margin-bottom:22px;
+  }
+  .stat{
+    background:var(--surface); padding:14px 16px;
+    display:flex; flex-direction:column; gap:2px;
+  }
+  .stat .n{
+    font-family:var(--font-display); font-size:26px; font-weight:600;
+    font-variant-numeric:tabular-nums;
+  }
+  .stat .l{ font-size:11.5px; color:var(--ink-soft); }
+  .stat.open .n{ color:var(--red); }
+  .stat.progress .n{ color:var(--amber); }
+  .stat.solved .n{ color:var(--green); }
+
+  .toolbar{
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:22px;
+  }
+  .search{
+    flex:1; position:relative;
+  }
+  .search input{
+    width:100%; font-family:var(--font-body); font-size:14px;
+    padding:9px 12px 9px 32px;
+    border:1px solid var(--line-strong); border-radius:8px;
+    background:var(--surface); color:var(--ink);
+  }
+  .search input:focus-visible{ outline:2px solid var(--accent); outline-offset:1px; }
+  .search svg{ position:absolute; left:10px; top:50%; transform:translateY(-50%); width:14px; height:14px; color:var(--ink-faint); }
+  .search .hint{ font-family:var(--font-mono); font-size:11px; color:var(--ink-faint); white-space:nowrap; }
+
+  .group-label{
+    font-family:var(--font-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--ink-faint); margin:28px 0 10px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .group-label::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .group-label:first-of-type{ margin-top:0; }
+
+  .task-list{ display:flex; flex-direction:column; gap:8px; }
+  .task{
+    background:var(--surface); border:1px solid var(--line);
+    border-radius:10px; padding:13px 15px;
+    display:flex; flex-direction:column; gap:7px;
+  }
+  .task.imp-high{ border-left:3px solid var(--red); }
+  .task-head{ display:flex; align-items:center; gap:7px; flex-wrap:wrap; }
+  .task-id{ font-family:var(--font-mono); font-size:11.5px; color:var(--ink-faint); margin-right:2px; }
+  .task-body{ font-size:14.5px; color:var(--ink); }
+  .task-body p{ margin:0; }
+  .task-notes{ font-size:13px; color:var(--ink-soft); border-top:1px dashed var(--line); padding-top:7px; margin-top:2px; }
+  .task-foot{ display:flex; justify-content:space-between; align-items:baseline; gap:10px; font-size:12px; color:var(--ink-faint); }
+  .task-foot .cat{ color:var(--ink-soft); }
+
+  .solved-list{ display:flex; flex-direction:column; }
+  .solved-row{
+    display:grid; grid-template-columns:44px 1fr 150px 92px;
+    gap:14px; align-items:start;
+    padding:10px 4px; border-bottom:1px solid var(--line);
+    font-size:13.5px;
+  }
+  .solved-row:first-child{ border-top:1px solid var(--line); }
+  .solved-row .sid{ font-family:var(--font-mono); font-size:11.5px; color:var(--ink-faint); padding-top:2px; }
+  .solved-row .stext{ color:var(--ink); }
+  .solved-row .scat{ font-size:11.5px; color:var(--ink-soft); padding-top:2px; }
+  .solved-row .sdate{ font-family:var(--font-mono); font-size:11.5px; color:var(--ink-faint); text-align:right; padding-top:2px; white-space:nowrap; }
+
+  .empty-state{ padding:40px 0; text-align:center; color:var(--ink-faint); font-size:13.5px; }
+
+  @media (max-width: 720px){
+    .stat-strip{ grid-template-columns:repeat(2,1fr); }
+    .solved-row{ grid-template-columns:1fr; gap:4px; }
+    .solved-row .sdate, .solved-row .scat{ text-align:left; }
+  }
+
+  /* ---------- Decisions tab ---------- */
+  .lede{
+    font-family:var(--font-display); font-size:17px; color:var(--ink-soft);
+    max-width:640px; margin:0 0 30px; font-style:italic;
+  }
+  .timeline{ position:relative; padding-left:26px; }
+  .timeline::before{
+    content:""; position:absolute; left:5px; top:6px; bottom:6px; width:1px; background:var(--line-strong);
+  }
+  .day{ position:relative; margin-bottom:36px; }
+  .day::before{
+    content:""; position:absolute; left:-26px; top:5px; width:11px; height:11px; border-radius:50%;
+    background:var(--accent-soft); border:2px solid var(--accent);
+  }
+  .day-date{
+    font-family:var(--font-mono); font-size:13px; color:var(--accent-ink);
+    font-weight:600; letter-spacing:.03em; margin-bottom:12px;
+  }
+  .day ul{ margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:11px; }
+  .day li{ position:relative; padding-left:16px; font-size:14.5px; }
+  .day li::before{ content:"—"; position:absolute; left:0; color:var(--ink-faint); }
+  .day li.key{
+    background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--ochre);
+    padding:10px 12px 10px 14px; border-radius:0 8px 8px 0; margin-left:-16px;
+  }
+  .day li.key::before{ content:""; }
+  .callout{
+    margin-top:22px; background:var(--surface); border:1px solid var(--line);
+    border-radius:10px; padding:16px 18px;
+  }
+  .callout h3{ font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-faint); margin:0 0 10px; }
+  .callout ul{ margin:0; padding-left:18px; }
+  .callout li{ margin-bottom:6px; font-size:13.5px; color:var(--ink-soft); }
+
+  /* ---------- Inconsistencies tab ---------- */
+  .topic{ margin-bottom:52px; }
+  .topic:last-child{ margin-bottom:0; }
+  .topic-num{ font-family:var(--font-mono); font-size:12px; color:var(--ochre); }
+  .topic h2{
+    font-family:var(--font-display); font-size:24px; font-weight:600; margin:2px 0 4px; text-wrap:balance;
+  }
+  .topic .found{ font-size:12.5px; color:var(--ink-faint); margin-bottom:18px; }
+
+  .ba-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:start; }
+  @media (max-width:800px){ .ba-grid{ grid-template-columns:1fr; } }
+  .ba-col{ border-radius:10px; padding:16px 18px; }
+  .ba-col.before{ background:var(--surface); border:1px solid var(--line); }
+  .ba-col.after{ background:var(--accent-soft); border:1px solid var(--accent); }
+  .ba-label{
+    font-family:var(--font-mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em;
+    margin-bottom:10px; display:flex; align-items:center; gap:6px;
+  }
+  .ba-col.before .ba-label{ color:var(--ink-faint); }
+  .ba-col.after .ba-label{ color:var(--accent-ink); }
+  .ba-col p{ margin:0 0 10px; font-size:13.8px; }
+  .ba-col ol, .ba-col ul{ margin:0; padding-left:18px; display:flex; flex-direction:column; gap:7px; font-size:13.8px; }
+
+  .mini-table{ width:100%; border-collapse:collapse; font-size:12.8px; margin:10px 0 14px; }
+  .mini-table th, .mini-table td{ border:1px solid var(--line); padding:6px 8px; text-align:left; vertical-align:top; }
+  .mini-table th{ background:var(--surface-raised); font-family:var(--font-mono); font-size:10.8px; text-transform:uppercase; letter-spacing:.03em; color:var(--ink-soft); }
+  .table-scroll{ overflow-x:auto; }
+
+  .findings{ margin-top:16px; display:flex; flex-direction:column; gap:10px; }
+  .finding{ font-size:13.8px; padding-left:14px; border-left:2px solid var(--line-strong); }
+  .finding strong{ color:var(--ink); }
+
+  .not-decided{
+    margin-top:16px; font-size:13px; color:var(--ink-soft);
+    background:var(--ochre-soft); border-radius:8px; padding:10px 14px;
+  }
+  .not-decided b{ color:var(--ochre); font-weight:600; }
+
+  .see-also{ margin-top:14px; font-family:var(--font-mono); font-size:11.5px; color:var(--ink-faint); }
+
+  footer.foot{
+    max-width:1040px; margin:0 auto; padding:0 28px 60px;
+    font-size:12px; color:var(--ink-faint); font-family:var(--font-mono);
+  }
+</style>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="eyebrow"><span class="dot"></span>MAEASaM &middot; Metadata Standardization</div>
+    <h1 class="title">Field Log</h1>
+    <nav class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-tab="tasks">Tasks <span class="count" id="count-open">19 open</span></button>
+      <button role="tab" aria-selected="false" data-tab="decisions">Decisions</button>
+      <button role="tab" aria-selected="false" data-tab="inconsistencies">Inconsistencies</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="panel" id="panel-tasks" role="tabpanel">
+    <div class="stat-strip">
+      <div class="stat open"><span class="n" id="stat-open">0</span><span class="l">Open</span></div>
+      <div class="stat progress"><span class="n" id="stat-progress">0</span><span class="l">In progress</span></div>
+      <div class="stat solved"><span class="n" id="stat-solved">0</span><span class="l">Solved</span></div>
+      <div class="stat"><span class="n" id="stat-high">0</span><span class="l">High priority open</span></div>
+    </div>
+    <div class="toolbar">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="task-search" type="text" placeholder="Search tasks, categories, notes&hellip;" autocomplete="off">
+      </div>
+      <span class="hint" id="search-hint"></span>
+    </div>
+    <div id="task-root"></div>
+  </section>
+
+  <section class="panel" id="panel-decisions" role="tabpanel" hidden>
+    <p class="lede">A chronological record of decisions actually made during standardization &mdash; kept separate from the open-issue tracker. Still-open questions live in <code>Reminders.md</code> and the Inconsistencies tab, not here.</p>
+
+    <div class="timeline">
+      <div class="day">
+        <div class="day-date">2026&#8209;09&#8209;09</div>
+        <ul>
+          <li><strong>Recorder must link to an Actor record everywhere</strong> (Resource-Instance-List, not plain text). RS and Info already did; extended to Grid, Map and Chronology (Chronology's CSV had already specified it &mdash; its JSON was a bug, now fixed).</li>
+          <li class="key"><strong>Canonical group names adopted</strong> (initial pick, later revised on 09&#8209;10) for the two &ldquo;system metadata&rdquo; clusters, replacing five inconsistent variants found across the seven models: <strong>Recording details</strong> &mdash; Recorder, Comment, Resource created at; <strong>Upload details</strong> &mdash; Uploader name, Upload date, Resource last modified at.</li>
+          <li><strong>Recorder's Cardinality standardized to 1..n</strong> across all five models that carry it (RS, Info, Chronology, Grid, Map) &mdash; one card, multiple people credited via the widget's own multi-select, rather than repeating the card. Also resolved Info's pre-existing Mandatory + 0..1 contradiction.</li>
+          <li><strong>Grid's &ldquo;Number of maps&rdquo;</strong> added as a node (mirroring &ldquo;Number of sites&rdquo; / &ldquo;Number of remote sensing sites&rdquo; &mdash; no data-entry widget, populated externally), isolated on its own branch (<code>grid-number-of-maps-node</code>) pending Arches import testing, rather than merged directly.</li>
+        </ul>
+      </div>
+
+      <div class="day">
+        <div class="day-date">2026&#8209;09&#8209;10</div>
+        <ul>
+          <li class="key"><strong>Final field names settled</strong> (resolves the &ldquo;still open&rdquo; naming question from 09&#8209;09): <code>Recorder</code> (was already the majority form; RS's &ldquo;Name of the recorder&rdquo; and Chronology's &ldquo;Name of recorder&rdquo; renamed to match) &middot; <code>Created at</code> (was &ldquo;Resource created at&rdquo; / Chronology's &ldquo;Resource creation at&rdquo;) &middot; <code>Comment</code> (unchanged) &middot; <code>Uploader</code> (was &ldquo;Uploader name&rdquo;) &middot; <code>Uploaded at</code> (was &ldquo;Upload date&rdquo;) &middot; <code>Last modified at</code> (was &ldquo;Resource last modified at&rdquo; / Chronology's &ldquo;Resource modified at&rdquo;).</li>
+          <li><strong>Group name for the second cluster revised to &ldquo;Uploading details&rdquo;</strong>, superseding 09&#8209;09's &ldquo;Upload details&rdquo; pick. Final pair: <strong>Recording details</strong> (the cataloguer's side) / <strong>Uploading details</strong> (the Arches ingestor's side).</li>
+          <li><strong>Uploader now also links to an Actor record</strong> in Actor, Admin, Grid and Map &mdash; both roles are people who should be represented in the Actor model. Consequence accepted: Uploader's Operational Info changes from Auto&#8209;Populated to Foreign Key, since Arches can't resolve a login session to an Actor record without custom development. Cardinality kept at 1 (not 1..n like Recorder) &mdash; a single ingestor per upload.</li>
+          <li>Renamed all multi-language widget labels' English text to match (Map's Arabic/French/Portuguese translations left untouched).</li>
+          <li class="key"><strong>&ldquo;Created at&rdquo; clarified as manually entered, not a system timestamp</strong> &mdash; resolving whether Created at / Uploaded at are the same event: they're not. Created at records when the cataloguer produced the content (manual); Uploaded at records when the record entered Arches (genuinely automatic). Operational Info changed from Auto&#8209;Populated to N/A across RS, Info, Chronology, Grid and Map.</li>
+          <li><strong>Copyright &amp; Access group coverage clarified</strong> &mdash; not every model should carry it, and that's correct, not a gap: <strong>Actor</strong> gets no group by design (not rights-bearing content); <strong>Grid</strong> initially called no-group, reversed later the same day (below); <strong>Info</strong>'s single merged <code>Copyright</code> field stays as-is (a verbatim Zotero import, not MAEASaM's own vocabulary); <strong>Admin</strong> is the one real gap &mdash; externally-sourced boundary data, needs the full five-field group.</li>
+          <li>Ledger files moved from <code>Scripts/exports/</code> (gitignored) to <code>Reference Documents/ledgers/</code> (tracked in git) &mdash; presentation material for the team/management, not local scratch work.</li>
+          <li class="key"><strong>Grid's &ldquo;no Copyright &amp; Access&rdquo; call reversed</strong> &mdash; it should get the full five-field group after all, matching Admin. Reasoning: &ldquo;we produced it ourselves&rdquo; isn't the right test for whether a licence is needed &mdash; an unlicensed resource defaults to &ldquo;all rights reserved&rdquo; in most jurisdictions, blocking reuse even when reuse is intended. There's a real possibility MAEASaM's grid data gets deposited in an external archive (ADS/tDAR/Zenodo-type) or shared with other teams later &mdash; added proactively rather than retrofitted.</li>
+          <li><strong>Both additions implemented the same day:</strong> Licence, Access level, Rights holder, Rights Notes and Preferred Citation added to Admin and Grid's CSV/JSON, matching RS/Chronology/Map field-for-field. CIDOC CRM Node Class left blank in both, consistent with the others &mdash; that classification stays Package 2's call.</li>
+          <li><strong>Canonical field/group order established for all seven templates:</strong> Copyright &amp; Access &rarr; Recording details &rarr; Uploading details, always last, in that order. Within each group the field order is fixed too: Licence/Access level/Rights holder/Rights Notes/Preferred Citation; Recorder/Comment/Created at; Uploader/Uploaded at/Last modified at.</li>
+          <li><strong>Every model completed to the full pattern, not just reordered</strong> &mdash; confirmed with the user before applying, since the supplied target order (<code>20260910_All_MetadataTemplates_01.xlsx</code>) turned out to add fields, not just reorder them: RS gained Comment/Uploader/Uploaded at; Actor and Admin gained Recorder/Created at; Chronology and Info gained Uploader/Uploaded at; <code>Nodes modified</code> intentionally removed from RS and Chronology.</li>
+          <li>Actor's and Chronology's pre-existing <code>Comment</code> fields were relocated into the new Recording details group, not duplicated &mdash; the supplied xlsx had in fact introduced a second, literal duplicate Comment node in both, caught before applying.</li>
+          <li>As a side effect of extracting Chronology's old Comment column, <code>Editorial note</code> briefly lost its Contextual information group label (a forward-fill artifact) &mdash; caught by the consistency checker and corrected before this was reported as done.</li>
+          <li>Also corrected in passing: the semantic container node behind the Uploading details card was still internally named &ldquo;Arches upload details&rdquo; in Actor, Admin, Grid and Map (the 09&#8209;09 rename only touched the card's own label) &mdash; fixed everywhere. RS's &ldquo;Copyright/access&rdquo; card label capitalization also fixed.</li>
+          <li class="key"><strong>Definitions for Recorder, Comment, Created at, Uploader, Uploaded at and Last modified at unified</strong> to one canonical sentence per field across all seven models &mdash; including two lingering &ldquo;grid square instance&rdquo; copy-paste-bug copies in Admin's and Grid's Uploaded at / Last modified at, missed when Uploader was fixed on 09&#8209;09. New wording drops the &ldquo;This node records&hellip;&rdquo; framing for direct phrasing, keeping Arches-internal (&ldquo;node&rdquo;) language out of user-facing text. The same &ldquo;This node&rdquo; phrasing exists in ~34 other definitions project-wide, mostly RS's own established style &mdash; left alone as a separate, bigger terminology decision (Task&nbsp;#65).</li>
+          <li>Fixed in the same pass: Info's Recorder Collection/Instructions said &ldquo;Actor Model (rm)&rdquo; instead of &ldquo;Actor (rm)&rdquo; &mdash; inconsistent with every other model and with the resource model's real name.</li>
+          <li><strong>RS.json's Copyright &amp; Access group deliberately left unrepaired</strong> (still has stale pre-09&#8209;02 node names/types, missing Licence and Rights holder) &mdash; fixing it means correcting existing stale nodes, not just adding new ones, bundled with the already-tracked RS.json drift (Task&nbsp;#57/#61) rather than attempted piecemeal here.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h3>Still open &mdash; not decided yet</h3>
+      <ul>
+        <li>Whether Uploader's now-manual entry needs a future Arches function to auto-resolve the logged-in user to their Actor record (restoring some form of auto-population) &mdash; flagged 2026&#8209;09&#8209;10, not scoped yet.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-inconsistencies" role="tabpanel" hidden>
+    <p class="lede">Cross-model inconsistencies found while standardizing the Metadata Templates, written up for team discussion. Each topic below carries the state found and, once a standard was agreed and applied, the resulting state.</p>
+
+    <div class="topic">
+      <div class="topic-num">Topic 01</div>
+      <h2>Resource version control, Cataloguer &amp; Admin roles</h2>
+      <div class="found">Found 2026&#8209;09&#8209;09 &middot; resolved 2026&#8209;09&#8209;10</div>
+
+      <div class="table-scroll">
+        <table class="mini-table">
+          <thead><tr><th>Model</th><th>Recorder</th><th>Created at</th><th>Last modified at</th><th>Uploader</th><th>Nodes modified</th></tr></thead>
+          <tbody>
+            <tr><td>RS (reference)</td><td>Yes &mdash; &ldquo;Name of the recorder&rdquo;</td><td>Yes</td><td>Yes</td><td>No</td><td>Yes</td></tr>
+            <tr><td>Chronology</td><td>Yes &mdash; &ldquo;Name of recorder&rdquo;</td><td>Yes &mdash; &ldquo;Resource creation at&rdquo;</td><td>Yes &mdash; &ldquo;Resource modified at&rdquo;</td><td>No</td><td>Yes</td></tr>
+            <tr><td>Info</td><td>Yes &mdash; &ldquo;Recorder&rdquo;</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
+            <tr><td>Actor</td><td>No</td><td>No</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+            <tr><td>Admin</td><td>No</td><td>No</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+            <tr><td>Grid</td><td>Yes &mdash; plain text</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+            <tr><td>Map</td><td>Yes &mdash; plain text</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ba-grid">
+        <div class="ba-col before">
+          <div class="ba-label">Before</div>
+          <p>No single model's field set covers every concept in use elsewhere &mdash; adopting any one wholesale means either dropping a concept some models rely on, or adding concepts to models that lack it. Grid and Map are the only two carrying both Recorder and Uploader side by side.</p>
+          <div class="findings">
+            <div class="finding"><strong>Naming varies per concept</strong> &mdash; Recorder: &ldquo;Recorder&rdquo; / &ldquo;Name of recorder&rdquo; / &ldquo;Name of the recorder&rdquo;; Created at: &ldquo;Resource created at&rdquo; / &ldquo;Resource creation at&rdquo;; Last modified: &ldquo;Resource last modified at&rdquo; / &ldquo;Resource modified at&rdquo;; Uploader name capitalization differs (Actor/Admin/Grid vs Map).</div>
+            <div class="finding"><strong>Recorder modeled two different ways</strong> &mdash; RS/Info link it to an Actor record; Grid/Map store plain free text; Chronology's CSV specified Resource-Instance-List but its JSON had plain string &mdash; a genuine mismatch, not a design choice.</div>
+            <div class="finding"><strong>Group naming varies</strong> &mdash; &ldquo;Resource version control&rdquo; / &ldquo;Arches upload details&rdquo; / &ldquo;Recording details&rdquo; / &ldquo;Recording Details&rdquo; / &ldquo;Uploader Details&rdquo; / a group containing only &ldquo;Recorder&rdquo;.</div>
+            <div class="finding"><strong>Copy-paste in definitions</strong> &mdash; Admin's Uploader name/Upload date/Resource last modified at, and Map's Uploader Name, all describe &ldquo;the grid square instance,&rdquo; copied verbatim from Grid, with two carried-over typos (&ldquo;uplaoded&rdquo;, &ldquo;ot Arches&rdquo;).</div>
+            <div class="finding">Map's Recorder definition is a single word (&ldquo;Cataloguer&rdquo;) where every other model has a full sentence.</div>
+            <div class="finding"><strong>Necessity/Cardinality drift</strong> &mdash; Info's Recorder is Mandatory but Cardinality 0..1; Info's Last modified at is Strongly recommended vs Mandatory in RS/Chronology; Map's Recorder allows 1..n while every other model is single-valued; Map's Comment is Mandatory, Grid's is Optional.</div>
+          </div>
+        </div>
+        <div class="ba-col after">
+          <div class="ba-label">&#10003; After</div>
+          <ol>
+            <li>Field names standardized: Recorder, Created at, Comment, Uploader, Uploaded at, Last modified at.</li>
+            <li>Group names standardized: <strong>Recording details</strong> (Recorder, Comment, Created at) and <strong>Uploading details</strong> (Uploader, Uploaded at, Last modified at).</li>
+            <li>Both Recorder and Uploader link to an Actor record everywhere they appear &mdash; Uploader's Auto&#8209;Populated traded for Foreign Key as a consequence.</li>
+            <li>Recorder's Cardinality standardized to 1..n; Uploader kept at 1.</li>
+            <li>Created at clarified as manually entered, distinct from Uploaded at's genuine auto-population. Operational Info corrected Auto&#8209;Populated &rarr; N/A across RS, Info, Chronology, Grid and Map.</li>
+          </ol>
+          <div class="not-decided"><b>Not yet decided:</b> whether every model should carry both concepts (RS/Chronology/Info still lack Uploading details; Actor/Admin still lack Recording details) &mdash; out of scope for this round. Also open: correct wording for Admin's copy-pasted &ldquo;grid square&rdquo; definitions.</div>
+        </div>
+      </div>
+      <div class="see-also">See also &middot; Task_List #46, #55</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-num">Topic 02</div>
+      <h2>Copyright &amp; Access</h2>
+      <div class="found">Found 2026&#8209;09&#8209;10 &middot; coverage question resolved 2026&#8209;09&#8209;10</div>
+
+      <p style="font-size:13.8px;color:var(--ink-soft);max-width:680px;margin:0 0 6px;">Unlike Topic 01, the CSV spec for this cluster (Licence, Access level, Rights holder, Rights Notes, Preferred Citation) was already settled and identical across RS, Chronology and Map back on 2026&#8209;09&#8209;02. What was uneven was coverage across models, and whether each model's Resource Model JSON had caught up with its own CSV.</p>
+
+      <div class="table-scroll">
+        <table class="mini-table">
+          <thead><tr><th>Model</th><th>CSV</th><th>Resource Model JSON</th></tr></thead>
+          <tbody>
+            <tr><td>RS</td><td>Full 5-field group</td><td>Missing entirely &mdash; stale pre-rename &ldquo;Copyright info&rdquo; node still there</td></tr>
+            <tr><td>Chronology</td><td>Full 5-field group</td><td>Missing entirely &mdash; never added</td></tr>
+            <tr><td>Map</td><td>Full 5-field group</td><td>Nodes exist, no CIDOC class/definition synced; group label casing mismatch</td></tr>
+            <tr><td>Info</td><td>One merged &ldquo;Copyright&rdquo; field, own group</td><td>Matches its own reduced CSV</td></tr>
+            <tr><td>Actor</td><td>No group</td><td>&mdash;</td></tr>
+            <tr><td>Admin</td><td>No group</td><td>&mdash;</td></tr>
+            <tr><td>Grid</td><td>No group</td><td>&mdash;</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="see-also" style="margin-bottom:16px;">Full field-by-field breakdown &middot; Reference Documents/ledgers/20260910_copyright_access_ledger_02.html</div>
+
+      <div class="ba-grid">
+        <div class="ba-col before">
+          <div class="ba-label">Before</div>
+          <p>Three open questions: should Actor/Admin/Grid carry the group at all, is Info's reduced field correct or a gap, and does each model's JSON match its own settled CSV.</p>
+        </div>
+        <div class="ba-col after">
+          <div class="ba-label">&#10003; After</div>
+          <ol>
+            <li><strong>Actor correctly has no Copyright/Access group</strong> &mdash; a person/org record isn't rights-bearing content. Deliberate, not a gap.</li>
+            <li><strong>Info's single merged Copyright field is also correct as-is</strong> &mdash; a verbatim Zotero import, not MAEASaM's own vocabulary. Not expanded to the 5-field pattern.</li>
+            <li><strong>Admin and Grid both got the full 5-field group</strong>, matching RS/Chronology/Map: Admin because its boundary data is externally sourced; Grid because &ldquo;we produced it ourselves&rdquo; isn't the right test &mdash; an unlicensed resource defaults to all-rights-reserved, and deposit/sharing is a real future possibility.</li>
+          </ol>
+          <div class="not-decided"><b>Still open (implementation only):</b> bring RS.json and Chronology.json's structure up to date with their own CSVs (group entirely missing from both), and sync Map.json's CIDOC classes, descriptions and group casing (Task&nbsp;#61).</div>
+        </div>
+      </div>
+      <div class="see-also">See also &middot; Task_List #38, #60, #61, #62</div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">Reference Documents/Task_List.md &middot; Decisions_Log.md &middot; Metadata_Inconsistencies.md &mdash; rendered snapshot, not live-synced to the repo.</footer>
+
+<script>
+(function(){
+  var OPEN = [
+    {id:66, imp:"", status:"open", tag:"(idea, parked)", cat:"Resource Model / ID scheme",
+     body:"<strong>Consider adding a <code>ResourceID</code> column to all 7 templates</strong> &mdash; not a real Arches node (unlike every other row, doesn't map to a graph node/CIDOC class/datatype), but a documentation of Arches' own bulk-load <code>ResourceID</code> convention: if the project pre-assigns a UUID before ingest, Arches uses it; if left blank, Arches generates one automatically. Real use case identified: pre-assigning UUIDs lets one bulk load cross-reference a resource that hasn't been ingested yet elsewhere in the same batch, without waiting on MAEASaM ID lookups. Related to the already-documented <code>resourceinstanceid</code> note in <code>metadata_rules.json</code>'s <code>identifier_concepts</code> (2026-09-06), which currently says no template field is needed for it &mdash; this would reverse that for the specific pre-assignment use case, not just documentation. Design mostly worked out (first column, &ldquo;Identifier(s)&rdquo; group, Necessity=Optional, Cardinality=0..1, Dublin Core=No direct equivalent, CIDOC/Data Type/Collection=N/A since it isn't a node), except the Operational Info label &mdash; leading candidate was &ldquo;Auto-Populated if blank&rdquo;, not yet confirmed. Shelved 2026-09-10, not implemented.",
+     notes:"Raised by the user 2026-09-10; related to #44 and #48 (two other identifier concepts already under discussion &mdash; MAEASaM ID and ARK Identifier &mdash; worth deciding together rather than piecemeal)."},
+    {id:65, imp:"", status:"open", cat:"Definitions / Terminology",
+     body:"<strong>&ldquo;This node records&hellip;&rdquo; phrasing is used in ~40 of 231 Definition (En) cells project-wide</strong> (mostly RS's own established style, predating today's work) &mdash; leaks Arches-internal terminology (&ldquo;node&rdquo;) into text meant for data-entry users, per the project's own Arches/Universal/User-form terminology tiers. Fixed for the 6 Recording/Uploading-details fields on 2026-09-10 (#64) by switching to direct wording; the remaining ~34 instances elsewhere are a separate, larger terminology-standardization decision.",
+     notes:"Found 2026-09-10 while unifying Recording/Uploading-details definitions."},
+    {id:44, imp:"High", status:"open", cat:"Content quality / ID scheme",
+     body:"<strong>MAEASaM ID format is inconsistent across all 7 models</strong> &mdash; digit count varies (6/8/9), whether a country code is part of the ID varies, and where both RS and Admin use <code>TYPE-COUNTRY-digits</code>, Map reverses it to <code>COUNTRY-TYPE-digits</code>. Only RS/Map/Chronology document their format at all.",
+     notes:"Found 2026-09-02 during the deep content review. Needs a real scheme decision &mdash; see Daily_Report_2026-09-02.md &sect;3.1. Highest-priority open item."},
+    {id:51, imp:"High", status:"open", cat:"Content quality / Data integrity",
+     body:"<strong>RS_MetadataTemplate.csv: two columns both named &ldquo;Date of image used&rdquo; are actually two different fields</strong>, not a copy-paste duplicate &mdash; column #33 (after Assessment date/Assessor name) is the Condition-assessment image date; column #45 (after Threat assessment date/Threat assessor name) is the Threat-assessment image date. Root cause: the Group label was never set to mark a new subsection starting at column #43, so columns #43&ndash;45 silently inherit the forward-filled &ldquo;Condition assessment&rdquo; group instead of their own. <strong>Needs testing</strong> by the user in the local Arches instance to confirm which node is which before renaming either column and fixing the missing Group label.",
+     notes:"Found 2026-09-09 while converting RS's date fields to EDTF (OU_csvXjson_match branch). Corrected 2026-09-09 after the user clarified these are two distinct concepts, not a value duplicate to merge."},
+    {id:5, imp:"", status:"open", cat:"Template / Guideline",
+     body:"Site has no Metadata Template and no Guideline at all.",
+     notes:"Biggest single gap &mdash; 158 JSON nodes, 136 fillable, nothing documented."},
+    {id:49, imp:"", status:"open", cat:"Resource Model / Data",
+     body:"<strong>Admin dataset is missing</strong> &mdash; <code>Datasets/</code> only contains an Info dataset; no real/exported Administrative data exists to validate the Admin template or Resource Model against.",
+     notes:"Flagged by the user 2026-09-08 while reviewing Grid's dependency on Admin (Grid's related-resource fields need real Map/Site/Admin data to check the &ldquo;Derived&rdquo; auto-population design against)."},
+    {id:8, imp:"", status:"open", cat:"Necessity",
+     body:"Admin: &ldquo;Geometry (WKT)&rdquo; Necessity value is literally the placeholder text <code>(Still to be decided if it will be added)</code>.",
+     notes:"A real unresolved decision left by whoever filled the template &mdash; needs an actual answer."},
+    {id:61, imp:"", status:"open", cat:"Resource Model / JSON",
+     body:"<strong><code>RS.json</code>'s Copyright &amp; Access group is still the stale pre-2026-09-02-rename structure</strong> &mdash; has &ldquo;Access level&rdquo; as plain string (not Concept-list), old field names &ldquo;Copyright info&rdquo; / &ldquo;Site data reference institution&rdquo; instead of &ldquo;Rights Notes&rdquo; / &ldquo;Preferred Citation&rdquo;, and is missing &ldquo;Licence&rdquo; and &ldquo;Rights holder&rdquo; entirely. Deliberately left untouched during the 2026-09-10 reorder pass (#63) since repairing it means renaming/retyping existing stale nodes, not just adding new ones.",
+     notes:"Found 2026-09-10, narrowed 2026-09-10 after #63."},
+    {id:57, imp:"", status:"open", cat:"Resource Model / JSON",
+     body:"<strong><code>Remote Sensing.json</code> has substantial drift from <code>RS_MetadataTemplate.csv</code> beyond the already-tracked #51 issue</strong> &mdash; a full <code>check_csv_json_match.py</code> run 2026-09-10 found 15 fields in CSV but not JSON, 14 in JSON but not CSV, 6 Group mismatches, and 3 Data Type mismatches, none related to today's Recording/Uploading details renaming. Likely the same sync gap #51 already addresses on <code>OU_csvXjson_match</code> &mdash; flagging in case it's broader than that branch's current scope.",
+     notes:"Found 2026-09-10 while verifying the Recorder/Uploader field renames didn't introduce new mismatches &mdash; this drift was already there beforehand."},
+    {id:50, imp:"", status:"open", cat:"Data Type / Arches bug",
+     body:"<strong>Arches EDTF datatype drops the combined <code>%</code> (uncertain+approximate) qualifier on save</strong> &mdash; confirmed on a local Arches 8.1.4 instance: <code>2004-06-11%</code> saves as <code>2004-06-11</code>, no error. Single <code>?</code> and <code>~</code> qualifiers work correctly alone. <strong>Decided 2026-09-08/09:</strong> proceed with EDTF adoption anyway; Date and EDTF split as separate Data Type values. 15 fields across 5 models now done (JSON datatype <code>edtf</code> + CSV Data Type/Input Instructions).",
+     notes:"Found 2026-09-08 while testing the Actor CSV/JSON Data Type mismatch. Upstream issue not filed &mdash; project chose to work around it internally."},
+    {id:7, imp:"", status:"open", cat:"Collection / data quality",
+     body:"RS: &ldquo;Threat type&rdquo; and &ldquo;Threat severity&rdquo; both reference the same vocabulary, <code>Disturbance cause (cv)</code>.",
+     notes:"Looks like a possible copy-paste slip; needs a human call, not silently changed."},
+    {id:45, imp:"", status:"open", cat:"Content quality",
+     body:"Map (19 fields) and Grid (4 fields) have Input Instructions text duplicated inside their Definition (En) &mdash; leftover from before the dedicated Input Instructions row existed. RS/Actor/Admin/Chronology/Info are already clean.",
+     notes:"Found 2026-09-02. Mechanical fix (strip the &ldquo;Please&hellip;&rdquo;/&ldquo;Leave this field blank&rdquo; sentence) once approved &mdash; see Daily_Report_2026-09-02.md &sect;3.2 for the full field list."},
+    {id:10, imp:"", status:"open", cat:"Data quality",
+     body:"Info: the &ldquo;Metadata (En)&rdquo; row has 21 non-empty cells while other rows have 22 &mdash; a one-field misalignment. <strong>Diagnosed 2026-09-02:</strong> a genuinely orphaned column between &ldquo;Copyright&rdquo; and &ldquo;Comment&rdquo; &mdash; has Data Type/Collection/Necessity/Cardinality set and a stray backslash in the Group cell, but no field name in any language and no definition. Someone started adding a field and never finished.",
+     notes:"Still needs a decision: name and define it, or delete the column. See Daily_Report_2026-09-02.md &sect;3.4."},
+    {id:48, imp:"", status:"open", cat:"ID scheme",
+     body:"<strong>Adopting ARK Identifiers as the project's persistent/citable external identifier scheme</strong> &mdash; distinct from &ldquo;MAEASaM ID&rdquo; (internal business key) and Arches' own <code>resourceinstanceid</code> (internal system UUID, already exists for every resource). Needs: a NAAN registration decision, which field/node would hold the ARK, and a minting workflow before any template work starts.",
+     notes:"Raised by the user 2026-09-06 &mdash; early-stage, no implementation yet."},
+    {id:30, imp:"", status:"open", cat:"Naming standard",
+     body:"Map's field naming was hand-crafted by the user (following on from RS, which the team built and approved together) and could be adopted as a secondary naming standard.",
+     notes:"Partially actioned: RS's Copyright/Access section was aligned to Map's naming on 2026-09-02 (#38). Still open for the rest of RS and the other models."},
+    {id:39, imp:"", status:"open", cat:"Workflow",
+     body:"The Excel &ldquo;CSV (Comma delimited)&rdquo;-based staging workflow (edit a copy, Claude reads and merges it) cannot carry Arabic content &mdash; needs a different path for any edit that touches Ar fields.",
+     notes:"Found 2026-09-02. Options: Google Sheets or LibreOffice Calc export as UTF-8 CSV (both handle Arabic correctly), or just describe Arabic edits in chat."},
+    {id:13, imp:"", status:"open", cat:"Package 1 (Translations)",
+     body:"Translations (Fr/Ar/Pt labels + definitions) are largely incomplete across every model except at the label level in a few places.",
+     notes:"Not started &mdash; Claude drafts, native speakers verify. Orhun's note: also belongs to the other work package."},
+    {id:14, imp:"", status:"progress", tag:"Waiting", cat:"Package 2 (CIDOC CRM)",
+     body:"CIDOC CRM classification (Node Class + Scope note) still has real gaps in RS (10), Map (51&ndash;52), Chronology (1&ndash;3), Info (3).",
+     notes:"Mail sent 2026-09-06, waiting on Renier &amp; Anto. Admin and Grid are already complete. Orhun's note: owned by Renier and Anto; also partly belongs to the other work package."},
+    {id:47, imp:"Low", status:"open", cat:"Content quality",
+     body:"Necessity level for the same conceptual field varies with no obvious reason across models: &ldquo;Comment&rdquo; (Mandatory/Optional/If applicable/Strongly recommended depending on model), &ldquo;Description&rdquo; (Optional/If applicable/Mandatory). &ldquo;Geometry (WKT)&rdquo; also varies but may be legitimately domain-driven.",
+     notes:"Found 2026-09-02 &mdash; see Daily_Report_2026-09-02.md &sect;3.5. Lower priority."}
+  ];
+
+  var PROGRESS = [
+    {id:15, cat:"Template / Guideline",
+     body:"Site metadata template/guideline creation.",
+     notes:"Blocked behind deciding how to handle its scale (158 nodes) &mdash; not started yet, listed here as the acknowledged next big piece of work."},
+    {id:6, cat:"Resource Model",
+     body:"Map's Resource Model JSON.",
+     notes:"<code>Resource Models/Map.json</code> now exists (generated via <code>Scripts/generate_map_resource_model.py</code>, structurally validated) and the <code>map-json</code> branch was merged to main via PR #11 on 2026-09-08. CIDOC CRM classes/properties in it are still placeholders pending review &mdash; not done until that review happens."}
+  ];
+
+  var SOLVED = [
+    {id:58, cat:"Resource Model / JSON", date:"2026-09-10", body:"<strong>Copyright &amp; Access group coverage, fully resolved and implemented:</strong> Actor's absence of the group is by design; Info's single merged Copyright field is correct as-is; Admin and Grid both needed the full 5-field group after all. Remaining JSON-sync issues tracked separately as #61. Full history: <code>ledgers/20260910_copyright_access_ledger_03.html</code>."},
+    {id:64, cat:"Definitions / Terminology", date:"2026-09-10", body:"Definitions for the 6 Recording/Uploading-details fields unified to one canonical wording per field, across all 7 models &mdash; including two lingering &ldquo;grid square instance&rdquo; copy-paste-bug copies. Also dropped the &ldquo;This node records&hellip;&rdquo; framing for direct wording. Also fixed: Info's Recorder said &ldquo;Actor Model (rm)&rdquo; instead of &ldquo;Actor (rm)&rdquo;."},
+    {id:63, cat:"Formatting / Data model", date:"2026-09-10", body:"All 7 templates reordered and completed to a single trailing sequence: Copyright &amp; Access &rarr; Recording details &rarr; Uploading details. Built by rebuilding each CSV from the repo's own clean data (not re-importing the xlsx's cell values directly) and mirroring into each Resource Model JSON. Confirmed with the user before applying which models gained which fields."},
+    {id:62, cat:"Resource Model / JSON", date:"2026-09-10", body:"Added the Copyright &amp; Access group (Licence, Access level, Rights holder, Rights Notes, Preferred Citation) to <code>Grid_MetadataTemplate.csv</code> / <code>Grid.json</code>, matching the RS/Chronology/Map pattern exactly."},
+    {id:60, cat:"Resource Model / JSON", date:"2026-09-10", body:"Added the Copyright &amp; Access group to <code>Admin_MetadataTemplate.csv</code> / <code>Administrative Model.json</code>, same pattern as #62/RS/Chronology/Map."},
+    {id:56, cat:"CIDOC CRM / Bug", date:"2026-09-10", body:"<code>Remote Sensing.json</code>'s &ldquo;Created at&rdquo; node had E63 Beginning of Existence as its CIDOC class while the CSV always said E50 Date &mdash; same copy-paste bug pattern already fixed in Grid on 2026-09-09. Fixed to E50 Date."},
+    {id:55, cat:"Naming standard / Data model", date:"2026-09-10", body:"Recorder/Uploader field and group naming standardized across all 7 models. Final scheme: Recorder / Created at / Comment / Uploader / Uploaded at / Last modified at; groups Recording details / Uploading details. Uploader traded Auto-Populated for Foreign Key."},
+    {id:46, cat:"Naming standard", date:"2026-09-10", body:"Superseded by #55 &mdash; see Decisions Log."},
+    {id:54, cat:"Data quality / Info", date:"2026-09-09", body:"Info's orphaned <code>APA_Reference</code> column filled in: renamed to &ldquo;APA Reference&rdquo;, Dublin Core Equivalent set to <code>bibliographicCitation</code>, Operational Info set to N/A, Definition and Input Instructions drafted."},
+    {id:53, cat:"Input Instructions / Rules gap", date:"2026-09-09", body:"<code>URL</code> Data Type had no <code>input_instructions</code> rule at all despite being valid since #19 &mdash; found via <code>Scripts/check_input_instructions.py</code>. Drafted and applied to the 2 affected fields. User-approved, DRAFT marker removed."},
+    {id:52, cat:"Input Instructions / Rules", date:"2026-09-09", body:"The EDTF Input Instructions text judged too verbose for a spreadsheet cell. Added <code>input_instructions_csv</code> to <code>metadata_rules.json</code> and applied the shortened text to all 15 EDTF fields."},
+    {id:1, cat:"Resource Model / JSON", date:"2026-09", body:"Actor.json / Actor_MetadataTemplate.csv mismatch &mdash; &ldquo;Contact information&rdquo;, &ldquo;Uploader name&rdquo;, &ldquo;Upload date&rdquo; now present in Resource Models/Actor.json."},
+    {id:3, cat:"Operational Info", date:"2026-09-06", body:"Actor's &ldquo;Uploader name&rdquo;, &ldquo;Upload date&rdquo;, &ldquo;Resource last modified at&rdquo; were N/A in Operational Info, now Auto-Populated (matching RS/Admin/Grid)."},
+    {id:16, cat:"Terminology", date:"2026-09-01", body:"Row label terminology normalized across all 7 templates (single canonical vocabulary)."},
+    {id:17, cat:"Dublin Core", date:"2026-09-01", body:"Dublin Core Equivalent filled for Admin, Grid, Info."},
+    {id:18, cat:"Collection", date:"2026-09-01", body:"Collection column normalized to Name (cv) / Name (rm) notation + N/A fill, across RS/Map/Admin/Chronology/Grid/Info."},
+    {id:19, cat:"Data Type", date:"2026-09-01/02", body:"Data Type vocabulary defined (<code>data_type_values</code>) and every model validated/fixed against it (Actor fixed by the user directly)."},
+    {id:20, cat:"Operational Info", date:"2026-09-02", body:"N/A added as a formal Operational Info type; Primary Key / Foreign Key rule violations found and fixed in RS, Admin, Grid."},
+    {id:21, cat:"Operational Info", date:"2026-09-02", body:"Chronology's and Info's fully-empty Operational Info rows filled."},
+    {id:22, cat:"Dublin Core", date:"2026-09-02", body:"Dublin Core basic 15 elements + in-use terms added to metadata_rules.json as reference vocabulary."},
+    {id:23, cat:"Necessity", date:"2026-09-02", body:"&ldquo;Mandatory if applicable&rdquo; / &ldquo;If applicable&rdquo; added to Necessity vocabulary (found in real use, undocumented)."},
+    {id:24, cat:"Necessity", date:"2026-09-02", body:"Chronology's &ldquo;Nodes modified&rdquo; Necessity typo fixed (&ldquo;Strongly recommend&rdquo; &rarr; &ldquo;Strongly recommended&rdquo;)."},
+    {id:25, cat:"Cardinality", date:"2026-09-02", body:"Cardinality validated across every model (including Actor) &mdash; fully clean."},
+    {id:26, cat:"Input Instructions", date:"2026-09-02", body:"Input Instructions (En) row added to all 7 templates, generated from Data Type + Operational Info."},
+    {id:27, cat:"Operational Info", date:"2026-09-02", body:"&ldquo;Resource created/modified/uploaded&rdquo;-type fields &rarr; Operational Info Auto-Populated rule discovered and applied to RS, Admin, Grid."},
+    {id:28, cat:"Formatting", date:"2026-09-02", body:"Sequential field numbering added to the header row of all 7 templates."},
+    {id:29, cat:"Data integrity", date:"2026-09-02", body:"Two Excel-encoding corruption incidents (RS, then Actor) caught and repaired without data loss."},
+    {id:31, cat:"Rules / metadata_rules.json", date:"2026-09-02", body:"<code>input_instructions</code> keys renamed to match <code>data_type_values</code> naming exactly, per the user's call that data_type_values is the authoritative vocabulary."},
+    {id:32, cat:"Input Instructions", date:"2026-09-02 (draft)", body:"Input Instructions drafted for GeoJSON-feature-collection and Number, applied to all 7 templates. Drafts pending the user's review, not final."},
+    {id:40, cat:"Operational Info", date:"2026-09-02", body:"Actor's Operational Info casing fixed: &ldquo;Primary key&rdquo; &rarr; &ldquo;Primary Key&rdquo;, &ldquo;Foreign key&rdquo; &rarr; &ldquo;Foreign Key&rdquo;."},
+    {id:42, cat:"Examples", date:"2026-09-02", body:"Filled Info's Example 1 and Example 2 with two real records from the user-provided Datasets/20260827_InfoDataset_uuidRel_OU.csv (INFO-00000003, INFO-00000004), picked to avoid the dataset's own mojibake-corrupted rows."},
+    {id:43, cat:"Definitions", date:"2026-09-02", body:"Definition (En) now complete everywhere except Info's known unnamed column (#10): RS's remaining 5 gaps closed via the Rights Notes/Preferred Citation/Licence merge (#38); Chronology's last gap (&ldquo;Comment&rdquo;) filled."},
+    {id:41, cat:"Dublin Core", date:"2026-09-02", body:"Filled Actor's previously-empty Dublin Core Equivalent row (0/17 &rarr; 17/17), following the same name/CIDOC-class mapping used for Admin/Grid/Info earlier."},
+    {id:38, cat:"Content / Data integrity", date:"2026-09-02", body:"Merged the user's real edits to RS and Map from an Excel staging file, read with cp1254 codepage. RS: &ldquo;Copyright info&rdquo;/&ldquo;Reference institution&rdquo; renamed to &ldquo;Rights Notes&rdquo;/&ldquo;Preferred Citation&rdquo;. <strong>Discovered: Turkish Windows' ANSI CSV export cannot represent Arabic at all</strong> &mdash; those diffs were correctly identified as corruption and ignored."},
+    {id:37, cat:"Data integrity", date:"2026-09-02", body:"A fourth and fifth Excel-encoding corruption (RS and Map, simultaneously) &mdash; no BOM, broken delimiters, RS's row count inflated from 58 to 250. Rebuilt both from git HEAD, reapplying every known transformation as explicit, verified rules rather than a history replay."},
+    {id:35, cat:"Group / formatting", date:"2026-09-02", body:"Fixed Map's missing &ldquo;Copyright/Access&rdquo; group label &mdash; those five fields visually read as part of the &ldquo;Recording Details&rdquo; group above them."},
+    {id:36, cat:"Operational Info", date:"2026-09-02", body:"Filled every remaining blank Operational Info cell with N/A, checked across all 7 templates: RS (5 cells) and Map (46 cells). Verified none were Resource-Instance-List first."},
+    {id:34, cat:"Definitions", date:"2026-09-02 (draft)", body:"Drafted the 10 missing Info Definition (En) values, matching the phrasing style already used in Info/RS/Grid. Drafts pending the user's review, not final."},
+    {id:33, cat:"Data integrity", date:"2026-09-02", body:"A third Excel-encoding corruption incident (Map, mixed tab/comma delimiters plus mojibake) &mdash; reverted to the last git-tracked clean version. The user's own recent hand-edits to Map were lost in this revert and needed to be redone."}
+  ];
+
+  function esc(s){ return s; }
+
+  function taskCard(t, statusKind, statusLabel){
+    var impBadge = t.imp ? '<span class="badge-imp '+(t.imp==='High'?'high':'low')+'">'+t.imp+'</span>' : '';
+    var tagBadge = t.tag ? '<span class="tag">'+t.tag+'</span>' : '';
+    var cls = 'task' + (t.imp==='High' ? ' imp-high' : '');
+    return '<article class="'+cls+'" data-search="'+ (t.id+' '+t.cat+' '+t.body+' '+(t.notes||'')).replace(/<[^>]+>/g,' ').toLowerCase().replace(/"/g,'&quot;') +'">'
+      + '<div class="task-head"><span class="task-id">#'+t.id+'</span><span class="pill '+statusKind+'">'+statusLabel+'</span>'+impBadge+tagBadge+'</div>'
+      + '<div class="task-body"><p>'+t.body+'</p></div>'
+      + (t.notes ? '<div class="task-notes">'+t.notes+'</div>' : '')
+      + '<div class="task-foot"><span class="cat">'+t.cat+'</span></div>'
+      + '</article>';
+  }
+
+  function solvedRow(t){
+    return '<div class="solved-row" data-search="'+ (t.id+' '+t.cat+' '+t.body).replace(/<[^>]+>/g,' ').toLowerCase().replace(/"/g,'&quot;') +'">'
+      + '<div class="sid">#'+t.id+'</div>'
+      + '<div class="stext">'+t.body+'</div>'
+      + '<div class="scat">'+t.cat+'</div>'
+      + '<div class="sdate">'+t.date+'</div>'
+      + '</div>';
+  }
+
+  var root = document.getElementById('task-root');
+  var html = '';
+
+  html += '<div class="group-label">Open &middot; '+OPEN.length+'</div><div class="task-list">';
+  OPEN.forEach(function(t){
+    html += taskCard(t, t.status==='open'?'open':'progress', t.status==='open' ? 'Open' : (t.tag||'Waiting'));
+  });
+  html += '</div>';
+
+  html += '<div class="group-label">In progress &middot; '+PROGRESS.length+'</div><div class="task-list">';
+  PROGRESS.forEach(function(t){ html += taskCard(t, 'progress', 'In progress'); });
+  html += '</div>';
+
+  html += '<div class="group-label">Solved &middot; '+SOLVED.length+'</div><div class="solved-list">';
+  SOLVED.forEach(function(t){ html += solvedRow(t); });
+  html += '</div>';
+
+  html += '<div class="empty-state" id="empty-state" hidden>No tasks match that search.</div>';
+
+  root.innerHTML = html;
+
+  document.getElementById('stat-open').textContent = OPEN.filter(function(t){return t.status==='open';}).length;
+  document.getElementById('stat-progress').textContent = PROGRESS.length + OPEN.filter(function(t){return t.status==='progress';}).length;
+  document.getElementById('stat-solved').textContent = SOLVED.length;
+  document.getElementById('stat-high').textContent = OPEN.filter(function(t){return t.imp==='High';}).length;
+  document.getElementById('count-open').textContent = (OPEN.filter(function(t){return t.status==='open';}).length) + ' open';
+
+  var searchInput = document.getElementById('task-search');
+  var hint = document.getElementById('search-hint');
+  searchInput.addEventListener('input', function(){
+    var q = searchInput.value.trim().toLowerCase();
+    var items = root.querySelectorAll('[data-search]');
+    var shown = 0;
+    items.forEach(function(el){
+      var match = !q || el.getAttribute('data-search').indexOf(q) !== -1;
+      el.hidden = !match;
+      if(match) shown++;
+    });
+    document.getElementById('empty-state').hidden = !(q && shown===0);
+    hint.textContent = q ? (shown + ' match' + (shown===1?'':'es')) : '';
+  });
+
+  var tabs = document.querySelectorAll('nav.tabs button');
+  var panels = { tasks: document.getElementById('panel-tasks'), decisions: document.getElementById('panel-decisions'), inconsistencies: document.getElementById('panel-inconsistencies') };
+  tabs.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      tabs.forEach(function(b){ b.setAttribute('aria-selected', b===btn ? 'true' : 'false'); });
+      Object.keys(panels).forEach(function(k){ panels[k].hidden = (k !== btn.dataset.tab); });
+    });
+  });
+})();
+</script>

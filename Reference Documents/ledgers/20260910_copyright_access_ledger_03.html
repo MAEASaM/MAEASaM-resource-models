@@ -1,0 +1,591 @@
+<title>Copyright & Access Ledger</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper: #ede7d8;
+    --paper-raised: #f7f3e7;
+    --ink: #262218;
+    --ink-soft: #6f6852;
+    --rule: #cdbd9a;
+    --accent: #2f4a5c;
+    --accent-ink: #eef2ee;
+    --brass: #8a6a34;
+    --ok: #3f6b46;
+    --ok-bg: #e3ecdf;
+    --warn: #9c5a1e;
+    --warn-bg: #f3e3cd;
+    --shadow: rgba(38,34,24,0.14);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper: #1c1a15;
+      --paper-raised: #262319;
+      --ink: #ece4d0;
+      --ink-soft: #a89d84;
+      --rule: #4a4330;
+      --accent: #7fa8bd;
+      --accent-ink: #14202a;
+      --brass: #c9a568;
+      --ok: #7fb489;
+      --ok-bg: #24352a;
+      --warn: #d99a55;
+      --warn-bg: #3a2d1c;
+      --shadow: rgba(0,0,0,0.45);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper: #1c1a15;
+    --paper-raised: #262319;
+    --ink: #ece4d0;
+    --ink-soft: #a89d84;
+    --rule: #4a4330;
+    --accent: #7fa8bd;
+    --accent-ink: #14202a;
+    --brass: #c9a568;
+    --ok: #7fb489;
+    --ok-bg: #24352a;
+    --warn: #d99a55;
+    --warn-bg: #3a2d1c;
+    --shadow: rgba(0,0,0,0.45);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap{ max-width: 980px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .eyebrow{
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 0 0 10px;
+  }
+  h1{
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    line-height: 1.08;
+    margin: 0 0 14px;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+  .lede{
+    max-width: 62ch;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    margin: 0 0 8px;
+  }
+  .lede strong{ color: var(--ink); font-weight: 600; }
+
+  header.page{
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 28px;
+    margin-bottom: 40px;
+  }
+
+  .legend{
+    display:flex; gap:18px; flex-wrap:wrap;
+    margin-top: 18px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.74rem;
+    color: var(--ink-soft);
+  }
+  .legend span{ display:inline-flex; align-items:center; gap:7px; }
+  .dot{ width:8px; height:8px; border-radius:50%; display:inline-block; }
+  .dot.ok{ background: var(--ok); }
+  .dot.warn{ background: var(--warn); }
+  .dot.gap{ background: var(--ink-soft); }
+
+  .coverage{
+    margin: 0 0 40px;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--paper-raised);
+  }
+  .coverage-head{
+    background: var(--accent);
+    color: var(--accent-ink);
+    padding: 12px 20px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .coverage table{ width:100%; border-collapse: collapse; font-size: 0.84rem; }
+  .coverage-wrap{ overflow-x: auto; }
+  .coverage th, .coverage td{
+    padding: 9px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--rule);
+    white-space: nowrap;
+  }
+  .coverage th{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--brass);
+    font-weight: 500;
+  }
+  .coverage tr:last-child td{ border-bottom: none; }
+  .pill{
+    display:inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem;
+    padding: 2px 9px;
+    border-radius: 100px;
+  }
+  .pill.full{ color: var(--ok); background: var(--ok-bg); }
+  .pill.partial{ color: var(--warn); background: var(--warn-bg); }
+  .pill.none{ color: var(--ink-soft); background: transparent; border: 1px dashed var(--rule); }
+
+  .group{ margin-bottom: 46px; }
+  .group-head{
+    display:flex; align-items:baseline; justify-content:space-between;
+    gap: 16px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    border-radius: 8px 8px 0 0;
+    padding: 14px 20px;
+  }
+  .group-head h2{
+    font-family:"Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.32rem;
+    margin: 0;
+    letter-spacing: -0.005em;
+  }
+  .group-head .role{
+    font-size: 0.86rem;
+    opacity: 0.86;
+    margin-top: 3px;
+    font-family: "IBM Plex Sans", sans-serif;
+  }
+  .group-head .count{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    opacity: 0.86;
+    align-self: flex-start;
+    padding-top: 4px;
+  }
+
+  .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 20px;
+    box-shadow: 0 1px 0 var(--rule) inset;
+  }
+
+  .card{
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 16px 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+  }
+  .card-top{
+    display:flex; align-items:flex-start; justify-content:space-between; gap: 10px;
+  }
+  .field-name{
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-size: 1.05rem;
+    color: var(--ink);
+  }
+  .chip{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 100px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .chip.ok{ color: var(--ok); background: var(--ok-bg); }
+  .chip.warn{ color: var(--warn); background: var(--warn-bg); }
+
+  .spec{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 8px 14px;
+    padding: 10px 0;
+    border-top: 1px dashed var(--rule);
+    border-bottom: 1px dashed var(--rule);
+  }
+  .spec div{ min-width:0; }
+  .spec .k{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.64rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--brass);
+    display:block;
+  }
+  .spec .v{
+    font-size: 0.86rem;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: break-word;
+  }
+
+  .def{ font-size: 0.9rem; color: var(--ink); }
+  .def em{ color: var(--ink-soft); font-style: normal; }
+
+  .note code, .def code{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.82em;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0 4px;
+  }
+
+  .note{
+    font-size: 0.82rem;
+    padding: 8px 10px;
+    border-left: 3px solid var(--warn);
+    background: var(--warn-bg);
+    color: var(--ink);
+    border-radius: 0 4px 4px 0;
+  }
+  .note.ok{ border-left-color: var(--ok); background: var(--ok-bg); }
+
+  details{ margin-top: 2px; }
+  summary{
+    cursor: pointer;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+    list-style: none;
+    display:flex; align-items:center; gap:6px;
+  }
+  summary::-webkit-details-marker{ display:none; }
+  summary::before{
+    content: "▸";
+    display:inline-block;
+    transition: transform 0.15s ease;
+    font-size: 0.7rem;
+  }
+  details[open] summary::before{ transform: rotate(90deg); }
+
+  .model-table{
+    margin-top: 10px;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.78rem;
+  }
+  .model-table-wrap{ overflow-x:auto; }
+  .model-table th, .model-table td{
+    text-align:left;
+    padding: 5px 8px;
+    border-bottom: 1px solid var(--rule);
+    white-space: nowrap;
+  }
+  .model-table th{
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 0.64rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--brass);
+    font-weight: 500;
+  }
+  .model-table td.model{ font-weight: 600; }
+  .model-table td.absent{ color: var(--ink-soft); font-style: italic; }
+  .model-table td.flag{ color: var(--warn); }
+
+  footer{
+    margin-top: 44px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+  footer code{
+    font-family:"IBM Plex Mono", monospace;
+    background: var(--paper-raised);
+    padding: 1px 5px;
+    border-radius: 3px;
+    border: 1px solid var(--rule);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    summary::before{ transition:none; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="page">
+    <p class="eyebrow">MAEASaM &middot; Metadata Standardization &middot; Snapshot 2026-09-10 &middot; 03</p>
+    <h1>Copyright &amp; Access Ledger</h1>
+    <p class="lede">Who may use a resource, under what licence, and how to cite it. RS, Chronology and Map already agree field&#8209;for&#8209;field in their CSVs (settled back on 2026&#8209;09&#8209;02, Task_List&nbsp;#38). Coverage across the other four models is now understood too: Actor deliberately has none (not rights&#8209;bearing content), Info's single field is a correct verbatim Zotero import, and Admin and Grid both need the group added &mdash; Admin because its boundary data is externally sourced, Grid because MAEASaM's own output may still be deposited or shared externally later. What's left is implementation: JSON catching up with each CSV, and adding the two new groups.</p>
+    <div class="legend">
+      <span><i class="dot ok"></i> Settled &mdash; CSV spec agreed, or correctly not applicable</span>
+      <span><i class="dot warn"></i> Real gap &mdash; needs work</span>
+    </div>
+  </header>
+
+  <div class="coverage">
+    <div class="coverage-head">Coverage across the 7 models</div>
+    <div class="coverage-wrap">
+    <table>
+      <thead><tr><th>Model</th><th>CSV</th><th>Resource Model JSON</th></tr></thead>
+      <tbody>
+        <tr><td class="model">RS</td><td><span class="pill full">Full 5&#8209;field group</span></td><td><span class="pill partial">Missing entirely &mdash; stale "Copyright info" leftover from before the 2026&#8209;09&#8209;02 rename</span></td></tr>
+        <tr><td class="model">Chronology</td><td><span class="pill full">Full 5&#8209;field group</span></td><td><span class="pill partial">Missing entirely &mdash; never added</span></td></tr>
+        <tr><td class="model">Map</td><td><span class="pill full">Full 5&#8209;field group</span></td><td><span class="pill partial">Nodes exist, but no CIDOC class or definition synced from CSV</span></td></tr>
+        <tr><td class="model">Info</td><td><span class="pill full">One merged field, "Copyright" &mdash; correct by design, see below</span></td><td><span class="pill full">Matches its own CSV</span></td></tr>
+        <tr><td class="model">Actor</td><td><span class="pill full">No group &mdash; by design, not rights&#8209;bearing content</span></td><td><span class="pill full">&mdash;</span></td></tr>
+        <tr><td class="model">Admin</td><td><span class="pill partial">No group yet &mdash; should be added, externally&#8209;sourced data</span></td><td><span class="pill partial">&mdash;</span></td></tr>
+        <tr><td class="model">Grid</td><td><span class="pill partial">No group yet &mdash; should be added, possible future external deposit/sharing</span></td><td><span class="pill partial">&mdash;</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <section class="group">
+    <div class="group-head">
+      <div>
+        <h2>Copyright &amp; Access</h2>
+        <div class="role">Licence, access level, rights holder, and how to cite the resource</div>
+      </div>
+      <div class="count">5 FIELDS</div>
+    </div>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-top">
+          <span class="field-name">Licence</span>
+          <span class="chip ok">Settled</span>
+        </div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Concept&#8209;list</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">license</span></div>
+          <div><span class="k">Op. Info</span><span class="v">N/A</span></div>
+        </div>
+        <p class="def">The licence under which the digital resource may be used or reused.</p>
+        <p class="note ok">Identical in RS, Chronology and Map &mdash; word for word, including the "Licences (cv)" controlled vocabulary reference.</p>
+        <details>
+          <summary>Per&#8209;model detail (7)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>CSV</th><th>Resource Model JSON</th></tr></thead>
+            <tbody>
+              <tr><td class="model">RS</td><td>Concept-list, Mandatory</td><td class="flag">field missing</td></tr>
+              <tr><td class="model">Chronology</td><td>Concept-list, Mandatory</td><td class="flag">field missing</td></tr>
+              <tr><td class="model">Map</td><td>Concept-list, Mandatory</td><td class="flag">present, description empty</td></tr>
+              <tr><td class="model">Info / Actor / Admin / Grid</td><td colspan="2" class="absent">no equivalent field</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="field-name">Access level</span>
+          <span class="chip ok">Settled</span>
+        </div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Concept&#8209;list</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">accessRights</span></div>
+          <div><span class="k">Op. Info</span><span class="v">N/A</span></div>
+        </div>
+        <p class="def">The level of access permitted for the digital resource.</p>
+        <p class="note ok">Identical in RS, Chronology and Map. Map's JSON is the only one where the node exists, but as plain <code>string</code>, not <code>Concept-list</code> &mdash; and its own Group label still reads lowercase <code>Copyright/access</code> against the CSV's <code>Copyright/Access</code>.</p>
+        <details>
+          <summary>Per&#8209;model detail (7)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>CSV</th><th>Resource Model JSON</th></tr></thead>
+            <tbody>
+              <tr><td class="model">RS</td><td>Concept-list, Mandatory</td><td class="flag">field missing</td></tr>
+              <tr><td class="model">Chronology</td><td>Concept-list, Mandatory</td><td class="flag">field missing</td></tr>
+              <tr><td class="model">Map</td><td>Concept-list, Mandatory</td><td class="flag">present as string; group casing differs</td></tr>
+              <tr><td class="model">Info / Actor / Admin / Grid</td><td colspan="2" class="absent">no equivalent field</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="field-name">Rights holder</span>
+          <span class="chip ok">Settled</span>
+        </div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Resource&#8209;Instance&#8209;List</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1..n</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">rightsHolder</span></div>
+          <div><span class="k">Op. Info</span><span class="v">Foreign Key</span></div>
+        </div>
+        <p class="def">The person or organisation holding or managing rights associated with the resource.</p>
+        <p class="note ok">Identical in RS, Chronology and Map &mdash; already links to Actor, same Foreign&#8209;Key pattern as the Recorder/Uploader ledger.</p>
+        <details>
+          <summary>Per&#8209;model detail (7)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>CSV</th><th>Resource Model JSON</th></tr></thead>
+            <tbody>
+              <tr><td class="model">RS</td><td>Resource-Instance-List, Mandatory</td><td class="flag">field missing</td></tr>
+              <tr><td class="model">Chronology</td><td>Resource-Instance-List, Mandatory</td><td class="flag">field missing</td></tr>
+              <tr><td class="model">Map</td><td>Resource-Instance-List, Mandatory</td><td class="flag">present, description empty</td></tr>
+              <tr><td class="model">Info / Actor / Admin / Grid</td><td colspan="2" class="absent">no equivalent field</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="field-name">Rights Notes</span>
+          <span class="chip ok">Settled</span>
+        </div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">String</span></div>
+          <div><span class="k">Necessity</span><span class="v">Optional</span></div>
+          <div><span class="k">Cardinality</span><span class="v">0..1</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">rights</span></div>
+          <div><span class="k">Op. Info</span><span class="v">N/A</span></div>
+        </div>
+        <p class="def">Additional information about rights, permissions, restrictions, or copyright status that is not captured by the other rights and access fields.</p>
+        <p class="note ok">Identical in RS, Chronology and Map &mdash; the free&#8209;text catch&#8209;all next to the three controlled fields above.</p>
+        <details>
+          <summary>Per&#8209;model detail (7)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>CSV</th><th>Resource Model JSON</th></tr></thead>
+            <tbody>
+              <tr><td class="model">RS</td><td>String, Optional</td><td class="flag">field missing</td></tr>
+              <tr><td class="model">Chronology</td><td>String, Optional</td><td class="flag">field missing</td></tr>
+              <tr><td class="model">Map</td><td>String, Optional</td><td class="flag">present, description empty</td></tr>
+              <tr><td class="model">Info / Actor / Admin / Grid</td><td colspan="2" class="absent">no equivalent field</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="field-name">Preferred Citation</span>
+          <span class="chip ok">Settled</span>
+        </div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">String</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">bibliographicCitation</span></div>
+          <div><span class="k">Op. Info</span><span class="v">Auto&#8209;Populated</span></div>
+        </div>
+        <p class="def">The recommended citation to use when referring to or reusing the resource.</p>
+        <p class="note">Identical in RS, Chronology and Map, but worth double&#8209;checking: it's the only field in this group marked <code>Auto&#8209;Populated</code> &mdash; confirm Arches actually generates it (from Rights holder + MAEASaM ID + title, presumably) rather than leaving cataloguers with a blank required field they can't fill in.</p>
+        <details>
+          <summary>Per&#8209;model detail (7)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>CSV</th><th>Resource Model JSON</th></tr></thead>
+            <tbody>
+              <tr><td class="model">RS</td><td>String, Auto-Populated</td><td class="flag">field missing</td></tr>
+              <tr><td class="model">Chronology</td><td>String, Auto-Populated</td><td class="flag">field missing</td></tr>
+              <tr><td class="model">Map</td><td>String, Auto-Populated</td><td class="flag">present, description empty</td></tr>
+              <tr><td class="model">Info / Actor / Admin / Grid</td><td colspan="2" class="absent">no equivalent field</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="group-head">
+      <div>
+        <h2>Info's outlier</h2>
+        <div class="role">A single merged field where everyone else has five &mdash; and that's correct</div>
+      </div>
+      <div class="count">1 FIELD</div>
+    </div>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-top">
+          <span class="field-name">Copyright</span>
+          <span class="chip ok">Settled</span>
+        </div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">String</span></div>
+          <div><span class="k">Necessity</span><span class="v">Strongly recommended</span></div>
+          <div><span class="k">Cardinality</span><span class="v">0..1</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">rights</span></div>
+          <div><span class="k">Op. Info</span><span class="v">N/A</span></div>
+        </div>
+        <p class="def">Some kind of statement about copyright or other rights and restrictions associated with the resource (or a hyperlink to such a statement).</p>
+        <p class="note ok">Resolved 2026&#8209;09&#8209;10: this is a verbatim import from Zotero's own rights field, saved as&#8209;is &mdash; not something MAEASaM classifies with its own Licence/Access&#8209;level vocabulary. Correctly stays a single free&#8209;text field, not expanded to the 5&#8209;field pattern. The lowercase group name ("Copyright/access" vs RS/Chronology/Map's "Copyright/Access") is still a minor casing inconsistency worth a mechanical fix.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="group-head">
+      <div>
+        <h2>Two planned additions</h2>
+        <div class="role">Models that should have this group and don't, yet</div>
+      </div>
+      <div class="count">0 / 5 FIELDS EACH</div>
+    </div>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-top">
+          <span class="field-name">Administrative Model</span>
+          <span class="chip warn">Real gap</span>
+        </div>
+        <p class="def">No Copyright &amp; Access fields exist yet in <code>Admin_MetadataTemplate.csv</code> or <code>Administrative Model.json</code>.</p>
+        <p class="note">Confirmed 2026&#8209;09&#8209;10: Admin's administrative boundary data is sourced externally (government/GIS institution) &mdash; genuinely rights&#8209;bearing content, should get the same 5&#8209;field group as RS/Chronology/Map. Not yet implemented (Task_List #60).</p>
+      </article>
+
+      <article class="card">
+        <div class="card-top">
+          <span class="field-name">Grid</span>
+          <span class="chip warn">Real gap (reversed call)</span>
+        </div>
+        <p class="def">No Copyright &amp; Access fields exist yet in <code>Grid_MetadataTemplate.csv</code> or <code>Grid.json</code>.</p>
+        <p class="note">Reversed 2026&#8209;09&#8209;10: originally judged unnecessary since Grid is MAEASaM's own output, not externally&#8209;licensed content. But "we produced it ourselves" isn't the right test &mdash; an unlicensed resource defaults to "all rights reserved," blocking reuse even when reuse is intended. There's a real possibility this data gets deposited in an external archive or shared with other teams later, so the group is being added proactively now rather than retrofitted afterward. Same 5&#8209;field pattern as Admin. Not yet implemented (Task_List #62).</p>
+      </article>
+
+    </div>
+  </section>
+
+  <footer>
+    Snapshot <code>20260910_copyright_access_ledger_03</code> &middot; supersedes <code>_02</code> from earlier today (Grid's coverage call reversed) &middot; CSV spec settled 2026&#8209;09&#8209;02 (Task_List #38) &middot; coverage question resolved 2026&#8209;09&#8209;10 (Task_List #58, #60, #61, #62) &middot; field/group ordering across templates tracked separately (#59).
+  </footer>
+</div>

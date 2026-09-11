@@ -104,10 +104,10 @@
                         "en": ""
                     },
                     "name": {
-                        "en": "Arches upload details"
+                        "en": "Uploading details"
                     },
                     "nodegroup_id": "f3e31883-d372-471e-a059-02c98f3df774",
-                    "sortorder": 4,
+                    "sortorder": 5,
                     "source_identifier_id": null,
                     "visible": true
                 },
@@ -134,8 +134,35 @@
                         "en": "Recording details"
                     },
                     "nodegroup_id": "ed0485e2-c0c8-4b87-9540-0f7f6102c6b2",
-                    "sortorder": 3,
+                    "sortorder": 4,
                     "source_identifier_id": null,
+                    "visible": true
+                },
+                {
+                    "active": true,
+                    "cardid": "8669779e-f0a2-4a09-96ea-da5b33667748",
+                    "component_id": "f05e4d3a-53c1-11e8-b0ea-784f435179ea",
+                    "config": null,
+                    "constraints": [],
+                    "cssclass": null,
+                    "description": null,
+                    "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
+                    "helpenabled": false,
+                    "helptext": {
+                        "en": ""
+                    },
+                    "helptitle": {
+                        "en": ""
+                    },
+                    "instructions": {
+                        "en": ""
+                    },
+                    "is_editable": false,
+                    "name": {
+                        "en": "Copyright/Access"
+                    },
+                    "nodegroup_id": "328d7905-882a-478d-97f1-d1fc8f31fb14",
+                    "sortorder": 3,
                     "visible": true
                 }
             ],
@@ -336,7 +363,7 @@
                     "edgeid": "93bc56f9-2728-455c-b44b-ac87f64abe2e",
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
                     "name": null,
-                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by",
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P11_had_participant",
                     "rangenode_id": "3c8138ea-7bd2-4262-9ce9-726b0d89c9f4",
                     "source_identifier_id": null
                 },
@@ -449,6 +476,70 @@
                     "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by",
                     "rangenode_id": "7b457bb0-cecf-46a3-8074-f5ace9290585",
                     "source_identifier_id": null
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "605521d9-e807-4f1a-adfd-2250e884156c",
+                    "edgeid": "1bb4f620-0330-45f4-b0c6-967e3cd4e9c5",
+                    "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
+                    "rangenode_id": "001926ac-74c5-4b2e-9ec8-f90bcb18cd68",
+                    "source_identifier_id": null
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "6af84876-ba83-11ee-aa09-4fdea520d3ce",
+                    "edgeid": "e07af66c-a032-4774-9c7e-7f7d212b379e",
+                    "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
+                    "rangenode_id": "c88f9738-6799-453d-9826-f9eeb03e7b61"
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "c88f9738-6799-453d-9826-f9eeb03e7b61",
+                    "edgeid": "1ebd8dae-1769-46d3-8cc5-27e53fe83649",
+                    "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P2_has_type",
+                    "rangenode_id": "045a1c76-0fa0-420b-b08c-5b772aafb2ed"
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "c88f9738-6799-453d-9826-f9eeb03e7b61",
+                    "edgeid": "5efb469e-e27c-46c7-b593-e78ac3158796",
+                    "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P2_has_type",
+                    "rangenode_id": "d1706d4b-3b77-4872-a2fb-cd91adb20367"
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "c88f9738-6799-453d-9826-f9eeb03e7b61",
+                    "edgeid": "e3a96d2d-cbc9-4300-8ced-022033e129b1",
+                    "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P67_refers_to",
+                    "rangenode_id": "2ca737b6-11ee-4e4a-850d-b8eda06b9ead"
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "c88f9738-6799-453d-9826-f9eeb03e7b61",
+                    "edgeid": "1d1ca3dc-d320-4287-8e61-9c794d852ada",
+                    "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
+                    "rangenode_id": "4b5e4875-ca55-4ed5-8fd3-a614f9b3f739"
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "c88f9738-6799-453d-9826-f9eeb03e7b61",
+                    "edgeid": "e7d56e20-0cd4-4418-a37f-52980b37c45a",
+                    "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
+                    "rangenode_id": "2a4d6375-08a4-4814-86f0-fa7a80765614"
                 }
             ],
             "functions_x_graphs": [
@@ -521,6 +612,12 @@
                     "legacygroupid": null,
                     "nodegroupid": "f3e31883-d372-471e-a059-02c98f3df774",
                     "parentnodegroup_id": null
+                },
+                {
+                    "cardinality": "1",
+                    "legacygroupid": null,
+                    "nodegroupid": "328d7905-882a-478d-97f1-d1fc8f31fb14",
+                    "parentnodegroup_id": null
                 }
             ],
             "nodes": [
@@ -541,7 +638,7 @@
                         "searchString": ""
                     },
                     "datatype": "resource-instance-list",
-                    "description": null,
+                    "description": "Another resource-instance-list node that links to the MAEASaM ID of all relevant Site resource instances linked to the map associated with the grid square.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -589,7 +686,7 @@
                         "dateFormat": "YYYY-MM-DD"
                     },
                     "datatype": "date",
-                    "description": null,
+                    "description": "The date on which this resource record was added to Arches.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -599,7 +696,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Upload date",
+                    "name": "Uploaded at",
                     "nodegroup_id": "f3e31883-d372-471e-a059-02c98f3df774",
                     "nodeid": "1586cfeb-ee28-45fc-8457-a2e99821a2aa",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E50_Date",
@@ -612,7 +709,7 @@
                     "alias": "sases_id",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
+                    "description": "The value is the relevant Standarized Site Enumeration System (SASES) id for the relevant grid square. This is a required field",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -633,10 +730,23 @@
                 },
                 {
                     "alias": "recorder",
-                    "config": {},
-                    "datatype": "string",
-                    "description": null,
-                    "exportable": false,
+                    "config": {
+                        "graphs": [
+                            {
+                                "graphid": "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",
+                                "inverseRelationshipConcept": "ac41d9be-79db-4256-b368-2f4559cfbe55",
+                                "name": "Actor",
+                                "relationshipCollection": "00000000-0000-0000-0000-000000000005",
+                                "relationshipConcept": "ac41d9be-79db-4256-b368-2f4559cfbe55",
+                                "useOntologyRelationship": false
+                            }
+                        ],
+                        "searchDsl": "",
+                        "searchString": ""
+                    },
+                    "datatype": "resource-instance-list",
+                    "description": "The name of the individual responsible for creating the resource record.",
+                    "exportable": true,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
                     "hascustomalias": false,
@@ -648,8 +758,8 @@
                     "name": "Recorder",
                     "nodegroup_id": "ed0485e2-c0c8-4b87-9540-0f7f6102c6b2",
                     "nodeid": "3c8138ea-7bd2-4262-9ce9-726b0d89c9f4",
-                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E82_Actor_Appellation",
-                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E39_Actor",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P11_had_participant",
                     "sortorder": 0,
                     "source_identifier_id": null,
                     "sourcebranchpublication_id": null
@@ -667,7 +777,7 @@
                         "searchString": ""
                     },
                     "datatype": "resource-instance-list",
-                    "description": null,
+                    "description": "A resource-instance-list node that lists the MAEASaM ID of all the identified remote sensing sites located within the relevant square.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -692,7 +802,7 @@
                         "dateFormat": "YYYY-MM-DD"
                     },
                     "datatype": "date",
-                    "description": null,
+                    "description": "The most recent date on which the resource record was modified.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -702,7 +812,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Resource last modified at",
+                    "name": "Last modified at",
                     "nodegroup_id": "f3e31883-d372-471e-a059-02c98f3df774",
                     "nodeid": "5d41adba-ed5b-4103-b8d2-fa542c825a0d",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E50_Date",
@@ -715,7 +825,7 @@
                     "alias": "comment",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
+                    "description": "Any additional information relevant to this resource that the recorder feels should be documented.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -761,7 +871,7 @@
                     "alias": "grid_square_long",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
+                    "description": "This value represents the name of the relevant grid and is based on the centroid of each grid square, with a precion of 3. This is a required field",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -811,7 +921,7 @@
                         "rdmCollection": "2cb5b62d-9079-4b57-8a83-c40d2fcd48a6"
                     },
                     "datatype": "concept-list",
-                    "description": null,
+                    "description": "This value is a controlled vocabulary that indicates the digitisation status of the map associated with the grid square. Please write the term exactly as recorded in the \"Map status\" controlled vocabulary.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -834,7 +944,7 @@
                     "alias": "maeasam_id",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
+                    "description": "A unique ID given to each resource entered. This is a required field",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -880,7 +990,7 @@
                         "weight": 2
                     },
                     "datatype": "geojson-feature-collection",
-                    "description": null,
+                    "description": "The geometry of the square is provided in WKT format. This is used for upload and display in Arches for each grid square entry. This is a required field",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -930,7 +1040,7 @@
                         "searchString": ""
                     },
                     "datatype": "resource-instance-list",
-                    "description": null,
+                    "description": "The node is a resource-instance-list node and links to the MAEASaM ID of the relevant map/s. Please write the MAEASaM ID of the relevant record from the \"Maps\" resource instance.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -955,7 +1065,7 @@
                         "dateFormat": "YYYY-MM-DD"
                     },
                     "datatype": "date",
-                    "description": null,
+                    "description": "The date on which the resource record was created in the database.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -965,7 +1075,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Resource created at",
+                    "name": "Created at",
                     "nodegroup_id": "ed0485e2-c0c8-4b87-9540-0f7f6102c6b2",
                     "nodeid": "b5de9703-4b33-4579-a9a7-13d56755c40b",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E50_Date",
@@ -978,7 +1088,7 @@
                     "alias": "number_of_remote_sensing_sites",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
+                    "description": "Indicates the number of remote sensing sites that have been identified within the relevant grid square.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -1001,7 +1111,7 @@
                     "alias": "number_of_sites",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
+                    "description": "This value indicates the number of sites that are present within the relevant grid square.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -1026,7 +1136,7 @@
                         "rdmCollection": "93bd13f6-3977-441d-90fa-79e5d1132b60"
                     },
                     "datatype": "concept-list",
-                    "description": null,
+                    "description": "A controlled vocabulary node that indicates the current status of the remote sensing survey located within the relevant grid square. Please write the term exactly as recorded in the \"Remote sensing survey progress\" controlled vocabulary.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -1049,7 +1159,7 @@
                     "alias": "grid_square_short",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
+                    "description": "This value represents the name of the relevant grid and is based on the centroid of each grid square, with a precion of 1. This is a required field",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -1105,7 +1215,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Arches upload details",
+                    "name": "Uploading details",
                     "nodegroup_id": "f3e31883-d372-471e-a059-02c98f3df774",
                     "nodeid": "f3e31883-d372-471e-a059-02c98f3df774",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E66_Formation",
@@ -1116,9 +1226,22 @@
                 },
                 {
                     "alias": "uploader_name",
-                    "config": {},
-                    "datatype": "string",
-                    "description": null,
+                    "config": {
+                        "graphs": [
+                            {
+                                "graphid": "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",
+                                "inverseRelationshipConcept": "ac41d9be-79db-4256-b368-2f4559cfbe55",
+                                "name": "Actor",
+                                "relationshipCollection": "00000000-0000-0000-0000-000000000005",
+                                "relationshipConcept": "ac41d9be-79db-4256-b368-2f4559cfbe55",
+                                "useOntologyRelationship": false
+                            }
+                        ],
+                        "searchDsl": "",
+                        "searchString": ""
+                    },
+                    "datatype": "resource-instance-list",
+                    "description": "The name of the individual that uploaded this resource record to Arches.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -1128,13 +1251,175 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Uploader name",
+                    "name": "Uploader",
                     "nodegroup_id": "f3e31883-d372-471e-a059-02c98f3df774",
                     "nodeid": "f65c4e2a-d090-4b5e-96ae-fbdcd900fcdc",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E82_Actor_Appellation",
                     "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by",
                     "sortorder": 0,
                     "source_identifier_id": null,
+                    "sourcebranchpublication_id": null
+                },
+                {
+                    "alias": "number_of_maps",
+                    "config": {},
+                    "datatype": "string",
+                    "description": "This indicates the number of maps that are associated with the relevant grid square",
+                    "exportable": false,
+                    "fieldname": null,
+                    "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
+                    "hascustomalias": false,
+                    "is_collector": false,
+                    "is_immutable": false,
+                    "isrequired": false,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "Number of maps",
+                    "nodegroup_id": "605521d9-e807-4f1a-adfd-2250e884156c",
+                    "nodeid": "001926ac-74c5-4b2e-9ec8-f90bcb18cd68",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E60_Number",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
+                    "sortorder": 0,
+                    "source_identifier_id": null,
+                    "sourcebranchpublication_id": null
+                },
+                {
+                    "alias": "copyright_access",
+                    "config": {
+                        "en": ""
+                    },
+                    "datatype": "semantic",
+                    "description": "",
+                    "exportable": false,
+                    "fieldname": null,
+                    "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
+                    "hascustomalias": false,
+                    "is_collector": true,
+                    "isrequired": false,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "Copyright/Access",
+                    "nodegroup_id": "328d7905-882a-478d-97f1-d1fc8f31fb14",
+                    "nodeid": "c88f9738-6799-453d-9826-f9eeb03e7b61",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity",
+                    "sortorder": 0,
+                    "sourcebranchpublication_id": null
+                },
+                {
+                    "alias": "licence",
+                    "config": {
+                        "rdmCollection": null
+                    },
+                    "datatype": "concept-list",
+                    "description": "The licence under which the digital resource may be used or reused.",
+                    "exportable": true,
+                    "fieldname": null,
+                    "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
+                    "hascustomalias": false,
+                    "is_collector": false,
+                    "isrequired": true,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "Licence",
+                    "nodegroup_id": "328d7905-882a-478d-97f1-d1fc8f31fb14",
+                    "nodeid": "045a1c76-0fa0-420b-b08c-5b772aafb2ed",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E55_Type",
+                    "sortorder": 0,
+                    "sourcebranchpublication_id": null
+                },
+                {
+                    "alias": "access_level",
+                    "config": {
+                        "rdmCollection": null
+                    },
+                    "datatype": "concept-list",
+                    "description": "The level of access permitted for the digital resource.",
+                    "exportable": true,
+                    "fieldname": null,
+                    "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
+                    "hascustomalias": false,
+                    "is_collector": false,
+                    "isrequired": true,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "Access level",
+                    "nodegroup_id": "328d7905-882a-478d-97f1-d1fc8f31fb14",
+                    "nodeid": "d1706d4b-3b77-4872-a2fb-cd91adb20367",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E55_Type",
+                    "sortorder": 1,
+                    "sourcebranchpublication_id": null
+                },
+                {
+                    "alias": "rights_holder",
+                    "config": {
+                        "graphs": [
+                            {
+                                "graphid": "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",
+                                "name": "Actor"
+                            }
+                        ],
+                        "searchDsl": "",
+                        "searchString": ""
+                    },
+                    "datatype": "resource-instance-list",
+                    "description": "The person or organisation holding or managing rights associated with the resource.",
+                    "exportable": true,
+                    "fieldname": null,
+                    "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
+                    "hascustomalias": false,
+                    "is_collector": false,
+                    "isrequired": true,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "Rights holder",
+                    "nodegroup_id": "328d7905-882a-478d-97f1-d1fc8f31fb14",
+                    "nodeid": "2ca737b6-11ee-4e4a-850d-b8eda06b9ead",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity",
+                    "sortorder": 2,
+                    "sourcebranchpublication_id": null
+                },
+                {
+                    "alias": "rights_notes",
+                    "config": {
+                        "en": ""
+                    },
+                    "datatype": "string",
+                    "description": "Additional information about rights, permissions, restrictions, or copyright status that is not captured by the other rights and access fields.",
+                    "exportable": true,
+                    "fieldname": null,
+                    "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
+                    "hascustomalias": false,
+                    "is_collector": false,
+                    "isrequired": false,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "Rights Notes",
+                    "nodegroup_id": "328d7905-882a-478d-97f1-d1fc8f31fb14",
+                    "nodeid": "4b5e4875-ca55-4ed5-8fd3-a614f9b3f739",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
+                    "sortorder": 3,
+                    "sourcebranchpublication_id": null
+                },
+                {
+                    "alias": "preferred_citation",
+                    "config": {
+                        "en": ""
+                    },
+                    "datatype": "string",
+                    "description": "The recommended citation to use when referring to or reusing the resource.",
+                    "exportable": true,
+                    "fieldname": null,
+                    "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
+                    "hascustomalias": false,
+                    "is_collector": false,
+                    "isrequired": true,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "Preferred Citation",
+                    "nodegroup_id": "328d7905-882a-478d-97f1-d1fc8f31fb14",
+                    "nodeid": "2a4d6375-08a4-4814-86f0-fa7a80765614",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
+                    "sortorder": 4,
                     "sourcebranchpublication_id": null
                 }
             ],
