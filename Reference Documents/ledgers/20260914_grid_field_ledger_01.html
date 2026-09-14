@@ -1,0 +1,724 @@
+<title>Grid Field Ledger</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper: #ede7d8;
+    --paper-raised: #f7f3e7;
+    --ink: #262218;
+    --ink-soft: #6f6852;
+    --rule: #cdbd9a;
+    --accent: #2f4a5c;
+    --accent-ink: #eef2ee;
+    --brass: #8a6a34;
+    --ok: #3f6b46;
+    --ok-bg: #e3ecdf;
+    --warn: #9c5a1e;
+    --warn-bg: #f3e3cd;
+    --bad: #a23a2c;
+    --bad-bg: #f3dad3;
+    --shadow: rgba(38,34,24,0.14);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper: #1c1a15;
+      --paper-raised: #262319;
+      --ink: #ece4d0;
+      --ink-soft: #a89d84;
+      --rule: #4a4330;
+      --accent: #7fa8bd;
+      --accent-ink: #14202a;
+      --brass: #c9a568;
+      --ok: #7fb489;
+      --ok-bg: #24352a;
+      --warn: #d99a55;
+      --warn-bg: #3a2d1c;
+      --bad: #e2897a;
+      --bad-bg: #3a2521;
+      --shadow: rgba(0,0,0,0.45);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper: #1c1a15;
+    --paper-raised: #262319;
+    --ink: #ece4d0;
+    --ink-soft: #a89d84;
+    --rule: #4a4330;
+    --accent: #7fa8bd;
+    --accent-ink: #14202a;
+    --brass: #c9a568;
+    --ok: #7fb489;
+    --ok-bg: #24352a;
+    --warn: #d99a55;
+    --warn-bg: #3a2d1c;
+    --bad: #e2897a;
+    --bad-bg: #3a2521;
+    --shadow: rgba(0,0,0,0.45);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap{ max-width: 1040px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .eyebrow{
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 0 0 10px;
+  }
+  h1{
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    line-height: 1.08;
+    margin: 0 0 14px;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+  .lede{
+    max-width: 68ch;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    margin: 0 0 8px;
+  }
+  .lede strong{ color: var(--ink); font-weight: 600; }
+
+  header.page{
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 28px;
+    margin-bottom: 40px;
+  }
+
+  .legend{
+    display:flex; gap:18px; flex-wrap:wrap;
+    margin-top: 18px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.74rem;
+    color: var(--ink-soft);
+  }
+  .legend span{ display:inline-flex; align-items:center; gap:7px; }
+  .dot{ width:8px; height:8px; border-radius:50%; display:inline-block; }
+  .dot.ok{ background: var(--ok); }
+  .dot.warn{ background: var(--warn); }
+
+  .stat-strip{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--rule); border:1px solid var(--rule);
+    border-radius:8px; overflow:hidden; margin:22px 0 0;
+  }
+  .stat{ background:var(--paper-raised); padding:12px 16px; display:flex; flex-direction:column; gap:2px; }
+  .stat .n{ font-family:"Fraunces", Georgia, serif; font-size:24px; font-weight:600; font-variant-numeric:tabular-nums; }
+  .stat .l{ font-size:11px; color:var(--ink-soft); }
+  .stat.warn .n{ color:var(--warn); }
+  .stat.ok .n{ color:var(--ok); }
+  @media (max-width:640px){ .stat-strip{ grid-template-columns:repeat(2,1fr); } }
+
+  .group{ margin-bottom: 46px; }
+  .group-head{
+    display:flex; align-items:baseline; justify-content:space-between;
+    gap: 16px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    border-radius: 8px 8px 0 0;
+    padding: 14px 20px;
+  }
+  .group-head h2{
+    font-family:"Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 1.32rem;
+    margin: 0;
+    letter-spacing: -0.005em;
+  }
+  .group-head .role{
+    font-size: 0.86rem;
+    opacity: 0.86;
+    margin-top: 3px;
+    font-family: "IBM Plex Sans", sans-serif;
+  }
+  .group-head .count{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    opacity: 0.86;
+    align-self: flex-start;
+    padding-top: 4px;
+  }
+
+  .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 20px;
+    box-shadow: 0 1px 0 var(--rule) inset;
+  }
+
+  .card{
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 16px 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+  }
+  .card-top{
+    display:flex; align-items:flex-start; justify-content:space-between; gap: 10px;
+  }
+  .field-name{
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-size: 1.02rem;
+    color: var(--ink);
+  }
+  .chip{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 100px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .chip.ok{ color: var(--ok); background: var(--ok-bg); }
+  .chip.warn{ color: var(--warn); background: var(--warn-bg); }
+
+  .spec{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+    gap: 8px 14px;
+    padding: 10px 0;
+    border-top: 1px dashed var(--rule);
+    border-bottom: 1px dashed var(--rule);
+  }
+  .spec div{ min-width:0; }
+  .spec .k{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--brass);
+    display:block;
+  }
+  .spec .v{
+    font-size: 0.85rem;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: break-word;
+  }
+
+  .def{ font-size: 0.88rem; color: var(--ink); }
+
+  .note code, .def code{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.82em;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0 4px;
+  }
+
+  .note{
+    font-size: 0.8rem;
+    padding: 8px 10px;
+    border-left: 3px solid var(--warn);
+    background: var(--warn-bg);
+    color: var(--ink);
+    border-radius: 0 4px 4px 0;
+  }
+  .note.ok{ border-left-color: var(--ok); background: var(--ok-bg); }
+  .note.bad{ border-left-color: var(--bad); background: var(--bad-bg); }
+  .note + .note{ margin-top: -2px; }
+
+  .csvjson{
+    margin-top: 2px;
+    font-size: 0.78rem;
+  }
+  .csvjson .cj-label{
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 0.62rem; letter-spacing:0.07em; text-transform:uppercase;
+    color: var(--brass); display:block; margin-bottom:4px;
+  }
+
+  .coverage{
+    margin: 28px 0 40px;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--paper-raised);
+  }
+  .coverage-head{
+    background: var(--accent); color: var(--accent-ink);
+    padding: 12px 20px; font-family: "IBM Plex Mono", monospace;
+    font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .coverage table{ width:100%; border-collapse: collapse; font-size: 0.82rem; }
+  .coverage-wrap{ overflow-x: auto; }
+  .coverage th, .coverage td{ padding: 8px 14px; text-align: left; border-bottom: 1px solid var(--rule); }
+  .coverage th{
+    font-family: "IBM Plex Mono", monospace; font-size: 0.64rem; letter-spacing: 0.05em;
+    text-transform: uppercase; color: var(--brass); font-weight: 500;
+  }
+  .coverage tr:last-child td{ border-bottom: none; }
+  .pill{ display:inline-block; font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; padding: 2px 9px; border-radius: 100px; }
+  .pill.warn{ color: var(--warn); background: var(--warn-bg); }
+  .pill.bad{ color: var(--bad); background: var(--bad-bg); }
+
+  footer{
+    margin-top: 44px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+  footer code{
+    font-family:"IBM Plex Mono", monospace;
+    background: var(--paper-raised);
+    padding: 1px 5px;
+    border-radius: 3px;
+    border: 1px solid var(--rule);
+  }
+</style>
+
+<div class="wrap">
+  <header class="page">
+    <p class="eyebrow">MAEASaM &middot; Metadata Standardization &middot; Snapshot 2026-09-14 &middot; 01</p>
+    <h1>Grid Field Ledger</h1>
+    <p class="lede">All 24 fields of <code>Grid_MetadataTemplate.csv</code> / <code>Grid.json</code>, one card per field, grouped the same way the template is. Every card carries the field's own spec (Data Type, Necessity, Cardinality, CIDOC CRM, Collection) and a CSV&nbsp;vs&nbsp;JSON check underneath &mdash; most fields are fully aligned; where they diverge, the note says exactly what differs and why it matters.</p>
+    <div class="legend">
+      <span><i class="dot ok"></i> CSV and JSON aligned</span>
+      <span><i class="dot warn"></i> CSV vs JSON difference found</span>
+    </div>
+    <div class="stat-strip">
+      <div class="stat"><span class="n">24</span><span class="l">Fields total</span></div>
+      <div class="stat ok"><span class="n">11</span><span class="l">Fully aligned</span></div>
+      <div class="stat warn"><span class="n">11</span><span class="l">Necessity vs isrequired</span></div>
+      <div class="stat warn"><span class="n">2</span><span class="l">Collection not linked</span></div>
+    </div>
+  </header>
+
+  <div class="coverage">
+    <div class="coverage-head">Where the differences are</div>
+    <div class="coverage-wrap">
+    <table>
+      <thead><tr><th>Field</th><th>Difference</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>MAEASaM ID</td><td><span class="pill warn">Necessity</span></td><td>CSV Mandatory &middot; JSON <code>isrequired=false</code></td></tr>
+        <tr><td>Grid square long</td><td><span class="pill warn">Necessity</span></td><td>CSV Mandatory &middot; JSON <code>isrequired=false</code></td></tr>
+        <tr><td>Grid square short</td><td><span class="pill warn">Necessity</span></td><td>CSV Mandatory &middot; JSON <code>isrequired=false</code></td></tr>
+        <tr><td>SASES ID</td><td><span class="pill warn">Necessity</span></td><td>CSV Mandatory &middot; JSON <code>isrequired=false</code></td></tr>
+        <tr><td>Geometry (WKT)</td><td><span class="pill warn">Necessity</span></td><td>CSV Mandatory &middot; JSON <code>isrequired=false</code></td></tr>
+        <tr><td>Remote sensing survey progress status</td><td><span class="pill warn">Necessity</span></td><td>CSV Mandatory &middot; JSON <code>isrequired=false</code></td></tr>
+        <tr><td>Licence</td><td><span class="pill bad">Collection</span></td><td>CSV &ldquo;Licences (cv)&rdquo; &middot; JSON <code>rdmCollection</code> is <code>null</code></td></tr>
+        <tr><td>Access level</td><td><span class="pill bad">Collection</span></td><td>CSV &ldquo;Access Levels (cv)&rdquo; &middot; JSON <code>rdmCollection</code> is <code>null</code></td></tr>
+        <tr><td>Recorder</td><td><span class="pill warn">Necessity</span></td><td>CSV Mandatory &middot; JSON <code>isrequired=false</code></td></tr>
+        <tr><td>Created at</td><td><span class="pill warn">Necessity</span></td><td>CSV Mandatory &middot; JSON <code>isrequired=false</code></td></tr>
+        <tr><td>Uploader</td><td><span class="pill warn">Necessity</span></td><td>CSV Mandatory &middot; JSON <code>isrequired=false</code></td></tr>
+        <tr><td>Uploaded at</td><td><span class="pill warn">Necessity</span></td><td>CSV Mandatory &middot; JSON <code>isrequired=false</code></td></tr>
+        <tr><td>Last modified at</td><td><span class="pill warn">Necessity</span></td><td>CSV Mandatory &middot; JSON <code>isrequired=false</code></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- ================= Identifier ================= -->
+  <section class="group">
+    <div class="group-head">
+      <div><h2>Identifier</h2><div class="role">MAEASaM's own key plus two derived grid-name forms</div></div>
+      <div class="count">4 FIELDS</div>
+    </div>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">MAEASaM ID</span><span class="chip warn">Diff found</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">String</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E42 Identifier</span></div>
+          <div><span class="k">Op. Info</span><span class="v">Primary Key</span></div>
+        </div>
+        <p class="def">A unique identifier assigned to each resource. Format: GRID-9-digit number (e.g. GRID-000016993).</p>
+        <div class="note warn"><span class="cj-label">CSV vs JSON</span>Name, Group, CIDOC, Data Type and Definition all match. Necessity says <strong>Mandatory</strong> but the JSON node has <code>isrequired: false</code> &mdash; Arches won't actually enforce this on save.</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Grid square long</span><span class="chip warn">Diff found</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">String</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E42 Identifier</span></div>
+          <div><span class="k">Op. Info</span><span class="v">N/A</span></div>
+        </div>
+        <p class="def">Name of the relevant grid, based on the centroid of the grid square, precision 3 (e.g. E32.625S18.125).</p>
+        <div class="note warn"><span class="cj-label">CSV vs JSON</span>Same Necessity/<code>isrequired</code> mismatch as MAEASaM ID. Also worth a look separately: the definition says this value is <em>derived from the centroid</em>, yet Operational Info is <code>N/A</code> and Input Instructions say to enter it as free text &mdash; if it's really computed from the geometry, Operational Info arguably belongs in the <code>Derived</code> bucket used elsewhere in this template (Map status, Related maps, etc.), not N/A. Flagging for review, not changed.</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Grid square short</span><span class="chip warn">Diff found</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">String</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E42 Identifier</span></div>
+          <div><span class="k">Op. Info</span><span class="v">N/A</span></div>
+        </div>
+        <p class="def">Name of the relevant grid, based on the centroid of the grid square, precision 1 (e.g. E32.6S18.1).</p>
+        <div class="note warn"><span class="cj-label">CSV vs JSON</span>Same Necessity/<code>isrequired</code> mismatch, and the same centroid-derivation-vs-N/A question as Grid square long above.</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">SASES ID</span><span class="chip warn">Diff found</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">String</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E42 Identifier</span></div>
+          <div><span class="k">Op. Info</span><span class="v">N/A</span></div>
+        </div>
+        <p class="def">The relevant Standardized Site Enumeration System (SASES) ID for the grid square.</p>
+        <div class="note warn"><span class="cj-label">CSV vs JSON</span>Name/Group/CIDOC/Data Type/Definition all match. Necessity says Mandatory, JSON <code>isrequired: false</code>.</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= Geometry ================= -->
+  <section class="group">
+    <div class="group-head">
+      <div><h2>Geometry</h2><div class="role">The grid square's shape and its remote-sensing survey status</div></div>
+      <div class="count">2 FIELDS</div>
+    </div>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Geometry (WKT)</span><span class="chip warn">Diff found</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">GeoJSON&#8209;feature&#8209;collection</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1..n</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E53 Place</span></div>
+          <div><span class="k">Op. Info</span><span class="v">N/A</span></div>
+        </div>
+        <p class="def">The geometry of the square, used for upload and display in Arches for each grid square entry.</p>
+        <div class="note warn"><span class="cj-label">CSV vs JSON</span>Necessity says Mandatory, JSON <code>isrequired: false</code>. Everything else lines up (Data Type/CIDOC/Definition match; the JSON nodegroup's own cardinality is <code>1</code> against the CSV's documented <code>1..n</code> &mdash; expected here, since a single <code>GeoJSON-feature-collection</code> value can already hold multiple features, not a real gap).</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Remote sensing survey progress status</span><span class="chip warn">Diff found</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Concept&#8209;list</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E17 Type Assignment</span></div>
+          <div><span class="k">Collection</span><span class="v">Remote sensing survey progress (cv)</span></div>
+        </div>
+        <p class="def">Indicates the current status of the remote sensing survey located within the grid square.</p>
+        <div class="note ok"><span class="cj-label">CSV vs JSON</span>Collection correctly linked &mdash; JSON <code>rdmCollection</code> is set to the vocabulary's UUID.</div>
+        <div class="note warn">Necessity says Mandatory, JSON <code>isrequired: false</code>.</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= Related resource models ================= -->
+  <section class="group">
+    <div class="group-head">
+      <div><h2>Related resource models</h2><div class="role">Everything linking the grid square to Maps, Sites and Remote Sensing records &mdash; all system-derived</div></div>
+      <div class="count">7 FIELDS</div>
+    </div>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Map status</span><span class="chip ok">Aligned</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Concept&#8209;list</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory if applicable</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1..n</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E17 Type Assignment</span></div>
+          <div><span class="k">Collection</span><span class="v">Map status (cv)</span></div>
+        </div>
+        <p class="def">Digitisation status of the map associated with the grid square. Derived from the linked Map record.</p>
+        <div class="note ok"><span class="cj-label">CSV vs JSON</span>Fully aligned &mdash; Collection correctly linked (JSON <code>rdmCollection</code> set), and the conditional Necessity ("Mandatory if applicable") is consistent with JSON <code>isrequired: false</code>, unlike the strict-Mandatory cases flagged elsewhere on this page.</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Related maps</span><span class="chip ok">Aligned</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Resource&#8209;Instance&#8209;List</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory if applicable</span></div>
+          <div><span class="k">Cardinality</span><span class="v">0..n</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E84 Information Carrier</span></div>
+          <div><span class="k">Collection</span><span class="v">Maps (rm)</span></div>
+        </div>
+        <p class="def">Links to the MAEASaM ID of the relevant Map record(s).</p>
+        <div class="note ok"><span class="cj-label">CSV vs JSON</span>Fully aligned. Collection is a resource-model reference ("(rm)"), which Arches doesn't track via <code>rdmCollection</code> &mdash; that config field only applies to controlled-vocabulary (cv) concept links, so there's nothing to check here beyond Name/Group/CIDOC/Data Type/Definition, which all match.</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Number of maps</span><span class="chip ok">Aligned</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">String</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory if applicable</span></div>
+          <div><span class="k">Cardinality</span><span class="v">0..n</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E60 Number</span></div>
+          <div><span class="k">Op. Info</span><span class="v">Derived</span></div>
+        </div>
+        <p class="def">The number of maps associated with the grid square.</p>
+        <div class="note ok"><span class="cj-label">CSV vs JSON</span>Fully aligned.</div>
+        <div class="note warn">CSV-internal, not a JSON diff: CIDOC class is <strong>E60 Number</strong> but Data Type is <strong>String</strong>, even though <code>Number</code> is already an established Data Type value in <code>metadata_rules.json</code>. Same pattern on Number of sites and Number of remote sensing sites below &mdash; worth a look, not changed.</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Related sites</span><span class="chip ok">Aligned</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Resource&#8209;Instance&#8209;List</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory if applicable</span></div>
+          <div><span class="k">Cardinality</span><span class="v">0..n</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E53 Place</span></div>
+          <div><span class="k">Collection</span><span class="v">Site (rm)</span></div>
+        </div>
+        <p class="def">Links to the MAEASaM ID of all Site records within the map associated with the grid square.</p>
+        <div class="note ok"><span class="cj-label">CSV vs JSON</span>Fully aligned (resource-model reference, no <code>rdmCollection</code> to check &mdash; see Related maps).</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Number of sites</span><span class="chip ok">Aligned</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">String</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory if applicable</span></div>
+          <div><span class="k">Cardinality</span><span class="v">0..n</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E60 Number</span></div>
+          <div><span class="k">Op. Info</span><span class="v">Derived</span></div>
+        </div>
+        <p class="def">The number of sites present within the grid square.</p>
+        <div class="note ok"><span class="cj-label">CSV vs JSON</span>Fully aligned.</div>
+        <div class="note warn">Same CIDOC E60 Number vs Data Type String note as Number of maps.</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Related remote sensing sites</span><span class="chip ok">Aligned</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Resource&#8209;Instance&#8209;List</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory if applicable</span></div>
+          <div><span class="k">Cardinality</span><span class="v">0..n</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E53 Place</span></div>
+          <div><span class="k">Collection</span><span class="v">Remote sensing (rm)</span></div>
+        </div>
+        <p class="def">Lists the MAEASaM ID of all remote sensing sites located within the grid square.</p>
+        <div class="note ok"><span class="cj-label">CSV vs JSON</span>Fully aligned (resource-model reference).</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Number of remote sensing sites</span><span class="chip ok">Aligned</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">String</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory if applicable</span></div>
+          <div><span class="k">Cardinality</span><span class="v">0..n</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E60 Number</span></div>
+          <div><span class="k">Op. Info</span><span class="v">Derived</span></div>
+        </div>
+        <p class="def">The number of remote sensing sites identified within the grid square.</p>
+        <div class="note ok"><span class="cj-label">CSV vs JSON</span>Fully aligned.</div>
+        <div class="note warn">Same CIDOC E60 Number vs Data Type String note as Number of maps / Number of sites.</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= Copyright/Access ================= -->
+  <section class="group">
+    <div class="group-head">
+      <div><h2>Copyright/Access</h2><div class="role">Who may use this record, under what licence, and how to cite it</div></div>
+      <div class="count">5 FIELDS</div>
+    </div>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Licence</span><span class="chip warn">Diff found</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Concept&#8209;list</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E55 Type</span></div>
+          <div><span class="k">Collection</span><span class="v">Licences (cv)</span></div>
+        </div>
+        <p class="def">The licence under which the digital resource may be used or reused.</p>
+        <div class="note ok"><span class="cj-label">CSV vs JSON</span>Necessity matches for once &mdash; JSON <code>isrequired: true</code>, consistent with Mandatory.</div>
+        <div class="note bad">Collection says "Licences (cv)" but the JSON node's <code>rdmCollection</code> is <code>null</code> &mdash; the controlled vocabulary isn't actually wired up yet.</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Access level</span><span class="chip warn">Diff found</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Concept&#8209;list</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E55 Type</span></div>
+          <div><span class="k">Collection</span><span class="v">Access Levels (cv)</span></div>
+        </div>
+        <p class="def">The level of access permitted for the digital resource.</p>
+        <div class="note ok"><span class="cj-label">CSV vs JSON</span>Necessity matches &mdash; JSON <code>isrequired: true</code>.</div>
+        <div class="note bad">Same as Licence: Collection says "Access Levels (cv)" but JSON <code>rdmCollection</code> is <code>null</code>.</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Rights holder</span><span class="chip ok">Aligned</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Resource&#8209;Instance&#8209;List</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1..n</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E1 CRM Entity</span></div>
+          <div><span class="k">Op. Info</span><span class="v">Foreign Key</span></div>
+        </div>
+        <p class="def">The person or organisation holding or managing rights associated with the resource.</p>
+        <div class="note ok"><span class="cj-label">CSV vs JSON</span>Fully aligned, including Necessity/<code>isrequired: true</code>.</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Rights Notes</span><span class="chip ok">Aligned</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">String</span></div>
+          <div><span class="k">Necessity</span><span class="v">Optional</span></div>
+          <div><span class="k">Cardinality</span><span class="v">0..1</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E62 String</span></div>
+          <div><span class="k">Op. Info</span><span class="v">N/A</span></div>
+        </div>
+        <p class="def">Additional information about rights, permissions, restrictions, or copyright status not captured elsewhere.</p>
+        <div class="note ok"><span class="cj-label">CSV vs JSON</span>Fully aligned &mdash; Optional matches <code>isrequired: false</code>.</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Preferred Citation</span><span class="chip ok">Aligned</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">String</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E62 String</span></div>
+          <div><span class="k">Op. Info</span><span class="v">Auto&#8209;Populated</span></div>
+        </div>
+        <p class="def">The recommended citation to use when referring to or reusing the resource.</p>
+        <div class="note ok"><span class="cj-label">CSV vs JSON</span>Fully aligned &mdash; Mandatory matches <code>isrequired: true</code>.</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= Recording details ================= -->
+  <section class="group">
+    <div class="group-head">
+      <div><h2>Recording details</h2><div class="role">Who catalogued this record, and when</div></div>
+      <div class="count">3 FIELDS</div>
+    </div>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Recorder</span><span class="chip warn">Diff found</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Resource&#8209;Instance&#8209;List</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1..n</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E39 Actor</span></div>
+          <div><span class="k">Op. Info</span><span class="v">Foreign Key</span></div>
+        </div>
+        <p class="def">The name of the individual responsible for creating the resource record.</p>
+        <div class="note warn"><span class="cj-label">CSV vs JSON</span>Necessity says Mandatory, JSON <code>isrequired: false</code>.</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Comment</span><span class="chip ok">Aligned</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">String</span></div>
+          <div><span class="k">Necessity</span><span class="v">Optional</span></div>
+          <div><span class="k">Cardinality</span><span class="v">0..n</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E62 String</span></div>
+          <div><span class="k">Op. Info</span><span class="v">N/A</span></div>
+        </div>
+        <p class="def">Any additional information relevant to this resource that the recorder feels should be documented.</p>
+        <div class="note ok"><span class="cj-label">CSV vs JSON</span>Fully aligned.</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Created at</span><span class="chip warn">Diff found</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Date</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E50 Date</span></div>
+          <div><span class="k">Op. Info</span><span class="v">N/A</span></div>
+        </div>
+        <p class="def">The date on which the resource record was created in the database.</p>
+        <div class="note warn"><span class="cj-label">CSV vs JSON</span>Necessity says Mandatory, JSON <code>isrequired: false</code>.</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= Uploading details ================= -->
+  <section class="group">
+    <div class="group-head">
+      <div><h2>Uploading details</h2><div class="role">Who ingested this record into Arches, and when</div></div>
+      <div class="count">3 FIELDS</div>
+    </div>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Uploader</span><span class="chip warn">Diff found</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Resource&#8209;Instance&#8209;List</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E82 Actor Appellation</span></div>
+          <div><span class="k">Op. Info</span><span class="v">Foreign Key</span></div>
+        </div>
+        <p class="def">The name of the individual that uploaded this resource record to Arches.</p>
+        <div class="note warn"><span class="cj-label">CSV vs JSON</span>Necessity says Mandatory, JSON <code>isrequired: false</code>.</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Uploaded at</span><span class="chip warn">Diff found</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Date</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E50 Date</span></div>
+          <div><span class="k">Op. Info</span><span class="v">Auto&#8209;Populated</span></div>
+        </div>
+        <p class="def">The date on which this resource record was added to Arches.</p>
+        <div class="note warn"><span class="cj-label">CSV vs JSON</span>Necessity says Mandatory, JSON <code>isrequired: false</code>.</div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Last modified at</span><span class="chip warn">Diff found</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Date</span></div>
+          <div><span class="k">Necessity</span><span class="v">Mandatory</span></div>
+          <div><span class="k">Cardinality</span><span class="v">1</span></div>
+          <div><span class="k">CIDOC</span><span class="v">E50 Date</span></div>
+          <div><span class="k">Op. Info</span><span class="v">Auto&#8209;Populated</span></div>
+        </div>
+        <p class="def">The most recent date on which the resource record was modified.</p>
+        <div class="note warn"><span class="cj-label">CSV vs JSON</span>Necessity says Mandatory, JSON <code>isrequired: false</code>.</div>
+      </article>
+
+    </div>
+  </section>
+
+  <footer>
+    Snapshot <code>20260914_grid_field_ledger_01</code> &middot; source: <code>Scripts/check_csv_json_match.py</code> (extended 2026&#8209;09&#8209;14 with Necessity/Collection checks), run against <code>Grid_MetadataTemplate.csv</code> &amp; <code>Grid.json</code> &middot; raw diff export: <code>Scripts/exports/20260914_Grid_CSVvsJSON_MatchReport.csv</code> &middot; Necessity/<code>isrequired</code> pattern also confirmed on Info (9 fields) and Actor (14 fields), not yet checked on Admin/Chronology/Map/RS &middot; see Task_List #79. Collection-linking fixes for Licence/Access level are being made directly in Arches by the user, not here.
+  </footer>
+</div>
