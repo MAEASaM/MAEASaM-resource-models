@@ -20,3 +20,10 @@ COMPLETED BUT REQUIRES SOME MODIFICATIONS,"First-pass complete, flagged for smal
 COMPLETED,"Reviewed and finished, ready to queue for Arches upload.",dark green
 COMPLETED IN ARCHES,Uploaded and live in Arches.,peach
 TO BE DELETED,"Marked for removal - should not be uploaded, and should be removed from Arches if already there.",red
+
+Standard sentinel terms (decided 2026-09-14),,,,,
+Term (En),Definition (En),Alt Label(s) (En) - folds in existing synonym wordings found in the vocabs,When to use it,,
+Unknown,The actual value is not known or has not been recorded.,No information; Not specified; Unclear,Add to any vocab where a recorder might genuinely not know the value for a real record.,,
+Other,A real value applies to this record but is not covered by any term currently in this vocabulary.,,"Add to any vocab that is realistically incomplete - a signal the vocab itself may need a new term added later, not a data-quality gap. Skip for small closed/technical vocabs (e.g. Coordinate System, EPSG) where every valid value is already enumerable.",,
+Not applicable,The question this field asks does not apply to this record.,,Add to any vocab where the underlying question can legitimately not apply to some records.,,
+,"Rule: do not add all 3 to every vocab automatically - each is added only where the concept is meaningful for that specific vocab, per-vocab judgment call during CV-11's rollout. Do not keep 'No information'/'Not specified'/'Unclear' etc. as separate terms going forward where 'Unknown' already exists or is being added - fold them into Unknown's Alt Label(s) (En) instead (existing Arches-uploaded terms with these exact labels are renamed as part of the same rollout, not left duplicated).",,,,,
