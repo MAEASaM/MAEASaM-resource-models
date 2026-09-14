@@ -1,0 +1,22 @@
+Field name,Required?,Definition / purpose,Replaces (legacy CSV header pattern seen),Maps to (Arches SKOS/XML),Example
+Term ID,Required,"A stable, unique identifier for this term. Use the term's existing Arches concept UUID once it has been uploaded; leave blank for a candidate term not yet in Arches (fill in after upload).",(no equivalent existed - no CSV had an ID column),skos:Concept rdf:about (the concept's UUID),51c2a811-fb63-48bb-af5f-8ae165032e71
+Parent Term ID,Optional (blank = top-level term),"The Term ID of this term's immediate broader/parent term. Replaces the old ""Hierarchy 2/3/4..."" column-per-level layout - one row per term, any hierarchy depth, no new columns needed as depth grows.",Hierarchy 2 en / Hierarchy 3 en / ... (position in the old wide layout),skos:broader,(Term ID of the parent term)
+Term (En),Required,"The English name of the term, as it should appear to users and be recorded in Arches.",Hierarchy N en,"skos:prefLabel[@xml:lang=""en""]",Radiocarbon dating
+Term (Fr),Optional,French translation of the term name.,Hierarchy N fr / Hierarchy N translation fr / Hierarchy N translation in fr,"skos:prefLabel[@xml:lang=""fr""]",Datation au radiocarbone
+Term (Ar),Optional,Arabic translation of the term name.,Hierarchy N ar,"skos:prefLabel[@xml:lang=""ar""]",التأريخ بالكربون المشع
+Term (Pt),Optional,"Portuguese translation of the term name. Currently empty in every vocabulary - a real, unfilled gap (see CV_Task_List.md CV-5), not a field to skip going forward.",(no equivalent existed - zero Pt columns found anywhere),"skos:prefLabel[@xml:lang=""pt""]",
+Alt Label(s) (En),Optional,"One or more English synonyms/alternative labels for the term, separated by "";"". Replaces the old repeated ""Hierarchy N alternative en / .1 / .2 ..."" columns (some vocabs had up to 6 of these per level).",Hierarchy N alternative en(.N),"skos:altLabel[@xml:lang=""en""]",14C dating; Carbon dating
+Definition (En),Required,A concise definition of what the term means.,Hierarchy N description en / Hierarchy N definition en,"skos:scopeNote[@xml:lang=""en""] (confirmed this project's Arches xml already uses scopeNote, not skos:definition, for this content)",The measurement of the ratio of the radioactive isotope 14C to stable carbon isotopes in organic material.
+Definition (Fr),Optional,French translation of the definition.,Hierarchy N description fr,"skos:scopeNote[@xml:lang=""fr""]",
+Definition (Ar),Optional,Arabic translation of the definition.,Hierarchy N description ar,"skos:scopeNote[@xml:lang=""ar""]",
+Definition (Pt),Optional,"Portuguese translation of the definition. Currently empty everywhere, same gap as Term (Pt).",(no equivalent existed),"skos:scopeNote[@xml:lang=""pt""]",
+Source (En),Optional,"Citation or attribution for where the term or its definition came from (a named standard, a contributor, a reference work).",Hierarchy N source en,no dedicated XML field currently used for this in the project's export - would need a skos:note or a custom note kept in this column only,FISH Archaeological Thesaurus
+Status,Recommended,"Review/upload progress for this term, carried over from the xlsx workbook's colour-only legend so it survives outside Excel. One of the 6 values below.",(was Excel cell/tab fill colour only - never a real column in any CSV),"no XML equivalent - a term is either present in Arches or it isn't; this column tracks the human review workflow, not Arches state",COMPLETED IN ARCHES
+
+Status value,Meaning,Legend colour (xlsx)
+NOT STARTED,No review work has begun on this term yet.,light pink
+STARTED BUT REQUIRES ATTENTION,Someone has started but the term needs more work before it's ready to check.,yellow
+COMPLETED BUT REQUIRES SOME MODIFICATIONS,"First-pass complete, flagged for small fixes.",light green
+COMPLETED,"Reviewed and finished, ready to queue for Arches upload.",dark green
+COMPLETED IN ARCHES,Uploaded and live in Arches.,peach
+TO BE DELETED,"Marked for removal - should not be uploaded, and should be removed from Arches if already there.",red

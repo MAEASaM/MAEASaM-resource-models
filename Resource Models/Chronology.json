@@ -185,7 +185,7 @@
                         "en": ""
                     },
                     "name": {
-                        "en": "Identifier"
+                        "en": "Identifiers"
                     },
                     "nodegroup_id": "e1ddb87e-d169-4f65-bbf4-6c3f4261bced",
                     "sortorder": 0,
@@ -1520,7 +1520,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Identifier",
+                    "name": "Identifiers",
                     "nodegroup_id": "e1ddb87e-d169-4f65-bbf4-6c3f4261bced",
                     "nodeid": "e1ddb87e-d169-4f65-bbf4-6c3f4261bced",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E42_Identifier",

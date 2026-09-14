@@ -1,0 +1,13 @@
+﻿Term ID,Parent Term ID,Term (En),Term (Fr),Term (Ar),Term (Pt),Alt Label(s) (En),Definition (En),Definition (Fr),Definition (Ar),Definition (Pt),Source (En),Status
+04f64760-8256-4375-b67d-f30d2554ba9c,,Community organisation,,,,Community member,An individual or organisation that represents a specific community,Une personne ou une organisation qui représente une communauté spécifique,,,,
+e69a6e32-18e0-4d6a-a055-03b9c037b95e,,Land owner,,,,,An individual or organisation that owns land on which a heritage site is located,Un individu ou une organisation qui possède un terrain sur lequel se trouve un site patrimonial,,,,
+,,Staff member,,,,,"This actor works as an employee at the actor (usually an institution) listed under ""Association"". A counterpart to ""Employer of"".","Cet acteur travaille en tant qu'employé auprès de l'acteur (généralement une institution) mentionné sous ""Association"". Contrepartie de ""Employeur de"".",,,,
+,,Former staff member,,,,,,,,,,
+8842cff1-fb82-4b10-a618-5d989508b448,,Employer,,,,,"This actor (usually an institution) employs the actor listed under ""Association"". A counterpart to ""Employed by"".","Cet acteur (généralement une institution) emploie l'acteur mentionné sous ""Association"". Contrepartie de ""Employé par"".",,,,
+,,Employee,,,,,,,,,,
+47841463-c904-44e4-b987-a28618e84b7b,,Affiliated with,,,,Associated with,The actor is affiliated with the project but does not work at a partner institution,L'acteur est affilié au projet mais ne travaille pas dans une institution partenaire.,,,,
+2b71fef4-29a4-49b5-9ab2-8ca1970b5d19,,Project institution,,,,,An institution that forms part of the MAEASaM project,Une institution qui fait partie du projet MAEASaM,,,,
+52a0e73e-fd47-4e52-8fd7-78f0ceccd4a3,,Affiliated institution,,,,,"An institution that is affiliated with the MAEASaM project, but does not form part of the project","Une institution affiliée au projet MAEASaM, mais qui ne fait pas partie du projet",,,,
+09ffba68-13b4-401f-b67d-cde9dda9deb7,,Former Affiliated institution,,,,,,,,,,
+,,No information,,,,,,,,,,
+,,Other,,,,,,,,,,

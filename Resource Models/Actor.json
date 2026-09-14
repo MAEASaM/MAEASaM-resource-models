@@ -104,7 +104,7 @@
                         "en": ""
                     },
                     "name": {
-                        "en": "Identifier"
+                        "en": "Identifiers"
                     },
                     "nodegroup_id": "65dafbed-614d-48bc-94b3-3a5b53f81837",
                     "sortorder": 0,
@@ -995,7 +995,7 @@
                         "searchString": ""
                     },
                     "datatype": "resource-instance-list",
-                    "description": "The purpose of this node is to record if one actor is associated with another actor as well as which actor it is associated with.",
+                    "description": "Whether this actor is associated with another actor, and which actor it is associated with.",
                     "exportable": true,
                     "fieldname": "AssWith",
                     "graph_id": "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",
@@ -1059,7 +1059,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Identifier",
+                    "name": "Identifiers",
                     "nodegroup_id": "65dafbed-614d-48bc-94b3-3a5b53f81837",
                     "nodeid": "65dafbed-614d-48bc-94b3-3a5b53f81837",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E42_Identifier",
@@ -1147,7 +1147,7 @@
                         "rdmCollection": "5f27407e-ed76-42c1-982f-b80fd08715a0"
                     },
                     "datatype": "concept-list",
-                    "description": "This node indicates what type of association the actor had with the other actor.",
+                    "description": "The type of association the actor had with the other actor.",
                     "exportable": true,
                     "fieldname": "NatOfAss",
                     "graph_id": "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",
