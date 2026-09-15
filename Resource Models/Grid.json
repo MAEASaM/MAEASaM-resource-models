@@ -104,7 +104,7 @@
                         "en": ""
                     },
                     "name": {
-                        "en": "Identifier"
+                        "en": "Identifiers"
                     },
                     "nodegroup_id": "7b457bb0-cecf-46a3-8074-f5ace9290585",
                     "sortorder": 0,
@@ -654,7 +654,7 @@
                 {
                     "alias": "licence",
                     "config": {
-                        "rdmCollection": null
+                        "rdmCollection": "51cf655a-5cc0-4cac-aab6-3df46b6a644b"
                     },
                     "datatype": "concept-list",
                     "description": "The licence under which the digital resource may be used or reused.",
@@ -693,7 +693,7 @@
                         "searchString": ""
                     },
                     "datatype": "resource-instance-list",
-                    "description": "Another resource-instance-list node that links to the MAEASaM ID of all relevant Site resource instances linked to the map associated with the grid square.",
+                    "description": "Another field that links to the MAEASaM ID of all relevant Site resource instances linked to the map associated with the grid square.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -889,7 +889,7 @@
                         "searchString": ""
                     },
                     "datatype": "resource-instance-list",
-                    "description": "A resource-instance-list node that lists the MAEASaM ID of all the identified remote sensing sites located within the relevant square.",
+                    "description": "A field that lists the MAEASaM ID of all the identified remote sensing sites located within the relevant square.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -1160,7 +1160,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Identifier",
+                    "name": "Identifiers",
                     "nodegroup_id": "7b457bb0-cecf-46a3-8074-f5ace9290585",
                     "nodeid": "7b457bb0-cecf-46a3-8074-f5ace9290585",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E42_Identifier",
@@ -1177,7 +1177,7 @@
                         "searchString": ""
                     },
                     "datatype": "resource-instance-list",
-                    "description": "The node is a resource-instance-list node and links to the MAEASaM ID of the relevant map/s. Please write the MAEASaM ID of the relevant record from the \"Maps\" resource instance.",
+                    "description": "This field links to the MAEASaM ID of the relevant map/s. Please write the MAEASaM ID of the relevant record from the \"Maps\" resource instance.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
@@ -1298,7 +1298,7 @@
                         "rdmCollection": "93bd13f6-3977-441d-90fa-79e5d1132b60"
                     },
                     "datatype": "concept-list",
-                    "description": "A controlled vocabulary node that indicates the current status of the remote sensing survey located within the relevant grid square. Please write the term exactly as recorded in the \"Remote sensing survey progress\" controlled vocabulary.",
+                    "description": "This field indicates the current status of the remote sensing survey located within the relevant grid square. Please write the term exactly as recorded in the \"Remote sensing survey progress\" controlled vocabulary.",
                     "exportable": false,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",

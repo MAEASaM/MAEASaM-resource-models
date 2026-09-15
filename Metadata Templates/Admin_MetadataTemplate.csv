@@ -84,7 +84,7 @@ linking the E82 Actor Appellation to an instance of either E21 Person or E74 Gro
 If this is not possible, the distinction can be made through the use of the P2 has type mechanism.","This class comprises specific forms of E49 Time Appellation.
 Dates may vary in their degree of precision.","This class comprises specific forms of E49 Time Appellation.
 Dates may vary in their degree of precision."
-Semantic Node (card),Group,Group,Identifier,Name,,,,Administrative area level,Geometry,Description,Copyright/Access,,,,,Recording details,,,Uploading details,,
+Semantic Node (card),Group,Group,Identifiers,Name,,,,Administrative area level,Geometry,Description,Copyright/Access,,,,,Recording details,,,Uploading details,,
 Node (En),Metadata (En),Metadata (En),MAEASaM ID,Administrative area name,Name type,Part of,Country,Administrative level,Geometry (WKT),Description,Licence,Access level,Rights holder,Rights Notes,Preferred Citation,Recorder,Comment,Created at,Uploader,Uploaded at,Last modified at
 Node (Fr),Metadata (Fr),Metadata (Fr),MAEASaM ID,,Type de nom,,,,Géométrie (WKT),Description,,,,,,,Commentaire,,,,
 Node (Ar),Metadata (Ar),Metadata (Ar),MAEASaM ID,,,,,,,,,,,,,,,,,,
