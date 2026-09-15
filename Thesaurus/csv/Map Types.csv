@@ -1,0 +1,10 @@
+Term ID,Parent Term ID,Term (En),Term (Fr),Term (Ar),Term (Pt),Alt Label(s) (En),Definition (En),Definition (Fr),Definition (Ar),Definition (Pt),Source (En),Status
+,,Topographic map,,,,,"A map showing the shape and features of the land surface, typically including elevation, contour lines, and natural and man-made features.",,,,,
+,,Cadastral map,,,,,"A map showing property boundaries, land parcels, and ownership divisions.",,,,,
+,,Administrative map,,,,,"A map showing administrative or political boundaries, such as regions, districts, or provinces.",,,,,
+,,Aerial photograph,,,,,A photographic image of the ground taken from an aircraft or other airborne platform.,,,,,
+,,Satellite image,,,,,An image of the Earth's surface captured by a satellite-based sensor.,,,,,
+,,Geological map,,,,,"A map showing the distribution of rock types, geological structures, and formations.",,,,,
+,,Thematic map,,,,,"A map designed to display a particular subject or theme, such as the distribution of archaeological sites.",,,,,
+,,Site plan,,,,Sketch map,"A hand-drawn or simplified map showing the layout of a site or area, not necessarily to scale.",,,,,
+,,Historical map,,,,,"A map produced in the past that documents historical geography, boundaries, or features no longer current.",,,,,
