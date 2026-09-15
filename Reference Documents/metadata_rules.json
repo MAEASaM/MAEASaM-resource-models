@@ -78,7 +78,7 @@
     "Use bold only for the row labels in the first 3 columns (Arches terminology / Universal terminology / User form). The rest of the page should be written in normal (non-bold) weight.",
     "Use wrap text for all cells.",
     "Use All Borders for every cell.",
-    "Use the colour legend (matching the Data Type Legend) for every row down to and including the Collection row; rows below that are not colour-coded."
+    "Colour-code each field's Metadata (En/Fr/Ar/Pt) rows using data_type_colors, keyed by that field's own Data Type. Colour the CIDOC CRM Semantic Node Class and CIDOC CRM Node Class rows using cidoc_class_row_colors (fixed per row, not Data-Type-dependent). The Data Type and Collection rows themselves, and every row below Collection, are not colour-coded - confirmed 2026-09-15 against the real reference workbook (see data_type_colors comment), correcting an earlier, less precise version of this rule."
   ],
 
   "collection_notation_rules": [
@@ -158,6 +158,28 @@
     "Boolean",
     "File-list"
   ],
+
+  "data_type_colors": {
+    "_comment": "Cell fill colour (hex RGB, no leading #) used to colour-code a field's Metadata (En/Fr/Ar/Pt) rows in the Excel export/round-trip, keyed by that field's own Data Type. Sourced 2026-09-15 directly from the real hand-coloured reference workbook 20260317_RSMetadata_Template_v02_CURRENT.xlsx (read with openpyxl, not guessed) - confirmed by cross-checking each field's fill colour against its own Data Type row value. 'Semantic' colours the Group row itself (every field's group/card node is Arches datatype 'semantic', so that row is always this one colour regardless of the field's own Data Type). EDTF has no precedent in that file (it split off 'Date' later, 2026-09-09 - see known_issues) so it reuses Date's colour, same family. Boolean has no precedent either - 2026-09-15 pick, not from the reference file. URL, Node, and File-list are genuinely undefined - null, not guessed; fill in only once a real precedent or an explicit decision exists.",
+    "String": "FFFF00",
+    "Semantic": "00FFFF",
+    "GeoJSON-feature-collection": "CCCCCC",
+    "Date": "FF00FF",
+    "EDTF": "FF00FF",
+    "Resource-Instance-List": "00FF00",
+    "Number": "FF9900",
+    "Concept-list": "FF0000",
+    "Node": null,
+    "URL": null,
+    "Boolean": "00B0F0",
+    "File-list": null
+  },
+
+  "cidoc_class_row_colors": {
+    "_comment": "Fixed fill colour (hex RGB) for these two CIDOC CRM ontology-class rows, applied uniformly across every field column regardless of that field's Data Type - these describe CIDOC CRM class assignment, not Arches Data Type, so they are a separate concept from data_type_colors above. Same source and date as data_type_colors.",
+    "CIDOC CRM Semantic Node Class": "0000FF",
+    "CIDOC CRM Node Class": "000000"
+  },
 
   "languages": {
     "Metadata": [

@@ -1,0 +1,7 @@
+Term ID,Parent Term ID,Term (En),Term (Fr),Term (Ar),Term (Pt),Alt Label(s) (En),Definition (En),Definition (Fr),Definition (Ar),Definition (Pt),Source (En),Status
+,,Good,,,,,"The document is in good physical condition, with no significant damage or deterioration.",,,,,
+,,Fair,,,,,The document shows some signs of wear or minor damage but remains fully usable.,,,,,
+,,Poor,,,,,"The document is significantly damaged or deteriorated, affecting its usability.",,,,,
+,,Damaged,,,,,"The document has sustained physical damage, such as tears, water damage, or staining.",,,,,
+,,Fragile,,,,,The document is intact but physically weak and requires careful handling to avoid further damage.,,,,,
+,,Unknown,,,,,The condition of the document has not been assessed or recorded.,,,,,
