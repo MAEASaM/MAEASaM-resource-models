@@ -2603,7 +2603,7 @@
                         "rdmCollection": null
                     },
                     "datatype": "concept-list",
-                    "description": "Type of map, following to MAEASaM controlled vocabulary. Please write the term exactly as recorded in the \"Map Types\" controlled vocabulary.",
+                    "description": "Type of map, following to MAEASaM controlled vocabulary. Please write the term exactly as recorded in the \"Map types\" controlled vocabulary.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",
@@ -2625,7 +2625,7 @@
                         "rdmCollection": null
                     },
                     "datatype": "concept-list",
-                    "description": "The physical condition of the original map at the time of recording. Please write the term exactly as recorded in the \"\"Document Conditions controlled vocabulary.",
+                    "description": "The physical condition of the original map at the time of recording. Please write the term exactly as recorded in the \"Document conditions\" controlled vocabulary.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",
@@ -3387,7 +3387,7 @@
                         "rdmCollection": null
                     },
                     "datatype": "concept-list",
-                    "description": "The method used to create the digital representation of the original map, such as scanning or photography. Please write the term exactly as recorded in the \"Digitisation Methods\" controlled vocabulary.",
+                    "description": "The method used to create the digital representation of the original map, such as scanning or photography. Please write the term exactly as recorded in the \"Digitisation methods\" controlled vocabulary.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",

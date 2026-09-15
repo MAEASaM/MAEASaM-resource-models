@@ -21,4 +21,4 @@ Best reading of the evidence: **xlsx is the master** (human review workflow live
 
 Same CSV-safety protocol as `Reference Documents/`'s Metadata Templates (full detail in the repo's `CLAUDE.md`): this machine's Excel cannot export clean UTF-8 CSV, so a hand-save can silently corrupt delimiters, Arabic text, or accented characters. Describe the intended change in chat rather than opening Excel directly where possible; if a hand-edit in Excel is unavoidable, save to a new filename and have it merged in, rather than overwriting a real file here directly.
 
-See `CV_Task_List.md` for the current open items and a proposed cleanup/sync workflow.
+See `CV_Task_List.md` for the current open items and a proposed cleanup/sync workflow, and `CV_Instructions_and_Protocols.md` for naming/formatting rules (e.g. vocab and term name casing) to follow when adding or editing a vocab.
