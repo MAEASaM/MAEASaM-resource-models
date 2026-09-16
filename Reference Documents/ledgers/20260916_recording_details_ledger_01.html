@@ -1,0 +1,218 @@
+<title>Recording Details Ledger</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper: #ede7d8; --paper-raised: #f7f3e7; --ink: #262218; --ink-soft: #6f6852;
+    --rule: #cdbd9a; --accent: #2f4a5c; --accent-ink: #eef2ee; --brass: #8a6a34;
+    --ok: #3f6b46; --ok-bg: #e3ecdf; --warn: #9c5a1e; --warn-bg: #f3e3cd;
+    --bad: #a23a2c; --bad-bg: #f3dad3; --shadow: rgba(38,34,24,0.14);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper: #1c1a15; --paper-raised: #262319; --ink: #ece4d0; --ink-soft: #a89d84;
+      --rule: #4a4330; --accent: #7fa8bd; --accent-ink: #14202a; --brass: #c9a568;
+      --ok: #7fb489; --ok-bg: #24352a; --warn: #d99a55; --warn-bg: #3a2d1c;
+      --bad: #e2897a; --bad-bg: #3a2521; --shadow: rgba(0,0,0,0.45);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper: #1c1a15; --paper-raised: #262319; --ink: #ece4d0; --ink-soft: #a89d84;
+    --rule: #4a4330; --accent: #7fa8bd; --accent-ink: #14202a; --brass: #c9a568;
+    --ok: #7fb489; --ok-bg: #24352a; --warn: #d99a55; --warn-bg: #3a2d1c;
+    --bad: #e2897a; --bad-bg: #3a2521; --shadow: rgba(0,0,0,0.45);
+  }
+
+  *{box-sizing:border-box;}
+  body{ background: var(--paper); color: var(--ink); font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  .wrap{ max-width: 1080px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .eyebrow{ font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass); margin: 0 0 10px; }
+  h1{ font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.08; margin: 0 0 14px; text-wrap: balance; letter-spacing: -0.01em; }
+  .lede{ max-width: 74ch; color: var(--ink-soft); font-size: 1rem; margin: 0 0 8px; }
+  .lede strong{ color: var(--ink); font-weight: 600; }
+  header.page{ border-bottom: 1px solid var(--rule); padding-bottom: 28px; margin-bottom: 40px; }
+
+  .legend{ display:flex; gap:18px; flex-wrap:wrap; margin-top: 18px; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.74rem; color: var(--ink-soft); }
+  .legend span{ display:inline-flex; align-items:center; gap:7px; }
+  .dot{ width:8px; height:8px; border-radius:50%; display:inline-block; }
+  .dot.ok{ background: var(--ok); } .dot.warn{ background: var(--warn); } .dot.bad{ background: var(--bad); }
+
+  .coverage{ margin: 0 0 40px; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--paper-raised); }
+  .coverage-head{ background: var(--accent); color: var(--accent-ink); padding: 12px 20px; font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; }
+  .coverage table{ width:100%; border-collapse: collapse; font-size: 0.82rem; }
+  .coverage-wrap{ overflow-x: auto; }
+  .coverage th, .coverage td{ padding: 10px 16px; text-align: left; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  .coverage th{ font-family: "IBM Plex Mono", monospace; font-size: 0.64rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--brass); font-weight: 500; }
+  .coverage tr:last-child td{ border-bottom: none; }
+  .pill{ display:inline-block; font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; padding: 2px 9px; border-radius: 100px; white-space:nowrap; }
+  .pill.warn{ color: var(--warn); background: var(--warn-bg); }
+  .pill.bad{ color: var(--bad); background: var(--bad-bg); }
+  .pill.ok{ color: var(--ok); background: var(--ok-bg); }
+
+  .group{ margin-bottom: 46px; }
+  .group-head{ display:flex; align-items:flex-start; justify-content:space-between; gap: 16px; background: var(--accent); color: var(--accent-ink); border-radius: 8px 8px 0 0; padding: 14px 20px; }
+  .group-head h2{ font-family:"Fraunces", Georgia, serif; font-weight: 600; font-size: 1.32rem; margin: 0; letter-spacing: -0.005em; }
+  .group-head .role{ font-size: 0.86rem; opacity: 0.86; margin-top: 3px; font-family: "IBM Plex Sans", sans-serif; max-width: 60ch; }
+  .group-head .count{ font-family: "IBM Plex Mono", monospace; font-size: 0.74rem; letter-spacing: 0.06em; white-space: nowrap; opacity: 0.86; align-self: flex-start; padding-top: 4px; }
+
+  .cards{ display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 340px)); justify-content: start; gap: 16px; background: var(--paper-raised); border: 1px solid var(--rule); border-top: none; border-radius: 0 0 8px 8px; padding: 20px; box-shadow: 0 1px 0 var(--rule) inset; }
+
+  .card{ background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 16px 18px 14px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .card-top{ display:flex; align-items:flex-start; justify-content:space-between; gap: 10px; }
+  .field-name{ font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 1.02rem; color: var(--ink); }
+  .chip{ font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 9px; border-radius: 100px; white-space: nowrap; flex-shrink: 0; }
+  .chip.ok{ color: var(--ok); background: var(--ok-bg); } .chip.warn{ color: var(--warn); background: var(--warn-bg); } .chip.bad{ color: var(--bad); background: var(--bad-bg); }
+
+  .spec{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 8px 14px; padding: 10px 0; border-top: 1px dashed var(--rule); border-bottom: 1px dashed var(--rule); }
+  .spec div{ min-width:0; }
+  .spec .k{ font-family: "IBM Plex Mono", monospace; font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brass); display:block; }
+  .spec .v{ font-size: 0.85rem; color: var(--ink); font-variant-numeric: tabular-nums; overflow-wrap: break-word; }
+
+  .def{ font-size: 0.88rem; color: var(--ink); }
+  .note code{ font-family: "IBM Plex Mono", monospace; font-size: 0.82em; background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 3px; padding: 0 4px; }
+  .note{ font-size: 0.82rem; padding: 8px 10px; border-left: 3px solid var(--warn); background: var(--warn-bg); color: var(--ink); border-radius: 0 4px 4px 0; }
+  .note.ok{ border-left-color: var(--ok); background: var(--ok-bg); }
+  .note.bad{ border-left-color: var(--bad); background: var(--bad-bg); }
+
+  details{ margin-top: 2px; }
+  summary{ cursor: pointer; font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.04em; color: var(--brass); text-transform: uppercase; padding: 4px 0; }
+  summary:hover{ color: var(--accent); }
+  .model-table-wrap{ overflow-x: auto; margin-top: 8px; }
+  table.model-table{ width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+  table.model-table th, table.model-table td{ padding: 6px 10px; text-align: left; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  table.model-table th{ font-family: "IBM Plex Mono", monospace; font-size: 0.62rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--brass); font-weight: 500; }
+  table.model-table tr:last-child td{ border-bottom: none; }
+  table.model-table td.model{ font-weight: 600; white-space: nowrap; }
+  table.model-table td.absent{ color: var(--ink-soft); font-style: italic; }
+  table.model-table td .flag{ color: var(--bad); }
+
+  footer{ margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--ink-soft); }
+  footer code{ font-family:"IBM Plex Mono", monospace; background: var(--paper-raised); padding: 1px 5px; border-radius: 3px; border: 1px solid var(--rule); }
+</style>
+
+<div class="wrap">
+  <header class="page">
+    <p class="eyebrow">MAEASaM &middot; Metadata Standardization &middot; Snapshot 2026-09-16 &middot; 01</p>
+    <h1>Recording Details Ledger</h1>
+    <p class="lede">Who created the record, and when &mdash; present in all 7 models, each field's own spec is nearly identical everywhere. What differs is the <strong>JSON container</strong> these three fields are actually parented to: not every model routes them through a real, correctly&#8209;named &ldquo;Recording details&rdquo; group.</p>
+    <div class="legend">
+      <span><i class="dot ok"></i> Parented to a correctly-named &amp; classed Recording details container</span>
+      <span><i class="dot warn"></i> Parented to a stale or mismatched container</span>
+    </div>
+  </header>
+
+  <div class="coverage">
+    <div class="coverage-head">The big picture</div>
+    <div class="coverage-wrap">
+    <table>
+      <thead><tr><th>What</th><th>Status</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>Container node</td><td><span class="pill warn">Inconsistent</span></td><td>Actor, Admin, Map, Grid: a real &ldquo;Recording details&rdquo; (<code>E66_Formation</code>) container. Chronology &amp; RS: still parented to an old &ldquo;Resource version control&rdquo; container &mdash; CSV already says &ldquo;Recording details&rdquo;, the JSON node was never renamed (same class of gap as the Map &ldquo;Recording Details&rdquo; casing bug fixed today under Task&nbsp;#89, here it's the whole node). Info: no dedicated container at all &mdash; its three fields have three different parents.</td></tr>
+        <tr><td><code>exportable</code></td><td><span class="pill warn">Partly applied</span></td><td>Task&nbsp;#90 (2026&#8209;09&#8209;16) set every field to <code>true</code> on Actor/Info/Map/Grid. Chronology's Created&nbsp;at is still <code>false</code>.</td></tr>
+        <tr><td>Necessity vs <code>isrequired</code></td><td><span class="pill warn">Pervasive</span></td><td>Already tracked project&#8209;wide, Task&nbsp;#79 &mdash; not repeated per field below.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <section class="group">
+    <div class="group-head">
+      <div><h2>Recording details</h2><div class="role">Who created the record, and when</div></div>
+      <div class="count">3 FIELDS</div>
+    </div>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Recorder</span><span class="chip warn">Container inconsistent</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Resource&#8209;Instance&#8209;List</span></div>
+          <div><span class="k">CIDOC (field)</span><span class="v">E39 Actor</span></div>
+          <div><span class="k">CIDOC (group)</span><span class="v">E66 Formation</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">contributor</span></div>
+        </div>
+        <p class="def">The individual responsible for creating the resource record.</p>
+        <div class="note warn">Same field spec everywhere (Resource-Instance-List, Actor (rm)). The parent differs by model &mdash; see detail.</div>
+        <details>
+          <summary>Per-model detail (7)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>CSV</th><th>JSON parent</th></tr></thead>
+            <tbody>
+              <tr><td class="model">Actor</td><td>Mandatory, 1..n</td><td>Recording details (E66_Formation)</td></tr>
+              <tr><td class="model">Admin</td><td>Mandatory, 1..n</td><td>Recording details (E66_Formation)</td></tr>
+              <tr><td class="model">Map</td><td>Mandatory, 1..n</td><td>Recording details (E66_Formation), isrequired=true (only model where it does)</td></tr>
+              <tr><td class="model">Grid</td><td>Mandatory, 1..n</td><td>Recording details (E66_Formation)</td></tr>
+              <tr><td class="model">Chronology</td><td>Mandatory, 1..n</td><td><span class="flag">Resource version control</span> (E66_Formation)</td></tr>
+              <tr><td class="model">RS</td><td>Mandatory, 1..n</td><td><span class="flag">Resource version control</span> (E1_CRM_Entity)</td></tr>
+              <tr><td class="model">Info</td><td>Mandatory, 1..n</td><td><span class="flag">Information</span> &mdash; the root node (E28_Conceptual_Object), edge=L54_is_same-as</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Comment</span><span class="chip warn">Mixed</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">String</span></div>
+          <div><span class="k">CIDOC (field)</span><span class="v">E62 String</span></div>
+          <div><span class="k">CIDOC (group)</span><span class="v">E66 Formation</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">description</span></div>
+        </div>
+        <p class="def">Any additional information relevant to this resource that the recorder feels should be documented.</p>
+        <div class="note warn">Map now matches Grid exactly (Optional / 0..n, Task&nbsp;#89). Chronology and Info both document it as &ldquo;Strongly recommended&rdquo; instead of Optional; Info's Comment also parents to the Recorder node itself, not a group.</div>
+        <details>
+          <summary>Per-model detail (7)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>CSV</th><th>JSON</th></tr></thead>
+            <tbody>
+              <tr><td class="model">Actor</td><td>Optional, 0..n</td><td>parent=Recording details</td></tr>
+              <tr><td class="model">Admin</td><td>Optional, 0..n</td><td>parent=Recording details</td></tr>
+              <tr><td class="model">Map</td><td>Optional, 0..n <em>(changed 2026-09-16, was Mandatory/1)</em></td><td>parent=Recording details</td></tr>
+              <tr><td class="model">Grid</td><td>Optional, 0..n</td><td>parent=Recording details</td></tr>
+              <tr><td class="model">Chronology</td><td><span class="flag">Strongly recommended, 0..n</span></td><td><span class="flag">exportable=false</span>, parent=<span class="flag">Resource version control</span></td></tr>
+              <tr><td class="model">RS</td><td>Optional, 0..n</td><td>parent=<span class="flag">Resource version control</span> (E1_CRM_Entity)</td></tr>
+              <tr><td class="model">Info</td><td><span class="flag">Strongly recommended, 0..1</span></td><td>parent=<span class="flag">Recorder</span> (E39_Actor, not a group)</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><span class="field-name">Created at</span><span class="chip warn">Container inconsistent</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Date</span></div>
+          <div><span class="k">CIDOC (field)</span><span class="v">E50 Date</span></div>
+          <div><span class="k">CIDOC (group)</span><span class="v">E66 Formation</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">created</span></div>
+        </div>
+        <p class="def">The date on which the resource record was created in the database.</p>
+        <div class="note warn">Map's edge property was fixed today to <code>P92_brought_into_existence</code> to match Grid (Task&nbsp;#89 &mdash; the node's own <code>parentproperty</code> already said this, the actual graph edge didn't). Same container gap as Recorder for Chronology/RS/Info.</div>
+        <details>
+          <summary>Per-model detail (7)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>CSV</th><th>JSON parent / edge</th></tr></thead>
+            <tbody>
+              <tr><td class="model">Actor</td><td>Mandatory, 1</td><td>Recording details, P92_brought_into_existence</td></tr>
+              <tr><td class="model">Admin</td><td>Mandatory, 1</td><td>Recording details, P92_brought_into_existence</td></tr>
+              <tr><td class="model">Map</td><td>Mandatory, 1</td><td>Recording details, P92_brought_into_existence <em>(fixed 2026-09-16, was P106_is_composed_of)</em></td></tr>
+              <tr><td class="model">Grid</td><td>Mandatory, 1</td><td>Recording details, P92_brought_into_existence</td></tr>
+              <tr><td class="model">Chronology</td><td>Mandatory, 1</td><td><span class="flag">Resource version control</span>, <span class="flag">exportable=false</span></td></tr>
+              <tr><td class="model">RS</td><td>Mandatory, 1</td><td><span class="flag">Resource version control</span> (E1_CRM_Entity), edge=L54_is_same-as</td></tr>
+              <tr><td class="model">Info</td><td>Mandatory, 1</td><td><span class="flag">Resource version control</span> (E50_Date), edge=L54_is_same-as</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+
+    </div>
+  </section>
+
+  <footer>
+    Snapshot as of 2026&#8209;09&#8209;16. Companions in this folder: <code>20260916_copyright_access_ledger_05.html</code>, <code>20260916_uploading_details_ledger_01.html</code>, <code>20260916_actor_field_ledger_01.html</code>.
+  </footer>
+</div>

@@ -1,5 +1,5 @@
 ﻿Arches terminology,Universal terminology,User form,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
-CIDOC CRM Semantic Node Class,CIDOC CRM Semantic Node Class,,E42 Identifier,E41 Appellation,,,,E55 Type,E53 Place,E62 String,,,,,,,E62 String,,E66 Formation,,
+CIDOC CRM Semantic Node Class,CIDOC CRM Semantic Node Class,,E42 Identifier,E41 Appellation,,,,E55 Type,E53 Place,E62 String,E30 Right,,,,,,E62 String,,E66 Formation,,
 CIDOC CRM Node Class,CIDOC CRM Node Class,,E42 Identifier,E41 Appellation,E55 Type,E41 Appellation,E41 Appellation,E55 Type,E53 Place,E62 String,,,,,,E39 Actor,E62 String,,E82 Actor Appellation,E50 Date,E50 Date
 CIDOC CRM Scope note,CIDOC CRM Scope note,,"This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them
 uniquely and permanently within the context of one or more organisations. Such codes are often known

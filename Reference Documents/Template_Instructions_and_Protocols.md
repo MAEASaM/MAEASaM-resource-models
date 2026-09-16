@@ -30,6 +30,14 @@ Do not hand-copy these phrases elsewhere - a stale copy is exactly what caused `
 - Metadata name `MAEASaM ID` → `Primary Key`.
 - Metadata name `Resource created at` / `Resource last modified at` / `Uploader name` / `Upload date` / `Nodes modified` → `Auto-Populated`.
 
+## Resource Model JSON: the `exportable` flag
+
+**Decided 2026-09-16: every real field's `exportable` should be `true`, project-wide, with no exceptions.** This is an Arches node attribute (not a CSV column) that controls whether the field is included in Arches' bulk "Export Business Data" / "Import Business Data" CSV round-trip - `false` means the field is silently skipped on both export and import, no error. It's independent of `isrequired` (which controls whether the *data-entry form* requires a value) and of the CSV's `Necessity` row (which is just documentation of intended policy, not enforced by Arches at all - see the already-tracked Necessity vs `isrequired` drift, `Task_List.md` #79).
+
+Found inconsistent 2026-09-16 while comparing `Map.json` against `Grid.json`: several fields across models (including ones already flagged `Auto-Populated` in Operational Info, like `Created at`/`Uploaded at`/`Last modified at`/`Uploader`, and ordinary content fields like `Info`'s `Author`/`Title of resource`/`URL`) had `exportable: false` for no documented reason - meaning a bulk CSV import/export would have silently dropped them. Fixed across every field already worked on (Actor, Information, Map, Grid) by setting `exportable: true` on every non-semantic, non-root-node field; group/container (`datatype: semantic`) nodes are correctly `exportable: false` everywhere and are left alone, since they hold no literal value to export.
+
+Apply this same fix (`exportable: true` on every real field) to the remaining models (Admin, Chronology, RS, Site) when they're worked on.
+
 ## About `template_instructions.csv`
 
 `Reference Documents/template_instructions.csv` predates `metadata_rules.json` and is now fully superseded and stale - every rule it has is above, in corrected form. Two concrete things it still gets wrong if read directly: the old `"Concept list"` / `"Resource instance model"` key names (see above), and the old, less precise colour rule. Left in place for now rather than deleted (2026-09-16 - flagged, not acted on).

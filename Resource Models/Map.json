@@ -3553,7 +3553,7 @@
                     },
                     "datatype": "string",
                     "description": "Any additional information relevant to this resource that the recorder feels should be documented.",
-                    "exportable": false,
+                    "exportable": true,
                     "fieldname": null,
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",
                     "hascustomalias": false,
