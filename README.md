@@ -44,7 +44,7 @@ Follow the setup instructions in the order provided to ensure that all dependenc
 - `Administrative Model.json` — Administrative boundaries and regions.
 - `Chronology.json` — Chronological periods and events.
 - `Information.json` — Information resources and documentation.
-- `MAEASaM Grid.json` — Grid reference system for spatial data.
+- `Grid.json` — Grid reference system for spatial data.
 - `Remote sensing.json` — Remote sensing data and metadata.
 - `Site.json` — Archaeological site definitions.
 

@@ -66,6 +66,11 @@
         <skos:hasTopConcept rdf:resource="http://localhost:8000/6c8a470f-11d6-4949-9e60-defdeb841e5b"/>
         <skos:hasTopConcept rdf:resource="http://localhost:8000/51c2a811-fb63-48bb-af5f-8ae165032e71"/>
         <skos:hasTopConcept rdf:resource="http://localhost:8000/177e24df-a9bd-47a4-af22-b39c4c4897d1"/>
+        <skos:hasTopConcept rdf:resource="http://localhost:8000/f4bd8968-5a58-4429-a9b1-f9c389d6f456"/>
+        <skos:hasTopConcept rdf:resource="http://localhost:8000/f2e641cd-0724-460e-9c00-cda6041f4a25"/>
+        <skos:hasTopConcept rdf:resource="http://localhost:8000/639b3227-65e4-42d6-952b-9981c415388b"/>
+        <skos:hasTopConcept rdf:resource="http://localhost:8000/f1680367-5296-4478-b098-f86154fc10a5"/>
+        <skos:hasTopConcept rdf:resource="http://localhost:8000/842ebc3c-0de9-45a8-91af-5b2558b778dd"/>
       </skos:ConceptScheme>
     </skos:inScheme>
   </skos:Concept>
@@ -30197,7 +30202,7 @@
   </skos:Concept>
   <skos:Concept rdf:about="http://localhost:8000/6c8d34f1-d8a0-4a65-b886-d79fbb56b4b1">
     <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
-    <skos:prefLabel xml:lang="en">{"id": "b75109fe-ed58-4920-8043-e2564f37433e", "value": "Survey Type"}</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">{"id": "b75109fe-ed58-4920-8043-e2564f37433e", "value": "Survey type"}</skos:prefLabel>
     <dcterms:identifier xml:lang="en">{"id": "24159502-0f35-4dd4-a6c0-8580a08d3fe9", "value": "http://localhost:8000/6c8d34f1-d8a0-4a65-b886-d79fbb56b4b1"}</dcterms:identifier>
     <skos:narrower>
       <skos:Concept rdf:about="http://localhost:8000/e8714b78-df6d-45af-9c3c-6efa6cb6e967">
@@ -40652,7 +40657,7 @@
     <skos:narrower rdf:resource="http://localhost:8000/049c4fd9-d4df-48b3-a7a0-e8dc61f5f0a1"/>
     <dcterms:identifier xml:lang="en">{"id": "0935c33a-f0d4-4ad9-92e4-aa97b67abe86", "value": "http://localhost:8000/93649ac2-b171-4632-a81e-21b4a9f3c883"}</dcterms:identifier>
     <skos:narrower rdf:resource="http://localhost:8000/4c428d15-7afc-4f11-987f-885c0cb3b38c"/>
-    <skos:prefLabel xml:lang="en">{"id": "2e01a222-c851-4220-9c4a-9a2ceac1a9e3", "value": "Ownership Type"}</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">{"id": "2e01a222-c851-4220-9c4a-9a2ceac1a9e3", "value": "Ownership type"}</skos:prefLabel>
     <skos:narrower>
       <skos:Concept rdf:about="http://localhost:8000/1c6af263-af55-4f74-8d61-d468fa4d49e3">
         <skos:prefLabel xml:lang="en">{"id": "8e71f6b5-4b69-4d4a-849d-3502b4e6e2aa", "value": "Community land"}</skos:prefLabel>
@@ -40897,7 +40902,7 @@
       </skos:Concept>
     </skos:narrower>
     <skos:narrower rdf:resource="http://localhost:8000/638bcc26-fa43-4c1d-9f51-2dbb11fd265f"/>
-    <skos:prefLabel xml:lang="en">{"id": "b921f609-1aaa-468f-9b2e-a3419f408af9", "value": "Coordinate System"}</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">{"id": "b921f609-1aaa-468f-9b2e-a3419f408af9", "value": "Coordinate system"}</skos:prefLabel>
     <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
   </skos:Concept>
   <skos:Concept rdf:about="http://localhost:8000/9d88633e-dcfd-436c-9d4c-e3f28fa68b38">
@@ -41709,5 +41714,612 @@
     <skos:prefLabel xml:lang="en">{"id": "b9bac4c4-fbf3-4007-8200-c316ebc26633", "value": "Supervised learning"}</skos:prefLabel>
     <dcterms:identifier xml:lang="en">{"id": "feae281d-34e2-48c4-bab9-1c81bcb050c7", "value": "http://localhost:8000/3b383977-93da-4f11-9a0e-db94a5c54fcf"}</dcterms:identifier>
     <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/f4bd8968-5a58-4429-a9b1-f9c389d6f456">
+    <dcterms:identifier xml:lang="en">{"id": "931e734d-9676-4afb-ad8b-be0e9b117af6", "value": "http://localhost:8000/f4bd8968-5a58-4429-a9b1-f9c389d6f456"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "875e2fa6-bfe9-4e3a-a896-0610516a0551", "value": "Map types"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:narrower rdf:resource="http://localhost:8000/2dea7216-c83f-4f1e-81e4-36b4d2552a59"/>
+    <skos:narrower rdf:resource="http://localhost:8000/4ebbf4bf-e282-43b1-beba-fd270168d0ff"/>
+    <skos:narrower rdf:resource="http://localhost:8000/6cfb5afb-6225-4cad-9bf7-f166b3ee9725"/>
+    <skos:narrower rdf:resource="http://localhost:8000/93874190-bffe-4de7-a8a6-694d14063714"/>
+    <skos:narrower rdf:resource="http://localhost:8000/613b7ff9-a511-4286-ae68-db672ff4c235"/>
+    <skos:narrower rdf:resource="http://localhost:8000/9f11f63d-58d2-4641-9b2a-a4e30dc060a6"/>
+    <skos:narrower rdf:resource="http://localhost:8000/51a1f541-a1ef-4d51-ada2-1254feb1b225"/>
+    <skos:narrower rdf:resource="http://localhost:8000/5f2f6ae6-d380-426e-b518-eaa8c5232fbd"/>
+    <skos:narrower rdf:resource="http://localhost:8000/0f357e80-83ad-455a-bc57-91cdf317f828"/>
+    <skos:narrower rdf:resource="http://localhost:8000/30053125-433a-4e3f-8c50-36c1d75d14d3"/>
+    <skos:narrower rdf:resource="http://localhost:8000/e9fe62b8-4d60-4277-9a55-fee48543c785"/>
+    <skos:narrower rdf:resource="http://localhost:8000/74218291-74a3-42e9-91e4-7b9b6b1790d6"/>
+    <skos:narrower rdf:resource="http://localhost:8000/19cce50e-0cba-45a0-adcc-c85028dc685c"/>
+    <skos:narrower rdf:resource="http://localhost:8000/c4405888-c6f5-4bf0-b89d-522d8c85ece9"/>
+    <skos:narrower rdf:resource="http://localhost:8000/a6ab9370-8f63-4e8f-aa9a-9cfa9bee48fa"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/2dea7216-c83f-4f1e-81e4-36b4d2552a59">
+    <dcterms:identifier xml:lang="en">{"id": "81d0bfdf-1bf4-452f-9737-1cc4f0730afe", "value": "http://localhost:8000/2dea7216-c83f-4f1e-81e4-36b4d2552a59"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "43b446a7-7c91-4528-a463-217fa49e93f9", "value": "Topographic map"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "a401577e-8640-4bbc-806f-266f2b114adb", "value": "A map showing the shape and features of the land surface, typically including elevation, contour lines, and natural and man-made features."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/4ebbf4bf-e282-43b1-beba-fd270168d0ff">
+    <dcterms:identifier xml:lang="en">{"id": "ec849ab6-c827-44ad-8a72-53d9d432d80a", "value": "http://localhost:8000/4ebbf4bf-e282-43b1-beba-fd270168d0ff"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "1d520f74-eb79-44ae-8fd5-6b9fd91d338d", "value": "Cadastral map"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "15c16326-3599-4a9f-98c1-3e0ff1505cc7", "value": "A map showing property boundaries, land parcels, and ownership divisions."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/6cfb5afb-6225-4cad-9bf7-f166b3ee9725">
+    <dcterms:identifier xml:lang="en">{"id": "3ee178fd-3b69-4ccc-bc61-d86566dcfb97", "value": "http://localhost:8000/6cfb5afb-6225-4cad-9bf7-f166b3ee9725"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "82d9f771-dfff-4cec-ae3b-00ac1bbcf827", "value": "Administrative map"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "b531a838-0d16-4e26-a312-2c1c58c546fc", "value": "A map showing administrative or political boundaries, such as regions, districts, or provinces."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/93874190-bffe-4de7-a8a6-694d14063714">
+    <dcterms:identifier xml:lang="en">{"id": "58b02530-895e-44d3-81a4-0bd40aefa01a", "value": "http://localhost:8000/93874190-bffe-4de7-a8a6-694d14063714"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "4e18ecfe-5988-46b2-af74-70af3e9c9a29", "value": "Aerial photograph"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "88bff3f3-4293-4256-8c0d-d4fd84d7aaa8", "value": "A photographic image of the ground taken from an aircraft or other airborne platform."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/613b7ff9-a511-4286-ae68-db672ff4c235">
+    <dcterms:identifier xml:lang="en">{"id": "846f2b9c-a9d3-4583-9722-45e9ea8c573a", "value": "http://localhost:8000/613b7ff9-a511-4286-ae68-db672ff4c235"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "81bc4fc6-ab65-4685-b175-c9c71b20f087", "value": "Satellite image"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "2656bf7f-a8c1-441a-8089-68eaca59e406", "value": "An image of the Earth's surface captured by a satellite-based sensor."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/9f11f63d-58d2-4641-9b2a-a4e30dc060a6">
+    <dcterms:identifier xml:lang="en">{"id": "7b0a5374-0b7b-495b-8e13-f1fc9da7bb3f", "value": "http://localhost:8000/9f11f63d-58d2-4641-9b2a-a4e30dc060a6"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "bdbb4c9e-b780-4573-aab1-df9b02b024b4", "value": "Geological map"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "085f9534-d68c-40ef-9855-0f9ad4891a2e", "value": "A map showing the distribution of rock types, geological structures, and formations."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/51a1f541-a1ef-4d51-ada2-1254feb1b225">
+    <dcterms:identifier xml:lang="en">{"id": "d38c4299-81df-4380-a69a-aaacfa9eeade", "value": "http://localhost:8000/51a1f541-a1ef-4d51-ada2-1254feb1b225"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "bc2f3015-ec3c-461a-b74e-557ad1bfdae2", "value": "Thematic map"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "5b97d84e-e5ee-43e5-99eb-30404a9d9caf", "value": "A map designed to display a particular subject or theme, such as the distribution of archaeological sites."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/5f2f6ae6-d380-426e-b518-eaa8c5232fbd">
+    <dcterms:identifier xml:lang="en">{"id": "5a9e334b-2f6f-4845-b594-859bebd8ba03", "value": "http://localhost:8000/5f2f6ae6-d380-426e-b518-eaa8c5232fbd"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "13831920-d380-4cc8-af02-0ddb8dcb8f68", "value": "Site plan"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "0ae25695-6362-4e1f-ba64-5b4e6352d1d8", "value": "Sketch map"}</skos:altLabel>
+    <skos:scopeNote xml:lang="en">{"id": "3cb73adc-6fcc-4c2c-b690-b4cd39ab2d89", "value": "A hand-drawn or simplified map showing the layout of a site or area, not necessarily to scale."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/0f357e80-83ad-455a-bc57-91cdf317f828">
+    <dcterms:identifier xml:lang="en">{"id": "2a86a86e-8392-4c4e-b0ab-db48f9adf624", "value": "http://localhost:8000/0f357e80-83ad-455a-bc57-91cdf317f828"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "53cf86f6-43c6-4b0c-966e-821edc3263c1", "value": "Historical map"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "434a2015-252c-4c24-b126-edf20c025e66", "value": "A map produced in the past that documents historical geography, boundaries, or features no longer current."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/f2e641cd-0724-460e-9c00-cda6041f4a25">
+    <dcterms:identifier xml:lang="en">{"id": "f391b2bb-8dfb-479d-92df-49da446ab715", "value": "http://localhost:8000/f2e641cd-0724-460e-9c00-cda6041f4a25"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "af402b70-d447-4c2e-ace0-de634596caa8", "value": "Document conditions"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:narrower rdf:resource="http://localhost:8000/f5e37b27-3550-4891-838f-35f255c86106"/>
+    <skos:narrower rdf:resource="http://localhost:8000/98c2b56e-a29a-421d-ab5e-b44fc765044c"/>
+    <skos:narrower rdf:resource="http://localhost:8000/afa19a4a-b9f8-4655-9f8d-8a7d76fc38b8"/>
+    <skos:narrower rdf:resource="http://localhost:8000/8ddc8a94-b350-4b62-bb74-a496a8af6a2c"/>
+    <skos:narrower rdf:resource="http://localhost:8000/f7095509-bbd1-487e-b0b1-553f55c95920"/>
+    <skos:narrower rdf:resource="http://localhost:8000/051df6db-7c07-4a4b-8d97-ce01b10e4d87"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/f5e37b27-3550-4891-838f-35f255c86106">
+    <dcterms:identifier xml:lang="en">{"id": "20c3da1e-89a9-4a97-8a54-835c803c1edf", "value": "http://localhost:8000/f5e37b27-3550-4891-838f-35f255c86106"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "e187e3ed-ba7d-4130-9d7a-4863e1bcd130", "value": "Good"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "a3d70e1e-9235-4db7-b625-9274234b07ec", "value": "The document is in good physical condition, with no significant damage or deterioration."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/98c2b56e-a29a-421d-ab5e-b44fc765044c">
+    <dcterms:identifier xml:lang="en">{"id": "0cfc226d-65da-4e84-8712-4586bbada8b8", "value": "http://localhost:8000/98c2b56e-a29a-421d-ab5e-b44fc765044c"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "59ca6ad0-7811-4069-aca2-a5cc2bca2b56", "value": "Fair"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "bf721d09-d435-4818-8181-32a4352a0360", "value": "The document shows some signs of wear or minor damage but remains fully usable."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/afa19a4a-b9f8-4655-9f8d-8a7d76fc38b8">
+    <dcterms:identifier xml:lang="en">{"id": "9dcd68d0-52c5-40dc-b2b7-ecab7a7bdc3f", "value": "http://localhost:8000/afa19a4a-b9f8-4655-9f8d-8a7d76fc38b8"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "fd57cb9b-0ee3-433b-904a-ef4e79a954c0", "value": "Poor"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "44b2d1d7-0e3f-4d09-92fa-f23e69bda510", "value": "The document is significantly damaged or deteriorated, affecting its usability."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/8ddc8a94-b350-4b62-bb74-a496a8af6a2c">
+    <dcterms:identifier xml:lang="en">{"id": "45e3a243-7083-45fb-8f83-e03b9a11b454", "value": "http://localhost:8000/8ddc8a94-b350-4b62-bb74-a496a8af6a2c"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "db16dfab-93e5-462d-aa88-b64e82e0fada", "value": "Damaged"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "49e08aef-0031-4f21-9781-3f358e5281c7", "value": "The document has sustained physical damage, such as tears, water damage, or staining."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/f7095509-bbd1-487e-b0b1-553f55c95920">
+    <dcterms:identifier xml:lang="en">{"id": "daf967d2-f884-4eaf-9498-e930ea577545", "value": "http://localhost:8000/f7095509-bbd1-487e-b0b1-553f55c95920"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "2a5b6a2e-90df-4e46-9e79-21c300392f06", "value": "Fragile"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "6cb366cf-cdd1-4e58-9a71-1a5d62ec2620", "value": "The document is intact but physically weak and requires careful handling to avoid further damage."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/051df6db-7c07-4a4b-8d97-ce01b10e4d87">
+    <dcterms:identifier xml:lang="en">{"id": "2ab4957f-310c-4b69-8c5a-82f6d616bd29", "value": "http://localhost:8000/051df6db-7c07-4a4b-8d97-ce01b10e4d87"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "959323ba-7554-4c8a-bb01-a3a63c91b070", "value": "Unknown"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "f8ecde4a-4106-41f2-85f9-6f1f08f452fd", "value": "The condition of the document has not been assessed or recorded."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/639b3227-65e4-42d6-952b-9981c415388b">
+    <dcterms:identifier xml:lang="en">{"id": "a7444b41-4469-4d56-bc4f-67b1a100c619", "value": "http://localhost:8000/639b3227-65e4-42d6-952b-9981c415388b"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "81c765a9-ddb5-4414-8d89-c408b9c92da3", "value": "Digitisation methods"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:narrower rdf:resource="http://localhost:8000/14f4b192-4eed-4350-b035-a07865e74429"/>
+    <skos:narrower rdf:resource="http://localhost:8000/adf0fef9-ab21-4b8e-8bf1-deaa21d755df"/>
+    <skos:narrower rdf:resource="http://localhost:8000/135612df-9070-48ca-bedf-908c42759d61"/>
+    <skos:narrower rdf:resource="http://localhost:8000/cdba1f14-3f4c-46a5-b2f7-03a331da4109"/>
+    <skos:narrower rdf:resource="http://localhost:8000/381936c8-3aa4-4dd0-92eb-2f541ca1c910"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/14f4b192-4eed-4350-b035-a07865e74429">
+    <dcterms:identifier xml:lang="en">{"id": "1efbc270-463f-4a8e-8014-aec03c8dd948", "value": "http://localhost:8000/14f4b192-4eed-4350-b035-a07865e74429"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "ee039229-236b-405b-9fc4-2872b816b73b", "value": "Scanning"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "3aa2d5ee-6cf6-43c9-9837-8277f12b0ace", "value": "The digital representation was created using a flatbed or sheet-fed scanner."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/adf0fef9-ab21-4b8e-8bf1-deaa21d755df">
+    <dcterms:identifier xml:lang="en">{"id": "822eaf9b-4794-49e0-aec4-7dad13a92bbd", "value": "http://localhost:8000/adf0fef9-ab21-4b8e-8bf1-deaa21d755df"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "2517686d-0723-4510-8e1f-831be5c9a396", "value": "Photography"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "d69619d5-3aa8-41fc-bd98-3825f0ee316c", "value": "The digital representation was created by photographing the original with a camera."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/135612df-9070-48ca-bedf-908c42759d61">
+    <dcterms:identifier xml:lang="en">{"id": "b5f90485-6644-45a5-8cb8-9de49f14fe4d", "value": "http://localhost:8000/135612df-9070-48ca-bedf-908c42759d61"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "7e9fceff-1e38-4df9-bf55-e0dfd2a82834", "value": "Photogrammetry"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "bb46d926-2468-498a-8b3d-6fc7e3598908", "value": "The digital representation was created by combining multiple photographs to produce a measured or georeferenced output."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/cdba1f14-3f4c-46a5-b2f7-03a331da4109">
+    <dcterms:identifier xml:lang="en">{"id": "13d53765-bfef-44ab-876c-75743879b615", "value": "http://localhost:8000/cdba1f14-3f4c-46a5-b2f7-03a331da4109"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "7903c0d0-9a30-4c07-beaa-211d9f944e5e", "value": "Born digital"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "b63e12ae-76da-46f9-9a0e-19203285f90b", "value": "The resource was created directly in digital form, with no physical original."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/381936c8-3aa4-4dd0-92eb-2f541ca1c910">
+    <dcterms:identifier xml:lang="en">{"id": "ef6d5fd8-42be-4dc6-9802-1339b6d81e82", "value": "http://localhost:8000/381936c8-3aa4-4dd0-92eb-2f541ca1c910"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "bfe45c4c-0946-4a34-9fad-1c1c741a7c37", "value": "Other"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "370949a2-4766-488f-b597-e7e2a6f57138", "value": "The digitisation method used is not covered by the terms currently in this vocabulary."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/f1680367-5296-4478-b098-f86154fc10a5">
+    <dcterms:identifier xml:lang="en">{"id": "ed7dc916-6797-40b7-a5d8-5109337bd9ae", "value": "http://localhost:8000/f1680367-5296-4478-b098-f86154fc10a5"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "16f7df67-166d-4b55-b17d-abdb2f3bee7a", "value": "Access levels"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:narrower rdf:resource="http://localhost:8000/32928659-c930-4689-a787-1b0bb70d5671"/>
+    <skos:narrower rdf:resource="http://localhost:8000/36f79a40-4fbf-4c08-b483-df6384c74990"/>
+    <skos:narrower rdf:resource="http://localhost:8000/6344b242-75c5-43e6-9258-7f42e87a93aa"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/32928659-c930-4689-a787-1b0bb70d5671">
+    <dcterms:identifier xml:lang="en">{"id": "ad0f3f8a-5f56-4014-8ea8-ac3c01c1f2a3", "value": "http://localhost:8000/32928659-c930-4689-a787-1b0bb70d5671"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "71cdb65e-90e4-41e0-86bd-ab44eee3f8b3", "value": "Open access"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "5d2bb686-b985-4fcc-acaf-14948fafcb84", "value": "The resource is publicly accessible without restriction."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/36f79a40-4fbf-4c08-b483-df6384c74990">
+    <dcterms:identifier xml:lang="en">{"id": "d28f76fd-710b-416d-be50-b0d87d52ceb3", "value": "http://localhost:8000/36f79a40-4fbf-4c08-b483-df6384c74990"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "84163a9c-b81e-40a4-af4a-9084bfbb77bc", "value": "Restricted access"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "308380b4-c3c5-475c-8aa1-fd63d3548fd7", "value": "Access to the resource is limited to specific users or requires permission from the rights holder or data custodian."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/6344b242-75c5-43e6-9258-7f42e87a93aa">
+    <dcterms:identifier xml:lang="en">{"id": "ff5304a7-7fb5-43b2-af48-54e1a419fc42", "value": "http://localhost:8000/6344b242-75c5-43e6-9258-7f42e87a93aa"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "056955dd-79f4-4b57-8b91-c8030ff80a55", "value": "Closed access"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "d9b49d1d-a61f-42da-8fbf-42671fe0794a", "value": "The resource is not accessible to users outside the data-holding organisation."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/842ebc3c-0de9-45a8-91af-5b2558b778dd">
+    <dcterms:identifier xml:lang="en">{"id": "04e806c4-bc62-41b2-90c8-a41581bf6931", "value": "http://localhost:8000/842ebc3c-0de9-45a8-91af-5b2558b778dd"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "17f90c97-5144-46d4-9475-09a55ebd2574", "value": "Countries"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:narrower rdf:resource="http://localhost:8000/b12f4427-273a-4d5d-b2e6-2ba1a0e043f5"/>
+    <skos:narrower rdf:resource="http://localhost:8000/948583e2-4cfd-4586-ae03-33c32c39bc73"/>
+    <skos:narrower rdf:resource="http://localhost:8000/84c3dd85-bfc8-4709-92a8-fc7c9af6f5d8"/>
+    <skos:narrower rdf:resource="http://localhost:8000/c503a204-261e-41e8-a3c5-1444194e1710"/>
+    <skos:narrower rdf:resource="http://localhost:8000/ea602ede-5280-499c-a47a-d8b3c4724293"/>
+    <skos:narrower rdf:resource="http://localhost:8000/a28d06a6-e3dd-43dc-b0c0-4ee162d85bf7"/>
+    <skos:narrower rdf:resource="http://localhost:8000/2a7f3ba2-b657-4725-858d-5aa40c309076"/>
+    <skos:narrower rdf:resource="http://localhost:8000/09a6d4bf-54c7-416d-b4dd-6576f1d832e4"/>
+    <skos:narrower rdf:resource="http://localhost:8000/253a2932-b7ca-432c-9ac8-460712f00069"/>
+    <skos:narrower rdf:resource="http://localhost:8000/0457f62f-ef0a-4e16-a751-a17d4387a858"/>
+    <skos:narrower rdf:resource="http://localhost:8000/78a17450-331d-4809-acba-126c4675fb50"/>
+    <skos:narrower rdf:resource="http://localhost:8000/4c1dfd96-2325-4f21-8210-f8ac0e08a728"/>
+    <skos:narrower rdf:resource="http://localhost:8000/a3ad0a8b-ebe8-4b92-97a1-f2fc2bd89a1d"/>
+    <skos:narrower rdf:resource="http://localhost:8000/3954a6f9-69da-4998-b271-496234906ded"/>
+    <skos:narrower rdf:resource="http://localhost:8000/14d916bc-3041-44df-9dc0-d05c2026aad3"/>
+    <skos:narrower rdf:resource="http://localhost:8000/ba712ab6-4c31-462f-8fc9-4a533e99d575"/>
+    <skos:narrower rdf:resource="http://localhost:8000/cc4df6f8-8e6b-4491-87df-ab17e31b0a1c"/>
+    <skos:narrower rdf:resource="http://localhost:8000/cae0baac-af34-4605-8aa1-765873106daa"/>
+    <skos:narrower rdf:resource="http://localhost:8000/3c4a2a9e-be33-4805-b6b5-18a11bc6c879"/>
+    <skos:narrower rdf:resource="http://localhost:8000/8fc80285-89cf-4091-a371-79bc287a61b1"/>
+    <skos:narrower rdf:resource="http://localhost:8000/1815e84f-196a-43d7-95d2-33b71242a99c"/>
+    <skos:narrower rdf:resource="http://localhost:8000/f9b5c1ff-f07c-4547-92bb-d5b5f1094502"/>
+    <skos:narrower rdf:resource="http://localhost:8000/9943687b-141b-43a0-94f0-577e630e4c9d"/>
+    <skos:narrower rdf:resource="http://localhost:8000/314133d2-6f9e-45d6-aa37-808fd92004db"/>
+    <skos:narrower rdf:resource="http://localhost:8000/48d64a3b-d4f0-435c-86c1-d1250899908d"/>
+    <skos:narrower rdf:resource="http://localhost:8000/4dc0ea7f-4a5f-497e-9bce-f89966f593a3"/>
+    <skos:narrower rdf:resource="http://localhost:8000/fd94b4d1-772f-42e5-ba09-ef7ca97b3b84"/>
+    <skos:narrower rdf:resource="http://localhost:8000/f3bfba5b-e319-492a-b563-e668587f4d37"/>
+    <skos:narrower rdf:resource="http://localhost:8000/e7d0da01-46eb-4dd0-8225-8cfa498cc621"/>
+    <skos:narrower rdf:resource="http://localhost:8000/ead2a2dc-953c-4c42-b417-d365f958ef45"/>
+    <skos:narrower rdf:resource="http://localhost:8000/a8c6b4ed-babb-4181-8a04-b2b33b9bee80"/>
+    <skos:narrower rdf:resource="http://localhost:8000/ae8f8405-7560-4e06-bbe9-202e8e1954f1"/>
+    <skos:narrower rdf:resource="http://localhost:8000/1ea8f83b-6419-4060-a709-c46c2035dd72"/>
+    <skos:narrower rdf:resource="http://localhost:8000/311a939e-7408-4fe9-9797-7fb17b4215c6"/>
+    <skos:narrower rdf:resource="http://localhost:8000/1786ee04-db24-4a7d-b19b-97dd98c8660f"/>
+    <skos:narrower rdf:resource="http://localhost:8000/27cec4b3-b679-4fe4-9d3a-5befec2eacc1"/>
+    <skos:narrower rdf:resource="http://localhost:8000/bfb6e979-ab33-49fe-978f-a77ea7cabfd0"/>
+    <skos:narrower rdf:resource="http://localhost:8000/d82fead1-1c28-4157-9a95-c9b0586bc6e7"/>
+    <skos:narrower rdf:resource="http://localhost:8000/ec6828de-b456-4e46-93bb-32063df9124d"/>
+    <skos:narrower rdf:resource="http://localhost:8000/518d1686-0652-4bcd-aa9a-f22fc4f21971"/>
+    <skos:narrower rdf:resource="http://localhost:8000/1770b713-a811-4855-8444-8bcc725d90c9"/>
+    <skos:narrower rdf:resource="http://localhost:8000/068ec728-9a68-4856-b1a5-ebde36d4a56b"/>
+    <skos:narrower rdf:resource="http://localhost:8000/be24a9a3-0333-43ff-abcb-aa7c655f94a6"/>
+    <skos:narrower rdf:resource="http://localhost:8000/f6324f94-ce12-4c49-95d2-25d2af03c354"/>
+    <skos:narrower rdf:resource="http://localhost:8000/23785018-d71f-4ca9-b930-39f74d0426aa"/>
+    <skos:narrower rdf:resource="http://localhost:8000/868ed8ea-0770-4aca-9811-d954f1cd4f3d"/>
+    <skos:narrower rdf:resource="http://localhost:8000/6674695f-1c53-4b95-a8c4-d9256cf7b6ae"/>
+    <skos:narrower rdf:resource="http://localhost:8000/3f0a9a86-bf78-42ec-a4ad-0264e5f6f24d"/>
+    <skos:narrower rdf:resource="http://localhost:8000/6eb69b41-ed91-4a85-98c1-a81cc87dfa47"/>
+    <skos:narrower rdf:resource="http://localhost:8000/87d4ec86-9f05-4150-a3e5-902e9cb4ff36"/>
+    <skos:narrower rdf:resource="http://localhost:8000/b0cd7966-8a31-4c43-b4bf-adc3bf40e88d"/>
+    <skos:narrower rdf:resource="http://localhost:8000/a22291ad-4146-4b77-a192-84fecde56647"/>
+    <skos:narrower rdf:resource="http://localhost:8000/237881ae-b308-4af5-9954-b13c64a38ef1"/>
+    <skos:narrower rdf:resource="http://localhost:8000/b901d116-9936-42eb-a6ee-77fc8488a592"/>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/b12f4427-273a-4d5d-b2e6-2ba1a0e043f5">
+    <dcterms:identifier xml:lang="en">{"id": "b52d7f31-345a-41a8-b0db-43ca5e8b0b44", "value": "http://localhost:8000/b12f4427-273a-4d5d-b2e6-2ba1a0e043f5"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "e670d0f3-a4d2-4b8e-a580-b4239c53b134", "value": "DZA"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "daeee40a-9318-4ca2-8a3d-1d10e1398d8a", "value": "Algeria"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/948583e2-4cfd-4586-ae03-33c32c39bc73">
+    <dcterms:identifier xml:lang="en">{"id": "2033dd7c-4796-49ea-a252-1d5b151378a2", "value": "http://localhost:8000/948583e2-4cfd-4586-ae03-33c32c39bc73"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "a8eb6052-85dc-44f7-9896-962739a9c7ba", "value": "AGO"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "73ddd4a9-fda2-4296-9b19-1606c8be4649", "value": "Angola"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/84c3dd85-bfc8-4709-92a8-fc7c9af6f5d8">
+    <dcterms:identifier xml:lang="en">{"id": "7d5582a0-925b-4077-825d-a16c5d60f671", "value": "http://localhost:8000/84c3dd85-bfc8-4709-92a8-fc7c9af6f5d8"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "e8f96058-6088-469c-87b9-c9ff8933dce1", "value": "BEN"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "b4e593f3-7518-47ca-8b30-4c0512c340bf", "value": "Benin"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/c503a204-261e-41e8-a3c5-1444194e1710">
+    <dcterms:identifier xml:lang="en">{"id": "3d9884ca-511c-458f-879b-7d20a5a04faf", "value": "http://localhost:8000/c503a204-261e-41e8-a3c5-1444194e1710"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "1cfaf8ce-e4cf-4999-8e27-fead2f2f0e0f", "value": "BWA"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "7a5d93df-f7d5-454a-a291-e0c4b0e91925", "value": "Botswana"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/ea602ede-5280-499c-a47a-d8b3c4724293">
+    <dcterms:identifier xml:lang="en">{"id": "1a7e0685-4b86-4999-a205-5098ebe33eac", "value": "http://localhost:8000/ea602ede-5280-499c-a47a-d8b3c4724293"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "0c3c5826-cee7-41ae-9fd9-a7ad59cb521e", "value": "BFA"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "16bcf0a5-bdd0-45e4-a762-74f4275ff931", "value": "Burkina Faso"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/a28d06a6-e3dd-43dc-b0c0-4ee162d85bf7">
+    <dcterms:identifier xml:lang="en">{"id": "fc03e877-175e-44c2-b9e1-0d7fba699907", "value": "http://localhost:8000/a28d06a6-e3dd-43dc-b0c0-4ee162d85bf7"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "edb15512-2391-4759-8da8-6cdeb24efef8", "value": "BDI"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "3932a9c5-eeee-4ade-a25f-88e214937e53", "value": "Burundi"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/2a7f3ba2-b657-4725-858d-5aa40c309076">
+    <dcterms:identifier xml:lang="en">{"id": "61dddd9c-1ca2-48bd-b3a1-80ada8bbe71c", "value": "http://localhost:8000/2a7f3ba2-b657-4725-858d-5aa40c309076"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "b2993cc1-c153-4f19-afec-74b4d08763ef", "value": "CPV"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "b1aae44d-b87b-42f8-a133-5ef7e782e5ee", "value": "Cabo Verde"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/09a6d4bf-54c7-416d-b4dd-6576f1d832e4">
+    <dcterms:identifier xml:lang="en">{"id": "75e286e2-ab88-474d-a969-88efd17b492e", "value": "http://localhost:8000/09a6d4bf-54c7-416d-b4dd-6576f1d832e4"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "7d4ea066-1d45-4777-bde3-bf0555a98c58", "value": "CMR"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "de498608-8320-481c-b14b-bef60de30be4", "value": "Cameroon"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/253a2932-b7ca-432c-9ac8-460712f00069">
+    <dcterms:identifier xml:lang="en">{"id": "f682c8a1-38e8-4d24-9818-bef32716a3e5", "value": "http://localhost:8000/253a2932-b7ca-432c-9ac8-460712f00069"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "012394eb-788f-4c2a-be9c-c3e3e746e1e5", "value": "CAF"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "6c0c1c90-39fe-4033-a047-c383ceddc9d0", "value": "Central African Republic"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/0457f62f-ef0a-4e16-a751-a17d4387a858">
+    <dcterms:identifier xml:lang="en">{"id": "80598c77-aae9-4693-8531-929e7924893f", "value": "http://localhost:8000/0457f62f-ef0a-4e16-a751-a17d4387a858"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "8fae590b-4462-4f8b-9593-b9f80da8f1f1", "value": "TCD"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "d2b674f6-4d5e-437f-b675-ceb09d870637", "value": "Chad"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/78a17450-331d-4809-acba-126c4675fb50">
+    <dcterms:identifier xml:lang="en">{"id": "a89af2c6-d932-4b74-b1e4-f46628d7511c", "value": "http://localhost:8000/78a17450-331d-4809-acba-126c4675fb50"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "d148c07c-286c-4438-85b3-9866a31deafd", "value": "COM"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "06ee6659-9e30-4835-9008-ff2691eac485", "value": "Comoros"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/4c1dfd96-2325-4f21-8210-f8ac0e08a728">
+    <dcterms:identifier xml:lang="en">{"id": "ffe057e0-7452-420e-b6ce-747ce66f92e7", "value": "http://localhost:8000/4c1dfd96-2325-4f21-8210-f8ac0e08a728"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "ca8361c3-6f2d-4291-9120-4730d5e4859c", "value": "COG"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "c5284cf1-5a7a-442c-a40b-4e8a7be6337b", "value": "Congo"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/a3ad0a8b-ebe8-4b92-97a1-f2fc2bd89a1d">
+    <dcterms:identifier xml:lang="en">{"id": "a152b9ff-85fc-4bb1-a6b0-5a3f3d010f9e", "value": "http://localhost:8000/a3ad0a8b-ebe8-4b92-97a1-f2fc2bd89a1d"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "fe4c3e5a-8166-4f58-88fe-50dc5daa409f", "value": "COD"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "2f1d7ae4-2e6d-4967-bbf4-c8a1212eac39", "value": "Congo, Democratic Republic of the"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/3954a6f9-69da-4998-b271-496234906ded">
+    <dcterms:identifier xml:lang="en">{"id": "7f7707a8-afef-43e4-82c3-3d6fe85b3464", "value": "http://localhost:8000/3954a6f9-69da-4998-b271-496234906ded"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "5950f3b0-8621-4aca-9c38-2fee6b4ee5b4", "value": "CIV"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "5b018420-4888-4adc-be45-acc1c90c45eb", "value": "Cote d'Ivoire"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/14d916bc-3041-44df-9dc0-d05c2026aad3">
+    <dcterms:identifier xml:lang="en">{"id": "f656d6df-d55b-40af-9413-def9e3f6c523", "value": "http://localhost:8000/14d916bc-3041-44df-9dc0-d05c2026aad3"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "4c59b83e-c540-4472-886f-61dbcdb2b107", "value": "DJI"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "f36fe34f-e858-44e6-9d48-4e5fe5ac0cbc", "value": "Djibouti"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/ba712ab6-4c31-462f-8fc9-4a533e99d575">
+    <dcterms:identifier xml:lang="en">{"id": "3057ff3a-0920-4c40-b6fc-c836da57f266", "value": "http://localhost:8000/ba712ab6-4c31-462f-8fc9-4a533e99d575"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "e52ed838-7174-4a35-9ed3-822e00b60633", "value": "EGY"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "833faf2a-cc77-4d67-9c82-9700e8b95d71", "value": "Egypt"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/cc4df6f8-8e6b-4491-87df-ab17e31b0a1c">
+    <dcterms:identifier xml:lang="en">{"id": "e76ddfa6-d515-484d-a583-f8259a44d21b", "value": "http://localhost:8000/cc4df6f8-8e6b-4491-87df-ab17e31b0a1c"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "091b783d-5179-4f8b-b50e-dae69d3aed2c", "value": "GNQ"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "8f802cda-9ee0-4cfe-9e38-8bbf7dd9fe4c", "value": "Equatorial Guinea"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/cae0baac-af34-4605-8aa1-765873106daa">
+    <dcterms:identifier xml:lang="en">{"id": "c009405e-7e1a-452d-971b-76696e6b0ff9", "value": "http://localhost:8000/cae0baac-af34-4605-8aa1-765873106daa"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "b9c15d42-a961-45ff-a983-62ac3faa8dfb", "value": "ERI"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "405bea75-deb2-4d5b-a725-b672372e9549", "value": "Eritrea"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/3c4a2a9e-be33-4805-b6b5-18a11bc6c879">
+    <dcterms:identifier xml:lang="en">{"id": "0922ed14-924d-4884-ac5b-c50eff5714d4", "value": "http://localhost:8000/3c4a2a9e-be33-4805-b6b5-18a11bc6c879"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "763295e7-d58e-4915-a60f-e1e66ecc18b8", "value": "SWZ"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "f49bc4e9-5b4c-4480-a4ca-0bc82af30195", "value": "Eswatini"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/8fc80285-89cf-4091-a371-79bc287a61b1">
+    <dcterms:identifier xml:lang="en">{"id": "9f118b0f-6cac-4ec9-8c78-6221835bb0c3", "value": "http://localhost:8000/8fc80285-89cf-4091-a371-79bc287a61b1"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "d147ad51-5fb6-4aea-943b-42a233a03974", "value": "ETH"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "a99c6308-4610-4248-8cc4-f0c364cacee7", "value": "Ethiopia"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/1815e84f-196a-43d7-95d2-33b71242a99c">
+    <dcterms:identifier xml:lang="en">{"id": "bb098e07-8676-4087-9fd2-7ea65650d230", "value": "http://localhost:8000/1815e84f-196a-43d7-95d2-33b71242a99c"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "c4d54775-f2cb-47ad-adf9-33d72096f637", "value": "GAB"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "d2a9aaba-ff41-4019-97b2-0b923c86121a", "value": "Gabon"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/f9b5c1ff-f07c-4547-92bb-d5b5f1094502">
+    <dcterms:identifier xml:lang="en">{"id": "7e96059f-adc6-4b88-95c6-1676dbf7529d", "value": "http://localhost:8000/f9b5c1ff-f07c-4547-92bb-d5b5f1094502"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "567ddd49-fe1e-4557-a218-7c71855ee89e", "value": "GMB"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "6fc4eab9-af8d-4923-aaad-0411cfde782b", "value": "Gambia"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/9943687b-141b-43a0-94f0-577e630e4c9d">
+    <dcterms:identifier xml:lang="en">{"id": "c0dc56f3-484d-4ced-b9da-12d0c1ddba64", "value": "http://localhost:8000/9943687b-141b-43a0-94f0-577e630e4c9d"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "f52a9ba5-889c-4a51-9355-1212ecd3d727", "value": "GHA"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "1e8d738a-15bb-4ca2-a39a-e0c5c15d77f4", "value": "Ghana"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/314133d2-6f9e-45d6-aa37-808fd92004db">
+    <dcterms:identifier xml:lang="en">{"id": "e5485a41-e7fc-4bb6-ae26-ad388491193a", "value": "http://localhost:8000/314133d2-6f9e-45d6-aa37-808fd92004db"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "4ca54af7-e256-43ae-a41e-a86301301d45", "value": "GIN"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "05ed1158-49a9-46de-8a78-36ea27606411", "value": "Guinea"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/48d64a3b-d4f0-435c-86c1-d1250899908d">
+    <dcterms:identifier xml:lang="en">{"id": "ae5f415c-a83c-416c-a397-63ad784bd879", "value": "http://localhost:8000/48d64a3b-d4f0-435c-86c1-d1250899908d"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "de8b5d83-730d-41fc-a182-084393d6f9fa", "value": "GNB"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "278ce277-0e02-48bf-bcce-3c655e31823f", "value": "Guinea-Bissau"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/4dc0ea7f-4a5f-497e-9bce-f89966f593a3">
+    <dcterms:identifier xml:lang="en">{"id": "fcf1ce6e-9722-4e22-9b6b-8a3500c07ef4", "value": "http://localhost:8000/4dc0ea7f-4a5f-497e-9bce-f89966f593a3"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "3d45de07-8d3d-4bd1-b358-d1c9129dfb83", "value": "KEN"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "d7b06b0b-b71f-4c0e-a5ad-f8020db07cc8", "value": "Kenya"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/fd94b4d1-772f-42e5-ba09-ef7ca97b3b84">
+    <dcterms:identifier xml:lang="en">{"id": "3b7df705-5c94-47a1-bdf7-44c252d54641", "value": "http://localhost:8000/fd94b4d1-772f-42e5-ba09-ef7ca97b3b84"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "6f8caa22-6235-4775-81e4-446bff05405f", "value": "LSO"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "4029e24e-e61e-4124-98a7-0b6eee84b94c", "value": "Lesotho"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/f3bfba5b-e319-492a-b563-e668587f4d37">
+    <dcterms:identifier xml:lang="en">{"id": "7c1f2277-ff7d-4546-a400-c752f56cdf96", "value": "http://localhost:8000/f3bfba5b-e319-492a-b563-e668587f4d37"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "52f59060-7c83-4867-8989-79d8c31c8d18", "value": "LBR"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "68e6f094-2071-4f84-ab78-d3281f827e99", "value": "Liberia"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/e7d0da01-46eb-4dd0-8225-8cfa498cc621">
+    <dcterms:identifier xml:lang="en">{"id": "58d043c6-0cdd-42a5-aed6-cea558876873", "value": "http://localhost:8000/e7d0da01-46eb-4dd0-8225-8cfa498cc621"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "da93705c-1f5b-4e20-ba38-7a83b1ac8d06", "value": "LBY"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "0edaceb4-3c88-4400-8564-07613a42eab9", "value": "Libya"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/ead2a2dc-953c-4c42-b417-d365f958ef45">
+    <dcterms:identifier xml:lang="en">{"id": "22d4e021-a6e0-43bc-9d39-3e9c9630caab", "value": "http://localhost:8000/ead2a2dc-953c-4c42-b417-d365f958ef45"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "107709ab-c65b-4a9c-95f0-d000975b8af5", "value": "MDG"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "7a330d90-5d9b-40a6-a9fb-ea6bedc5b7ca", "value": "Madagascar"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/a8c6b4ed-babb-4181-8a04-b2b33b9bee80">
+    <dcterms:identifier xml:lang="en">{"id": "572918ca-6f6a-42e1-ae4f-9d0d77a2d2d0", "value": "http://localhost:8000/a8c6b4ed-babb-4181-8a04-b2b33b9bee80"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "39667bcc-3a56-4c38-a48b-39bc14416223", "value": "MWI"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "1d577bfc-ee0b-4e68-abf5-d17efee21d17", "value": "Malawi"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/ae8f8405-7560-4e06-bbe9-202e8e1954f1">
+    <dcterms:identifier xml:lang="en">{"id": "79e745c4-aeea-4c21-896d-e6e745ec04db", "value": "http://localhost:8000/ae8f8405-7560-4e06-bbe9-202e8e1954f1"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "d7ffd1c2-ca73-471f-88e8-f04038902a6e", "value": "MLI"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "98b25ed7-9bd4-482c-b5e1-1f864025e0e5", "value": "Mali"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/1ea8f83b-6419-4060-a709-c46c2035dd72">
+    <dcterms:identifier xml:lang="en">{"id": "0a03cd6f-b1ab-455a-932d-31b776781044", "value": "http://localhost:8000/1ea8f83b-6419-4060-a709-c46c2035dd72"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "849b0e85-b75c-403a-bc33-4b29b15fcfe8", "value": "MRT"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "6ceaf10e-af2f-4c34-89fa-b4dbe12a3e3a", "value": "Mauritania"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/311a939e-7408-4fe9-9797-7fb17b4215c6">
+    <dcterms:identifier xml:lang="en">{"id": "ef8fba91-04b7-4d43-a326-47bb07e5021d", "value": "http://localhost:8000/311a939e-7408-4fe9-9797-7fb17b4215c6"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "75c542f4-b1fe-4ea5-beb4-df3b9210e4d3", "value": "MUS"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "f767e170-17f5-4815-a42f-a7a7c0efd501", "value": "Mauritius"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/1786ee04-db24-4a7d-b19b-97dd98c8660f">
+    <dcterms:identifier xml:lang="en">{"id": "1e6a017a-7cd3-44d1-9c13-92e4af6cf6d7", "value": "http://localhost:8000/1786ee04-db24-4a7d-b19b-97dd98c8660f"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "14728804-7928-4cfc-b27a-b7a55f9bed4f", "value": "MAR"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "d1ca0761-228c-4e49-8b74-f857b7879129", "value": "Morocco"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/27cec4b3-b679-4fe4-9d3a-5befec2eacc1">
+    <dcterms:identifier xml:lang="en">{"id": "90076c9d-6501-49a9-9082-5122edac4cbb", "value": "http://localhost:8000/27cec4b3-b679-4fe4-9d3a-5befec2eacc1"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "faf5ff8e-ae43-4b72-955a-183f966d05d0", "value": "MOZ"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "38038c59-67b8-443e-a5c3-c2e6045ac3b2", "value": "Mozambique"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/bfb6e979-ab33-49fe-978f-a77ea7cabfd0">
+    <dcterms:identifier xml:lang="en">{"id": "bc852405-2047-4ddf-90e2-35c2af51e293", "value": "http://localhost:8000/bfb6e979-ab33-49fe-978f-a77ea7cabfd0"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "ceb9484d-dbda-49c9-8646-8e8af947bb04", "value": "NAM"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "e6ea5957-09e4-474d-af5f-108084980cba", "value": "Namibia"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/d82fead1-1c28-4157-9a95-c9b0586bc6e7">
+    <dcterms:identifier xml:lang="en">{"id": "ba4965c7-997c-4717-a1ed-1d215cca2907", "value": "http://localhost:8000/d82fead1-1c28-4157-9a95-c9b0586bc6e7"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "ac90a400-1ef9-4a01-9256-1f58167f085b", "value": "NER"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "004eaf53-7b4a-44fe-b3d4-f0a74324e012", "value": "Niger"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/ec6828de-b456-4e46-93bb-32063df9124d">
+    <dcterms:identifier xml:lang="en">{"id": "de53b0b8-312c-41bd-9637-159295fe25fd", "value": "http://localhost:8000/ec6828de-b456-4e46-93bb-32063df9124d"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "602b9aab-5b0d-46db-be4c-88e6641ff592", "value": "NGA"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "bf009e29-a1ef-4fab-8f35-4ea4b10eae30", "value": "Nigeria"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/518d1686-0652-4bcd-aa9a-f22fc4f21971">
+    <dcterms:identifier xml:lang="en">{"id": "d9cdd0bf-8524-4523-9125-10cf14d1a0bc", "value": "http://localhost:8000/518d1686-0652-4bcd-aa9a-f22fc4f21971"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "e7c6fbbb-47d0-4b73-92f0-afbaa08a0613", "value": "RWA"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "5ea4e9be-ef15-41d5-8095-f40f537c341b", "value": "Rwanda"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/1770b713-a811-4855-8444-8bcc725d90c9">
+    <dcterms:identifier xml:lang="en">{"id": "a8d0f4f4-4b79-48f3-86e2-130bb0ab12ea", "value": "http://localhost:8000/1770b713-a811-4855-8444-8bcc725d90c9"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "f26e2b79-98ae-47df-9a7f-125d5fed0e09", "value": "STP"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "42de314c-d7ac-412f-b410-cfe06c553fed", "value": "Sao Tome and Principe"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/068ec728-9a68-4856-b1a5-ebde36d4a56b">
+    <dcterms:identifier xml:lang="en">{"id": "e96bb68c-5465-4e11-8815-a28e2bd0bf37", "value": "http://localhost:8000/068ec728-9a68-4856-b1a5-ebde36d4a56b"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "52d5d3a1-e6d5-4234-8c9c-2b38b273e2fb", "value": "SEN"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "ffedff53-49e9-488b-80b7-efb0b7028230", "value": "Senegal"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/be24a9a3-0333-43ff-abcb-aa7c655f94a6">
+    <dcterms:identifier xml:lang="en">{"id": "ccf9b597-ce90-4a5a-b4da-2eb8886ba662", "value": "http://localhost:8000/be24a9a3-0333-43ff-abcb-aa7c655f94a6"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "ab06f8cf-3fc1-48f8-aabe-b456aab3070e", "value": "SYC"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "740e774f-17e0-41d1-8bd7-ae6c3f03d0dd", "value": "Seychelles"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/f6324f94-ce12-4c49-95d2-25d2af03c354">
+    <dcterms:identifier xml:lang="en">{"id": "de6ca7ba-9b3b-479d-ac53-6c0a2bb2dd60", "value": "http://localhost:8000/f6324f94-ce12-4c49-95d2-25d2af03c354"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "ea5a1116-0579-4c56-a388-e02dd9edf06a", "value": "SLE"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "0456032a-a595-4887-a343-a369ed6724bf", "value": "Sierra Leone"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/23785018-d71f-4ca9-b930-39f74d0426aa">
+    <dcterms:identifier xml:lang="en">{"id": "e3f0bfde-7bef-4241-bf8d-1d924350f006", "value": "http://localhost:8000/23785018-d71f-4ca9-b930-39f74d0426aa"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "f9a4ffce-49dd-443d-91bf-b6c5bc8f7eec", "value": "SOM"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "c51243a8-9b53-40f8-855f-7301055833ca", "value": "Somalia"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/868ed8ea-0770-4aca-9811-d954f1cd4f3d">
+    <dcterms:identifier xml:lang="en">{"id": "0c7378b9-e694-489c-a6f3-df7b3bc3c70c", "value": "http://localhost:8000/868ed8ea-0770-4aca-9811-d954f1cd4f3d"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "558d3dcb-3ca3-4e79-ae0f-8c20944a9249", "value": "ZAF"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "4f2af555-f7c1-42b3-a12b-519a1c843b99", "value": "South Africa"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/6674695f-1c53-4b95-a8c4-d9256cf7b6ae">
+    <dcterms:identifier xml:lang="en">{"id": "c64f6b1f-9ded-46ad-b637-7df86874da48", "value": "http://localhost:8000/6674695f-1c53-4b95-a8c4-d9256cf7b6ae"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "5a6d5fb8-5ed2-42dc-8480-faac935638f7", "value": "SSD"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "1905c868-71d2-4980-a530-988068edd53a", "value": "South Sudan"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/3f0a9a86-bf78-42ec-a4ad-0264e5f6f24d">
+    <dcterms:identifier xml:lang="en">{"id": "faae9c25-4731-42a2-879f-376c1167ff53", "value": "http://localhost:8000/3f0a9a86-bf78-42ec-a4ad-0264e5f6f24d"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "fbbc64d5-b4d7-4136-a4f5-423a302cbc6e", "value": "SDN"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "f0bb17c5-bdb4-4927-95f8-0c08228755c3", "value": "Sudan"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/6eb69b41-ed91-4a85-98c1-a81cc87dfa47">
+    <dcterms:identifier xml:lang="en">{"id": "139a35bf-d46b-48db-8b54-21eafaa5ba7a", "value": "http://localhost:8000/6eb69b41-ed91-4a85-98c1-a81cc87dfa47"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "b4aead6d-01e5-4094-bd07-2b6bf652311a", "value": "TZA"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "79df192b-a7e1-44ff-9bc2-44d20c462dca", "value": "Tanzania, United Republic of"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/87d4ec86-9f05-4150-a3e5-902e9cb4ff36">
+    <dcterms:identifier xml:lang="en">{"id": "dc684952-e27f-452f-bdd9-f6cf5e091c42", "value": "http://localhost:8000/87d4ec86-9f05-4150-a3e5-902e9cb4ff36"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "38b62898-12d7-412a-9f7b-5948302bf222", "value": "TGO"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "d814c4cc-64fd-4fc2-9a06-ca5295ed01cc", "value": "Togo"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/b0cd7966-8a31-4c43-b4bf-adc3bf40e88d">
+    <dcterms:identifier xml:lang="en">{"id": "8b360f45-908d-4969-8db3-0b1818815737", "value": "http://localhost:8000/b0cd7966-8a31-4c43-b4bf-adc3bf40e88d"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "b4c8f968-fb6a-4d9c-8aa1-47771d5c3391", "value": "TUN"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "93b5741c-d288-42a1-bc91-e1691492b161", "value": "Tunisia"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/a22291ad-4146-4b77-a192-84fecde56647">
+    <dcterms:identifier xml:lang="en">{"id": "88577b2a-3ed8-43bb-bd44-6752486dcf27", "value": "http://localhost:8000/a22291ad-4146-4b77-a192-84fecde56647"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "5b6d5cb8-543f-4070-8b91-9e1214f222e0", "value": "UGA"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "506da101-e270-4330-9588-528989d4b333", "value": "Uganda"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/237881ae-b308-4af5-9954-b13c64a38ef1">
+    <dcterms:identifier xml:lang="en">{"id": "3e337e56-6c42-4f03-8e9d-2a146d301e75", "value": "http://localhost:8000/237881ae-b308-4af5-9954-b13c64a38ef1"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "d9ea8791-4582-4fcf-9a69-abc2435bec1c", "value": "ZMB"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "0ef2d14f-b1ac-4be6-8392-93bbaab89bee", "value": "Zambia"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/b901d116-9936-42eb-a6ee-77fc8488a592">
+    <dcterms:identifier xml:lang="en">{"id": "167278a3-0860-4636-8dd2-cfd8335fbcb0", "value": "http://localhost:8000/b901d116-9936-42eb-a6ee-77fc8488a592"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "ff273442-c190-4f19-8c4b-42535b9528f7", "value": "ZWE"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:altLabel xml:lang="en">{"id": "932a26e0-4def-4836-a489-2c85cac8b20b", "value": "Zimbabwe"}</skos:altLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/30053125-433a-4e3f-8c50-36c1d75d14d3">
+    <dcterms:identifier xml:lang="en">{"id": "b1a1853c-50c9-47d6-9334-4fb5e85a0945", "value": "http://localhost:8000/30053125-433a-4e3f-8c50-36c1d75d14d3"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "baf71fa5-c81b-4644-814f-c11af6f00162", "value": "Vegetation map"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "2292c572-9fcf-4927-9b23-842a0f5f0a91", "value": "A map showing the distribution and type of plant cover across an area, such as forest, grassland, or cultivated land."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/e9fe62b8-4d60-4277-9a55-fee48543c785">
+    <dcterms:identifier xml:lang="en">{"id": "332ca5ef-57fb-4bef-83b0-a329d01e4d55", "value": "http://localhost:8000/e9fe62b8-4d60-4277-9a55-fee48543c785"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "25808164-7cd0-4969-8041-59f5284c39b9", "value": "Soil map"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "45d5a067-327e-4d85-8a27-3328f7586d1a", "value": "A map showing the distribution, type, and characteristics of soils across an area."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/74218291-74a3-42e9-91e4-7b9b6b1790d6">
+    <dcterms:identifier xml:lang="en">{"id": "696a972c-6f33-48f1-b536-48300875a859", "value": "http://localhost:8000/74218291-74a3-42e9-91e4-7b9b6b1790d6"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "07f30b96-e3d8-4028-8b6c-5ac0bab99610", "value": "Population map"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "00ee94ba-7c22-4133-941b-c215e5186d19", "value": "A map showing the distribution or density of human population across an area."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/19cce50e-0cba-45a0-adcc-c85028dc685c">
+    <dcterms:identifier xml:lang="en">{"id": "effac547-e87c-4892-a14c-ef75202bed38", "value": "http://localhost:8000/19cce50e-0cba-45a0-adcc-c85028dc685c"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "17098ae7-7781-4f57-97b7-3a596918c243", "value": "Chart"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "0e087686-e0ef-4a3e-a525-253c9abcd821", "value": "A map designed for navigation, such as a nautical or aeronautical chart, showing features relevant to travel by sea or air."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/c4405888-c6f5-4bf0-b89d-522d8c85ece9">
+    <dcterms:identifier xml:lang="en">{"id": "913dd058-6c6b-4105-89c6-8240f8338b39", "value": "http://localhost:8000/c4405888-c6f5-4bf0-b89d-522d8c85ece9"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "ccef72f0-85ea-4cae-8fc7-fa4d990e60bb", "value": "Tourist map"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "6b08e10e-f444-436b-8875-8a99f66fd43b", "value": "A map designed for visitors, highlighting points of interest, facilities, and routes rather than technical survey detail."}</skos:scopeNote>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://localhost:8000/a6ab9370-8f63-4e8f-aa9a-9cfa9bee48fa">
+    <dcterms:identifier xml:lang="en">{"id": "e2356a78-d14b-4fc0-b15a-2f1461180260", "value": "http://localhost:8000/a6ab9370-8f63-4e8f-aa9a-9cfa9bee48fa"}</dcterms:identifier>
+    <skos:prefLabel xml:lang="en">{"id": "c5f2f1ec-e2d1-44b9-8670-37721acecd06", "value": "Modern map"}</skos:prefLabel>
+    <skos:inScheme rdf:resource="http://localhost:8000/3f5606bd-cc32-38e7-8cd7-89e6eba4eb48"/>
+    <skos:scopeNote xml:lang="en">{"id": "a687721c-e612-4ef6-9d22-efe88335f1dd", "value": "A current map that reflects present-day geography, boundaries, or features, as distinct from a historical map."}</skos:scopeNote>
   </skos:Concept>
 </rdf:RDF>

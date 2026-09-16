@@ -1,5 +1,5 @@
 ﻿Arches terminology,Universal terminology,User form,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25
-CIDOC CRM Semantic Node Class,CIDOC CRM Semantic Node Class,,E42 Identifier,,E55 Type,E31 Document,,,,,,,,,,,,,,E30 Right,,E39 Actor,E62 String,E50 Date,,,
+CIDOC CRM Semantic Node Class,CIDOC CRM Semantic Node Class,,E42 Identifier,,E31 Document,,,,,,,,,,,,,,,E30 Right,,E39 Actor,E62 String,E50 Date,,,
 CIDOC CRM Node Class,CIDOC CRM Node Class,,E42 Identifier,http://www.cidoc-crm.org/cidoc-crm/E42_Identifier,E55 Type,E35 Title,E39 Actor,E74 Group,E50 Date,E31 Document,E31 Document,E42 Identifier,E42 Identifier,,E62 String,E62 String,E51 Contact Point,E56 Language,E62 String,E30 Right,http://www.cidoc-crm.org/cidoc-crm/E30_Right,E39 Actor,E62 String,E50 Date,E82 Actor Appellation,,E50 Date
 CIDOC CRM Scope note,CIDOC CRM Scope note,,"This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations. Such codes are often known as inventory numbers, registration codes, etc. and are typically composed of alphanumeric sequences. The class E42 Identifier is not normally used for machine-generated identifiers used for automated processing unless these are also used by human agent. The class E42 Identifier is not normally used for machine-generated identifiers used for automated processing unless these are also used by human agent. ",,"This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to
 characterize and classify instances of CRM classes. Instances of E55 Type represent concepts in
@@ -55,7 +55,7 @@ strings, bitmaps, vector graphics, etc.
 E62 String is not further elaborated upon within the mode","This class comprises specific forms of E49 Time Appellation.
 Dates may vary in their degree of precision",,,"This class comprises specific forms of E49 Time Appellation.
 Dates may vary in their degree of precision"
-Semantic Node (card),Group,Group,Identifiers,,Resource type,Publication information,,,,,,,,,,,,,,Copyright/Access,,Recording details,,,Uploading details,,
+Semantic Node (card),Group,Group,Identifiers,,Publication information,,,,,,,,,,,,,,,Copyright/Access,,Recording details,,,Uploading details,,
 Node (En),Metadata (En),Metadata (En),MAEASaM ID,Zotero Key,Resource type,Title of resource,Author,Publisher,Year of publication,Book or journal information,Book or journal edition,DOI,ISBN,ISSN,Page numbers,Volume,URL,Language,Abstract Note,Copyright,APA Reference,Recorder,Comment,Created at,Uploader,Uploaded at,Last modified at
 Node (Fr),Metadata (Fr),Metadata (Fr),MAEASaM ID,,Type de la  ressource,Titre de la ressource,Auteur,Éditeur,Année de publication,Informations sur les livres ou les revues,Édition d'un livre ou d'une revue,DOI,ISBN,ISSN,,,URL,,Édition de la publication,,,Enregistreur,Commentaire,Ressource créée à,,,Dernière modification de la ressource
 Node (Ar),Metadata (Ar),Metadata (Ar),,,,,,,,,,,,,,,,,,,,,,,,,

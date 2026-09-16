@@ -1,7 +1,7 @@
 Term ID,Parent Term ID,Term (En),Term (Fr),Term (Ar),Term (Pt),Alt Label(s) (En),Definition (En),Definition (Fr),Definition (Ar),Definition (Pt),Source (En),Status
-,,Good,,,,,"The document is in good physical condition, with no significant damage or deterioration.",,,,,
-,,Fair,,,,,The document shows some signs of wear or minor damage but remains fully usable.,,,,,
-,,Poor,,,,,"The document is significantly damaged or deteriorated, affecting its usability.",,,,,
-,,Damaged,,,,,"The document has sustained physical damage, such as tears, water damage, or staining.",,,,,
-,,Fragile,,,,,The document is intact but physically weak and requires careful handling to avoid further damage.,,,,,
-,,Unknown,,,,,The condition of the document has not been assessed or recorded.,,,,,
+f5e37b27-3550-4891-838f-35f255c86106,,Good,,,,,"The document is in good physical condition, with no significant damage or deterioration.",,,,,
+98c2b56e-a29a-421d-ab5e-b44fc765044c,,Fair,,,,,The document shows some signs of wear or minor damage but remains fully usable.,,,,,
+afa19a4a-b9f8-4655-9f8d-8a7d76fc38b8,,Poor,,,,,"The document is significantly damaged or deteriorated, affecting its usability.",,,,,
+8ddc8a94-b350-4b62-bb74-a496a8af6a2c,,Damaged,,,,,"The document has sustained physical damage, such as tears, water damage, or staining.",,,,,
+f7095509-bbd1-487e-b0b1-553f55c95920,,Fragile,,,,,The document is intact but physically weak and requires careful handling to avoid further damage.,,,,,
+051df6db-7c07-4a4b-8d97-ce01b10e4d87,,Unknown,,,,,The condition of the document has not been assessed or recorded.,,,,,

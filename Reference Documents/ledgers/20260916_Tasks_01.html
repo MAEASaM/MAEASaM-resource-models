@@ -1,0 +1,607 @@
+<title>MAEASaM Task Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #eef0ea;
+    --surface: #ffffff;
+    --surface-muted: #e4e8df;
+    --border: #d2d7c9;
+    --ink: #23271f;
+    --muted: #62695b;
+    --accent: #2c5f6f;
+    --accent-ink: #ffffff;
+    --status-open: #a13d31;
+    --status-open-bg: #f7e6e2;
+    --status-progress: #93630f;
+    --status-progress-bg: #f6ecd6;
+    --status-solved: #3f7a52;
+    --status-solved-bg: #e2eee3;
+    --imp-high: #8a2f2f;
+    --imp-high-bg: #f3e0de;
+    --chip-bg: #e4e8df;
+    --chip-active-bg: var(--accent);
+    --chip-active-ink: #ffffff;
+    --shadow: 0 1px 2px rgba(30,35,25,0.06), 0 1px 1px rgba(30,35,25,0.04);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141813;
+      --surface: #1b201a;
+      --surface-muted: #232921;
+      --border: #333c30;
+      --ink: #e8ebe1;
+      --muted: #9ba392;
+      --accent: #7fb8c9;
+      --accent-ink: #0e1a1d;
+      --status-open: #e18b7f;
+      --status-open-bg: #3a2420;
+      --status-progress: #e0bc6f;
+      --status-progress-bg: #3a3018;
+      --status-solved: #8fcaa0;
+      --status-solved-bg: #1f3324;
+      --imp-high: #e6a3a3;
+      --imp-high-bg: #3a2420;
+      --chip-bg: #232921;
+      --chip-active-bg: var(--accent);
+      --chip-active-ink: #0e1a1d;
+      --shadow: 0 1px 2px rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141813;
+    --surface: #1b201a;
+    --surface-muted: #232921;
+    --border: #333c30;
+    --ink: #e8ebe1;
+    --muted: #9ba392;
+    --accent: #7fb8c9;
+    --accent-ink: #0e1a1d;
+    --status-open: #e18b7f;
+    --status-open-bg: #3a2420;
+    --status-progress: #e0bc6f;
+    --status-progress-bg: #3a3018;
+    --status-solved: #8fcaa0;
+    --status-solved-bg: #1f3324;
+    --imp-high: #e6a3a3;
+    --imp-high-bg: #3a2420;
+    --chip-bg: #232921;
+    --chip-active-bg: var(--accent);
+    --chip-active-ink: #0e1a1d;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    padding-inline: 16px;
+    padding-block: 20px 48px;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; }
+
+  header.page { margin-bottom: 18px; }
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  h1 {
+    font-size: clamp(24px, 5vw, 32px);
+    line-height: 1.15;
+    margin: 4px 0 6px;
+    text-wrap: balance;
+  }
+  .lede {
+    color: var(--muted);
+    font-size: 14.5px;
+    line-height: 1.55;
+    max-width: 62ch;
+    margin: 0;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+    gap: 8px;
+    margin: 18px 0;
+  }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 12px;
+    box-shadow: var(--shadow);
+  }
+  .stat .n {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 22px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+  .stat .l {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
+  .dot.open { background: var(--status-open); }
+  .dot.progress { background: var(--status-progress); }
+  .dot.solved { background: var(--status-solved); }
+
+  .panel {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 5;
+    background: var(--bg);
+    padding-block: 10px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid var(--border);
+  }
+  .search {
+    width: 100%;
+    font: inherit;
+    font-size: 14px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .search:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .search::placeholder { color: var(--muted); }
+
+  .filters { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .filter-group { display: flex; gap: 5px; flex-wrap: wrap; }
+  .chip {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+    border: 1px solid var(--border);
+    background: var(--chip-bg);
+    color: var(--muted);
+    padding: 5px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    user-select: none;
+    transition: background .12s ease, color .12s ease, border-color .12s ease;
+  }
+  .chip:hover { border-color: var(--accent); }
+  .chip.active {
+    background: var(--chip-active-bg);
+    color: var(--chip-active-ink);
+    border-color: transparent;
+    font-weight: 600;
+  }
+  select.chip { appearance: none; padding-right: 22px; background-repeat: no-repeat; background-position: right 8px center; background-size: 9px; }
+
+  .divider {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 22px 0 8px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .divider::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+  .divider b { color: var(--ink); font-weight: 600; }
+
+  .row {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    margin-bottom: 6px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .row > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .row > summary::-webkit-details-marker { display: none; }
+  .row > summary::marker { content: ""; }
+
+  .id-badge {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    flex: none;
+    width: 52px;
+  }
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .status-dot.open { background: var(--status-open); }
+  .status-dot.progress { background: var(--status-progress); }
+  .status-dot.solved { background: var(--status-solved); }
+
+  .title {
+    flex: 1;
+    min-width: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.35;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .row[open] .title { white-space: normal; }
+
+  .tag {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    padding: 2px 7px;
+    border-radius: 5px;
+    background: var(--surface-muted);
+    color: var(--muted);
+    flex: none;
+    white-space: nowrap;
+  }
+  .tag.high { background: var(--imp-high-bg); color: var(--imp-high); font-weight: 600; }
+  .tag.list-cv { color: var(--accent); }
+
+  .chev {
+    flex: none;
+    width: 14px; height: 14px;
+    color: var(--muted);
+    transition: transform .15s ease;
+  }
+  .row[open] .chev { transform: rotate(90deg); }
+
+  .row .body {
+    padding: 0 12px 14px 74px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .row .body p { margin: 0 0 8px; }
+  .row .meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .empty {
+    text-align: center;
+    color: var(--muted);
+    padding: 40px 12px;
+    font-size: 13.5px;
+  }
+
+  footer.page {
+    margin-top: 28px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  footer.page code {
+    font-family: "IBM Plex Mono", monospace;
+    background: var(--surface-muted);
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 520px) {
+    .id-badge { width: 40px; font-size: 10px; }
+    .title { white-space: normal; }
+    .row .body { padding-left: 12px; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="page">
+    <div class="eyebrow">MAEASaM &middot; metadata standardization</div>
+    <h1>Task Ledger</h1>
+    <p class="lede">Every open, in-progress and solved item from <code>Reference Documents/Task_List.md</code> (Resource Models &amp; Metadata Templates) and <code>Thesaurus/CV_Task_List.md</code> (controlled vocabularies), in one scannable index. Summaries are condensed &mdash; the source files hold full detail.</p>
+  </header>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="panel">
+    <input class="search" id="search" type="text" placeholder="Search tasks, categories, IDs&hellip;">
+    <div class="filters">
+      <div class="filter-group" id="statusFilters"></div>
+      <div class="filter-group" id="listFilters"></div>
+      <select class="chip" id="impFilter">
+        <option value="">All importance</option>
+        <option value="high">High only</option>
+        <option value="low">Low only</option>
+      </select>
+      <select class="chip" id="catFilter">
+        <option value="">All categories</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="results"></div>
+
+  <footer class="page">
+    Rendered from a snapshot of both task lists taken 2026-09-16. Re-read the source files for anything newer than that, and treat solved-item wording here as a compressed paraphrase, not the authoritative record.
+  </footer>
+</div>
+
+<script>
+const TASKS = [
+  {id:"T-88",list:"template",status:"solved",imp:"",cat:"Resource Model / JSON",date:"2026-09-15",title:"Map.json aligned to Grid.json's Copyright/Access, Recording Details, Uploader Details CIDOC pattern",sum:"Fixed 4 CIDOC mismatches (parentproperty on Created at / Uploaded at / Last modified at, and the Uploader Details group class) plus filled the corresponding blank CIDOC CRM Semantic Node Class cells in Map_MetadataTemplate.csv."},
+  {id:"T-85",list:"template",status:"open",imp:"",cat:"Resource Model / JSON / CIDOC CRM",date:"2026-09-14",title:"Remote Sensing.json's Recorder will fail a real Arches import",sum:"Same bug just fixed on Map: the 'Resource version control' group is typed E1 CRM Entity but Recorder's P11_had_participant needs an E5 Event subclass. Likely the same E66 Formation fix applies, not yet applied."},
+  {id:"T-84",list:"template",status:"open",imp:"",cat:"Resource Model / JSON / CIDOC CRM",date:"2026-09-14",title:"Actor.json's Address / Geometry (WKT) fail the CIDOC edge validator",sum:"'Location' group is typed E27 Site but the connecting properties need an E53 Place subclass. Actor is otherwise treated as import-tested, so this may be latent or a validator gap &mdash; needs a real import to confirm."},
+  {id:"T-79",list:"template",status:"open",imp:"",cat:"Necessity / Resource Model JSON",date:"2026-09-14",title:"Necessity vs Arches isrequired flag mismatched project-wide",sum:"CSV documents 'Mandatory' where JSON has isrequired: False &mdash; confirmed on Grid (11/24), Info (9/25), Actor (14/19). Needs a decision: fix the JSON flags or review the CSV Necessity values."},
+  {id:"T-78",list:"template",status:"open",imp:"",cat:"Naming standard",date:"2026-09-11",title:"Node name casing inconsistent: Sentence case vs Title Case",sum:"273 Sentence case vs 66 Title Case project-wide, no documented standard. Map.json is the outlier (mostly Title Case). Needs a decision to standardize on one and fix the minority."},
+  {id:"T-77",list:"template",status:"open",imp:"",cat:"Resource Model / JSON",date:"2026-09-11",title:"parentproperty (CIDOC P-value) missing on far more nodes than expected",sum:"Administrative Model is missing it on its whole Copyright/Access group (7 nodes); Map.json is missing it on 63 of 65 nodes. Needs the user to confirm the correct P value per node before touching."},
+  {id:"T-71",list:"template",status:"open",imp:"",cat:"CIDOC CRM",date:"2026-09-10",title:"Recorder's CIDOC property is valid but semantically weak",sum:"P11_had_participant just means 'was involved', not 'created' as the field's own definition implies. P14_carried_out_by fits better but needs the Recording/Uploading details group reclassified off E66 Formation first."},
+  {id:"T-68",list:"template",status:"open",imp:"",cat:"Bulk Ingest Test",date:"2026-09-10",title:"Confirm the bulk-CSV value format for Resource-Instance-List fields",sum:"A real example exists in the Actor dataset (a JSON blob with resourceId + ontologyProperty pair) but it's presumed, not yet confirmed by an actual successful import."},
+  {id:"T-69",list:"template",status:"progress",imp:"",cat:"Bulk Ingest Test",date:"2026-09-10",title:"Actor dataset's Recorder field filled for all 72 rows, ready to test",sum:"Uses the format from T-68 (Renier's ResourceID). This is now the blocking step for confirming that format actually works on a real bulk ingest."},
+  {id:"T-70",list:"template",status:"open",imp:"",cat:"Bulk Ingest Test",date:"2026-09-10",title:"Do a full bulk-ingest test of the Actor model",sum:"Uses ActorDefault2.csv, now column-matched to the current template. Would validate today's Recording/Uploading-details and Copyright/Access work, plus the ResourceID pre-assignment mechanism."},
+  {id:"T-66",list:"template",status:"open",imp:"",cat:"Resource Model / ID scheme",date:"2026-09-10",title:"Idea (parked): add a ResourceID column to all 7 templates",sum:"Documents Arches' bulk-load UUID pre-assignment convention &mdash; not a real graph node. Design mostly worked out but shelved until there's a concrete need."},
+  {id:"T-65",list:"template",status:"open",imp:"",cat:"Definitions / Terminology",date:"2026-09-10",title:"'This node records&hellip;' Arches-internal phrasing leaks into user-facing text",sum:"~40 of 231 Definition (En) cells project-wide, mostly RS's established style. 6 fields already fixed; the remaining ~34 are a larger terminology decision."},
+  {id:"T-44",list:"template",status:"open",imp:"high",cat:"Content quality / ID scheme",date:"2026-09-02",title:"MAEASaM ID format is inconsistent across all 7 models",sum:"Digit counts range 6&ndash;9, country-code presence and ordering both vary by model. Every model's own format is now at least documented, but the real unification decision is still open. Highest-priority open item."},
+  {id:"T-51",list:"template",status:"open",imp:"high",cat:"Content quality / Data integrity",date:"2026-09-09",title:"RS template's two 'Date of image used' columns are different fields, not a duplicate",sum:"A missing Group label at column 43 makes the Threat-assessment image date silently inherit the Condition-assessment group. Needs testing in Arches before renaming/fixing either column."},
+  {id:"T-5",list:"template",status:"open",imp:"",cat:"Template / Guideline",date:"",title:"Site has no Metadata Template and no Guideline at all",sum:"158 JSON nodes, 136 fillable, nothing documented. The single biggest coverage gap in the project."},
+  {id:"T-49",list:"template",status:"open",imp:"",cat:"Resource Model / Data",date:"2026-09-08",title:"Admin dataset is missing entirely",sum:"No real/exported Administrative data exists to validate the Admin template or Resource Model against."},
+  {id:"T-8",list:"template",status:"open",imp:"",cat:"Necessity",date:"",title:"Admin's 'Geometry (WKT)' Necessity is still placeholder text",sum:"Literally reads '(Still to be decided if it will be added)' &mdash; a real unresolved decision left by whoever filled the template."},
+  {id:"T-61",list:"template",status:"open",imp:"",cat:"Resource Model / JSON",date:"2026-09-10",title:"RS.json's Copyright & Access group is still the stale pre-rename structure",sum:"Plain-string Access level, old field names, missing Licence and Rights holder entirely. Deliberately left untouched &mdash; needs dedicated repair, not a quick add."},
+  {id:"T-57",list:"template",status:"open",imp:"",cat:"Resource Model / JSON",date:"2026-09-10",title:"Remote Sensing.json has substantial drift from its own CSV",sum:"15 fields in CSV but not JSON, 14 in JSON but not CSV, 6 Group mismatches, 3 Data Type mismatches &mdash; beyond the already-tracked T-51 issue."},
+  {id:"T-50",list:"template",status:"open",imp:"",cat:"Data Type / Arches bug",date:"2026-09-08",title:"Arches EDTF datatype silently drops the combined '%' qualifier",sum:"Confirmed on a local Arches 8.1.4 instance. Decided to proceed with EDTF anyway by splitting Date/EDTF as separate Data Types &mdash; done for 15 fields across 5 models."},
+  {id:"T-7",list:"template",status:"open",imp:"",cat:"Collection / data quality",date:"",title:"RS's 'Threat type' and 'Threat severity' reference the same vocabulary",sum:"Both point at Disturbance cause (cv) &mdash; looks like a copy-paste slip, needs a human call rather than a silent fix."},
+  {id:"T-45",list:"template",status:"open",imp:"",cat:"Content quality",date:"2026-09-02",title:"Input Instructions text duplicated inside Definition (En)",sum:"Map (19 fields) and Grid (4 fields) still carry leftover instruction text from before the dedicated Input Instructions row existed. Mechanical fix once approved."},
+  {id:"T-10",list:"template",status:"open",imp:"",cat:"Data quality",date:"2026-09-02",title:"Info's 'Metadata (En)' row has one fewer cell than every other row",sum:"Diagnosed as a genuinely orphaned column between Copyright and Comment &mdash; has some attributes set but no name or definition. Needs a decision: define it or delete it."},
+  {id:"T-48",list:"template",status:"open",imp:"",cat:"ID scheme",date:"2026-09-06",title:"Adopting ARK Identifiers as the project's persistent external ID scheme",sum:"Early-stage. Needs a NAAN registration decision, a field/node choice, and a minting workflow before any template work starts."},
+  {id:"T-30",list:"template",status:"open",imp:"",cat:"Naming standard",date:"",title:"Map's hand-crafted field naming could become a secondary standard",sum:"Already partially actioned &mdash; RS's Copyright/Access section was aligned to it. Rest of RS and the other models still open."},
+  {id:"T-39",list:"template",status:"open",imp:"",cat:"Workflow",date:"2026-09-02",title:"The Excel CSV staging workflow can't carry Arabic content",sum:"This machine's ANSI 'CSV (Comma delimited)' export destroys Arabic characters. Needs a different path (UTF-8 export elsewhere, or describe the edit in chat) for any Ar-field change."},
+  {id:"T-13",list:"template",status:"open",imp:"",cat:"Package 1 (Translations)",date:"",title:"Fr/Ar/Pt translations are largely incomplete",sum:"Across every model except at the label level in a few places. Not started &mdash; Claude drafts, native speakers verify."},
+  {id:"T-14",list:"template",status:"progress",imp:"",cat:"Package 2 (CIDOC CRM)",date:"2026-09-06",title:"CIDOC CRM classification still has real gaps",sum:"RS (10), Map (51&ndash;52), Chronology (1&ndash;3), Info (3). Mail sent to Renier &amp; Anto, waiting on their review. Admin and Grid are already complete."},
+  {id:"T-47",list:"template",status:"open",imp:"low",cat:"Content quality",date:"2026-09-02",title:"Necessity level varies for the same conceptual field across models",sum:"'Comment' and 'Description' swing between Mandatory/Optional/If applicable with no obvious reason. 'Geometry (WKT)' also varies, but may be legitimately domain-driven."},
+  {id:"T-15",list:"template",status:"progress",imp:"",cat:"Template / Guideline",date:"",title:"Site metadata template / guideline creation",sum:"Blocked behind deciding how to handle its scale (158 nodes). Not started &mdash; the acknowledged next big piece of work."},
+  {id:"T-6",list:"template",status:"progress",imp:"",cat:"Resource Model",date:"2026-09-08",title:"Map's Resource Model JSON",sum:"Map.json exists, generated and structurally validated, merged to main via PR #11. Its CIDOC CRM classes/properties are still placeholders pending Package 2 review."},
+
+  {id:"T-87",list:"template",status:"solved",imp:"",cat:"Resource Model / JSON",date:"2026-09-14",title:"Map.json's 4th real import failure fixed (has_nodegroup_or_istopnode)",sum:"All 10 group-container nodegroup IDs were random UUIDs instead of matching their own collector node's nodeid. Fixed ~90 references and added the missing grouping_node_id."},
+  {id:"T-86",list:"template",status:"solved",imp:"",cat:"Resource Model / JSON / CIDOC CRM",date:"2026-09-14",title:"Map.json fixed to actually pass a real Arches import",sum:"Reverted 6 of 8 deliberate CIDOC picks that failed domain/range validation, fixed the Recording Details group class for Recorder, and set the graph's missing slug. Built validate_cidoc_edges.py in the process."},
+  {id:"T-83",list:"template",status:"solved",imp:"",cat:"CIDOC CRM / Map",date:"2026-09-14",title:"Map's 42 remaining CIDOC CRM Node Class values drafted and applied",sum:"34 matched the existing placeholder, 8 deliberately upgraded &mdash; 6 of those 8 later reverted (see T-86) once real import testing showed they were CIDOC-invalid. Full table in Map_CIDOC_Draft_Suggestions.md."},
+  {id:"T-82",list:"template",status:"solved",imp:"",cat:"Resource Model / JSON",date:"2026-09-14",title:"Map.json's 47 empty Definitions synced from its own CSV",sum:"Plus Licence's vocabulary link and 9 CIDOC CRM Node Class cells filled into the CSV to match values already present in JSON."},
+  {id:"T-81",list:"template",status:"solved",imp:"",cat:"Naming standard",date:"2026-09-14",title:"'Identifier'/'Identifiers' group naming standardized to plural",sum:"Applied across all 6 models that carry the group, in both CSV and JSON."},
+  {id:"T-80",list:"template",status:"solved",imp:"",cat:"Definitions / Terminology",date:"2026-09-14",title:"'Node' terminology removed from 6 Definition (En) cells",sum:"Actor's Associated with / Nature of association, and 4 Grid fields &mdash; part of the broader T-65 pattern."},
+  {id:"T-58",list:"template",status:"solved",imp:"",cat:"Resource Model / JSON",date:"2026-09-10",title:"Copyright & Access group coverage fully resolved",sum:"Actor's absence is by design (not rights-bearing content); Info's single merged field is correct as a verbatim Zotero import; Admin and Grid both got the full 5-field group."},
+  {id:"T-64",list:"template",status:"solved",imp:"",cat:"Definitions / Terminology",date:"2026-09-10",title:"Recording/Uploading-details definitions unified to one wording each",sum:"Across all 7 models, dropping the 'This node records&hellip;' framing. Also fixed Info's Recorder Collection referencing the wrong model name."},
+  {id:"T-63",list:"template",status:"solved",imp:"",cat:"Formatting / Data model",date:"2026-09-10",title:"All 7 templates reordered to Copyright &amp; Access &rarr; Recording details &rarr; Uploading details",sum:"Rebuilt from clean repo data per the user's target order, extending several models with fields they never had (Recorder, Uploader, Comment, etc.)."},
+  {id:"T-62",list:"template",status:"solved",imp:"",cat:"Resource Model / JSON",date:"2026-09-10",title:"Added Copyright & Access group to Grid",sum:"Matching the RS/Chronology/Map pattern exactly."},
+  {id:"T-60",list:"template",status:"solved",imp:"",cat:"Resource Model / JSON",date:"2026-09-10",title:"Added Copyright & Access group to Admin",sum:"Same pattern as Grid/RS/Chronology/Map."},
+  {id:"T-56",list:"template",status:"solved",imp:"",cat:"CIDOC CRM / Bug",date:"2026-09-10",title:"RS's 'Created at' CIDOC class fixed",sum:"Was E63 Beginning of Existence, corrected to E50 Date to match the CSV and every other model &mdash; same copy-paste bug already fixed on Grid."},
+  {id:"T-55",list:"template",status:"solved",imp:"",cat:"Naming standard / Data model",date:"2026-09-10",title:"Recorder/Uploader field and group naming standardized across all 7 models",sum:"Final scheme: Recorder / Created at / Comment / Uploader / Uploaded at / Last modified at, under Recording details / Uploading details. Both linked to Actor everywhere."},
+  {id:"T-46",list:"template",status:"solved",imp:"",cat:"Naming standard",date:"2026-09-10",title:"Superseded by T-55",sum:"See Decisions_Log.md."},
+  {id:"T-72",list:"template",status:"solved",imp:"",cat:"Resource Model / JSON",date:"2026-09-10",title:"APA Reference and Zotero Key added to Information.json",sum:"Existed in the CSV already but were never added as nodes to the JSON."},
+  {id:"T-75",list:"template",status:"solved",imp:"",cat:"Resource Model / JSON",date:"2026-09-10",title:"Info's URL field switched from Data Type URL to String",sum:"Real Arches bug found: bulk-loading a blank cell into a url-datatype node crashes because pandas NaN isn't a string the validator can regex against. Documented in metadata_rules.json's known_issues."},
+  {id:"T-76",list:"template",status:"solved",imp:"",cat:"Data / Datasets",date:"2026-09-10",title:"Rebuilt the Info dataset from the user's xlsx",sum:"Reordered/renamed columns to match the current template exactly; uuid column renamed to ResourceID matching the bulk-load convention."},
+  {id:"T-73",list:"template",status:"solved",imp:"",cat:"Resource Model / JSON",date:"2026-09-10",title:"Fixed two real Arches import errors on Information.json",sum:"Zotero Key and APA Reference had the invalid literal class E62 String; fixed to E42 Identifier / E30 Right. Also removed an unrelated duplicate node. Wrote a CIDOC domain/range validator in the process."},
+  {id:"T-54",list:"template",status:"solved",imp:"",cat:"Data quality / Info",date:"2026-09-09",title:"Info's orphaned APA_Reference column filled in",sum:"Renamed 'APA Reference', Dublin Core set to bibliographicCitation, Definition and Input Instructions drafted."},
+  {id:"T-53",list:"template",status:"solved",imp:"",cat:"Input Instructions / Rules gap",date:"2026-09-09",title:"URL Data Type had no input_instructions rule",sum:"Drafted and applied to the 2 affected fields, user-approved."},
+  {id:"T-52",list:"template",status:"solved",imp:"",cat:"Input Instructions / Rules",date:"2026-09-09",title:"Shorter EDTF instruction text added for spreadsheet cells",sum:"input_instructions_csv override applied to all 15 EDTF fields."},
+  {id:"T-1",list:"template",status:"solved",imp:"",cat:"Resource Model / JSON",date:"2026-09",title:"Actor.json/CSV mismatch resolved",sum:"Contact information, Uploader name, Upload date are now present in the JSON."},
+  {id:"T-3",list:"template",status:"solved",imp:"",cat:"Operational Info",date:"2026-09-06",title:"Actor's auto-populated fields corrected to Operational Info: Auto-Populated",sum:"Matching RS/Admin/Grid; Input Instructions regenerated to match."},
+  {id:"T-16",list:"template",status:"solved",imp:"",cat:"Terminology",date:"2026-09-01",title:"Row label terminology normalized across all 7 templates",sum:"Single canonical vocabulary."},
+  {id:"T-17",list:"template",status:"solved",imp:"",cat:"Dublin Core",date:"2026-09-01",title:"Dublin Core Equivalent filled for Admin, Grid, Info",sum:""},
+  {id:"T-18",list:"template",status:"solved",imp:"",cat:"Collection",date:"2026-09-01",title:"Collection column normalized to 'Name (cv)'/'Name (rm)' + N/A",sum:"Across RS/Map/Admin/Chronology/Grid/Info."},
+  {id:"T-19",list:"template",status:"solved",imp:"",cat:"Data Type",date:"2026-09-01/02",title:"Data Type vocabulary defined and every model validated against it",sum:""},
+  {id:"T-20",list:"template",status:"solved",imp:"",cat:"Operational Info",date:"2026-09-02",title:"N/A added as a formal Operational Info type",sum:"Primary Key / Foreign Key rule violations found and fixed in RS, Admin, Grid."},
+  {id:"T-21",list:"template",status:"solved",imp:"",cat:"Operational Info",date:"2026-09-02",title:"Chronology's and Info's empty Operational Info rows filled",sum:""},
+  {id:"T-22",list:"template",status:"solved",imp:"",cat:"Dublin Core",date:"2026-09-02",title:"Dublin Core basic 15 elements added to metadata_rules.json",sum:"As reference vocabulary."},
+  {id:"T-23",list:"template",status:"solved",imp:"",cat:"Necessity",date:"2026-09-02",title:"'Mandatory if applicable' / 'If applicable' added to the Necessity vocabulary",sum:"Found already in real use, previously undocumented."},
+  {id:"T-24",list:"template",status:"solved",imp:"",cat:"Necessity",date:"2026-09-02",title:"Chronology's Necessity typo fixed",sum:"'Strongly recommend' &rarr; 'Strongly recommended'."},
+  {id:"T-25",list:"template",status:"solved",imp:"",cat:"Cardinality",date:"2026-09-02",title:"Cardinality validated across every model, including Actor",sum:"Fully clean."},
+  {id:"T-26",list:"template",status:"solved",imp:"",cat:"Input Instructions",date:"2026-09-02",title:"Input Instructions (En) row added to all 7 templates",sum:"Generated from Data Type + Operational Info."},
+  {id:"T-27",list:"template",status:"solved",imp:"",cat:"Operational Info",date:"2026-09-02",title:"Auto-Populated rule discovered and applied",sum:"For 'Resource created/modified/uploaded'-type fields in RS, Admin, Grid."},
+  {id:"T-28",list:"template",status:"solved",imp:"",cat:"Formatting",date:"2026-09-02",title:"Sequential field numbering added to the header row",sum:"All 7 templates."},
+  {id:"T-29",list:"template",status:"solved",imp:"",cat:"Data integrity",date:"2026-09-02",title:"Two Excel-encoding corruption incidents caught and repaired",sum:"RS, then Actor &mdash; no data loss."},
+  {id:"T-31",list:"template",status:"solved",imp:"",cat:"Rules / metadata_rules.json",date:"2026-09-02",title:"input_instructions keys renamed to match data_type_values naming",sum:""},
+  {id:"T-32",list:"template",status:"solved",imp:"",cat:"Input Instructions",date:"2026-09-02 (draft)",title:"Input Instructions drafted for GeoJSON-feature-collection and Number",sum:"Applied to all 7 templates."},
+  {id:"T-40",list:"template",status:"solved",imp:"",cat:"Operational Info",date:"2026-09-02",title:"Actor's Operational Info casing fixed",sum:"'Primary key' &rarr; 'Primary Key', 'Foreign key' &rarr; 'Foreign Key'."},
+  {id:"T-42",list:"template",status:"solved",imp:"",cat:"Examples",date:"2026-09-02",title:"Filled Info's Example 1 and Example 2",sum:"Two real, uncorrupted records from the user-provided Info dataset."},
+  {id:"T-43",list:"template",status:"solved",imp:"",cat:"Definitions",date:"2026-09-02",title:"Definition (En) now complete everywhere except Info's known unnamed column",sum:"See T-10."},
+  {id:"T-41",list:"template",status:"solved",imp:"",cat:"Dublin Core",date:"2026-09-02",title:"Filled Actor's previously-empty Dublin Core Equivalent row",sum:"0/17 &rarr; 17/17."},
+  {id:"T-38",list:"template",status:"solved",imp:"",cat:"Content / Data integrity",date:"2026-09-02",title:"Merged the user's real Excel edits to RS and Map",sum:"RS's Copyright/Access fields renamed to match Map's naming; discovered this machine's ANSI CSV export destroys Arabic content entirely."},
+  {id:"T-37",list:"template",status:"solved",imp:"",cat:"Data integrity",date:"2026-09-02",title:"A 4th and 5th Excel-encoding corruption caught (RS and Map)",sum:"More severe than before. Rebuilt both from git HEAD, reapplying every known transformation as explicit, verified rules."},
+  {id:"T-35",list:"template",status:"solved",imp:"",cat:"Group / formatting",date:"2026-09-02",title:"Fixed Map's missing 'Copyright/Access' group label",sum:""},
+  {id:"T-36",list:"template",status:"solved",imp:"",cat:"Operational Info",date:"2026-09-02",title:"Filled every remaining blank Operational Info cell with N/A",sum:"Checked across all 7 templates."},
+  {id:"T-34",list:"template",status:"solved",imp:"",cat:"Definitions",date:"2026-09-02 (draft)",title:"Drafted the 10 missing Info Definition (En) values",sum:""},
+  {id:"T-33",list:"template",status:"solved",imp:"",cat:"Data integrity",date:"2026-09-02",title:"A 3rd Excel-encoding corruption incident (Map) reverted",sum:"Reverted to last clean git version, transformations reapplied on top. The user's own recent hand-edits to Map were lost and had to be redone."},
+
+  {id:"CV-1",list:"cv",status:"open",imp:"",cat:"Workflow",date:"2026-09-14",title:"Confirm the actual xlsx &rarr; Arches &rarr; xml/csv workflow",sum:"README states a best-guess reading (xlsx master, xml read-only export, csv a side export) inferred from file evidence only &mdash; not confirmed with whoever runs the real export/upload steps."},
+  {id:"CV-2",list:"cv",status:"open",imp:"",cat:"Sync / Upload backlog",date:"2026-09-14",title:"Most vocabularies are far from fully uploaded into Arches",sum:"xml member count vs csv row count ranges from ~1% (Activity) to ~100% (Materialobject type). Needs a decision on priority order for the upload backlog."},
+  {id:"CV-3",list:"cv",status:"open",imp:"",cat:"Data integrity",date:"2026-09-14",title:"'Activity.csv' vs 'Copy of 9.Activity' &mdash; unclear which is authoritative",sum:"The xlsx-matched file's export only captured the tracking-header block, not real term rows &mdash; likely a mis-selected export range. Needs a clean re-export and confirmation."},
+  {id:"CV-4",list:"cv",status:"open",imp:"",cat:"Content decision",date:"2026-09-14",title:"6 xlsx sheets marked 'TO BE DELETED' still exist as live Arches collections",sum:"One (Materialobject type) is ~100% uploaded. Needs a person who knows the content to decide if the status is current or stale."},
+  {id:"CV-5",list:"cv",status:"open",imp:"",cat:"Structural / Naming",date:"2026-09-14",title:"No shared column template across the 55 vocab CSVs",sum:"Header shape ranges 1&ndash;38 columns, hierarchy 1&ndash;8 levels, inconsistent language coverage and header spelling. The core structural problem CV_Reference_Schema.csv is meant to solve."},
+  {id:"CV-6",list:"cv",status:"open",imp:"",cat:"Coverage gap",date:"2026-09-14",title:"5 Arches collections exist only in xml, with no xlsx sheet or csv",sum:"Languages, Map status, Remote sensing survey progress, Resource To Resource Relationship Types. May be Arches system collections, or genuine gaps &mdash; needs confirmation."},
+  {id:"CV-7",list:"cv",status:"open",imp:"",cat:"Naming / Cosmetic",date:"2026-09-14",title:"Leftover sequence-number prefixes on 3 xlsx sheet names",sum:"Implies an old 1&ndash;54 numbered vocab list never fully cleaned up. Low priority, tied to CV-3."},
+  {id:"CV-8",list:"cv",status:"open",imp:"",cat:"Structural",date:"2026-09-14",title:"'OTHER THESAURII PROPOSALS' sheet is a brainstorm table, not a vocabulary",sum:"Shouldn't be counted alongside the 51 real vocab sheets, and arguably shouldn't live in the main workbook."},
+  {id:"CV-11",list:"cv",status:"progress",imp:"",cat:"Rollout",date:"2026-09-14",title:"Rolling out CV_Reference_Schema.csv's new field set, vocab by vocab",sum:"Actor's 3 vocabs (Actor type, Name type, Nature of association) finalized as a pilot in staged csv_v2/, not yet applied to the real csv/ files."},
+  {id:"CV-12",list:"cv",status:"progress",imp:"",cat:"Content standard",date:"2026-09-14",title:"Catch-all placeholder wording standardized to 3 sentinel terms",sum:"Unknown / Other / Not applicable, replacing 6 inconsistent variants found across 22 of 51 vocabs. Standard decided, but no vocab has actually been migrated yet."},
+  {id:"CV-15",list:"cv",status:"progress",imp:"",cat:"Content / Ingest prep",date:"2026-09-15",title:"5 vocabs with zero Arches presence added into both xml exports",sum:"Map types, Document conditions, Digitisation methods, Access levels, Countries &mdash; 27 terms, UUIDs generated and back-filled into the source CSVs. Unconfirmed: whether Arches preserves caller-supplied UUIDs on ingest."},
+  {id:"CV-16",list:"cv",status:"progress",imp:"",cat:"Content / Ingest prep",date:"2026-09-15",title:"5 more 'Map types' terms added",sum:"Vegetation map, Soil map, Population map, Chart, Tourist map &mdash; same pending-ingest batch as CV-15."},
+  {id:"CV-17",list:"cv",status:"progress",imp:"",cat:"Content / Ingest prep",date:"2026-09-15",title:"'Modern map' added as the missing counterpart to 'Historical map'",sum:"Same pending-ingest batch as CV-15/16."},
+  {id:"CV-9",list:"cv",status:"solved",imp:"",cat:"Structural / Data loss risk",date:"2026-09-14",title:"Per-cell review-status colour is invisible outside Excel &mdash; formalized as one Status field",sum:"Kept as a single column with the original 6 values rather than split into two axes."},
+  {id:"CV-10",list:"cv",status:"solved",imp:"",cat:"Data integrity (false alarm)",date:"2026-09-14",title:"'xml export is stale' was a false positive &mdash; retracted",sum:"Claude's own analysis script only checked direct children and missed Arches' nested concept structure. The real file resolves ~100% of collection members."},
+  {id:"CV-13",list:"cv",status:"solved",imp:"",cat:"Naming standard",date:"2026-09-15",title:"Sentence-case standard decided and applied to vocab (CV) names",sum:"4 vocab CSVs renamed to sentence case (Map types, Document conditions, Digitisation methods, Access levels) with every reference updated. Standard written up in CV_Instructions_and_Protocols.md."},
+  {id:"CV-14",list:"cv",status:"solved",imp:"",cat:"Naming standard",date:"2026-09-15",title:"3 legacy Title Case outliers renamed too, no exceptions",sum:"Coordinate System / Ownership Type / Survey Type fixed in xlsx and both xml files. The live Arches instance itself still needs the same rename, or a re-export will revert it."},
+];
+
+const statusMeta = {
+  open: { label: "Open", color: "open" },
+  progress: { label: "In Progress", color: "progress" },
+  solved: { label: "Solved", color: "solved" },
+};
+const listMeta = {
+  template: { label: "Templates" },
+  cv: { label: "Vocabularies" },
+};
+
+const state = {
+  q: "",
+  status: new Set(["open", "progress"]),
+  list: "",
+  imp: "",
+  cat: "",
+};
+
+function el(tag, cls, html) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (html !== undefined) e.innerHTML = html;
+  return e;
+}
+
+function renderStats() {
+  const wrap = document.getElementById("stats");
+  wrap.innerHTML = "";
+  const groups = [
+    ["template", "Templates"],
+    ["cv", "Vocabularies"],
+  ];
+  groups.forEach(([listKey, listLabel]) => {
+    ["open", "progress", "solved"].forEach((st) => {
+      const n = TASKS.filter((t) => t.list === listKey && t.status === st).length;
+      const s = el("div", "stat");
+      s.appendChild(el("div", "n", String(n)));
+      const l = el("div", "l");
+      l.appendChild(el("span", "dot " + st));
+      l.appendChild(document.createTextNode(listLabel + " · " + statusMeta[st].label));
+      s.appendChild(l);
+      wrap.appendChild(s);
+    });
+  });
+}
+
+function renderFilterChips() {
+  const sf = document.getElementById("statusFilters");
+  Object.entries(statusMeta).forEach(([key, meta]) => {
+    const c = el("button", "chip", meta.label);
+    c.type = "button";
+    c.dataset.status = key;
+    if (state.status.has(key)) c.classList.add("active");
+    c.addEventListener("click", () => {
+      if (state.status.has(key)) state.status.delete(key);
+      else state.status.add(key);
+      c.classList.toggle("active");
+      render();
+    });
+    sf.appendChild(c);
+  });
+
+  const lf = document.getElementById("listFilters");
+  [["", "All lists"], ["template", "Templates"], ["cv", "Vocabularies"]].forEach(([val, label]) => {
+    const c = el("button", "chip", label);
+    c.type = "button";
+    if (val === "") c.classList.add("active");
+    c.addEventListener("click", () => {
+      state.list = val;
+      lf.querySelectorAll(".chip").forEach((x) => x.classList.remove("active"));
+      c.classList.add("active");
+      render();
+    });
+    lf.appendChild(c);
+  });
+
+  const catSel = document.getElementById("catFilter");
+  const cats = Array.from(new Set(TASKS.map((t) => t.cat))).sort();
+  cats.forEach((c) => {
+    const o = document.createElement("option");
+    o.value = c;
+    o.textContent = c;
+    catSel.appendChild(o);
+  });
+  catSel.addEventListener("change", () => { state.cat = catSel.value; render(); });
+
+  document.getElementById("impFilter").addEventListener("change", (e) => { state.imp = e.target.value; render(); });
+  document.getElementById("search").addEventListener("input", (e) => { state.q = e.target.value.trim().toLowerCase(); render(); });
+}
+
+function matches(t) {
+  if (!state.status.has(t.status)) return false;
+  if (state.list && t.list !== state.list) return false;
+  if (state.imp && t.imp !== state.imp) return false;
+  if (state.cat && t.cat !== state.cat) return false;
+  if (state.q) {
+    const hay = (t.id + " " + t.title + " " + t.sum + " " + t.cat).toLowerCase();
+    if (!hay.includes(state.q)) return false;
+  }
+  return true;
+}
+
+function makeRow(t) {
+  const row = document.createElement("details");
+  row.className = "row";
+
+  const summary = el("summary");
+  summary.appendChild(el("span", "id-badge", t.id));
+  summary.appendChild(el("span", "status-dot " + t.status));
+  summary.appendChild(el("span", "title", t.title));
+  if (t.imp === "high") summary.appendChild(el("span", "tag high", "High"));
+  summary.appendChild(el("span", "tag" + (t.list === "cv" ? " list-cv" : ""), t.cat));
+  summary.appendChild(el("span", "chev", '<svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'));
+  row.appendChild(summary);
+
+  const body = el("div", "body");
+  if (t.sum) body.appendChild(el("p", "", t.sum));
+  const meta = el("div", "meta");
+  meta.appendChild(document.createTextNode(listMeta[t.list].label));
+  if (t.date) meta.appendChild(document.createTextNode(" · " + t.date));
+  meta.appendChild(document.createTextNode(" · " + (t.list === "cv" ? "Thesaurus/CV_Task_List.md " : "Reference Documents/Task_List.md #") + t.id.replace(/^T-|^CV-/, m => m === "T-" ? "" : "CV-")));
+  body.appendChild(meta);
+  row.appendChild(body);
+
+  return row;
+}
+
+function render() {
+  const results = document.getElementById("results");
+  results.innerHTML = "";
+  const filtered = TASKS.filter(matches);
+
+  if (!filtered.length) {
+    results.appendChild(el("div", "empty", "No tasks match these filters."));
+    return;
+  }
+
+  const order = { open: 0, progress: 1, solved: 2 };
+  const impOrder = { high: 0, "": 1, low: 2 };
+  filtered.sort((a, b) => {
+    if (order[a.status] !== order[b.status]) return order[a.status] - order[b.status];
+    if (impOrder[a.imp] !== impOrder[b.imp]) return impOrder[a.imp] - impOrder[b.imp];
+    return (b.date || "").localeCompare(a.date || "");
+  });
+
+  let lastStatus = null;
+  filtered.forEach((t) => {
+    if (t.status !== lastStatus) {
+      const count = filtered.filter((x) => x.status === t.status).length;
+      results.appendChild(el("div", "divider", "<b>" + statusMeta[t.status].label + "</b>&nbsp;(" + count + ")"));
+      lastStatus = t.status;
+    }
+    results.appendChild(makeRow(t));
+  });
+}
+
+renderStats();
+renderFilterChips();
+render();
+</script>

@@ -1,6 +1,6 @@
 Term ID,Parent Term ID,Term (En),Term (Fr),Term (Ar),Term (Pt),Alt Label(s) (En),Definition (En),Definition (Fr),Definition (Ar),Definition (Pt),Source (En),Status
-,,Scanning,,,,,The digital representation was created using a flatbed or sheet-fed scanner.,,,,,
-,,Photography,,,,,The digital representation was created by photographing the original with a camera.,,,,,
-,,Photogrammetry,,,,,The digital representation was created by combining multiple photographs to produce a measured or georeferenced output.,,,,,
-,,Born digital,,,,,"The resource was created directly in digital form, with no physical original.",,,,,
-,,Other,,,,,The digitisation method used is not covered by the terms currently in this vocabulary.,,,,,
+14f4b192-4eed-4350-b035-a07865e74429,,Scanning,,,,,The digital representation was created using a flatbed or sheet-fed scanner.,,,,,
+adf0fef9-ab21-4b8e-8bf1-deaa21d755df,,Photography,,,,,The digital representation was created by photographing the original with a camera.,,,,,
+135612df-9070-48ca-bedf-908c42759d61,,Photogrammetry,,,,,The digital representation was created by combining multiple photographs to produce a measured or georeferenced output.,,,,,
+cdba1f14-3f4c-46a5-b2f7-03a331da4109,,Born digital,,,,,"The resource was created directly in digital form, with no physical original.",,,,,
+381936c8-3aa4-4dd0-92eb-2f541ca1c910,,Other,,,,,The digitisation method used is not covered by the terms currently in this vocabulary.,,,,,
