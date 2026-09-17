@@ -29,7 +29,7 @@ Follow the setup instructions in the order provided to ensure that all dependenc
    - Use the "Import" function to upload each JSON file, **in this order**, since later models reference earlier ones (e.g. via Resource-Instance-List fields like Recorder/Uploader linking to Actor):
      1. `Actor.json`
      2. `Information.json`
-     3. `Administrative Model.json`
+     3. `Administrative.json`
      4. `Grid.json`
      5. `Map.json`
    - Follow the prompts to complete the import process for each model.
@@ -41,7 +41,7 @@ Follow the setup instructions in the order provided to ensure that all dependenc
 ## Files
 
 - `Actor.json` — Defines actors and organizations.
-- `Administrative Model.json` — Administrative boundaries and regions.
+- `Administrative.json` — Administrative boundaries and regions.
 - `Chronology.json` — Chronological periods and events.
 - `Information.json` — Information resources and documentation.
 - `Grid.json` — Grid reference system for spatial data.

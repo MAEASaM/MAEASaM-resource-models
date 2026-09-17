@@ -2923,7 +2923,7 @@
                             {
                                 "graphid": "809f0b43-a066-482f-bd2c-e62bc51e04cb",
                                 "inverseRelationshipConcept": "ac41d9be-79db-4256-b368-2f4559cfbe55",
-                                "name": "Administrative Model",
+                                "name": "Administrative",
                                 "relationshipCollection": "00000000-0000-0000-0000-000000000005",
                                 "relationshipConcept": "ac41d9be-79db-4256-b368-2f4559cfbe55",
                                 "useOntologyRelationship": false
