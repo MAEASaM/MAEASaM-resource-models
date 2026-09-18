@@ -1,0 +1,258 @@
+<title>Copyright &amp; Access Ledger</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper: #ede7d8; --paper-raised: #f7f3e7; --ink: #262218; --ink-soft: #6f6852;
+    --rule: #cdbd9a; --accent: #2f4a5c; --accent-ink: #eef2ee; --brass: #8a6a34;
+    --ok: #3f6b46; --ok-bg: #e3ecdf; --warn: #9c5a1e; --warn-bg: #f3e3cd;
+    --bad: #a23a2c; --bad-bg: #f3dad3; --shadow: rgba(38,34,24,0.14);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper: #1c1a15; --paper-raised: #262319; --ink: #ece4d0; --ink-soft: #a89d84;
+      --rule: #4a4330; --accent: #7fa8bd; --accent-ink: #14202a; --brass: #c9a568;
+      --ok: #7fb489; --ok-bg: #24352a; --warn: #d99a55; --warn-bg: #3a2d1c;
+      --bad: #e2897a; --bad-bg: #3a2521; --shadow: rgba(0,0,0,0.45);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper: #1c1a15; --paper-raised: #262319; --ink: #ece4d0; --ink-soft: #a89d84;
+    --rule: #4a4330; --accent: #7fa8bd; --accent-ink: #14202a; --brass: #c9a568;
+    --ok: #7fb489; --ok-bg: #24352a; --warn: #d99a55; --warn-bg: #3a2d1c;
+    --bad: #e2897a; --bad-bg: #3a2521; --shadow: rgba(0,0,0,0.45);
+  }
+
+  *{box-sizing:border-box;}
+  body{ background: var(--paper); color: var(--ink); font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  .wrap{ max-width: 1080px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .eyebrow{ font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass); margin: 0 0 10px; }
+  h1{ font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.08; margin: 0 0 14px; text-wrap: balance; letter-spacing: -0.01em; }
+  .lede{ max-width: 74ch; color: var(--ink-soft); font-size: 1rem; margin: 0 0 8px; }
+  .lede strong{ color: var(--ink); font-weight: 600; }
+  header.page{ border-bottom: 1px solid var(--rule); padding-bottom: 28px; margin-bottom: 40px; }
+
+  .legend{ display:flex; gap:18px; flex-wrap:wrap; margin-top: 18px; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.74rem; color: var(--ink-soft); }
+  .legend span{ display:inline-flex; align-items:center; gap:7px; }
+  .dot{ width:8px; height:8px; border-radius:50%; display:inline-block; }
+  .dot.ok{ background: var(--ok); } .dot.warn{ background: var(--warn); } .dot.bad{ background: var(--bad); }
+
+  .coverage{ margin: 0 0 40px; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--paper-raised); }
+  .coverage-head{ background: var(--accent); color: var(--accent-ink); padding: 12px 20px; font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; }
+  .coverage table{ width:100%; border-collapse: collapse; font-size: 0.82rem; }
+  .coverage-wrap{ overflow-x: auto; }
+  .coverage th, .coverage td{ padding: 10px 16px; text-align: left; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  .coverage th{ font-family: "IBM Plex Mono", monospace; font-size: 0.64rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--brass); font-weight: 500; }
+  .coverage tr:last-child td{ border-bottom: none; }
+  .pill{ display:inline-block; font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; padding: 2px 9px; border-radius: 100px; white-space:nowrap; }
+  .pill.warn{ color: var(--warn); background: var(--warn-bg); }
+  .pill.bad{ color: var(--bad); background: var(--bad-bg); }
+  .pill.ok{ color: var(--ok); background: var(--ok-bg); }
+
+  .group{ margin-bottom: 46px; }
+  .group-head{ display:flex; align-items:flex-start; justify-content:space-between; gap: 16px; background: var(--accent); color: var(--accent-ink); border-radius: 8px 8px 0 0; padding: 14px 20px; }
+  .group-head h2{ font-family:"Fraunces", Georgia, serif; font-weight: 600; font-size: 1.32rem; margin: 0; letter-spacing: -0.005em; }
+  .group-head .role{ font-size: 0.86rem; opacity: 0.86; margin-top: 3px; font-family: "IBM Plex Sans", sans-serif; max-width: 60ch; }
+  .group-head .count{ font-family: "IBM Plex Mono", monospace; font-size: 0.74rem; letter-spacing: 0.06em; white-space: nowrap; opacity: 0.86; align-self: flex-start; padding-top: 4px; }
+
+  .cards{ display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 340px)); justify-content: start; gap: 16px; background: var(--paper-raised); border: 1px solid var(--rule); border-top: none; border-radius: 0 0 8px 8px; padding: 20px; box-shadow: 0 1px 0 var(--rule) inset; }
+
+  .card{ background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 16px 18px 14px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .card-top{ display:flex; align-items:flex-start; justify-content:space-between; gap: 10px; }
+  .field-name{ font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 1.02rem; color: var(--ink); }
+  .chip{ font-family: "IBM Plex Mono", monospace; font-size: 0.66rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 9px; border-radius: 100px; white-space: nowrap; flex-shrink: 0; }
+  .chip.ok{ color: var(--ok); background: var(--ok-bg); } .chip.warn{ color: var(--warn); background: var(--warn-bg); } .chip.bad{ color: var(--bad); background: var(--bad-bg); }
+
+  .spec{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 8px 14px; padding: 10px 0; border-top: 1px dashed var(--rule); border-bottom: 1px dashed var(--rule); }
+  .spec div{ min-width:0; }
+  .spec .k{ font-family: "IBM Plex Mono", monospace; font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brass); display:block; }
+  .spec .v{ font-size: 0.85rem; color: var(--ink); font-variant-numeric: tabular-nums; overflow-wrap: break-word; }
+
+  .def{ font-size: 0.88rem; color: var(--ink); }
+  .note code{ font-family: "IBM Plex Mono", monospace; font-size: 0.82em; background: var(--paper-raised); border: 1px solid var(--rule); border-radius: 3px; padding: 0 4px; }
+  .note{ font-size: 0.82rem; padding: 8px 10px; border-left: 3px solid var(--warn); background: var(--warn-bg); color: var(--ink); border-radius: 0 4px 4px 0; }
+  .note.ok{ border-left-color: var(--ok); background: var(--ok-bg); }
+  .note.bad{ border-left-color: var(--bad); background: var(--bad-bg); }
+
+  details{ margin-top: 2px; }
+  summary{ cursor: pointer; font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.04em; color: var(--brass); text-transform: uppercase; padding: 4px 0; }
+  summary:hover{ color: var(--accent); }
+  .model-table-wrap{ overflow-x: auto; margin-top: 8px; }
+  table.model-table{ width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+  table.model-table th, table.model-table td{ padding: 6px 10px; text-align: left; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  table.model-table th{ font-family: "IBM Plex Mono", monospace; font-size: 0.62rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--brass); font-weight: 500; }
+  table.model-table tr:last-child td{ border-bottom: none; }
+  table.model-table td.model{ font-weight: 600; white-space: nowrap; }
+  table.model-table td.absent{ color: var(--ink-soft); font-style: italic; }
+  table.model-table td .flag{ color: var(--bad); }
+
+  footer{ margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 0.8rem; color: var(--ink-soft); }
+  footer code{ font-family:"IBM Plex Mono", monospace; background: var(--paper-raised); padding: 1px 5px; border-radius: 3px; border: 1px solid var(--rule); }
+</style>
+
+<div class="wrap">
+  <header class="page">
+    <p class="eyebrow">MAEASaM &middot; Metadata Standardization &middot; Snapshot 2026-09-17 &middot; 06</p>
+    <h1>Copyright &amp; Access Ledger</h1>
+    <p class="lede">Refresh of the 2026&#8209;09&#8209;16 ledger (01&ndash;05). Every open item from that snapshot &mdash; the group's own CIDOC class, field classes, vocabulary links, and Necessity/<code>isrequired</code> agreement &mdash; is now confirmed fixed. <strong>This group is fully standardized across Map, Grid, and Admin.</strong> Deliberately absent from Actor (not rights&#8209;bearing) and Info (has its own single merged &ldquo;Copyright&rdquo; field instead).</p>
+    <div class="legend">
+      <span><i class="dot ok"></i> Settled &mdash; identical across every model it applies to</span>
+      <span><i class="dot warn"></i> Present everywhere but diverges (wording, isrequired, etc.)</span>
+      <span><i class="dot bad"></i> Missing entirely, or wrong data type</span>
+    </div>
+  </header>
+
+  <div class="coverage">
+    <div class="coverage-head">The big picture</div>
+    <div class="coverage-wrap">
+    <table>
+      <thead><tr><th>What</th><th>Status</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>The group&#x27;s own CIDOC class</td><td><span class="pill ok">Settled</span></td><td><code>E30_Right</code> in Map, Grid, and Admin alike. Admin's earlier mis-classification as <code>E1_CRM_Entity</code> (flagged 2026-09-16) is confirmed fixed.</td></tr>
+        <tr><td>Field CIDOC classes</td><td><span class="pill ok">Settled</span></td><td><code>E55 Type</code> (Licence, Access level), <code>E1 CRM Entity</code> (Rights holder), <code>E62 String</code> (Rights Notes, Preferred Citation) &mdash; identical in all 3 models.</td></tr>
+        <tr><td>Vocabulary links (&lt;code&gt;rdmCollection&lt;/code&gt;)</td><td><span class="pill ok">Settled</span></td><td>Licence and Access level link to the exact same controlled-vocabulary UUIDs in Map, Grid, and Admin.</td></tr>
+        <tr><td>Necessity vs &lt;code&gt;isrequired&lt;/code&gt;</td><td><span class="pill ok">Settled</span></td><td><code>isrequired=true</code> for all 5 fields in all 3 models, matching their Mandatory Necessity &mdash; the one group in the project where this fully lines up everywhere it exists.</td></tr>
+        <tr><td>Definition (En)</td><td><span class="pill ok">Settled</span></td><td>Word-for-word identical CSV text across Map, Grid, and Admin for every field in the group.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <section class="group">
+    <div class="group-head">
+      <div><h2>Copyright &amp; Access</h2><div class="role">Licence, access level, rights holder, and how to cite the resource</div></div>
+      <div class="count">5 FIELDS</div>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="card-top"><span class="field-name">Licence</span><span class="chip ok">Settled</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Concept&#8209;list</span></div>
+          <div><span class="k">CIDOC (field)</span><span class="v">E55 Type</span></div>
+          <div><span class="k">CIDOC (group)</span><span class="v">E30 Right</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">license</span></div>
+        </div>
+        <p class="def">The licence under which the digital resource may be used or reused.</p>
+        <div class="note ok">Identical CSV text and JSON configuration (datatype, isrequired, ontology class, vocabulary link) in Map, Grid, and Admin. Absent from Actor and Info by design.</div>
+        <details>
+          <summary>Per-model detail (4)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>CSV</th><th>JSON</th></tr></thead>
+            <tbody>
+              <tr><td class="model">Map</td><td>Concept&#8209;list, Mandatory</td><td>isrequired=true, group=Copyright/Access (E30_Right)</td></tr>
+              <tr><td class="model">Grid</td><td>Concept&#8209;list, Mandatory</td><td>isrequired=true, group=Copyright/Access (E30_Right)</td></tr>
+              <tr><td class="model">Admin</td><td>Concept&#8209;list, Mandatory</td><td>isrequired=true, group=Copyright/Access (E30_Right)</td></tr>
+              <tr><td class="model">Actor / Info</td><td colspan="2" class="absent">no equivalent field (by design)</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+      <article class="card">
+        <div class="card-top"><span class="field-name">Access level</span><span class="chip ok">Settled</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Concept&#8209;list</span></div>
+          <div><span class="k">CIDOC (field)</span><span class="v">E55 Type</span></div>
+          <div><span class="k">CIDOC (group)</span><span class="v">E30 Right</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">accessRights</span></div>
+        </div>
+        <p class="def">The level of access permitted for the digital resource.</p>
+        <div class="note ok">Identical CSV text and JSON configuration (datatype, isrequired, ontology class, vocabulary link) in Map, Grid, and Admin. Absent from Actor and Info by design.</div>
+        <details>
+          <summary>Per-model detail (4)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>CSV</th><th>JSON</th></tr></thead>
+            <tbody>
+              <tr><td class="model">Map</td><td>Concept&#8209;list, Mandatory</td><td>isrequired=true, group=Copyright/Access (E30_Right)</td></tr>
+              <tr><td class="model">Grid</td><td>Concept&#8209;list, Mandatory</td><td>isrequired=true, group=Copyright/Access (E30_Right)</td></tr>
+              <tr><td class="model">Admin</td><td>Concept&#8209;list, Mandatory</td><td>isrequired=true, group=Copyright/Access (E30_Right)</td></tr>
+              <tr><td class="model">Actor / Info</td><td colspan="2" class="absent">no equivalent field (by design)</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+      <article class="card">
+        <div class="card-top"><span class="field-name">Rights holder</span><span class="chip ok">Settled</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">Resource&#8209;Instance&#8209;List</span></div>
+          <div><span class="k">CIDOC (field)</span><span class="v">E1 CRM Entity</span></div>
+          <div><span class="k">CIDOC (group)</span><span class="v">E30 Right</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">rightsHolder</span></div>
+        </div>
+        <p class="def">The person or organisation holding or managing rights associated with the resource.</p>
+        <div class="note ok">Identical CSV text and JSON configuration (datatype, isrequired, ontology class, vocabulary link) in Map, Grid, and Admin. Absent from Actor and Info by design.</div>
+        <details>
+          <summary>Per-model detail (4)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>CSV</th><th>JSON</th></tr></thead>
+            <tbody>
+              <tr><td class="model">Map</td><td>Resource&#8209;Instance&#8209;List, Mandatory</td><td>isrequired=true, group=Copyright/Access (E30_Right)</td></tr>
+              <tr><td class="model">Grid</td><td>Resource&#8209;Instance&#8209;List, Mandatory</td><td>isrequired=true, group=Copyright/Access (E30_Right)</td></tr>
+              <tr><td class="model">Admin</td><td>Resource&#8209;Instance&#8209;List, Mandatory</td><td>isrequired=true, group=Copyright/Access (E30_Right)</td></tr>
+              <tr><td class="model">Actor / Info</td><td colspan="2" class="absent">no equivalent field (by design)</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+      <article class="card">
+        <div class="card-top"><span class="field-name">Rights Notes</span><span class="chip ok">Settled</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">String</span></div>
+          <div><span class="k">CIDOC (field)</span><span class="v">E62 String</span></div>
+          <div><span class="k">CIDOC (group)</span><span class="v">E30 Right</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">rights</span></div>
+        </div>
+        <p class="def">Additional information about rights, permissions, restrictions, or copyright status that is not captured by the other rights and access fields.</p>
+        <div class="note ok">Identical CSV text and JSON configuration (datatype, isrequired, ontology class, vocabulary link) in Map, Grid, and Admin. Absent from Actor and Info by design.</div>
+        <details>
+          <summary>Per-model detail (4)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>CSV</th><th>JSON</th></tr></thead>
+            <tbody>
+              <tr><td class="model">Map</td><td>String, Mandatory</td><td>isrequired=true, group=Copyright/Access (E30_Right)</td></tr>
+              <tr><td class="model">Grid</td><td>String, Mandatory</td><td>isrequired=true, group=Copyright/Access (E30_Right)</td></tr>
+              <tr><td class="model">Admin</td><td>String, Mandatory</td><td>isrequired=true, group=Copyright/Access (E30_Right)</td></tr>
+              <tr><td class="model">Actor / Info</td><td colspan="2" class="absent">no equivalent field (by design)</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+      <article class="card">
+        <div class="card-top"><span class="field-name">Preferred Citation</span><span class="chip ok">Settled</span></div>
+        <div class="spec">
+          <div><span class="k">Type</span><span class="v">String</span></div>
+          <div><span class="k">CIDOC (field)</span><span class="v">E62 String</span></div>
+          <div><span class="k">CIDOC (group)</span><span class="v">E30 Right</span></div>
+          <div><span class="k">Dublin Core</span><span class="v">bibliographicCitation</span></div>
+        </div>
+        <p class="def">The recommended citation to use when referring to or reusing the resource.</p>
+        <div class="note ok">Identical CSV text and JSON configuration (datatype, isrequired, ontology class, vocabulary link) in Map, Grid, and Admin. Absent from Actor and Info by design.</div>
+        <details>
+          <summary>Per-model detail (4)</summary>
+          <div class="model-table-wrap">
+          <table class="model-table">
+            <thead><tr><th>Model</th><th>CSV</th><th>JSON</th></tr></thead>
+            <tbody>
+              <tr><td class="model">Map</td><td>String, Mandatory</td><td>isrequired=true, group=Copyright/Access (E30_Right)</td></tr>
+              <tr><td class="model">Grid</td><td>String, Mandatory</td><td>isrequired=true, group=Copyright/Access (E30_Right)</td></tr>
+              <tr><td class="model">Admin</td><td>String, Mandatory</td><td>isrequired=true, group=Copyright/Access (E30_Right)</td></tr>
+              <tr><td class="model">Actor / Info</td><td colspan="2" class="absent">no equivalent field (by design)</td></tr>
+            </tbody>
+          </table>
+          </div>
+        </details>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    Snapshot as of 2026&#8209;09&#8209;17. Supersedes <code>20260916_copyright_access_ledger_05.html</code>. Companions: <code>20260917_recording_details_ledger_02.html</code>, <code>20260917_uploading_details_ledger_02.html</code>.
+  </footer>
+</div>
