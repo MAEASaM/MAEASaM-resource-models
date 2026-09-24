@@ -699,7 +699,7 @@
                     "alias": "administrative_area_name",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
+                    "description": "The name of the administrative area.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "809f0b43-a066-482f-bd2c-e62bc51e04cb",
@@ -724,7 +724,7 @@
                         "en": ""
                     },
                     "datatype": "string",
-                    "description": null,
+                    "description": "Provide a description of the administrative area.",
                     "exportable": true,
                     "fieldname": "Discript",
                     "graph_id": "809f0b43-a066-482f-bd2c-e62bc51e04cb",
@@ -749,7 +749,7 @@
                         "rdmCollection": "d0adb1d5-d63f-4fff-b16f-1ec8723122dd"
                     },
                     "datatype": "concept-list",
-                    "description": null,
+                    "description": "The type of name attribution applied to the administrative area name, such as primary, additional, or historical.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "809f0b43-a066-482f-bd2c-e62bc51e04cb",
@@ -870,7 +870,7 @@
                     "alias": "country",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
+                    "description": "The name of the country in which the administrative area is located. For level 0 areas, this should match the value given in the administrative area name.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "809f0b43-a066-482f-bd2c-e62bc51e04cb",
@@ -942,15 +942,15 @@
                     "config": {
                         "graphs": [
                             {
-                                "graphid": "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",
-                                "name": "Actor"
+                                "graphid": "809f0b43-a066-482f-bd2c-e62bc51e04cb",
+                                "name": "Administrative"
                             }
                         ],
                         "searchDsl": "",
                         "searchString": ""
                     },
                     "datatype": "resource-instance-list",
-                    "description": null,
+                    "description": "Links to the MAEASaM ID of the administrative area that the relevant area is part of, where applicable. Generally, level 1 areas link to level 0, and level 2 areas link to level 1.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "809f0b43-a066-482f-bd2c-e62bc51e04cb",
@@ -1021,7 +1021,7 @@
                         "rdmCollection": "80e86c5a-5f73-4935-a7ab-3ee9cad58086"
                     },
                     "datatype": "concept-list",
-                    "description": null,
+                    "description": "The administrative level of the relevant administrative area within the overall hierarchy (e.g. Level 0, Level 1, Level 2).",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "809f0b43-a066-482f-bd2c-e62bc51e04cb",
@@ -1090,7 +1090,7 @@
                         "weight": 2
                     },
                     "datatype": "geojson-feature-collection",
-                    "description": null,
+                    "description": "The geometric extent of the administrative area. Coordinates should be provided in Well-known Text (WKT) format.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "809f0b43-a066-482f-bd2c-e62bc51e04cb",
