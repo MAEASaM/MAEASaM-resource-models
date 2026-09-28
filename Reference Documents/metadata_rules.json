@@ -76,7 +76,7 @@
     "Use 12 point font size for all characters.",
     "Use Calibri font for all characters.",
     "Use bold only for the row labels in the first 3 columns (Arches terminology / Universal terminology / User form). The rest of the page should be written in normal (non-bold) weight.",
-    "Use wrap text for all cells.",
+    "Do not use wrap text: turn wrap text off for all cells, so every row stays one line high and the sheet stays compact (changed 2026-09-24 from the earlier \"Use wrap text for all cells.\" rule, by the user's decision).",
     "Use All Borders for every cell.",
     "Colour-code each field's Metadata (En/Fr/Ar/Pt) rows using data_type_colors, keyed by that field's own Data Type. Colour the CIDOC CRM Semantic Node Class and CIDOC CRM Node Class rows using cidoc_class_row_colors (fixed per row, not Data-Type-dependent). The Data Type and Collection rows themselves, and every row below Collection, are not colour-coded - confirmed 2026-09-15 against the real reference workbook (see data_type_colors comment), correcting an earlier, less precise version of this rule."
   ],
@@ -181,6 +181,18 @@
     "CIDOC CRM Node Class": "000000"
   },
 
+  "definition_writing_rules": [
+    "Definitions describe what the value is, as a noun phrase or sentence starting with \"The ...\", \"A ...\" or \"Whether ...\" - not \"Records the ...\", \"This node records ...\", \"It records ...\" or a question (\"Who was ...\", \"What recommendation can you make ...\"). End with a full stop. No data-entry instructions (\"Please write/enter ...\", \"This is a required field\") - those belong in Input Instructions and Necessity. Adopted 2026-09-25 (Site review; already the style of Actor, Info, Map, Grid).",
+    "Definitions (and translated definitions) use sentence case: capitalize only the first word of each sentence and real proper nouns or acronyms (MAEASaM, Arches, WGS 84, CIDOC CRM). Do not capitalize common nouns mid-sentence (write \"the type of actor\", \"a museum\", \"a hierarchical thesaurus\", not \"the Type of Actor\", \"a Museum\", \"a hierarchical Thesaurus\"). Adopted 2026-09-25.",
+    "Exception: when a definition lists controlled-vocabulary terms as examples of allowed values, write them exactly as the term appears in the vocabulary (e.g. \"e.g. Primary name, Alternative name, Local name\"). The same words used in ordinary running prose are lowercase (\"a person may have a primary name and an alternative name\")."
+  ],
+  "naming_rules": [
+    "Field names (Metadata (En)) and group names use sentence case: capitalize only the first word plus acronyms and proper nouns (ID, DOI, ISBN, ISSN, URL, EPSG, WKT, APA, MAEASaM). E.g. \"Map name\", \"Digital file name\", \"Map details\" - not \"Map Name\". Decided 2026-09-25 for all models; applied to Map the same day. The shared Copyright/Access block names (Copyright/Access, Rights Notes, Preferred Citation) and remaining Title Case names in other models are renamed across all templates together, not model by model."
+  ],
+  "translation_rules": [
+    "Portuguese translations use European/African Portuguese spelling (pt-PT: registo, ficheiro, contacto, equipa, grelha), matching Mozambique and Guinea-Bissau. Decided 2026-09-25; Map's earlier Brazilian Portuguese (registro, arquivo, grade) was converted the same day.",
+    "Translations are made from the current English definition. When the English changes, the French, Arabic and Portuguese texts of that cell must be updated too."
+  ],
   "languages": {
     "Metadata": [
       "Fr",

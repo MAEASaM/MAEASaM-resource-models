@@ -1,0 +1,283 @@
+<title>Info Change Log</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#ede7d8; --paper-raised:#f7f3e7; --ink:#262218; --ink-soft:#6f6852; --rule:#cdbd9a;
+    --accent:#2f4a5c; --accent-ink:#eef2ee; --brass:#8a6a34;
+    --ok:#3f6b46; --ok-bg:#e3ecdf; --warn:#9c5a1e; --warn-bg:#f3e3cd; --bad:#a23a2c; --bad-bg:#f3dad3;
+    --ai:#6a4a8c; --ai-bg:#ebe2f2; --cidoc:#2f5f6e; --cidoc-bg:#dcebee;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme:dark;
+      --paper:#1c1a15; --paper-raised:#262319; --ink:#ece4d0; --ink-soft:#a89d84; --rule:#4a4330;
+      --accent:#7fa8bd; --accent-ink:#14202a; --brass:#c9a568;
+      --ok:#7fb489; --ok-bg:#24352a; --warn:#d99a55; --warn-bg:#3a2d1c; --bad:#e2897a; --bad-bg:#3a2521;
+      --ai:#c3a6e0; --ai-bg:#30263b; --cidoc:#86c1d0; --cidoc-bg:#1f3137;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --paper:#1c1a15; --paper-raised:#262319; --ink:#ece4d0; --ink-soft:#a89d84; --rule:#4a4330;
+    --accent:#7fa8bd; --accent-ink:#14202a; --brass:#c9a568;
+    --ok:#7fb489; --ok-bg:#24352a; --warn:#d99a55; --warn-bg:#3a2d1c; --bad:#e2897a; --bad-bg:#3a2521;
+    --ai:#c3a6e0; --ai-bg:#30263b; --cidoc:#86c1d0; --cidoc-bg:#1f3137;
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--paper); color:var(--ink); font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif; line-height:1.5; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1080px; margin:0 auto; padding-inline:24px; padding-block:48px 80px;}
+  @media (max-width:600px){ .wrap{padding-inline:16px; padding-block:32px 56px;} }
+  .eyebrow{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--brass); margin:0 0 10px;}
+  h1{font-family:"Fraunces", Georgia, serif; font-weight:600; font-size:clamp(1.9rem,4vw,2.6rem); line-height:1.08; margin:0 0 14px; text-wrap:balance; letter-spacing:-.01em;}
+  h2{font-family:"Fraunces", Georgia, serif; font-weight:600; font-size:1.55rem; margin:0; text-wrap:balance;}
+  h3{font-size:.8rem; font-family:"IBM Plex Mono", ui-monospace, monospace; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin:28px 0 10px; font-weight:500;}
+  .lede{max-width:72ch; color:var(--ink-soft); margin:0 0 8px;}
+  .lede strong, .lede code{color:var(--ink);}
+  code{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.86em;}
+  header.page{border-bottom:1px solid var(--rule); padding-bottom:28px; margin-bottom:12px;}
+  .facts{display:flex; flex-wrap:wrap; gap:1px; background:var(--rule); border:1px solid var(--rule); margin:22px 0 0;}
+  .facts div{flex:1 1 150px; background:var(--paper-raised); padding:12px 14px;}
+  .facts b{display:block; font-family:"Fraunces", Georgia, serif; font-size:1.5rem; font-weight:600; font-variant-numeric:tabular-nums;}
+  .facts span{font-size:.8rem; color:var(--ink-soft);}
+  .legend{display:flex; gap:10px 18px; flex-wrap:wrap; margin-top:18px; font-size:.82rem; color:var(--ink-soft); align-items:center;}
+  section{padding-top:40px;}
+  .sec-head{display:flex; align-items:baseline; gap:14px; border-bottom:2px solid var(--ink); padding-bottom:8px; margin-bottom:6px; flex-wrap:wrap;}
+  .sec-head .count{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.78rem; color:var(--ink-soft);}
+  ul.plain{margin:0; padding-left:1.1rem; max-width:80ch;}
+  ul.plain li{margin:6px 0;}
+  .tablebox{overflow-x:auto; border:1px solid var(--rule); background:var(--paper-raised);}
+  table{border-collapse:collapse; width:100%; font-size:.86rem;}
+  thead th{position:sticky; top:0; background:var(--accent); color:var(--accent-ink); text-align:left; font-weight:500; font-size:.76rem; letter-spacing:.06em; text-transform:uppercase; padding:9px 12px;}
+  td, tbody th{padding:8px 12px; vertical-align:top; border-top:1px solid var(--rule); text-align:left;}
+  tbody th{font-weight:600; white-space:nowrap;}
+  td.attr{color:var(--ink-soft); white-space:nowrap; font-size:.8rem;}
+  td.old{color:var(--ink-soft); text-decoration:line-through; text-decoration-color:color-mix(in srgb, var(--bad) 55%, transparent); min-width:180px;}
+  td.new{min-width:220px;}
+  .empty{font-style:italic; text-decoration:none; opacity:.75;}
+  .tag{display:inline-block; font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.68rem; letter-spacing:.04em; padding:1px 7px; border-radius:3px; margin-left:4px; white-space:nowrap; text-decoration:none; vertical-align:1px;}
+  .tag.ai{background:var(--ai-bg); color:var(--ai);}
+  .tag.cidoc{background:var(--cidoc-bg); color:var(--cidoc);}
+  .tag.us{background:var(--warn-bg); color:var(--warn);}
+  .tag.open{background:var(--bad-bg); color:var(--bad);}
+  .tag.json{background:var(--paper); color:var(--ink-soft); border:1px solid var(--rule);}
+  .tag.done{background:var(--ok-bg); color:var(--ok);}
+  .added{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px; margin-top:14px;}
+  .added article{background:var(--paper-raised); border:1px solid var(--rule); padding:14px 16px;}
+  .added h4{margin:0 0 6px; font-size:1rem;}
+  .added p{margin:0; font-size:.88rem; color:var(--ink-soft);}
+  .added dl{margin:8px 0 0; display:grid; grid-template-columns:auto 1fr; gap:3px 10px; font-size:.82rem;}
+  .added dt{color:var(--ink-soft);} .added dd{margin:0;}
+  .tasks{list-style:none; margin:14px 0 0; padding:0; display:grid; gap:10px;}
+  .tasks li{background:var(--paper-raised); border:1px solid var(--rule); border-left:4px solid var(--rule); padding:12px 16px; display:grid; grid-template-columns:1fr auto; gap:4px 16px;}
+  .tasks li.k-ai{border-left-color:var(--ai);} .tasks li.k-cidoc{border-left-color:var(--cidoc);} .tasks li.k-us{border-left-color:var(--warn);} .tasks li.k-open{border-left-color:var(--bad);}
+  .tasks .t{font-weight:600;}
+  .tasks .who{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.74rem; color:var(--ink-soft); text-align:right; white-space:nowrap;}
+  .tasks .d{grid-column:1 / -1; font-size:.88rem; color:var(--ink-soft); max-width:92ch;}
+  .tasks .d b{color:var(--ink); font-weight:500;}
+  @media (max-width:600px){ .tasks li{grid-template-columns:1fr;} .tasks .who{text-align:left;} }
+  footer{margin-top:48px; padding-top:16px; border-top:1px solid var(--rule); font-size:.8rem; color:var(--ink-soft);}
+</style>
+
+<div class="wrap">
+  <header class="page">
+    <p class="eyebrow">MAEASaM · Information resource model · Metadata Template + Information.json</p>
+    <h1>Info Change Log</h1>
+    <p class="lede">Everything that changed in <code>Info_MetadataTemplate.csv</code> since its first version in the repository (<strong>2026-09-01</strong>, commit <code>e3ffd84</code>) and in <code>Information.json</code> since <strong>2026-08-28</strong> (commit <code>f4ae792</code>), up to the working copy of <strong>2026-09-25</strong>. The most recent changes (2026-09-25 review) are not committed yet.</p>
+    <div class="facts">
+      <div><b>22 → 25</b><span>template fields</span></div>
+      <div><b>3</b><span>fields added (APA Reference, Uploader, Uploaded at)</span></div>
+      <div><b>2</b><span>fields renamed</span></div>
+      <div><b>78</b><span>field values changed (excl. bulk fills)</span></div>
+      <div><b>131</b><span>translation cells filled</span></div>
+    </div>
+    <div class="legend">
+      <span><span class="tag ai">AI draft</span> written by Claude, needs a human check</span>
+      <span><span class="tag json">From JSON</span> CIDOC value copied from Information.json, not chosen by us</span>
+      <span><span class="tag us">Decision</span> content decision made in review</span>
+    </div>
+  </header>
+
+  <section id="changed">
+    <div class="sec-head"><h2>Things changed</h2><span class="count">structure, groups, field values, Information.json</span></div>
+
+    <h3>Template-wide</h3>
+    <ul class="plain">
+      <li>Collection notation lower-cased to the shared rule: <code>Resource type (CV)</code> → <code>Resource type (cv)</code>, <code>Languages (CV)</code> → <code>Languages (cv)</code>, <code>Actor Model (RM)</code> → <code>Actor (rm)</code>.</li>
+      <li>Example values: the original template's single example column described a Botswana site record sheet (<code>SITE-BWA-0000026</code>, "Archaeological Site Record Sheet"), not an Info record. Both example rows now use two real journal articles from the Info dataset.</li>
+      <li>CIDOC scope notes: E42 Identifier's duplicated last sentence removed and trailing spaces cleaned.</li>
+      <li>Four broken French cells repaired: the Abstract Note label read "Édition de la publication" (<i>publication edition</i>) and its definition was a pasted example text; the Language definition was just "English"; the Resource type label had a double space.</li>
+    </ul>
+
+    <h3>Groups and field names</h3>
+    <div class="tablebox"><table>
+      <thead><tr><th>What</th><th>Before</th><th>After</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Group</th><td class="old">Resource type (own group)</td><td class="new">Resource type moved into <b>Publication information</b></td></tr>
+        <tr><th scope="row">Group</th><td class="old">Copyright/access</td><td class="new">Copyright/Access</td></tr>
+        <tr><th scope="row">Group</th><td class="old">Recorder · Comment · Resource version control</td><td class="new"><b>Recording details</b> (Recorder, Comment, Created at)</td></tr>
+        <tr><th scope="row">Group</th><td class="old">—</td><td class="new"><b>Uploading details</b> (Uploader, Uploaded at, Last modified at)</td></tr>
+        <tr><th scope="row">Field</th><td class="old">Resource created at</td><td class="new">Created at</td></tr>
+        <tr><th scope="row">Field</th><td class="old">Resource last modified at</td><td class="new">Last modified at</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Field values</h3>
+    <div class="tablebox"><table>
+      <thead><tr><th>Field</th><th>Attribute</th><th>Before</th><th>After</th></tr></thead>
+      <tbody>
+<tr><th scope="row">MAEASaM ID</th><td class="attr">CIDOC CRM Scope note</td><td class="old">This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations. Such codes are often known as inventory num…</td><td class="new">This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations. Such codes are often known as inventory num… </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The MAEASaM Internal ID used to refer to this resource</td><td class="new">A unique identifier assigned to each resource. Format: INFO-8-digit number (e.g. INFO-00000004). </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old"><span class=empty>empty</span></td><td class="new">INFO-00000003 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">SITE-BWA-0000026</td><td class="new">INFO-00000004 </td></tr>
+<tr><th scope="row">Zotero Key</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E42 Identifier <span class="tag json">From JSON</span></td></tr>
+<tr><th scope="row"></th><td class="attr">CIDOC CRM Scope note</td><td class="old"><span class=empty>empty</span></td><td class="new">This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations. Such codes are often known as inventory num… </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old"><span class=empty>empty</span></td><td class="new">The unique identifier (key) assigned to this reference by Zotero, used to track or sync the record with the Zotero reference management library. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old"><span class=empty>empty</span></td><td class="new">2J4WJX34 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old"><span class=empty>empty</span></td><td class="new">2X4P9P4C </td></tr>
+<tr><th scope="row">Resource type</th><td class="attr">CIDOC CRM Semantic Node Class</td><td class="old">E55 Type</td><td class="new">E31 Document <span class="tag json">From JSON</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old">Resource type (CV)</td><td class="new">Resource type (cv) </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Whether it is a publication, collection or a map</td><td class="new">The type of information resource being recorded - e.g. Journal article, Book, Webpage, Map. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old"><span class=empty>empty</span></td><td class="new">Journal article </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">National sites and monuments records</td><td class="new">Journal article </td></tr>
+<tr><th scope="row">Title of resource</th><td class="attr">CIDOC CRM Semantic Node Class</td><td class="old">E31 Document</td><td class="new"><span class=empty>empty</span> <span class="tag json">From JSON</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">A name value refers to the unique name of the publication.</td><td class="new">The title of the publication. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old"><span class=empty>empty</span></td><td class="new">Animal economies and Islamic conversion in eastern Ethiopia: zooarchaeological analyses from Harlaa, Harar and Ganda Harla </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Archaeological  Site Record Sheet</td><td class="new">A reassessment of the Middle and Later Stone Age lithic assemblages from Aladi Springs, southern Afar Rift, Ethiopia </td></tr>
+<tr><th scope="row">Author</th><td class="attr">Definition (En)</td><td class="old">A name value refers to the writer of the publication.</td><td class="new">The name of the writer of the publication. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old"><span class=empty>empty</span></td><td class="new">Gaastra, Jane S.; Insoll, Timothy </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">J. Denbow</td><td class="new">Gossa, Tegenu; Sahle, Yonatan; Negash, Agazi </td></tr>
+<tr><th scope="row">Publisher</th><td class="attr">Definition (En)</td><td class="old">an individual or organization responsible for producing,  distributing, and managing the dissemination of content such  as books, magazines, newspapers, digital media, and other  forms of information</td><td class="new">The organisation or person responsible for publishing the resource (e.g. a publishing house, a journal publisher or a heritage institution). </td></tr>
+<tr><th scope="row">Year of publication</th><td class="attr">Data Type</td><td class="old">Date</td><td class="new">EDTF </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">the specific year in which a work, such as a book, article, or any other type of content, is officially released </td><td class="new">The specific year in which the resource was officially released. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old"><span class=empty>empty</span></td><td class="new">2020 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">1979-11-06</td><td class="new">2012 </td></tr>
+<tr><th scope="row">Book or journal information</th><td class="attr">Definition (En)</td><td class="old"><span class=empty>empty</span></td><td class="new">The name of the book or journal in which this resource was published, if applicable (e.g. the journal title for an article, or the book title for a chapter). </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old"><span class=empty>empty</span></td><td class="new">Journal of African Archaeology </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Site Record Sheet</td><td class="new">Azania: Archaeological Research in Africa </td></tr>
+<tr><th scope="row">Book or journal edition</th><td class="attr">Definition (En)</td><td class="old"> the version or form of the book that has been published.</td><td class="new">The version or form of the book that has been published. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old"><span class=empty>empty</span></td><td class="new">2 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Hard copy</td><td class="new">2 </td></tr>
+<tr><th scope="row">DOI</th><td class="attr">CIDOC CRM Scope note</td><td class="old">This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations. Such codes are often known as inventory num…</td><td class="new">This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations. Such codes are often known as inventory num… </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Digital Object Identifier, a unique alphanumeric string assigned to a resource for persistent identification and access online</td><td class="new">Digital Object Identifier, a unique alphanumeric string assigned to a resource for persistent identification and access online. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old"><span class=empty>empty</span></td><td class="new">10.1163/21915784-20200008 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Not applicable</td><td class="new">10.1080/0067270X.2012.676314 </td></tr>
+<tr><th scope="row">ISBN</th><td class="attr">CIDOC CRM Scope note</td><td class="old">This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations. Such codes are often known as inventory num…</td><td class="new">This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations. Such codes are often known as inventory num… </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">International Standard Book Number (ISBN)</td><td class="new">International Standard Book Number (ISBN), a unique identifier for books. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Not applicable</td><td class="new"><span class=empty>empty</span> </td></tr>
+<tr><th scope="row">ISSN</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E42 Identifier <span class="tag json">From JSON</span></td></tr>
+<tr><th scope="row"></th><td class="attr">CIDOC CRM Scope note</td><td class="old"><span class=empty>empty</span></td><td class="new">This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations. Such codes are often known as inventory num… </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">International Standard Serial Number (ISSN), which are unique identifiers for books and serial publications, respectively.</td><td class="new">International Standard Serial Number (ISSN), a unique identifier for serial publications. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old"><span class=empty>empty</span></td><td class="new">1612-1651, 2191-5784 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Not applicable</td><td class="new">0067-270X, 1945-5534 </td></tr>
+<tr><th scope="row">Page numbers</th><td class="attr">Definition (En)</td><td class="old"><span class=empty>empty</span></td><td class="new">The page range within the book or journal where this resource can be found (e.g. 12-34). </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old"><span class=empty>empty</span></td><td class="new">181-208 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">2</td><td class="new">210-222 </td></tr>
+<tr><th scope="row">Volume</th><td class="attr">Definition (En)</td><td class="old"><span class=empty>empty</span></td><td class="new">The volume number of the journal or book series in which this resource was published, if applicable. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old"><span class=empty>empty</span></td><td class="new">18 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Not applicable</td><td class="new">47 </td></tr>
+<tr><th scope="row">URL</th><td class="attr">Data Type</td><td class="old">URL</td><td class="new">String </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old"><span class=empty>empty</span></td><td class="new">A web link to an online version of the resource, if one is available. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old"><span class=empty>empty</span></td><td class="new">https://brill.com/view/journals/jaa/18/2/article-p181_3.xml </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Department of National Museum and Monuments, Private Bag 00114, Gaborone, Botswana, Tel. (+267) 3973860, Fax. (+267) 3911186.</td><td class="new">http://www.tandfonline.com/doi/abs/10.1080/0067270X.2012.676314 </td></tr>
+<tr><th scope="row">Language</th><td class="attr">Collection</td><td class="old">Languages (CV)</td><td class="new">Languages (cv) </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (Fr)</td><td class="old">English</td><td class="new">La langue utilisée pour le contenu intellectuel de la ressource. <span class="tag ai">AI draft</span></td></tr>
+<tr><th scope="row">Abstract Note</th><td class="attr">Metadata (Fr)</td><td class="old">Édition de la publication</td><td class="new">Résumé <span class="tag ai">AI draft</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old"><span class=empty>empty</span></td><td class="new">A short summary or abstract of the resource&#x27;s content. </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (Fr)</td><td class="old">The survey form includes basic data about the site location and description, directions to the site and its state of conservation. The site card contains a summary of this info including the SASES number assigned for the…</td><td class="new">Un bref résumé du contenu de la ressource. <span class="tag ai">AI draft</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old"><span class=empty>empty</span></td><td class="new">Excavations at three urban sites, Harlaa, Harar, and Ganda Harla, in eastern Ethiopia have recovered substantial assemblages of faunal remains. These, the first to be analysed from Islamic contexts in the country, were s… </td></tr>
+<tr><th scope="row">Copyright</th><td class="attr">Definition (En)</td><td class="old">some kind of statement about copyright or other rights and restrictions associated with the resource (or a hyperlink to such a statement).</td><td class="new">A statement about copyright or other rights and restrictions associated with the resource, or a hyperlink to such a statement. </td></tr>
+<tr><th scope="row">Recorder</th><td class="attr">CIDOC CRM Scope note</td><td class="old">This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations. Such codes are often known as inventory num…</td><td class="new">This class comprises people, either individually or in groups, who have the potential to perform intentional actions of kinds for which someone may be held responsible.  (Definition of the CIDOC Conceptual Reference Mode… </td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old">Actor Model (RM)</td><td class="new">Actor (rm) </td></tr>
+<tr><th scope="row"></th><td class="attr">Cardinality</td><td class="old">0..1</td><td class="new">1..n </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old"><span class=empty>empty</span></td><td class="new">The name of the individual responsible for creating the resource record. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old"><span class=empty>empty</span></td><td class="new">ACT-00000057 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Thabo Kgosietsile</td><td class="new"><span class=empty>empty</span> </td></tr>
+<tr><th scope="row">Comment</th><td class="attr">Definition (En)</td><td class="old"><span class=empty>empty</span></td><td class="new">Any additional information relevant to this resource that the recorder feels should be documented. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old"><span class=empty>empty</span></td><td class="new">Year of publication taken from the publisher&#x27;s website; the PDF gives no date. <span class="tag ai">AI draft</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">The map creation date was only given on year, no date and month was given. As such, a common practice of such scenario was used where the date and month was the 1st of January of that year.</td><td class="new"><span class=empty>empty</span> </td></tr>
+<tr><th scope="row">Created at</th><td class="attr">Definition (En)</td><td class="old"><span class=empty>empty</span></td><td class="new">The date on which the resource record was created in the database. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old"><span class=empty>empty</span></td><td class="new">2026-04-10 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">2024-08-02</td><td class="new">2026-04-10 </td></tr>
+<tr><th scope="row">Last modified at</th><td class="attr">Necessity</td><td class="old">Strongly recommended</td><td class="new">Mandatory </td></tr>
+<tr><th scope="row"></th><td class="attr">Cardinality</td><td class="old">0..1</td><td class="new">1 </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old"><span class=empty>empty</span></td><td class="new">The most recent date on which the resource record was modified. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old"><span class=empty>empty</span></td><td class="new">This field is automatically populated by the system. Leave this field blank </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">2024-08-02</td><td class="new"><span class=empty>empty</span> </td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Information.json (Arches resource model)</h3>
+    <ul class="plain">
+      <li><b>Most structural changes came from Renier's v2 demo export (2026-09-08, commit <code>1541133</code>)</b>, which he marked as "not yet finished" for Info. It changed several CIDOC properties: Author <code>L33 has maker</code> → <code>P70 documents</code>; Publisher <code>L33 has maker</code> → <code>P105 right held by</code>; URL → <code>P130 shows features of</code>; Book or journal edition → <code>P148 has component</code>; Book or journal information → <code>P129 is about</code>; Volume → <code>P3 has note</code>; Publication information → <code>P70i is documented in</code>; Page numbers class <code>E60 Number</code> → <code>E62 String</code>.</li>
+      <li>Cards restructured: <code>Resource Type</code> card merged into <b>Publication information</b>; <code>Recorder</code> and <code>Resource version control</code> merged into <b>Recording details</b>; new <b>Uploading details</b> card (<code>E66 Formation</code>).</li>
+      <li>Nodes renamed: <code>Zotero key</code> → <code>Zotero Key</code>, <code>Resource Type</code> → <code>Resource type</code>, <code>Languages</code> → <code>Language</code>, <code>Resource created at</code> → <code>Created at</code>, <code>Resource last modified at</code> → <code>Last modified at</code>.</li>
+      <li>Nodes added: Comment, Abstract Note, APA Reference, Uploader, Uploaded at.</li>
+      <li>Node descriptions filled for every field, synced with the template's Definition (En); Resource type and Publisher rewritten on 2026-09-25.</li>
+      <li><code>exportable</code> switched on for MAEASaM ID, ISSN and Copyright (Task #90).</li>
+    </ul>
+  </section>
+
+  <section id="added">
+    <div class="sec-head"><h2>Things added</h2><span class="count">new fields, rows and mappings</span></div>
+    <div class="added">
+      <article>
+        <h4>APA Reference</h4>
+        <p>Copyright/Access · String · Strongly recommended · 0..1 · <code>dcterms:bibliographicCitation</code></p>
+        <dl><dt>CIDOC</dt><dd><code>E30 Right</code> <span class="tag json">From JSON</span></dd></dl>
+      </article>
+      <article>
+        <h4>Uploader</h4>
+        <p>Uploading details · Resource-Instance-List → <code>Actor (rm)</code> · Mandatory · 1 · Foreign Key · <code>dcterms:contributor</code></p>
+        <dl><dt>CIDOC</dt><dd><code>E66 Formation</code> / <code>E82 Actor Appellation</code> <span class="tag json">From JSON</span></dd><dt>Example</dt><dd><code>ACT-00000056</code></dd></dl>
+      </article>
+      <article>
+        <h4>Uploaded at</h4>
+        <p>Uploading details · Date · Mandatory · 1 · Auto-Populated · <code>dcterms:dateSubmitted</code></p>
+        <dl><dt>CIDOC</dt><dd><code>E50 Date</code> <span class="tag json">From JSON</span></dd></dl>
+      </article>
+      <article>
+        <h4>Translations <span class="tag ai">AI draft</span></h4>
+        <p>Every empty French, Arabic and Portuguese label and definition filled: 97 cells drafted by Claude, 34 copied from the Actor template.</p>
+      </article>
+      <article>
+        <h4>Input Instructions (En)</h4>
+        <p>Filled for all 25 fields from the rules in <code>metadata_rules.json</code>.</p>
+      </article>
+      <article>
+        <h4>Dublin Core and Operational Info</h4>
+        <p>Both rows were empty for every field; now mapped for all 25 (table below). MAEASaM ID → Primary Key; Recorder, Uploader → Foreign Key; Uploaded at, Last modified at → Auto-Populated. <span class="tag us">Decision</span></p>
+      </article>
+    </div>
+    <h3>Dublin Core mappings (new)</h3>
+    <div class="tablebox"><table>
+      <thead><tr><th>Field</th><th>Dublin Core Equivalent</th></tr></thead>
+      <tbody><tr><th scope="row">MAEASaM ID</th><td>dcterms:identifier</td></tr><tr><th scope="row">Zotero Key</th><td>dcterms:identifier</td></tr><tr><th scope="row">Resource type</th><td>dcterms:type</td></tr><tr><th scope="row">Title of resource</th><td>dcterms:title</td></tr><tr><th scope="row">Author</th><td>dcterms:creator</td></tr><tr><th scope="row">Publisher</th><td>dcterms:publisher</td></tr><tr><th scope="row">Year of publication</th><td>dcterms:date</td></tr><tr><th scope="row">Book or journal information</th><td>dcterms:isPartOf</td></tr><tr><th scope="row">Book or journal edition</th><td>dcterms:hasVersion</td></tr><tr><th scope="row">DOI</th><td>dcterms:identifier</td></tr><tr><th scope="row">ISBN</th><td>dcterms:identifier</td></tr><tr><th scope="row">ISSN</th><td>dcterms:identifier</td></tr><tr><th scope="row">Page numbers</th><td>dcterms:description</td></tr><tr><th scope="row">Volume</th><td>dcterms:description</td></tr><tr><th scope="row">URL</th><td>dcterms:identifier</td></tr><tr><th scope="row">Language</th><td>dcterms:language</td></tr><tr><th scope="row">Abstract Note</th><td>dcterms:description</td></tr><tr><th scope="row">Copyright</th><td>dcterms:rights</td></tr><tr><th scope="row">Recorder</th><td>dcterms:contributor</td></tr><tr><th scope="row">Comment</th><td>dcterms:description</td></tr><tr><th scope="row">Created at</th><td>dcterms:created</td></tr><tr><th scope="row">Last modified at</th><td>dcterms:modified</td></tr><tr><th scope="row">APA Reference</th><td>dcterms:bibliographicCitation</td></tr><tr><th scope="row">Uploader</th><td>dcterms:contributor</td></tr><tr><th scope="row">Uploaded at</th><td>dcterms:dateSubmitted</td></tr></tbody>
+    </table></div>
+  </section>
+
+  <section id="check">
+    <div class="sec-head"><h2>Things to check</h2><span class="count">tasks for reviewers</span></div>
+    <ul class="tasks">
+      <li class="k-ai"><span class="t">French, Arabic and Portuguese translations <span class="tag ai">AI draft</span></span><span class="who">native speakers · Task #13</span>
+        <span class="d"><b>97 cells drafted by Claude on 2026-09-25</b> from the English definitions: every Arabic and Portuguese label and definition, the empty French labels (Zotero Key, Page numbers, Volume, Language, Copyright, APA Reference, Uploader, Uploaded at) and every empty French definition. <b>34 cells copied from the Actor template</b> for the standard Recorder, Comment, Created at, Uploader, Uploaded at and Last modified at fields — those are also AI drafts or of unrecorded origin. The four repaired French cells (Abstract Note label and definition, Language definition) are AI drafts too. Portuguese uses European/African spelling (<i>registo</i>, <i>contacto</i>) for Mozambique and Guinea-Bissau.</span></li>
+      <li class="k-open"><span class="t">Older French labels</span><span class="who">native French speaker</span>
+        <span class="d">The French labels present since 2026-09-01 have no recorded author. Two differ from the Actor/Map wording for the same field: Created at "Ressource créée à" and Last modified at "Dernière modification de la ressource".</span></li>
+      <li class="k-ai"><span class="t">Comment example <span class="tag ai">AI draft</span></span><span class="who">team</span>
+        <span class="d">"Year of publication taken from the publisher's website; the PDF gives no date." replaces an example that was about map creation dates.</span></li>
+      <li class="k-cidoc"><span class="t">Weak CIDOC properties in Information.json</span><span class="who">Renier &amp; Anto · Task #14</span>
+        <span class="d">These pass Arches validation but carry the wrong meaning: <code>L54 is same-as</code> for Recorder, Created at, Resource version control, Year of publication and Copyright/access; Author via <code>P70 documents</code> (the document documents the author, not the other way round); Publisher via <code>P105 right held by</code>; URL via <code>P130 shows features of</code>; Language via <code>P103 was intended for</code>. Most came from the 2026-09-08 v2 demo export that Renier marked as unfinished.</span></li>
+      <li class="k-us"><span class="t">CIDOC cells filled in the template <span class="tag json">From JSON</span></span><span class="who">CIDOC reviewers</span>
+        <span class="d">Node Class for Zotero Key, ISSN, APA Reference and Uploaded at, the Uploading details semantic class and five scope notes were copied from Information.json and from same-class notes, not chosen by us. Recorder's scope note was replaced (it held E42 Identifier's text) with the E39 Actor note.</span></li>
+      <li class="k-us"><span class="t">Definitions rewritten by us</span><span class="who">team</span>
+        <span class="d">Resource type ("publication, collection or map" did not match its 131-term vocabulary) and Publisher (was a generic dictionary definition) were rewritten on 2026-09-25; most other English definitions were written or cleaned up earlier in September.</span></li>
+      <li class="k-us"><span class="t">Review decisions <span class="tag us">Decision</span></span><span class="who">team</span>
+        <span class="d">Last modified at Strongly recommended / 0..1 → Mandatory / 1, as in every other model. URL stays a String (its Input Instructions now say free text; Information.json stores it as <code>string</code>). Info keeps its own Copyright and APA Reference fields instead of the standard five-field Copyright/Access block, because they describe the external publication, not the MAEASaM record.</span></li>
+      <li class="k-open"><span class="t">Necessity vs Arches "required" setting</span><span class="who">Task #79 / #95</span>
+        <span class="d">10 fields are Mandatory in the template but not required in Information.json (<code>isrequired = false</code>).</span></li>
+      <li class="k-open"><span class="t">Legend block below the template</span><span class="who">Task #102</span>
+        <span class="d">The Data Type legend lists <code>Date</code> but not <code>EDTF</code>; being standardized across all templates.</span></li>
+    </ul>
+  </section>
+
+  <footer>Generated 2026-09-25 from <code>git show e3ffd84</code> / <code>f4ae792</code> compared with the working copy. Bulk fills (translations, Input Instructions, Operational Info, Dublin Core) are summarized, not listed per cell.</footer>
+</div>

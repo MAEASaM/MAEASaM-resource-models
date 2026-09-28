@@ -1104,7 +1104,7 @@
                     "alias": "publisher",
                     "config": {},
                     "datatype": "string",
-                    "description": "An individual or organization responsible for producing, distributing, and managing the dissemination of content such as books, magazines, newspapers, digital media, and other forms of information.",
+                    "description": "The organisation or person responsible for publishing the resource (e.g. a publishing house, a journal publisher or a heritage institution).",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",
@@ -1423,7 +1423,7 @@
                         "rdmCollection": "57c662b1-9343-40da-a3a8-1a4fd9306716"
                     },
                     "datatype": "concept-list",
-                    "description": "Indicates whether the resource is a publication, collection, or a map.",
+                    "description": "The type of information resource being recorded - e.g. Journal article, Book, Webpage, Map.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "298517a4-4a2c-4b42-864f-b52e44afc9f2",

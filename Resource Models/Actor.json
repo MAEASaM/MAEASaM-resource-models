@@ -622,7 +622,7 @@
                     "edgeid": "f6914a85-5b66-4e67-b398-2443cb44d47b",
                     "graph_id": "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",
                     "name": null,
-                    "ontologyproperty": "http://www.ics.forth.gr/isl/CRMdig/L54_is_same-as",
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P76_has_contact_point",
                     "rangenode_id": "4cc77db9-bba0-49c2-822c-55e1d649814d",
                     "source_identifier_id": null
                 },
@@ -830,7 +830,7 @@
                     "alias": "maeasam_id",
                     "config": {},
                     "datatype": "string",
-                    "description": "A unique identifier assigned to each resource. Format: ACT-9-digit number (e.g. ACT-000000003).",
+                    "description": "A unique identifier assigned to each resource. Format: ACT-8-digit number (e.g. ACT-00000003).",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",
@@ -941,8 +941,8 @@
                     "name": "Contact information",
                     "nodegroup_id": "433ca09c-eb5d-11ee-863e-21b2c24047e5",
                     "nodeid": "4cc77db9-bba0-49c2-822c-55e1d649814d",
-                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E84_Information_Carrier",
-                    "parentproperty": "http://www.ics.forth.gr/isl/CRMdig/L54_is_same-as",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E51_Contact_Point",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P76_has_contact_point",
                     "sortorder": 0,
                     "source_identifier_id": null,
                     "sourcebranchpublication_id": null
@@ -1099,7 +1099,7 @@
                         "en": ""
                     },
                     "datatype": "string",
-                    "description": "The Name the actor is generally referred to as. An entry can have multiple name values with different name types - e.g. a person may have a Primary name they are referred to as and an Alternative name.",
+                    "description": "The name the actor is generally referred to as. An entry can have multiple name values with different name types - e.g. a person may have a primary name they are referred to as and an alternative name.",
                     "exportable": true,
                     "fieldname": "ActName",
                     "graph_id": "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",
@@ -1197,7 +1197,7 @@
                         "rdmCollection": "d0adb1d5-d63f-4fff-b16f-1ec8723122dd"
                     },
                     "datatype": "concept-list",
-                    "description": "The type of Name described via the previous \"Name value\" attribute - e.g. Primary, Official, Alternative. Controlled by a Thesaurus (uses the main site Thesaurus for Name types). An entry can have multiple name values with different name types - e.g. a person may have a Primary name they are referred to as and an Alternative name.",
+                    "description": "The type of the name recorded in the \"Name\" field - e.g. Primary name, Alternative name, Local name. An actor can have several names, each with its own name type (e.g. a person may be referred to by a primary name and an alternative name).",
                     "exportable": true,
                     "fieldname": "NameType",
                     "graph_id": "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",
@@ -1247,7 +1247,7 @@
                         "rdmCollection": "757240ad-21d0-4edd-85e0-ae943ef19215"
                     },
                     "datatype": "concept-list",
-                    "description": "The Type of Actor which this resource represents - e.g. a member of the MAEASaM team (a type of person), or a Museum (a type of institution). Controlled by a hierarchical Thesaurus (only certain values valid).",
+                    "description": "The type of actor which this resource represents - e.g. a member of the MAEASaM team (a type of person), or a museum (a type of institution). Controlled by a hierarchical thesaurus (only certain values valid).",
                     "exportable": true,
                     "fieldname": "ActType",
                     "graph_id": "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",

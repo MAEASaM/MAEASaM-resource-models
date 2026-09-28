@@ -1,0 +1,266 @@
+<title>Actor Change Log</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#ede7d8; --paper-raised:#f7f3e7; --ink:#262218; --ink-soft:#6f6852; --rule:#cdbd9a;
+    --accent:#2f4a5c; --accent-ink:#eef2ee; --brass:#8a6a34;
+    --ok:#3f6b46; --ok-bg:#e3ecdf; --warn:#9c5a1e; --warn-bg:#f3e3cd; --bad:#a23a2c; --bad-bg:#f3dad3;
+    --ai:#6a4a8c; --ai-bg:#ebe2f2; --cidoc:#2f5f6e; --cidoc-bg:#dcebee;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme:dark;
+      --paper:#1c1a15; --paper-raised:#262319; --ink:#ece4d0; --ink-soft:#a89d84; --rule:#4a4330;
+      --accent:#7fa8bd; --accent-ink:#14202a; --brass:#c9a568;
+      --ok:#7fb489; --ok-bg:#24352a; --warn:#d99a55; --warn-bg:#3a2d1c; --bad:#e2897a; --bad-bg:#3a2521;
+      --ai:#c3a6e0; --ai-bg:#30263b; --cidoc:#86c1d0; --cidoc-bg:#1f3137;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --paper:#1c1a15; --paper-raised:#262319; --ink:#ece4d0; --ink-soft:#a89d84; --rule:#4a4330;
+    --accent:#7fa8bd; --accent-ink:#14202a; --brass:#c9a568;
+    --ok:#7fb489; --ok-bg:#24352a; --warn:#d99a55; --warn-bg:#3a2d1c; --bad:#e2897a; --bad-bg:#3a2521;
+    --ai:#c3a6e0; --ai-bg:#30263b; --cidoc:#86c1d0; --cidoc-bg:#1f3137;
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--paper); color:var(--ink); font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif; line-height:1.5; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1080px; margin:0 auto; padding-inline:24px; padding-block:48px 80px;}
+  @media (max-width:600px){ .wrap{padding-inline:16px; padding-block:32px 56px;} }
+  .eyebrow{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--brass); margin:0 0 10px;}
+  h1{font-family:"Fraunces", Georgia, serif; font-weight:600; font-size:clamp(1.9rem,4vw,2.6rem); line-height:1.08; margin:0 0 14px; text-wrap:balance; letter-spacing:-.01em;}
+  h2{font-family:"Fraunces", Georgia, serif; font-weight:600; font-size:1.55rem; margin:0; text-wrap:balance;}
+  h3{font-size:.8rem; font-family:"IBM Plex Mono", ui-monospace, monospace; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin:28px 0 10px; font-weight:500;}
+  .lede{max-width:72ch; color:var(--ink-soft); margin:0 0 8px;}
+  .lede strong, .lede code{color:var(--ink);}
+  code{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.86em;}
+  header.page{border-bottom:1px solid var(--rule); padding-bottom:28px; margin-bottom:12px;}
+  .facts{display:flex; flex-wrap:wrap; gap:1px; background:var(--rule); border:1px solid var(--rule); margin:22px 0 0;}
+  .facts div{flex:1 1 150px; background:var(--paper-raised); padding:12px 14px;}
+  .facts b{display:block; font-family:"Fraunces", Georgia, serif; font-size:1.5rem; font-weight:600; font-variant-numeric:tabular-nums;}
+  .facts span{font-size:.8rem; color:var(--ink-soft);}
+  .legend{display:flex; gap:10px 18px; flex-wrap:wrap; margin-top:18px; font-size:.82rem; color:var(--ink-soft); align-items:center;}
+  section{padding-top:40px;}
+  .sec-head{display:flex; align-items:baseline; gap:14px; border-bottom:2px solid var(--ink); padding-bottom:8px; margin-bottom:6px; flex-wrap:wrap;}
+  .sec-head .count{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.78rem; color:var(--ink-soft);}
+  ul.plain{margin:0; padding-left:1.1rem; max-width:80ch;}
+  ul.plain li{margin:6px 0;}
+  .tablebox{overflow-x:auto; border:1px solid var(--rule); background:var(--paper-raised);}
+  table{border-collapse:collapse; width:100%; font-size:.86rem;}
+  thead th{position:sticky; top:0; background:var(--accent); color:var(--accent-ink); text-align:left; font-weight:500; font-size:.76rem; letter-spacing:.06em; text-transform:uppercase; padding:9px 12px;}
+  td, tbody th{padding:8px 12px; vertical-align:top; border-top:1px solid var(--rule); text-align:left;}
+  tbody th{font-weight:600; white-space:nowrap;}
+  td.attr{color:var(--ink-soft); white-space:nowrap; font-size:.8rem;}
+  td.old{color:var(--ink-soft); text-decoration:line-through; text-decoration-color:color-mix(in srgb, var(--bad) 55%, transparent); min-width:180px;}
+  td.new{min-width:220px;}
+  .empty{font-style:italic; text-decoration:none; opacity:.75;}
+  .tag{display:inline-block; font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.68rem; letter-spacing:.04em; padding:1px 7px; border-radius:3px; margin-left:4px; white-space:nowrap; text-decoration:none; vertical-align:1px;}
+  .tag.ai{background:var(--ai-bg); color:var(--ai);}
+  .tag.cidoc{background:var(--cidoc-bg); color:var(--cidoc);}
+  .tag.us{background:var(--warn-bg); color:var(--warn);}
+  .tag.open{background:var(--bad-bg); color:var(--bad);}
+  .tag.done{background:var(--ok-bg); color:var(--ok);}
+  .added{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px; margin-top:14px;}
+  .added article{background:var(--paper-raised); border:1px solid var(--rule); padding:14px 16px;}
+  .added h4{margin:0 0 6px; font-size:1rem;}
+  .added p{margin:0; font-size:.88rem; color:var(--ink-soft);}
+  .added dl{margin:8px 0 0; display:grid; grid-template-columns:auto 1fr; gap:3px 10px; font-size:.82rem;}
+  .added dt{color:var(--ink-soft);} .added dd{margin:0;}
+  .tasks{list-style:none; margin:14px 0 0; padding:0; display:grid; gap:10px;}
+  .tasks li{background:var(--paper-raised); border:1px solid var(--rule); border-left:4px solid var(--rule); padding:12px 16px; display:grid; grid-template-columns:1fr auto; gap:4px 16px;}
+  .tasks li.k-ai{border-left-color:var(--ai);} .tasks li.k-cidoc{border-left-color:var(--cidoc);} .tasks li.k-us{border-left-color:var(--warn);} .tasks li.k-open{border-left-color:var(--bad);}
+  .tasks .t{font-weight:600;}
+  .tasks .who{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.74rem; color:var(--ink-soft); text-align:right; white-space:nowrap;}
+  .tasks .d{grid-column:1 / -1; font-size:.88rem; color:var(--ink-soft); max-width:92ch;}
+  .tasks .d b{color:var(--ink); font-weight:500;}
+  @media (max-width:600px){ .tasks li{grid-template-columns:1fr;} .tasks .who{text-align:left;} }
+  footer{margin-top:48px; padding-top:16px; border-top:1px solid var(--rule); font-size:.8rem; color:var(--ink-soft);}
+</style>
+
+<div class="wrap">
+  <header class="page">
+    <p class="eyebrow">MAEASaM · Actor resource model · Metadata Template + Actor.json</p>
+    <h1>Actor Change Log</h1>
+    <p class="lede">Everything that changed in <code>Actor_MetadataTemplate.csv</code> since its first version in the repository (<strong>2026-09-01</strong>, commit <code>fa44cae</code>) and in <code>Actor.json</code> since <strong>2026-08-28</strong> (commit <code>c3311b1</code>), up to the working copy of <strong>2026-09-25</strong>. The most recent changes (2026-09-24/25 review) are not committed yet.</p>
+    <div class="facts">
+      <div><b>17 → 19</b><span>template fields</span></div>
+      <div><b>2</b><span>fields added (Recorder, Created at)</span></div>
+      <div><b>3</b><span>fields renamed</span></div>
+      <div><b>53</b><span>field values changed (excl. bulk fills)</span></div>
+      <div><b>1</b><span>new attribute row (Input Instructions)</span></div>
+    </div>
+    <div class="legend">
+      <span><span class="tag ai">AI draft</span> written by Claude, needs a human check</span>
+      <span><span class="tag cidoc">CIDOC by us</span> CIDOC CRM filled by the project team, not the CIDOC reviewers</span>
+      <span><span class="tag us">Decision</span> content decision made in review</span>
+    </div>
+  </header>
+
+  <section id="changed">
+    <div class="sec-head"><h2>Things changed</h2><span class="count">structure, groups, field values, Actor.json</span></div>
+
+    <h3>Template-wide</h3>
+    <ul class="plain">
+      <li>Row labels normalized to the shared 22-row schema used by every template (e.g. <code>Language 1: en (node)</code> → <code>Node (En)</code> / <code>Metadata (En)</code>, <code>DC Equivalent</code> → <code>Dublin Core Equivalent</code>, <code>Mandatory</code>/<code>Required</code> → <code>Necessity</code>/<code>Cardinality</code>).</li>
+      <li>Collection cells of fields that are neither Concept-list nor Resource-Instance-List changed from empty to <code>N/A</code>.</li>
+      <li>Data Type vocabulary aligned with <code>metadata_rules.json</code>; the upload dates moved from <code>EDTF</code> to <code>Date</code>.</li>
+      <li>English definitions put in sentence case (Name, Name type, Actor type), also in <code>Actor.json</code>; rule added to <code>metadata_rules.json</code>.</li>
+      <li>Language table typo <code>Portugeuse</code> → <code>Portuguese</code>; whitespace cleaned in the French definitions of Name and Address.</li>
+    </ul>
+
+    <h3>Groups and field names</h3>
+    <div class="tablebox"><table>
+      <thead><tr><th>What</th><th>Before</th><th>After</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Group</th><td class="old">Identifier</td><td class="new">Identifiers</td></tr>
+        <tr><th scope="row">Group</th><td class="old">Comment (own group)</td><td class="new">Comment moved into <b>Recording details</b></td></tr>
+        <tr><th scope="row">Group</th><td class="old">Arches upload details</td><td class="new">Uploading details</td></tr>
+        <tr><th scope="row">Field</th><td class="old">Uploader name</td><td class="new">Uploader</td></tr>
+        <tr><th scope="row">Field</th><td class="old">Upload date</td><td class="new">Uploaded at</td></tr>
+        <tr><th scope="row">Field</th><td class="old">Resource last modified at</td><td class="new">Last modified at</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Field values</h3>
+    <div class="tablebox"><table>
+      <thead><tr><th>Field</th><th>Attribute</th><th>Before</th><th>After</th></tr></thead>
+      <tbody>
+<tr><th scope="row">MAEASaM ID</th><td class="attr">Operational Info</td><td class="old">N/A</td><td class="new">Primary Key </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Unique ID give to each resource entered.</td><td class="new">A unique identifier assigned to each resource. Format: ACT-8-digit number (e.g. ACT-00000003). </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">ACT-000000003</td><td class="new">ACT-00000003 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">ACT-000000005</td><td class="new">ACT-00000005 </td></tr>
+<tr><th scope="row">Name</th><td class="attr">Definition (En)</td><td class="old">The Name the actor is generally referred to as.  An entry can have multiple name values with different name types - e.g. a person may have a Primary name they are referred to as and an Alternative name.</td><td class="new">The name the actor is generally referred to as. An entry can have multiple name values with different name types - e.g. a person may have a primary name they are referred to as and an alternative name. </td></tr>
+<tr><th scope="row">Name type</th><td class="attr">Definition (En)</td><td class="old">The type of Name described via the previous &quot;Name value&quot; attribute - e.g. Primary, Official, Alternative. Controlled by a Thesaurus (uses the main site Thesaurus for Name types). An entry can have multiple name values wi…</td><td class="new">The type of the name recorded in the &quot;Name&quot; field - e.g. Primary name, Alternative name, Local name. An actor can have several names, each with its own name type (e.g. a person may be referred to by a primary name and an… </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (Fr)</td><td class="old">Le type de nom décrit par l&#x27;attribut &quot;Name value&quot; précédent - par exemple Primary, Legal, Alternative. Contrôlé par un thésaurus (utilise le thésaurus du site principal pour les types de noms). Une entrée peut avoir plus…</td><td class="new">Le type du nom enregistré dans le champ « Name » - par exemple Primary name, Alternative name, Local name. Un acteur peut avoir plusieurs noms, chacun avec son propre type de nom (par exemple, une personne peut être dési… <span class="tag ai">AI draft</span></td></tr>
+<tr><th scope="row">Contact information</th><td class="attr">CIDOC CRM Node Class</td><td class="old">E84 Information carrier</td><td class="new">E51 Contact Point <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">CIDOC CRM Scope note</td><td class="old">This class comprises all instances of E22 Man-Made Object that are explicitly designed to act as persistent physical carriers for instances of E73 Information Object. An E84 Information Carrier may or may not contain inf…</td><td class="new">This class comprises identifiers employed, or understood, by communication services to direct communications to an instance of E39 Actor. These include E-mail addresses, telephone numbers, post office boxes, Fax numbers,… <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Information related to how the individual can be contacted. This can be either email,cellular phone, land telephone etc</td><td class="new">Information related to how the individual can be contacted. This can be either email, cellular phone, landline telephone, etc. </td></tr>
+<tr><th scope="row">Actor type</th><td class="attr">Definition (En)</td><td class="old">The Type of Actor which this resource represents - e.g. a member of the MAEASaM team (a type of person), or a Museum (a type of institution). Controlled by a hierarchical Thesaurus (only certain values valid)</td><td class="new">The type of actor which this resource represents - e.g. a member of the MAEASaM team (a type of person), or a museum (a type of institution). Controlled by a hierarchical thesaurus (only certain values valid). </td></tr>
+<tr><th scope="row">Associated with</th><td class="attr">CIDOC CRM Semantic Node Class</td><td class="old">E40 Legal body</td><td class="new">E74 Group <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">CIDOC CRM Node Class</td><td class="old">E40 Legal body</td><td class="new">E74 Group <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Operational Info</td><td class="old">Primary and Foreign key</td><td class="new">Foreign Key </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The purpose of this node is to record if one actor is associated with another actor as well as which actor it is associated with</td><td class="new">Whether this actor is associated with another actor, and which actor it is associated with. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">Mapping Africa&#x27;s Endangered Archaeological Sites and Monuments</td><td class="new">ACT-00000002 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Mapping Africa&#x27;s Endangered Archaeological Sites and Monuments</td><td class="new">ACT-00000002 </td></tr>
+<tr><th scope="row">Nature of association</th><td class="attr">Definition (En)</td><td class="old">This node indicate what type of association the actor had with the other actor.</td><td class="new">The type of association the actor had with the other actor. </td></tr>
+<tr><th scope="row">Start date</th><td class="attr">Definition (En)</td><td class="old">This records the date at which the actor became associated with the other actor</td><td class="new">This records the date at which the actor became associated with the other actor. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">2025-01-01</td><td class="new">2019-03-01 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">2025-01-01</td><td class="new">2015-01-01 </td></tr>
+<tr><th scope="row">End date</th><td class="attr">Necessity</td><td class="old">Mandatory</td><td class="new">Optional </td></tr>
+<tr><th scope="row"></th><td class="attr">Cardinality</td><td class="old">1</td><td class="new">0..1 </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">This records the date at which the actor ended its association with the other actor</td><td class="new">This records the date at which the actor ended its association with the other actor. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">2025-01-01</td><td class="new">2024-12-31 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">2025-01-01</td><td class="new">2020-06-30 </td></tr>
+<tr><th scope="row">Country</th><td class="attr">Necessity</td><td class="old">Mandatory</td><td class="new">Optional </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The name of the country in which the actor physically situated</td><td class="new">The name of the country in which the actor is physically situated. </td></tr>
+<tr><th scope="row">Geometry (WKT)</th><td class="attr">Cardinality</td><td class="old">1..n</td><td class="new">0..n </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The coordiantes (WGS 84 formate) of the place indicated by the address</td><td class="new">The coordinates (WGS 84 format) of the place indicated by the address. </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (Fr)</td><td class="old">Les coordonnées (WGS 84 formate) du lieu indiqué par l&#x27;adresse</td><td class="new">Les coordonnées (format WGS 84) du lieu indiqué par l&#x27;adresse </td></tr>
+<tr><th scope="row">Description</th><td class="attr">Cardinality</td><td class="old">1</td><td class="new">0..1 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">Remember to avoid special characters as far as possible.</td><td class="new">Public research university in Pretoria, South Africa; MAEASaM partner institution. <span class="tag ai">AI draft</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Remember to avoid special characters as far as possible.</td><td class="new">Collegiate research university in Cambridge, United Kingdom; MAEASaM partner institution. <span class="tag ai">AI draft</span></td></tr>
+<tr><th scope="row">Comment</th><td class="attr">Definition (En)</td><td class="old">Any additional comments necessary to fully describe this actor or their entry here</td><td class="new">Any additional information relevant to this resource that the recorder feels should be documented. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">Remember to avoid special characters as far as possible.</td><td class="new">Contact details confirmed with the institution in 2025. <span class="tag ai">AI draft</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Remember to avoid special characters as far as possible.</td><td class="new"><span class=empty>empty</span> </td></tr>
+<tr><th scope="row">Uploader</th><td class="attr">Data Type</td><td class="old">String</td><td class="new">Resource-Instance-List </td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old"><span class=empty>empty</span></td><td class="new">Actor (rm) </td></tr>
+<tr><th scope="row"></th><td class="attr">Operational Info</td><td class="old">N/A</td><td class="new">Foreign Key </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The name of the individual that uplaoded the grid square instance ot Arches. This is a required field</td><td class="new">The name of the individual that uploaded this resource record to Arches. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">Renier Hendrik van der Merwe</td><td class="new">ACT-00000056 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Renier Hendrik van der Merwe</td><td class="new">ACT-00000056 </td></tr>
+<tr><th scope="row">Uploaded at</th><td class="attr">Data Type</td><td class="old">EDTF</td><td class="new">Date </td></tr>
+<tr><th scope="row"></th><td class="attr">Operational Info</td><td class="old">N/A</td><td class="new">Auto-Populated </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The date on which the grid square instance was added to Arches. This is a required field</td><td class="new">The date on which this resource record was added to Arches. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">2026-03-03</td><td class="new">This field is automatically populated by the system. Leave this field blank </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">2026-03-03</td><td class="new"><span class=empty>empty</span> </td></tr>
+<tr><th scope="row">Last modified at</th><td class="attr">Data Type</td><td class="old">EDTF</td><td class="new">Date </td></tr>
+<tr><th scope="row"></th><td class="attr">Operational Info</td><td class="old">N/A</td><td class="new">Auto-Populated </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The date of the latest modification that has been made to the relevant grid square instance in Arches. This is a required field</td><td class="new">The most recent date on which the resource record was modified. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">2026-03-03</td><td class="new">This field is automatically populated by the system. Leave this field blank </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">2026-03-03</td><td class="new"><span class=empty>empty</span> </td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Actor.json (Arches resource model)</h3>
+    <ul class="plain">
+      <li>Cards restructured to match the template: <code>MAEASaM ID</code> → <b>Identifiers</b>; <code>Location⇥</code> (stray tab in the name) → <b>Location</b>; <code>Comment</code> card merged into <b>Recording details</b>; <code>Resource version control</code> replaced by <b>Recording details</b> + <b>Uploading details</b> (both <code>E66 Formation</code>).</li>
+      <li>Nodes renamed: <code>Geometry</code> → <code>Geometry (WKT)</code>, <code>Resource created at</code> → <code>Created at</code>, <code>Resource last modified at</code> → <code>Last modified at</code>.</li>
+      <li><b>Nature of association</b>: class <code>E39 Actor</code> → <code>E55 Type</code>. <span class="tag cidoc">CIDOC by us</span></li>
+      <li><b>Contact information</b>: <code>E84 Information Carrier</code> via <code>L54 is same-as</code> → <code>E51 Contact Point</code> via <code>P76 has contact point</code> (2026-09-25). <span class="tag cidoc">CIDOC by us</span></li>
+      <li>Node descriptions filled or synced with the template's Definition (En) for MAEASaM ID, Name, Name type, Actor type, Associated with, Nature of association, Start date, End date, Country, Comment.</li>
+    </ul>
+  </section>
+
+  <section id="added">
+    <div class="sec-head"><h2>Things added</h2><span class="count">new fields, rows and mappings</span></div>
+    <div class="added">
+      <article>
+        <h4>Recorder</h4>
+        <p>Recording details · Resource-Instance-List → <code>Actor (rm)</code> · Mandatory · 1..n · Foreign Key · <code>dcterms:contributor</code></p>
+        <dl><dt>CIDOC</dt><dd><code>E66 Formation</code> / <code>E39 Actor</code> <span class="tag cidoc">CIDOC by us</span></dd><dt>Example</dt><dd><code>ACT-00000072</code></dd></dl>
+      </article>
+      <article>
+        <h4>Created at</h4>
+        <p>Recording details · Date · Mandatory · 1 · <code>dcterms:created</code></p>
+        <dl><dt>CIDOC</dt><dd><code>E50 Date</code> <span class="tag cidoc">CIDOC by us</span></dd><dt>Example</dt><dd><code>2026-09-01</code></dd></dl>
+      </article>
+      <article>
+        <h4>Input Instructions (En) row</h4>
+        <p>New attribute row, filled for all 19 fields from the rules in <code>metadata_rules.json</code> (by Data Type, or by Operational Info for auto-populated fields).</p>
+      </article>
+      <article>
+        <h4>Translations <span class="tag ai">AI draft</span></h4>
+        <p>All empty French, Arabic and Portuguese labels and definitions filled: 79 cells drafted by Claude, 16 copied from Map.</p>
+      </article>
+      <article>
+        <h4>Column numbering</h4>
+        <p>Header row now numbers the fields 1–19, as in the other templates.</p>
+      </article>
+      <article>
+        <h4>Operational Info</h4>
+        <p>MAEASaM ID → <code>Primary Key</code>; Associated with, Recorder, Uploader → <code>Foreign Key</code>; Uploaded at, Last modified at → <code>Auto-Populated</code>.</p>
+      </article>
+      <article>
+        <h4>Dublin Core Equivalent</h4>
+        <p>Was empty for every field; now mapped for all 19 (table below). <span class="tag us">Decision</span></p>
+      </article>
+    </div>
+    <h3>Dublin Core mappings (new)</h3>
+    <div class="tablebox"><table>
+      <thead><tr><th>Field</th><th>Dublin Core Equivalent</th></tr></thead>
+      <tbody><tr><th scope="row">MAEASaM ID</th><td>dcterms:identifier</td></tr><tr><th scope="row">Name</th><td>dcterms:title</td></tr><tr><th scope="row">Name type</th><td>dcterms:type</td></tr><tr><th scope="row">Contact information</th><td>No direct equivalent</td></tr><tr><th scope="row">Actor type</th><td>dcterms:type</td></tr><tr><th scope="row">Associated with</th><td>dcterms:relation</td></tr><tr><th scope="row">Nature of association</th><td>dcterms:type</td></tr><tr><th scope="row">Start date</th><td>dcterms:date</td></tr><tr><th scope="row">End date</th><td>dcterms:date</td></tr><tr><th scope="row">Address</th><td>No direct equivalent</td></tr><tr><th scope="row">Country</th><td>dcterms:coverage</td></tr><tr><th scope="row">Geometry (WKT)</th><td>dcterms:spatial</td></tr><tr><th scope="row">Description</th><td>dcterms:description</td></tr><tr><th scope="row">Comment</th><td>dcterms:description</td></tr><tr><th scope="row">Uploader</th><td>dcterms:contributor</td></tr><tr><th scope="row">Uploaded at</th><td>dcterms:dateSubmitted</td></tr><tr><th scope="row">Last modified at</th><td>dcterms:modified</td></tr></tbody>
+    </table></div>
+  </section>
+
+  <section id="check">
+    <div class="sec-head"><h2>Things to check</h2><span class="count">tasks for reviewers</span></div>
+    <ul class="tasks">
+      <li class="k-ai"><span class="t">French definition of Name type <span class="tag ai">AI draft</span></span><span class="who">native French speaker</span>
+        <span class="d">Rewritten by Claude on 2026-09-25 together with the English text. Check wording and terminology.</span></li>
+      <li class="k-ai"><span class="t">Example values for Description and Comment <span class="tag ai">AI draft</span></span><span class="who">team</span>
+        <span class="d">Written by Claude to replace a "Remember to avoid special characters" note. Confirm they are accurate and appropriate for the University of Pretoria / Cambridge examples.</span></li>
+      <li class="k-ai"><span class="t">Arabic, Portuguese and missing French translations <span class="tag ai">AI draft</span></span><span class="who">native speakers · Task #13</span>
+        <span class="d"><b>79 cells drafted by Claude on 2026-09-25</b> from the English definitions: every Arabic and Portuguese label and definition, plus the French labels and definitions that were empty (Contact information, Actor type, Associated with, Nature of association, Start date, End date, Country). <b>16 cells copied from the Map template</b> (French definitions and French/Arabic labels of Recorder, Comment, Created at, Uploader, Uploaded at, Last modified at), whose origin is not recorded either. Portuguese uses European/African spelling (<i>registo</i>, <i>contacto</i>, <i>equipa</i>) for Mozambique and Guinea-Bissau; confirm this is the variant the project wants.</span></li>
+      <li class="k-open"><span class="t">Older French definitions</span><span class="who">native French speaker</span>
+        <span class="d">The French texts that already existed on 2026-09-01 have no recorded author. Two are out of date with the current English: <b>MAEASaM ID</b> (no ID format) and <b>Comment</b> (translates the old English definition).</span></li>
+      <li class="k-cidoc"><span class="t">CIDOC CRM choices made by the project team <span class="tag cidoc">CIDOC by us</span></span><span class="who">Renier &amp; Anto · Task #14</span>
+        <span class="d">None of these went through the CIDOC reviewers: <b>Associated with</b> <code>E40 Legal Body</code> → <code>E74 Group</code>; <b>Nature of association</b> (JSON) <code>E39 Actor</code> → <code>E55 Type</code>; <b>Contact information</b> → <code>E51 Contact Point</code> via <code>P76 has contact point</code>; <b>Recorder</b> <code>E66 Formation</code> / <code>E39 Actor</code>; <b>Created at</b> <code>E50 Date</code>; <b>Recording details / Uploading details</b> groups <code>E66 Formation</code>.</span></li>
+      <li class="k-open"><span class="t">Location group fails CIDOC validation</span><span class="who">CIDOC reviewers · Task #84</span>
+        <span class="d">Location is typed <code>E27 Site</code>, but Address (<code>P87</code>) and Geometry (WKT) (<code>P89</code>) need an <code>E53 Place</code> domain. Arches may reject the model on import.</span></li>
+      <li class="k-us"><span class="t">Re-import Actor.json into Arches</span><span class="who">Orhun / Renier</span>
+        <span class="d">The Contact information class and property changed on 2026-09-25, so the live model is out of date until it is re-imported.</span></li>
+      <li class="k-us"><span class="t">Definitions edited by us</span><span class="who">team</span>
+        <span class="d">English definitions were rewritten or corrected for MAEASaM ID, Name type, Associated with, Nature of association, Comment, Uploader, Uploaded at and Last modified at (the last three used to say "grid square instance"). Confirm the wording.</span></li>
+      <li class="k-us"><span class="t">Necessity and Cardinality decisions <span class="tag us">Decision</span></span><span class="who">team</span>
+        <span class="d">Country Mandatory → Optional; End date Mandatory / 1 → Optional / 0..1; Geometry (WKT) 1..n → 0..n; Description 1 → 0..1. Country stays free text (actors can be outside the project countries), and Actor deliberately has no Copyright/Access or Sources group.</span></li>
+      <li class="k-open"><span class="t">Necessity vs Arches "required" setting</span><span class="who">Task #79 / #95</span>
+        <span class="d">12 fields are Mandatory in the template but not required in Actor.json (<code>isrequired = false</code>).</span></li>
+      <li class="k-open"><span class="t">MAEASaM ID format across models</span><span class="who">Task #44</span>
+        <span class="d">Actor now documents the real 8-digit format (<code>ACT-00000003</code>). Map and Site still show a prefixed variant (<code>MAEASAM-ACT-00000056</code>) in their Uploader example.</span></li>
+      <li class="k-open"><span class="t">Legend block below the template</span><span class="who">Task #102</span>
+        <span class="d">The Data Type legend still shows a combined <code>Date/EDTF</code> row; this is being standardized across all templates.</span></li>
+    </ul>
+  </section>
+
+  <footer>Generated 2026-09-25 from <code>git show fa44cae</code> / <code>c3311b1</code> compared with the working copy. Bulk fills (Input Instructions for all fields, Collection <code>N/A</code>) are summarized, not listed per cell.</footer>
+</div>

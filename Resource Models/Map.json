@@ -23,7 +23,7 @@
                         "en": ""
                     },
                     "name": {
-                        "en": "Digitisation Status"
+                        "en": "Digitisation status"
                     },
                     "nodegroup_id": "d6fb85a9-c04a-4cd6-8d75-c0a181bb5c4c",
                     "sortorder": 5,
@@ -50,7 +50,7 @@
                         "en": ""
                     },
                     "name": {
-                        "en": "Digital Transformation Details"
+                        "en": "Digital transformation details"
                     },
                     "nodegroup_id": "b9fbcb03-7733-48bf-bbea-a6e3eafd3cde",
                     "sortorder": 6,
@@ -77,7 +77,7 @@
                         "en": ""
                     },
                     "name": {
-                        "en": "Cartographic Information"
+                        "en": "Cartographic information"
                     },
                     "nodegroup_id": "b5041eee-978b-485a-b7df-8bfb73c4258f",
                     "sortorder": 4,
@@ -104,7 +104,7 @@
                         "en": ""
                     },
                     "name": {
-                        "en": "Publication Information"
+                        "en": "Publication information"
                     },
                     "nodegroup_id": "7d5da118-4a4c-4830-8820-c2bfe8dd1456",
                     "sortorder": 3,
@@ -239,7 +239,7 @@
                         "en": ""
                     },
                     "name": {
-                        "en": "Map Details"
+                        "en": "Map details"
                     },
                     "nodegroup_id": "6bff71d3-fd2d-41dc-add1-fc450f31a465",
                     "sortorder": 1,
@@ -266,7 +266,7 @@
                         "en": ""
                     },
                     "name": {
-                        "en": "File Location"
+                        "en": "File location"
                     },
                     "nodegroup_id": "9421c886-128d-473f-859e-7e6ee05de697",
                     "sortorder": 2,
@@ -307,7 +307,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Clipping Person",
+                        "label": "Clipping person",
                         "maxLength": null,
                         "placeholder": {
                             "en": "Enter text"
@@ -317,7 +317,7 @@
                     },
                     "id": "07e737b5-855c-4895-a1cc-939565eb2e05",
                     "label": {
-                        "en": "Clipping Person"
+                        "en": "Clipping person"
                     },
                     "node_id": "8bbd21a1-91a9-47ad-9302-76cc9b9dd67f",
                     "sortorder": 7,
@@ -332,7 +332,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Map Name",
+                        "label": "Map name",
                         "maxLength": null,
                         "placeholder": {
                             "en": "Enter text"
@@ -342,7 +342,7 @@
                     },
                     "id": "0a12b208-8e67-44c1-b474-0032190e8f6c",
                     "label": {
-                        "en": "Map Name"
+                        "en": "Map name"
                     },
                     "node_id": "6affb1a1-bbd6-4f06-9596-1d51ac3c3af6",
                     "sortorder": 0,
@@ -357,7 +357,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Physical File Place",
+                        "label": "Physical file place",
                         "maxLength": null,
                         "placeholder": {
                             "en": "Enter text"
@@ -367,7 +367,7 @@
                     },
                     "id": "0ab91b66-1991-42ce-ae7d-cd16f0cca86b",
                     "label": {
-                        "en": "Physical File Place"
+                        "en": "Physical file place"
                     },
                     "node_id": "0e099197-033a-4792-ab81-6bf628ebe0e1",
                     "sortorder": 2,
@@ -382,14 +382,14 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Publication Year",
+                        "label": "Publication year",
                         "placeholder": {
                             "en": "Enter date"
                         }
                     },
                     "id": "0dab89ee-c570-49c3-b8f6-98cea4cb8483",
                     "label": {
-                        "en": "Publication Year"
+                        "en": "Publication year"
                     },
                     "node_id": "7a1489b5-66ff-4f0e-b76d-0d10ca3f2584",
                     "sortorder": 1,
@@ -404,7 +404,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Map Condition",
+                        "label": "Map condition",
                         "options": [],
                         "placeholder": {
                             "en": "Select an option"
@@ -412,7 +412,7 @@
                     },
                     "id": "1a0d57eb-b0eb-4399-aa5c-592df93a9718",
                     "label": {
-                        "en": "Map Condition"
+                        "en": "Map condition"
                     },
                     "node_id": "6291df3e-d69e-4efb-920d-0ce3a7e2500c",
                     "sortorder": 8,
@@ -472,7 +472,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Sheet History",
+                        "label": "Sheet history",
                         "maxLength": null,
                         "placeholder": {
                             "en": "Enter text"
@@ -482,7 +482,7 @@
                     },
                     "id": "2fe47650-eb50-4da0-9593-8ecf851f9cff",
                     "label": {
-                        "en": "Sheet History"
+                        "en": "Sheet history"
                     },
                     "node_id": "7d770770-1de6-4727-bf05-2d04f6439ec6",
                     "sortorder": 2,
@@ -568,7 +568,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Scale Factor",
+                        "label": "Scale factor",
                         "maxLength": null,
                         "placeholder": {
                             "en": "Enter text"
@@ -578,7 +578,7 @@
                     },
                     "id": "3fc76079-88c8-40a1-8e38-d6bcacc57840",
                     "label": {
-                        "en": "Scale Factor"
+                        "en": "Scale factor"
                     },
                     "node_id": "deabe4df-2805-42d2-b4b2-a71367db6ad6",
                     "sortorder": 6,
@@ -593,14 +593,14 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Clipping Date",
+                        "label": "Clipping date",
                         "placeholder": {
                             "en": "Enter date"
                         }
                     },
                     "id": "47cb4ca3-98d6-4835-bedc-132aceb86a12",
                     "label": {
-                        "en": "Clipping Date"
+                        "en": "Clipping date"
                     },
                     "node_id": "4edd3128-0acd-4636-9adf-7b45a6b71fee",
                     "sortorder": 8,
@@ -615,7 +615,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Digitisation Tool",
+                        "label": "Digitisation tool",
                         "maxLength": null,
                         "placeholder": {
                             "en": "Enter text"
@@ -625,7 +625,7 @@
                     },
                     "id": "54604c19-27b9-4cd5-80fd-c50812597e41",
                     "label": {
-                        "en": "Digitisation Tool"
+                        "en": "Digitisation tool"
                     },
                     "node_id": "20ea3e03-c584-43f1-ae0a-6829e4a5a076",
                     "sortorder": 0,
@@ -640,7 +640,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Map Material",
+                        "label": "Map material",
                         "maxLength": null,
                         "placeholder": {
                             "en": "Enter text"
@@ -650,7 +650,7 @@
                     },
                     "id": "5aa59e60-400c-4bdc-ae94-f80442c217f1",
                     "label": {
-                        "en": "Map Material"
+                        "en": "Map material"
                     },
                     "node_id": "2f3c895f-fd46-43e4-b998-e51846b441d8",
                     "sortorder": 5,
@@ -687,12 +687,12 @@
                             "label"
                         ],
                         "label": {
-                            "en": "Is Digitised?"
+                            "en": "Is digitised?"
                         }
                     },
                     "id": "6c59d370-70f8-4d5a-84b3-d8b64677b14b",
                     "label": {
-                        "en": "Is Digitised?"
+                        "en": "Is digitised?"
                     },
                     "node_id": "7c8c519c-8ac4-403b-964a-fd821553cea2",
                     "sortorder": 0,
@@ -732,7 +732,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Geographical Identifier",
+                        "label": "Geographical identifier",
                         "options": [],
                         "placeholder": {
                             "en": "Select an option"
@@ -740,7 +740,7 @@
                     },
                     "id": "6f375322-b4ee-4512-8fa6-c9c7bb6458f4",
                     "label": {
-                        "en": "Geographical Identifier"
+                        "en": "Geographical identifier"
                     },
                     "node_id": "d59c7d8e-de52-4103-9083-f46c983cb6a8",
                     "sortorder": 2,
@@ -828,7 +828,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Digitisation Method",
+                        "label": "Digitisation method",
                         "options": [],
                         "placeholder": {
                             "en": "Select an option"
@@ -836,7 +836,7 @@
                     },
                     "id": "7a8b2744-8b02-443a-9c40-669fd489671d",
                     "label": {
-                        "en": "Digitisation Method"
+                        "en": "Digitisation method"
                     },
                     "node_id": "8b7ce314-8a11-4fed-ba66-e02d45e05d3a",
                     "sortorder": 9,
@@ -876,23 +876,21 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Spheroid",
-                        "maxLength": null,
+                        "label": "Ellipsoid",
+                        "options": [],
                         "placeholder": {
-                            "en": "Enter text"
-                        },
-                        "uneditable": false,
-                        "width": "100%"
+                            "en": "Select an option"
+                        }
                     },
                     "id": "8b5ca4c6-3b75-40d5-ba35-9de15ea220bf",
                     "label": {
-                        "en": "Spheroid"
+                        "en": "Ellipsoid"
                     },
                     "node_id": "f7dd5b92-6bf1-4056-80b1-53f7c995a330",
                     "sortorder": 2,
                     "source_identifier_id": null,
                     "visible": true,
-                    "widget_id": "10000000-0000-0000-0000-000000000001"
+                    "widget_id": "10000000-0000-0000-0000-000000000012"
                 },
                 {
                     "card_id": "0484d9f3-08c9-4e24-b1ae-6046333fabd6",
@@ -901,7 +899,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Digitisation Person",
+                        "label": "Digitisation person",
                         "maxLength": null,
                         "placeholder": {
                             "en": "Enter text"
@@ -911,7 +909,7 @@
                     },
                     "id": "8b7fd53e-c385-4fd2-bdbd-ac7fcda3f6d5",
                     "label": {
-                        "en": "Digitisation Person"
+                        "en": "Digitisation person"
                     },
                     "node_id": "d9f81fdf-05f5-4141-bc70-62caf243141b",
                     "sortorder": 1,
@@ -977,12 +975,12 @@
                             "label"
                         ],
                         "label": {
-                            "en": "Is Georeferenced?"
+                            "en": "Is georeferenced?"
                         }
                     },
                     "id": "a51cd1c5-6fa2-4f58-843f-cd95973764f5",
                     "label": {
-                        "en": "Is Georeferenced?"
+                        "en": "Is georeferenced?"
                     },
                     "node_id": "ffd90040-44cd-4841-ac28-139a9e0876c8",
                     "sortorder": 3,
@@ -997,7 +995,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Map Type",
+                        "label": "Map type",
                         "options": [],
                         "placeholder": {
                             "en": "Select an option"
@@ -1005,7 +1003,7 @@
                     },
                     "id": "a83e4f50-a144-46d0-aa82-c3311183bf5c",
                     "label": {
-                        "en": "Map Type"
+                        "en": "Map type"
                     },
                     "node_id": "b0649c62-f279-4f12-b9a2-f1cb94762e17",
                     "sortorder": 7,
@@ -1020,23 +1018,21 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Unit of",
-                        "maxLength": null,
+                        "label": "Unit of measure",
+                        "options": [],
                         "placeholder": {
-                            "en": "Enter text"
-                        },
-                        "uneditable": false,
-                        "width": "100%"
+                            "en": "Select an option"
+                        }
                     },
                     "id": "af44da4c-3506-4eac-a9da-6cc2a80b1dac",
                     "label": {
-                        "en": "Unit of"
+                        "en": "Unit of measure"
                     },
                     "node_id": "11559386-0516-4ff1-a401-d10befdc39b6",
                     "sortorder": 3,
                     "source_identifier_id": null,
                     "visible": true,
-                    "widget_id": "10000000-0000-0000-0000-000000000001"
+                    "widget_id": "10000000-0000-0000-0000-000000000012"
                 },
                 {
                     "card_id": "a56cb8b8-d9fa-45b3-8210-c2e2af0a5498",
@@ -1070,7 +1066,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "File Resolution",
+                        "label": "File resolution",
                         "maxLength": null,
                         "placeholder": {
                             "en": "Enter text"
@@ -1080,7 +1076,7 @@
                     },
                     "id": "b52adf9b-fc45-4425-9145-3c7e0c5e2607",
                     "label": {
-                        "en": "File Resolution"
+                        "en": "File resolution"
                     },
                     "node_id": "202bed32-5182-4215-aac8-fb28694d3793",
                     "sortorder": 2,
@@ -1095,7 +1091,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Digital File Path",
+                        "label": "Digital file path",
                         "maxLength": null,
                         "placeholder": {
                             "en": "Enter text"
@@ -1105,7 +1101,7 @@
                     },
                     "id": "b6bca485-d5c5-4942-a637-46ef4df0a244",
                     "label": {
-                        "en": "Digital File Path"
+                        "en": "Digital file path"
                     },
                     "node_id": "6bdade8a-94b9-4b08-99f1-a10e8e3d4d29",
                     "sortorder": 1,
@@ -1146,12 +1142,12 @@
                             "label"
                         ],
                         "label": {
-                            "en": "Is Clipped?"
+                            "en": "Is clipped?"
                         }
                     },
                     "id": "bcf99f16-2a45-4e00-a477-4076a87de148",
                     "label": {
-                        "en": "Is Clipped?"
+                        "en": "Is clipped?"
                     },
                     "node_id": "429cc2d1-afde-4df3-89c8-914635a26241",
                     "sortorder": 6,
@@ -1166,14 +1162,14 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Digitisation Date",
+                        "label": "Digitisation date",
                         "placeholder": {
                             "en": "Enter date"
                         }
                     },
                     "id": "c2ca5a14-8f61-4b90-a6ed-a90a7f9cde6e",
                     "label": {
-                        "en": "Digitisation Date"
+                        "en": "Digitisation date"
                     },
                     "node_id": "bbc841c7-049a-449d-a4eb-7126018012c3",
                     "sortorder": 2,
@@ -1188,7 +1184,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Color Detail",
+                        "label": "Color detail",
                         "maxLength": null,
                         "placeholder": {
                             "en": "Enter text"
@@ -1198,7 +1194,7 @@
                     },
                     "id": "c3999cf5-c3f4-434d-9896-dea966222372",
                     "label": {
-                        "en": "Color Detail"
+                        "en": "Color detail"
                     },
                     "node_id": "e999652b-86a4-4f48-93e6-fc448bd9d272",
                     "sortorder": 1,
@@ -1310,12 +1306,10 @@
                             "placeholder"
                         ],
                         "label": "Datum",
-                        "maxLength": null,
+                        "options": [],
                         "placeholder": {
-                            "en": "Enter text"
-                        },
-                        "uneditable": false,
-                        "width": "100%"
+                            "en": "Select an option"
+                        }
                     },
                     "id": "d9040327-08ff-4620-9258-2c0ff41e0957",
                     "label": {
@@ -1325,7 +1319,7 @@
                     "sortorder": 9,
                     "source_identifier_id": null,
                     "visible": true,
-                    "widget_id": "10000000-0000-0000-0000-000000000001"
+                    "widget_id": "10000000-0000-0000-0000-000000000012"
                 },
                 {
                     "card_id": "2e6eccbe-bdde-499d-ab8e-b2ad95a2a023",
@@ -1334,7 +1328,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "False Co-ords",
+                        "label": "False co-ords",
                         "maxLength": null,
                         "placeholder": {
                             "en": "Enter text"
@@ -1344,7 +1338,7 @@
                     },
                     "id": "d9fb239b-f266-4ad4-84c3-dc0a11aad76b",
                     "label": {
-                        "en": "False Co-ords"
+                        "en": "False co-ords"
                     },
                     "node_id": "34e24cb9-69ee-4ddc-87cb-39932b30da26",
                     "sortorder": 7,
@@ -1359,7 +1353,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Map Dimensions",
+                        "label": "Map dimensions",
                         "maxLength": null,
                         "placeholder": {
                             "en": "Enter text"
@@ -1369,7 +1363,7 @@
                     },
                     "id": "e00a3451-4cce-487e-bad6-ec44d7b3abd7",
                     "label": {
-                        "en": "Map Dimensions"
+                        "en": "Map dimensions"
                     },
                     "node_id": "ddd2710c-66f0-42be-af17-4203f0570417",
                     "sortorder": 6,
@@ -1409,7 +1403,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "False Co-ords of Origin",
+                        "label": "False co-ords of origin",
                         "maxLength": null,
                         "placeholder": {
                             "en": "Enter text"
@@ -1419,7 +1413,7 @@
                     },
                     "id": "eb87da28-cd37-44be-981f-ca1f786edb24",
                     "label": {
-                        "en": "False Co-ords of Origin"
+                        "en": "False co-ords of origin"
                     },
                     "node_id": "75114e50-48f9-4e6c-95ae-00cc0a947125",
                     "sortorder": 8,
@@ -1481,7 +1475,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Sheet Code",
+                        "label": "Sheet code",
                         "maxLength": null,
                         "placeholder": {
                             "en": "Enter text"
@@ -1491,7 +1485,7 @@
                     },
                     "id": "f7cfd100-7e4f-4d97-bc80-b0b853ad4fcb",
                     "label": {
-                        "en": "Sheet Code"
+                        "en": "Sheet code"
                     },
                     "node_id": "5bdc78e7-df2c-4787-9761-ab34cdb28ffd",
                     "sortorder": 1,
@@ -1506,14 +1500,14 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Georeference Date",
+                        "label": "Georeference date",
                         "placeholder": {
                             "en": "Enter date"
                         }
                     },
                     "id": "fc507c3d-c811-41f6-9ef3-036998fd0a83",
                     "label": {
-                        "en": "Georeference Date"
+                        "en": "Georeference date"
                     },
                     "node_id": "958b1fb2-1f54-445b-a089-448aee5fe575",
                     "sortorder": 5,
@@ -1528,7 +1522,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Digital File Name",
+                        "label": "Digital file name",
                         "maxLength": null,
                         "placeholder": {
                             "en": "Enter text"
@@ -1538,7 +1532,7 @@
                     },
                     "id": "fc92f567-330b-410f-8852-ce7ea6b07531",
                     "label": {
-                        "en": "Digital File Name"
+                        "en": "Digital file name"
                     },
                     "node_id": "0a8922b2-7732-4fd2-8926-56b2a4c297c5",
                     "sortorder": 0,
@@ -1553,7 +1547,7 @@
                         "i18n_properties": [
                             "placeholder"
                         ],
-                        "label": "Georeference Person",
+                        "label": "Georeference person",
                         "maxLength": null,
                         "placeholder": {
                             "en": "Enter text"
@@ -1563,7 +1557,7 @@
                     },
                     "id": "fe0113a5-0bb9-4b62-a01f-1fb083a063c2",
                     "label": {
-                        "en": "Georeference Person"
+                        "en": "Georeference person"
                     },
                     "node_id": "7f41b0e5-23a4-4aab-929c-0e7606ea0ad2",
                     "sortorder": 4,
@@ -1586,7 +1580,7 @@
                     "edgeid": "05ed4262-492e-4311-b289-7178bcbca1a6",
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",
                     "name": null,
-                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P2_has_type",
                     "rangenode_id": "11559386-0516-4ff1-a401-d10befdc39b6",
                     "source_identifier_id": null
                 },
@@ -1816,7 +1810,7 @@
                     "edgeid": "824b600c-7bce-44a1-9d3c-e8cc86abf081",
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",
                     "name": null,
-                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P2_has_type",
                     "rangenode_id": "a33022ae-1d4f-441b-8a00-0fab44f89391",
                     "source_identifier_id": null
                 },
@@ -1876,7 +1870,7 @@
                     "edgeid": "928a09b5-8aa2-4bcf-9bb0-ca67cc8c0dac",
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",
                     "name": null,
-                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P2_has_type",
                     "rangenode_id": "f7dd5b92-6bf1-4056-80b1-53f7c995a330",
                     "source_identifier_id": null
                 },
@@ -2372,7 +2366,7 @@
                     "isrequired": true,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Digital File Name",
+                    "name": "Digital file name",
                     "nodegroup_id": "9421c886-128d-473f-859e-7e6ee05de697",
                     "nodeid": "0a8922b2-7732-4fd2-8926-56b2a4c297c5",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E42_Identifier",
@@ -2397,7 +2391,7 @@
                     "isrequired": true,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Physical File Place",
+                    "name": "Physical file place",
                     "nodegroup_id": "9421c886-128d-473f-859e-7e6ee05de697",
                     "nodeid": "0e099197-033a-4792-ab81-6bf628ebe0e1",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
@@ -2407,11 +2401,11 @@
                     "sourcebranchpublication_id": null
                 },
                 {
-                    "alias": "unit_of",
+                    "alias": "unit_of_measure",
                     "config": {
-                        "en": ""
+                        "rdmCollection": "937b5666-258d-49f5-9273-4575d0493435"
                     },
-                    "datatype": "string",
+                    "datatype": "concept-list",
                     "description": "The unit of measurement used by the map or its coordinate reference system. It is generally written on the map.",
                     "exportable": true,
                     "fieldname": null,
@@ -2422,11 +2416,11 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Unit of",
+                    "name": "Unit of measure",
                     "nodegroup_id": "b5041eee-978b-485a-b7df-8bfb73c4258f",
                     "nodeid": "11559386-0516-4ff1-a401-d10befdc39b6",
-                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
-                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E55_Type",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P2_has_type",
                     "sortorder": 3,
                     "source_identifier_id": null,
                     "sourcebranchpublication_id": null
@@ -2547,7 +2541,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "File Resolution",
+                    "name": "File resolution",
                     "nodegroup_id": "b9fbcb03-7733-48bf-bbea-a6e3eafd3cde",
                     "nodeid": "202bed32-5182-4215-aac8-fb28694d3793",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
@@ -2597,7 +2591,7 @@
                     "isrequired": true,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Digitisation Tool",
+                    "name": "Digitisation tool",
                     "nodegroup_id": "b9fbcb03-7733-48bf-bbea-a6e3eafd3cde",
                     "nodeid": "20ea3e03-c584-43f1-ae0a-6829e4a5a076",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
@@ -2622,7 +2616,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Map Material",
+                    "name": "Map material",
                     "nodegroup_id": "6bff71d3-fd2d-41dc-add1-fc450f31a465",
                     "nodeid": "2f3c895f-fd46-43e4-b998-e51846b441d8",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
@@ -2697,7 +2691,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "False Co-ords",
+                    "name": "False co-ords",
                     "nodegroup_id": "b5041eee-978b-485a-b7df-8bfb73c4258f",
                     "nodeid": "34e24cb9-69ee-4ddc-87cb-39932b30da26",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
@@ -2746,7 +2740,7 @@
                         }
                     },
                     "datatype": "boolean",
-                    "description": "Indicates whether the digital map has been clipped or cropped as part of digital processing. Please enter either \"Yes\" or \"No\" as the value.",
+                    "description": "Indicates whether the digital map has been clipped or cropped as part of digital processing.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",
@@ -2756,7 +2750,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Is Clipped?",
+                    "name": "Is clipped?",
                     "nodegroup_id": "d6fb85a9-c04a-4cd6-8d75-c0a181bb5c4c",
                     "nodeid": "429cc2d1-afde-4df3-89c8-914635a26241",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
@@ -2802,7 +2796,7 @@
                         "multiplier_if_uncertain": 1
                     },
                     "datatype": "edtf",
-                    "description": "Date on which clipping or cropping of the digital map was completed. Please enter the date using the Extended Date/Time Format (EDTF) standard. See the EDTF specification \"https://www.loc.gov/standards/datetime/\"  for guidance.",
+                    "description": "Date on which clipping or cropping of the digital map was completed.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",
@@ -2812,7 +2806,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Clipping Date",
+                    "name": "Clipping date",
                     "nodegroup_id": "d6fb85a9-c04a-4cd6-8d75-c0a181bb5c4c",
                     "nodeid": "4edd3128-0acd-4636-9adf-7b45a6b71fee",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E50_Date",
@@ -2873,7 +2867,7 @@
                     "isrequired": true,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Sheet Code",
+                    "name": "Sheet code",
                     "nodegroup_id": "6bff71d3-fd2d-41dc-add1-fc450f31a465",
                     "nodeid": "5bdc78e7-df2c-4787-9761-ab34cdb28ffd",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E42_Identifier",
@@ -2888,7 +2882,7 @@
                         "rdmCollection": "0d9e9144-03ca-4b9d-a260-7229fa7ede06"
                     },
                     "datatype": "concept-list",
-                    "description": "The physical condition of the original map at the time of recording. Please write the term exactly as recorded in the \"Document conditions\" controlled vocabulary.",
+                    "description": "The physical condition of the original map at the time of recording.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",
@@ -2898,7 +2892,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Map Condition",
+                    "name": "Map condition",
                     "nodegroup_id": "6bff71d3-fd2d-41dc-add1-fc450f31a465",
                     "nodeid": "6291df3e-d69e-4efb-920d-0ce3a7e2500c",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E55_Type",
@@ -2923,7 +2917,7 @@
                     "isrequired": true,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Map Name",
+                    "name": "Map name",
                     "nodegroup_id": "6bff71d3-fd2d-41dc-add1-fc450f31a465",
                     "nodeid": "6affb1a1-bbd6-4f06-9596-1d51ac3c3af6",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E35_Title",
@@ -2948,7 +2942,7 @@
                     "isrequired": true,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Digital File Path",
+                    "name": "Digital file path",
                     "nodegroup_id": "9421c886-128d-473f-859e-7e6ee05de697",
                     "nodeid": "6bdade8a-94b9-4b08-99f1-a10e8e3d4d29",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
@@ -2973,7 +2967,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Map Details",
+                    "name": "Map details",
                     "nodegroup_id": "6bff71d3-fd2d-41dc-add1-fc450f31a465",
                     "nodeid": "6bff71d3-fd2d-41dc-add1-fc450f31a465",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity",
@@ -2998,7 +2992,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "False Co-ords of Origin",
+                    "name": "False co-ords of origin",
                     "nodegroup_id": "b5041eee-978b-485a-b7df-8bfb73c4258f",
                     "nodeid": "75114e50-48f9-4e6c-95ae-00cc0a947125",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
@@ -3055,7 +3049,7 @@
                         "multiplier_if_uncertain": 1
                     },
                     "datatype": "edtf",
-                    "description": "The date in which the map was published or issued. It is generally written on the map. Please enter the date using the Extended Date/Time Format (EDTF) standard. See the EDTF specification \"https://www.loc.gov/standards/datetime/\"  for guidance.",
+                    "description": "The date in which the map was published or issued. It is generally written on the map.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",
@@ -3065,7 +3059,7 @@
                     "isrequired": true,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Publication Year",
+                    "name": "Publication year",
                     "nodegroup_id": "7d5da118-4a4c-4830-8820-c2bfe8dd1456",
                     "nodeid": "7a1489b5-66ff-4f0e-b76d-0d10ca3f2584",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E50_Date",
@@ -3089,7 +3083,7 @@
                         }
                     },
                     "datatype": "boolean",
-                    "description": "Indicates whether the digitisation of the map has been completed. Please enter either \"Yes\" or \"No\" as the value.",
+                    "description": "Indicates whether the digitisation of the map has been completed.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",
@@ -3099,7 +3093,7 @@
                     "isrequired": true,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Is Digitised?",
+                    "name": "Is digitised?",
                     "nodegroup_id": "d6fb85a9-c04a-4cd6-8d75-c0a181bb5c4c",
                     "nodeid": "7c8c519c-8ac4-403b-964a-fd821553cea2",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
@@ -3124,7 +3118,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Publication Information",
+                    "name": "Publication information",
                     "nodegroup_id": "7d5da118-4a4c-4830-8820-c2bfe8dd1456",
                     "nodeid": "7d5da118-4a4c-4830-8820-c2bfe8dd1456",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity",
@@ -3149,7 +3143,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Sheet History",
+                    "name": "Sheet history",
                     "nodegroup_id": "7d5da118-4a4c-4830-8820-c2bfe8dd1456",
                     "nodeid": "7d770770-1de6-4727-bf05-2d04f6439ec6",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
@@ -3174,7 +3168,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Georeference Person",
+                    "name": "Georeference person",
                     "nodegroup_id": "d6fb85a9-c04a-4cd6-8d75-c0a181bb5c4c",
                     "nodeid": "7f41b0e5-23a4-4aab-929c-0e7606ea0ad2",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E82_Actor_Appellation",
@@ -3221,7 +3215,7 @@
                         "searchString": ""
                     },
                     "datatype": "resource-instance-list",
-                    "description": "Matching MAEASaM grid of the map. Please write the MAEASaM ID of the relevant record from the \"GRID Model\" resource instance such as \"GRID-000016993\".",
+                    "description": "The MAEASaM grid square or squares covered by the map.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",
@@ -3246,7 +3240,7 @@
                         "rdmCollection": "e3f65886-8590-4188-becc-a7ff4d118300"
                     },
                     "datatype": "concept-list",
-                    "description": "The method used to create the digital representation of the original map, such as scanning or photography. Please write the term exactly as recorded in the \"Digitisation methods\" controlled vocabulary.",
+                    "description": "The method used to create the digital representation of the original map, such as scanning or photography.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",
@@ -3256,7 +3250,7 @@
                     "isrequired": true,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Digitisation Method",
+                    "name": "Digitisation method",
                     "nodegroup_id": "d6fb85a9-c04a-4cd6-8d75-c0a181bb5c4c",
                     "nodeid": "8b7ce314-8a11-4fed-ba66-e02d45e05d3a",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E55_Type",
@@ -3281,7 +3275,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Clipping Person",
+                    "name": "Clipping person",
                     "nodegroup_id": "d6fb85a9-c04a-4cd6-8d75-c0a181bb5c4c",
                     "nodeid": "8bbd21a1-91a9-47ad-9302-76cc9b9dd67f",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E82_Actor_Appellation",
@@ -3331,7 +3325,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "File Location",
+                    "name": "File location",
                     "nodegroup_id": "9421c886-128d-473f-859e-7e6ee05de697",
                     "nodeid": "9421c886-128d-473f-859e-7e6ee05de697",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity",
@@ -3352,7 +3346,7 @@
                         "multiplier_if_uncertain": 1
                     },
                     "datatype": "edtf",
-                    "description": "Date on which georeferencing of the digital map was completed. Please enter the date using the Extended Date/Time Format (EDTF) standard. See the EDTF specification \"https://www.loc.gov/standards/datetime/\"  for guidance.",
+                    "description": "Date on which georeferencing of the digital map was completed.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",
@@ -3362,7 +3356,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Georeference Date",
+                    "name": "Georeference date",
                     "nodegroup_id": "d6fb85a9-c04a-4cd6-8d75-c0a181bb5c4c",
                     "nodeid": "958b1fb2-1f54-445b-a089-448aee5fe575",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E50_Date",
@@ -3399,9 +3393,9 @@
                 {
                     "alias": "datum",
                     "config": {
-                        "en": ""
+                        "rdmCollection": "d6c657a6-42d2-43bd-84d2-8c3933212298"
                     },
-                    "datatype": "string",
+                    "datatype": "concept-list",
                     "description": "The geodetic datum used by the map\u2019s coordinate reference system. It is generally written on the map.",
                     "exportable": true,
                     "fieldname": null,
@@ -3415,8 +3409,8 @@
                     "name": "Datum",
                     "nodegroup_id": "b5041eee-978b-485a-b7df-8bfb73c4258f",
                     "nodeid": "a33022ae-1d4f-441b-8a00-0fab44f89391",
-                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
-                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E55_Type",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P2_has_type",
                     "sortorder": 9,
                     "source_identifier_id": null,
                     "sourcebranchpublication_id": null
@@ -3502,7 +3496,7 @@
                         "rdmCollection": "a58366db-1f9a-46a4-bef2-31234f68ded9"
                     },
                     "datatype": "concept-list",
-                    "description": "Type of map, following to MAEASaM controlled vocabulary. Please write the term exactly as recorded in the \"Map types\" controlled vocabulary.",
+                    "description": "The type of map (e.g. Modern, Historical).",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",
@@ -3512,7 +3506,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Map Type",
+                    "name": "Map type",
                     "nodegroup_id": "6bff71d3-fd2d-41dc-add1-fc450f31a465",
                     "nodeid": "b0649c62-f279-4f12-b9a2-f1cb94762e17",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E55_Type",
@@ -3537,7 +3531,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Cartographic Information",
+                    "name": "Cartographic information",
                     "nodegroup_id": "b5041eee-978b-485a-b7df-8bfb73c4258f",
                     "nodeid": "b5041eee-978b-485a-b7df-8bfb73c4258f",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity",
@@ -3587,7 +3581,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Digital Transformation Details",
+                    "name": "Digital transformation details",
                     "nodegroup_id": "b9fbcb03-7733-48bf-bbea-a6e3eafd3cde",
                     "nodeid": "b9fbcb03-7733-48bf-bbea-a6e3eafd3cde",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity",
@@ -3608,7 +3602,7 @@
                         "multiplier_if_uncertain": 1
                     },
                     "datatype": "edtf",
-                    "description": "Date on which the digitisation process was completed. Please enter the date using the Extended Date/Time Format (EDTF) standard. See the EDTF specification \"https://www.loc.gov/standards/datetime/\"  for guidance.",
+                    "description": "Date on which the digitisation process was completed.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",
@@ -3618,7 +3612,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Digitisation Date",
+                    "name": "Digitisation date",
                     "nodegroup_id": "d6fb85a9-c04a-4cd6-8d75-c0a181bb5c4c",
                     "nodeid": "bbc841c7-049a-449d-a4eb-7126018012c3",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E50_Date",
@@ -3683,7 +3677,7 @@
                         "rdmCollection": "7edf277b-a5d9-48a6-aa5c-23ad622f9512"
                     },
                     "datatype": "concept-list",
-                    "description": "ISO 3166-1 alpha-3 country code (2009 revision). Please write the term code exactly as recorded in the \"Countries\" controlled vocabulary.",
+                    "description": "The country covered by the map, as an ISO 3166-1 alpha-3 code (e.g. KEN).",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",
@@ -3693,7 +3687,7 @@
                     "isrequired": true,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Geographical Identifier",
+                    "name": "Geographical identifier",
                     "nodegroup_id": "11fd8c9d-bb1e-406c-b3ae-7fd426277aa9",
                     "nodeid": "d59c7d8e-de52-4103-9083-f46c983cb6a8",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E55_Type",
@@ -3718,7 +3712,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Digitisation Status",
+                    "name": "Digitisation status",
                     "nodegroup_id": "d6fb85a9-c04a-4cd6-8d75-c0a181bb5c4c",
                     "nodeid": "d6fb85a9-c04a-4cd6-8d75-c0a181bb5c4c",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity",
@@ -3768,7 +3762,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Digitisation Person",
+                    "name": "Digitisation person",
                     "nodegroup_id": "d6fb85a9-c04a-4cd6-8d75-c0a181bb5c4c",
                     "nodeid": "d9f81fdf-05f5-4141-bc70-62caf243141b",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E82_Actor_Appellation",
@@ -3818,7 +3812,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Map Dimensions",
+                    "name": "Map dimensions",
                     "nodegroup_id": "6bff71d3-fd2d-41dc-add1-fc450f31a465",
                     "nodeid": "ddd2710c-66f0-42be-af17-4203f0570417",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
@@ -3843,7 +3837,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Scale Factor",
+                    "name": "Scale factor",
                     "nodegroup_id": "b5041eee-978b-485a-b7df-8bfb73c4258f",
                     "nodeid": "deabe4df-2805-42d2-b4b2-a71367db6ad6",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
@@ -3918,7 +3912,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Color Detail",
+                    "name": "Color detail",
                     "nodegroup_id": "b9fbcb03-7733-48bf-bbea-a6e3eafd3cde",
                     "nodeid": "e999652b-86a4-4f48-93e6-fc448bd9d272",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
@@ -3960,11 +3954,11 @@
                     "sourcebranchpublication_id": null
                 },
                 {
-                    "alias": "spheroid",
+                    "alias": "ellipsoid",
                     "config": {
-                        "en": ""
+                        "rdmCollection": "67e8a414-3713-4a03-a17d-dcec9f2a9607"
                     },
-                    "datatype": "string",
+                    "datatype": "concept-list",
                     "description": "The reference spheroid or ellipsoid used by the map\u2019s coordinate reference system. It is generally written on the map.",
                     "exportable": true,
                     "fieldname": null,
@@ -3975,11 +3969,11 @@
                     "isrequired": true,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Spheroid",
+                    "name": "Ellipsoid",
                     "nodegroup_id": "b5041eee-978b-485a-b7df-8bfb73c4258f",
                     "nodeid": "f7dd5b92-6bf1-4056-80b1-53f7c995a330",
-                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
-                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E55_Type",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P2_has_type",
                     "sortorder": 2,
                     "source_identifier_id": null,
                     "sourcebranchpublication_id": null
@@ -3999,7 +3993,7 @@
                         }
                     },
                     "datatype": "boolean",
-                    "description": "Indicates whether the georeferencing of the digital map has been completed. Please enter either \"Yes\" or \"No\" as the value.",
+                    "description": "Indicates whether the georeferencing of the digital map has been completed.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "c67b8d78-648b-46f5-9d49-0f7733f716fb",
@@ -4009,7 +4003,7 @@
                     "isrequired": true,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Is Georeferenced?",
+                    "name": "Is georeferenced?",
                     "nodegroup_id": "d6fb85a9-c04a-4cd6-8d75-c0a181bb5c4c",
                     "nodeid": "ffd90040-44cd-4841-ac28-139a9e0876c8",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",

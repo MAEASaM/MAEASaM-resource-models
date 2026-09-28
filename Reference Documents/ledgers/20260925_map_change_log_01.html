@@ -1,0 +1,321 @@
+<title>Map Change Log</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#ede7d8; --paper-raised:#f7f3e7; --ink:#262218; --ink-soft:#6f6852; --rule:#cdbd9a;
+    --accent:#2f4a5c; --accent-ink:#eef2ee; --brass:#8a6a34;
+    --ok:#3f6b46; --ok-bg:#e3ecdf; --warn:#9c5a1e; --warn-bg:#f3e3cd; --bad:#a23a2c; --bad-bg:#f3dad3;
+    --ai:#6a4a8c; --ai-bg:#ebe2f2; --cidoc:#2f5f6e; --cidoc-bg:#dcebee;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme:dark;
+      --paper:#1c1a15; --paper-raised:#262319; --ink:#ece4d0; --ink-soft:#a89d84; --rule:#4a4330;
+      --accent:#7fa8bd; --accent-ink:#14202a; --brass:#c9a568;
+      --ok:#7fb489; --ok-bg:#24352a; --warn:#d99a55; --warn-bg:#3a2d1c; --bad:#e2897a; --bad-bg:#3a2521;
+      --ai:#c3a6e0; --ai-bg:#30263b; --cidoc:#86c1d0; --cidoc-bg:#1f3137;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --paper:#1c1a15; --paper-raised:#262319; --ink:#ece4d0; --ink-soft:#a89d84; --rule:#4a4330;
+    --accent:#7fa8bd; --accent-ink:#14202a; --brass:#c9a568;
+    --ok:#7fb489; --ok-bg:#24352a; --warn:#d99a55; --warn-bg:#3a2d1c; --bad:#e2897a; --bad-bg:#3a2521;
+    --ai:#c3a6e0; --ai-bg:#30263b; --cidoc:#86c1d0; --cidoc-bg:#1f3137;
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--paper); color:var(--ink); font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif; line-height:1.5; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1080px; margin:0 auto; padding-inline:24px; padding-block:48px 80px;}
+  @media (max-width:600px){ .wrap{padding-inline:16px; padding-block:32px 56px;} }
+  .eyebrow{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--brass); margin:0 0 10px;}
+  h1{font-family:"Fraunces", Georgia, serif; font-weight:600; font-size:clamp(1.9rem,4vw,2.6rem); line-height:1.08; margin:0 0 14px; text-wrap:balance; letter-spacing:-.01em;}
+  h2{font-family:"Fraunces", Georgia, serif; font-weight:600; font-size:1.55rem; margin:0; text-wrap:balance;}
+  h3{font-size:.8rem; font-family:"IBM Plex Mono", ui-monospace, monospace; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin:28px 0 10px; font-weight:500;}
+  .lede{max-width:72ch; color:var(--ink-soft); margin:0 0 8px;}
+  .lede strong, .lede code{color:var(--ink);}
+  code{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.86em;}
+  header.page{border-bottom:1px solid var(--rule); padding-bottom:28px; margin-bottom:12px;}
+  .facts{display:flex; flex-wrap:wrap; gap:1px; background:var(--rule); border:1px solid var(--rule); margin:22px 0 0;}
+  .facts div{flex:1 1 150px; background:var(--paper-raised); padding:12px 14px;}
+  .facts b{display:block; font-family:"Fraunces", Georgia, serif; font-size:1.5rem; font-weight:600; font-variant-numeric:tabular-nums;}
+  .facts span{font-size:.8rem; color:var(--ink-soft);}
+  .legend{display:flex; gap:10px 18px; flex-wrap:wrap; margin-top:18px; font-size:.82rem; color:var(--ink-soft); align-items:center;}
+  section{padding-top:40px;}
+  .sec-head{display:flex; align-items:baseline; gap:14px; border-bottom:2px solid var(--ink); padding-bottom:8px; margin-bottom:6px; flex-wrap:wrap;}
+  .sec-head .count{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.78rem; color:var(--ink-soft);}
+  ul.plain{margin:0; padding-left:1.1rem; max-width:80ch;}
+  ul.plain li{margin:6px 0;}
+  .tablebox{overflow-x:auto; border:1px solid var(--rule); background:var(--paper-raised);}
+  table{border-collapse:collapse; width:100%; font-size:.86rem;}
+  thead th{position:sticky; top:0; background:var(--accent); color:var(--accent-ink); text-align:left; font-weight:500; font-size:.76rem; letter-spacing:.06em; text-transform:uppercase; padding:9px 12px;}
+  td, tbody th{padding:8px 12px; vertical-align:top; border-top:1px solid var(--rule); text-align:left;}
+  tbody th{font-weight:600; white-space:nowrap;}
+  td.attr{color:var(--ink-soft); white-space:nowrap; font-size:.8rem;}
+  td.old{color:var(--ink-soft); text-decoration:line-through; text-decoration-color:color-mix(in srgb, var(--bad) 55%, transparent); min-width:180px;}
+  td.new{min-width:220px;}
+  .empty{font-style:italic; text-decoration:none; opacity:.75;}
+  .tag{display:inline-block; font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.68rem; letter-spacing:.04em; padding:1px 7px; border-radius:3px; margin-left:4px; white-space:nowrap; text-decoration:none; vertical-align:1px;}
+  .tag.ai{background:var(--ai-bg); color:var(--ai);}
+  .tag.cidoc{background:var(--cidoc-bg); color:var(--cidoc);}
+  .tag.us{background:var(--warn-bg); color:var(--warn);}
+  .tag.open{background:var(--bad-bg); color:var(--bad);}
+  .tag.json{background:var(--paper); color:var(--ink-soft); border:1px solid var(--rule);}
+  .tag.done{background:var(--ok-bg); color:var(--ok);}
+  .added{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px; margin-top:14px;}
+  .added article{background:var(--paper-raised); border:1px solid var(--rule); padding:14px 16px;}
+  .added h4{margin:0 0 6px; font-size:1rem;}
+  .added p{margin:0; font-size:.88rem; color:var(--ink-soft);}
+  .added dl{margin:8px 0 0; display:grid; grid-template-columns:auto 1fr; gap:3px 10px; font-size:.82rem;}
+  .added dt{color:var(--ink-soft);} .added dd{margin:0;}
+  .tasks{list-style:none; margin:14px 0 0; padding:0; display:grid; gap:10px;}
+  .tasks li{background:var(--paper-raised); border:1px solid var(--rule); border-left:4px solid var(--rule); padding:12px 16px; display:grid; grid-template-columns:1fr auto; gap:4px 16px;}
+  .tasks li.k-ai{border-left-color:var(--ai);} .tasks li.k-cidoc{border-left-color:var(--cidoc);} .tasks li.k-us{border-left-color:var(--warn);} .tasks li.k-open{border-left-color:var(--bad);}
+  .tasks .t{font-weight:600;}
+  .tasks .who{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.74rem; color:var(--ink-soft); text-align:right; white-space:nowrap;}
+  .tasks .d{grid-column:1 / -1; font-size:.88rem; color:var(--ink-soft); max-width:92ch;}
+  .tasks .d b{color:var(--ink); font-weight:500;}
+  @media (max-width:600px){ .tasks li{grid-template-columns:1fr;} .tasks .who{text-align:left;} }
+  footer{margin-top:48px; padding-top:16px; border-top:1px solid var(--rule); font-size:.8rem; color:var(--ink-soft);}
+</style>
+
+<div class="wrap">
+  <header class="page">
+    <p class="eyebrow">MAEASaM · Map resource model · Metadata Template + Map.json</p>
+    <h1>Map Change Log</h1>
+    <p class="lede">Everything that changed in <code>Map_MetadataTemplate.csv</code> since its first version in the repository (<strong>2026-09-01</strong>, commit <code>87986b1</code>) and in <code>Map.json</code> since it was first generated (<strong>2026-09-06</strong>, commit <code>4824f80</code>), up to the working copy of <strong>2026-09-25</strong>. The most recent changes (2026-09-25 review) are not committed yet.</p>
+    <div class="facts">
+      <div><b>54</b><span>template fields (none added or removed)</span></div>
+      <div><b>34</b><span>fields renamed (sentence case, Ellipsoid, Unit of measure…)</span></div>
+      <div><b>3</b><span>fields turned into controlled vocabularies</span></div>
+      <div><b>123</b><span>field values changed (excl. bulk fills)</span></div>
+      <div><b>52</b><span>CIDOC classes filled by the team</span></div>
+    </div>
+    <div class="legend">
+      <span><span class="tag ai">AI draft</span> written by Claude, needs a human check</span>
+      <span><span class="tag cidoc">CIDOC by us</span> CIDOC CRM chosen by the project team, not the CIDOC reviewers</span>
+      <span><span class="tag us">Decision</span> content decision made in review</span>
+    </div>
+  </header>
+
+  <section id="changed">
+    <div class="sec-head"><h2>Things changed</h2><span class="count">structure, names, field values, Map.json</span></div>
+
+    <h3>Template-wide</h3>
+    <ul class="plain">
+      <li><b>All field and group names put in sentence case</b> on 2026-09-25 (e.g. <code>Map Name</code> → <code>Map name</code>, <code>Digital File Name</code> → <code>Digital file name</code>, <code>Map Details</code> → <code>Map details</code>), in the template and in <code>Map.json</code>. The shared <code>Copyright/Access</code>, <code>Rights Notes</code> and <code>Preferred Citation</code> names are left for an all-model rename (Task #107). <span class="tag us">Decision</span></li>
+      <li>Collection names lower-cased to the vocabulary names (<code>Map Types (cv)</code> → <code>Map types (cv)</code>, <code>Document Conditions</code>, <code>Digitisation Methods</code>, <code>Access Levels</code>), and <code>Grids (rm)</code> → <code>Grid (rm)</code>.</li>
+      <li>Dublin Core values rewritten from the short <code>dcterms:</code> form to full <code>http://purl.org/dc/terms/…</code> URIs and completed for every field.</li>
+      <li>Input-instruction sentences ("Please write the term exactly…", "Please enter the date using EDTF…", "Please enter Yes or No") removed from 12 English and 9 French definitions — they now live only in the Input Instructions row.</li>
+      <li>Publication, digitisation, georeference and clipping dates moved from <code>Date</code> to <code>EDTF</code>.</li>
+      <li>Eleven reviewer notes that sat in row 24 of the template were moved to Task #106.</li>
+    </ul>
+
+    <h3>Renamed fields and groups (besides sentence case)</h3>
+    <div class="tablebox"><table>
+      <thead><tr><th>What</th><th>Before</th><th>After</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Field</th><td class="old">Spheroid</td><td class="new">Ellipsoid <span class="tag us">Decision</span></td></tr>
+        <tr><th scope="row">Field</th><td class="old">Unit of</td><td class="new">Unit of measure <span class="tag us">Decision</span></td></tr>
+        <tr><th scope="row">Field</th><td class="old">Resource created at</td><td class="new">Created at</td></tr>
+        <tr><th scope="row">Field</th><td class="old">Uploader Name</td><td class="new">Uploader</td></tr>
+        <tr><th scope="row">Field</th><td class="old">Upload Date</td><td class="new">Uploaded at</td></tr>
+        <tr><th scope="row">Field</th><td class="old">Resource last modified at</td><td class="new">Last modified at</td></tr>
+        <tr><th scope="row">Group</th><td class="old">Recording Details · Uploader Details</td><td class="new">Recording details · Uploading details</td></tr>
+        <tr><th scope="row">Group</th><td class="old">(Licence etc. had no group)</td><td class="new">Copyright/Access</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Field values</h3>
+    <div class="tablebox"><table>
+      <thead><tr><th>Field</th><th>Attribute</th><th>Before</th><th>After</th></tr></thead>
+      <tbody>
+<tr><th scope="row">MAEASaM ID</th><td class="attr">CIDOC CRM Scope note</td><td class="old">This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations. Such codes are often known as inventory num…</td><td class="new">This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations. Such codes are often known as inventory num… </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Unique ID given to each resource entered. Must be formatted as Country code-MAP-###### (six digit id). KEN-MAP-000001.</td><td class="new">A unique identifier assigned to each resource. Format: [3-letter country code]-MAP-6-digit number (e.g. KEN-MAP-000001). </td></tr>
+<tr><th scope="row">Local ID</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E42 Identifier <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">N</td><td class="new"><span class=empty>empty</span> </td></tr>
+<tr><th scope="row">Geographical identifier</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E55 Type <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">ISO 3166-1 alpha-3 country code (2009 revision). Please write the term code exactly as recorded in the &quot;Countries&quot; controlled vocabulary.</td><td class="new">The country covered by the map, as an ISO 3166-1 alpha-3 code (e.g. KEN). <span class="tag ai">AI draft</span></td></tr>
+<tr><th scope="row">Sheet code</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E42 Identifier <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Series</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Edition</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Scale</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Map material</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Map dimensions</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Map type</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E55 Type <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old">Map Types (cv)</td><td class="new">Map types (cv) </td></tr>
+<tr><th scope="row"></th><td class="attr">Cardinality</td><td class="old">1</td><td class="new">0..1 <span class="tag us">Decision</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Type of map, following to MAEASaM controlled vocabulary. Please write the term exactly as recorded in the &quot;Map Types&quot; controlled vocabulary.</td><td class="new">The type of map (e.g. Modern, Historical). <span class="tag ai">AI draft</span></td></tr>
+<tr><th scope="row">Map condition</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E55 Type <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old">Document Conditions (cv)</td><td class="new">Document conditions (cv) </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The physical condition of the original map at the time of recording. Please write the term exactly as recorded in the &quot;&quot;Document Conditions controlled vocabulary.</td><td class="new">The physical condition of the original map at the time of recording. </td></tr>
+<tr><th scope="row">Description</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Digital file name</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E42 Identifier <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Digital file path</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Physical file place</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Publisher</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E82 Actor Appellation <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Publication year</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E50 Date <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Data Type</td><td class="old">Date</td><td class="new">EDTF </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The date in which the map was published or issued. It is generally written on the map. Please enter the date using the Extended Date/Time Format (EDTF) standard. See the EDTF specification &quot;https://www.loc.gov/standards/…</td><td class="new">The date in which the map was published or issued. It is generally written on the map. </td></tr>
+<tr><th scope="row">Sheet history</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Grid</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E53 Place <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old">Grids (rm)</td><td class="new">Grid (rm) </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Matching MAEASaM grid of the map. Please write the MAEASaM ID of the relevant record from the &quot;GRID Model&quot; resource instance such as &quot;GRID-000016993&quot;.</td><td class="new">The MAEASaM grid square or squares covered by the map. <span class="tag ai">AI draft</span></td></tr>
+<tr><th scope="row">Projection</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Ellipsoid</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E55 Type <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Data Type</td><td class="old">String</td><td class="new">Concept-list <span class="tag us">Decision</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old"><span class=empty>empty</span></td><td class="new">Ellipsoid (cv) <span class="tag us">Decision</span></td></tr>
+<tr><th scope="row">Unit of measure</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E55 Type <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Data Type</td><td class="old">String</td><td class="new">Concept-list <span class="tag us">Decision</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old"><span class=empty>empty</span></td><td class="new">Measurement units (cv) <span class="tag us">Decision</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">Metre</td><td class="new">Metre (m) </td></tr>
+<tr><th scope="row">Meridian of</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Latitude of</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Scale factor</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">False co-ords</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">False co-ords of origin</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Datum</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E55 Type <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Data Type</td><td class="old">String</td><td class="new">Concept-list <span class="tag us">Decision</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old"><span class=empty>empty</span></td><td class="new">Datum (cv) <span class="tag us">Decision</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">New (1960) Arc</td><td class="new">Arc 1960 </td></tr>
+<tr><th scope="row">Annotation</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Is digitised?</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Indicates whether the digitisation of the map has been completed. Please enter either &quot;Yes&quot; or &quot;No&quot; as the value.</td><td class="new">Indicates whether the digitisation of the map has been completed. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old"><span class=empty>empty</span></td><td class="new">Yes </td></tr>
+<tr><th scope="row">Digitisation person</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E82 Actor Appellation <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old"><span class=empty>empty</span></td><td class="new">Orhun Ugur </td></tr>
+<tr><th scope="row">Digitisation date</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E50 Date <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Data Type</td><td class="old">Date</td><td class="new">EDTF </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Date on which the digitisation process was completed. Please enter the date using the Extended Date/Time Format (EDTF) standard. See the EDTF specification &quot;https://www.loc.gov/standards/datetime/&quot;  for guidance.</td><td class="new">Date on which the digitisation process was completed. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old"><span class=empty>empty</span></td><td class="new">2026-08-27 </td></tr>
+<tr><th scope="row">Is georeferenced?</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Indicates whether the georeferencing of the digital map has been completed. Please enter either &quot;Yes&quot; or &quot;No&quot; as the value.</td><td class="new">Indicates whether the georeferencing of the digital map has been completed. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old"><span class=empty>empty</span></td><td class="new">Yes </td></tr>
+<tr><th scope="row">Georeference person</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E82 Actor Appellation <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">N/A</td><td class="new"><span class=empty>empty</span> </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old"><span class=empty>empty</span></td><td class="new">Orhun Ugur </td></tr>
+<tr><th scope="row">Georeference date</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E50 Date <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Data Type</td><td class="old">Date</td><td class="new">EDTF </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Date on which georeferencing of the digital map was completed. Please enter the date using the Extended Date/Time Format (EDTF) standard. See the EDTF specification &quot;https://www.loc.gov/standards/datetime/&quot;  for guidance…</td><td class="new">Date on which georeferencing of the digital map was completed. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">N/A</td><td class="new"><span class=empty>empty</span> </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old"><span class=empty>empty</span></td><td class="new">2026-08-28 </td></tr>
+<tr><th scope="row">Is clipped?</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Cardinality</td><td class="old">1</td><td class="new">0..1 <span class="tag us">Decision</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Indicates whether the digital map has been clipped or cropped as part of digital processing. Please enter either &quot;Yes&quot; or &quot;No&quot; as the value.</td><td class="new">Indicates whether the digital map has been clipped or cropped as part of digital processing. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old"><span class=empty>empty</span></td><td class="new">Yes </td></tr>
+<tr><th scope="row">Clipping person</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E82 Actor Appellation <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">N/A</td><td class="new"><span class=empty>empty</span> </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old"><span class=empty>empty</span></td><td class="new">Orhun Ugur </td></tr>
+<tr><th scope="row">Clipping date</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E50 Date <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Data Type</td><td class="old">Date</td><td class="new">EDTF </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Date on which clipping or cropping of the digital map was completed. Please enter the date using the Extended Date/Time Format (EDTF) standard. See the EDTF specification &quot;https://www.loc.gov/standards/datetime/&quot;  for gu…</td><td class="new">Date on which clipping or cropping of the digital map was completed. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">N/A</td><td class="new"><span class=empty>empty</span> </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old"><span class=empty>empty</span></td><td class="new">2026-08-29 </td></tr>
+<tr><th scope="row">Digitisation method</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E55 Type <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old">Digitisation Methods (cv)</td><td class="new">Digitisation methods (cv) </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The method used to create the digital representation of the original map, such as scanning or photography. Please write the term exactly as recorded in the &quot;Digitisation Methods&quot; controlled vocabulary.</td><td class="new">The method used to create the digital representation of the original map, such as scanning or photography. </td></tr>
+<tr><th scope="row">Digitisation tool</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Color detail</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">File resolution</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Licence</th><td class="attr">CIDOC CRM Semantic Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E30 Right <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E55 Type <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">CIDOC CRM Scope note</td><td class="old">Copyright/access</td><td class="new"><span class=empty>empty</span> </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The licence under which the digital resource may be used or reused. Please write the term exactly as recorded in the &quot;Licences&quot; controlled vocabulary.</td><td class="new">The licence under which the digital resource may be used or reused. </td></tr>
+<tr><th scope="row">Access level</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E55 Type <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old">Access Levels (cv)</td><td class="new">Access levels (cv) </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The level of access permitted for the digital resource. Please write the term exactly as recorded in the &quot;Access Levels&quot; controlled vocabulary.</td><td class="new">The level of access permitted for the digital resource. </td></tr>
+<tr><th scope="row">Rights holder</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E1 CRM Entity <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The person or organisation holding or managing rights associated with the resource. Please write the MAEASaM ID of the relevant record from the &quot;Actor&quot; resource instance.</td><td class="new">The person or organisation holding or managing rights associated with the resource. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">MAEASAM-ACT-00000072</td><td class="new">ACT-00000072 </td></tr>
+<tr><th scope="row">Rights Notes</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row">Preferred Citation</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The recommended citation to use when referring to or reusing the resource. This field is automatically populated by the system. Leave this field blank</td><td class="new">The recommended citation to use when referring to or reusing the resource. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">This field is automatically populated by the system. Leave this field blank</td><td class="new"><span class=empty>empty</span> </td></tr>
+<tr><th scope="row">Recorder</th><td class="attr">CIDOC CRM Semantic Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E66 Formation <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E39 Actor <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Data Type</td><td class="old">String</td><td class="new">Resource-Instance-List </td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old"><span class=empty>empty</span></td><td class="new">Actor (rm) </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Cataloguer</td><td class="new">The name of the individual responsible for creating the resource record. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">Orhun Ugur</td><td class="new">ACT-00000072 </td></tr>
+<tr><th scope="row">Comment</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Necessity</td><td class="old">Mandatory</td><td class="new">Optional </td></tr>
+<tr><th scope="row"></th><td class="attr">Cardinality</td><td class="old">1</td><td class="new">0..n </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Additional information or remarks relevant to the resource or its metadata.</td><td class="new">Any additional information relevant to this resource that the recorder feels should be documented. </td></tr>
+<tr><th scope="row">Created at</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E50 Date <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The date and time when the resource record was created in the system. Please enter the date using the Extended Date/Time Format (EDTF) standard. See the EDTF specification &quot;https://www.loc.gov/standards/datetime/&quot;  for g…</td><td class="new">The date on which the resource record was created in the database. </td></tr>
+<tr><th scope="row">Uploader</th><td class="attr">CIDOC CRM Semantic Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E66 Formation <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E82 Actor Appellation <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Data Type</td><td class="old">String</td><td class="new">Resource-Instance-List </td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old"><span class=empty>empty</span></td><td class="new">Actor (rm) </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The name of the individual that uplaoded the grid square instance ot Arches. This is a required field</td><td class="new">The name of the individual that uploaded this resource record to Arches. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">MAEASAM-ACT-00000056</td><td class="new">ACT-00000056 </td></tr>
+<tr><th scope="row">Uploaded at</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E50 Date <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The date and time when the resource was uploaded to the system.  This field is automatically populated by the system. Leave this field blank</td><td class="new">The date on which this resource record was added to Arches. </td></tr>
+<tr><th scope="row">Last modified at</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E50 Date <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The date and time when the resource record was last modified. This field is automatically populated by the system. Leave this field blank</td><td class="new">The most recent date on which the resource record was modified. </td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Map.json (Arches resource model)</h3>
+    <ul class="plain">
+      <li><b>Map.json was built by the project team</b>, not exported from the CIDOC reviewers' work: first generated on 2026-09-06 by <code>Scripts/generate_map_resource_model.py</code> with placeholder CIDOC classes, then fixed through four real Arches import attempts (Tasks #86, #87, #89) and is now import-tested. <span class="tag cidoc">CIDOC by us</span></li>
+      <li>Since generation: 42 node names changed, 13 CIDOC properties and 10 classes changed, 54 descriptions written or synced with the template's Definition (En).</li>
+      <li><b>2026-09-25:</b> Datum, Ellipsoid (was Spheroid) and Unit of measure (was Unit of) changed from free text to concept lists, linked to the live Arches collections <code>Datum</code>, <code>Ellipsoid</code> and <code>Measurement unit</code>; class <code>E55 Type</code> via <code>P2 has type</code>; select widget instead of a text box. <span class="tag cidoc">CIDOC by us</span></li>
+      <li><b>2026-09-25:</b> node, card and widget names put in sentence case (96 names; aliases unchanged); 21 descriptions updated. <b>A re-import is needed.</b></li>
+    </ul>
+  </section>
+
+  <section id="added">
+    <div class="sec-head"><h2>Things added</h2><span class="count">values that were empty before</span></div>
+    <div class="added">
+      <article>
+        <h4>CIDOC CRM classes <span class="tag cidoc">CIDOC by us</span></h4>
+        <p>The first template had no Node Class for 52 of 54 fields. All were filled on 2026-09-14 (Task #83, drafted by Claude from sibling models) and later aligned with the import-tested Map.json.</p>
+      </article>
+      <article>
+        <h4>French definitions <span class="tag ai">AI draft</span></h4>
+        <p>52 French definitions were empty in the first template; they were added on 2026-09-14 (commit <code>5938d8a</code>) during the Map JSON work. Their author is not recorded — treat them as AI drafts.</p>
+      </article>
+      <article>
+        <h4>Arabic and Portuguese <span class="tag ai">AI draft</span></h4>
+        <p>All Arabic and Portuguese definitions retranslated on 2026-09-25 from the current English (the earlier ones did not match it); Portuguese labels moved to pt-PT. Standard Recording/Uploading fields copied from the Actor template.</p>
+      </article>
+      <article>
+        <h4>Input Instructions (En)</h4>
+        <p>Filled for all 54 fields from the rules in <code>metadata_rules.json</code>.</p>
+      </article>
+      <article>
+        <h4>Operational Info</h4>
+        <p>Was empty for 45 fields; now <code>N/A</code>, with MAEASaM ID → Primary Key, Grid, Rights holder, Recorder, Uploader → Foreign Key, and Preferred Citation, Uploaded at, Last modified at → Auto-Populated.</p>
+      </article>
+      <article>
+        <h4>Filled Example 2</h4>
+        <p>Example 2 now shows a digitised, georeferenced and clipped map (person and date for each step), so both branches of the "Mandatory if" rules are illustrated. <span class="tag us">Decision</span></p>
+      </article>
+    </div>
+    <h3>Dublin Core mappings (current)</h3>
+    <div class="tablebox"><table>
+      <thead><tr><th>Field</th><th>Dublin Core Equivalent</th></tr></thead>
+      <tbody><tr><th scope="row">MAEASaM ID</th><td>dcterms:identifier</td></tr><tr><th scope="row">Local ID</th><td>dcterms:identifier</td></tr><tr><th scope="row">Geographical identifier</th><td>dcterms:spatial</td></tr><tr><th scope="row">Map name</th><td>dcterms:title</td></tr><tr><th scope="row">Sheet code</th><td>dcterms:identifier</td></tr><tr><th scope="row">Series</th><td>dcterms:relation</td></tr><tr><th scope="row">Edition</th><td>dcterms:hasVersion</td></tr><tr><th scope="row">Scale</th><td>dcterms:format</td></tr><tr><th scope="row">Map material</th><td>dcterms:format</td></tr><tr><th scope="row">Map dimensions</th><td>dcterms:extent</td></tr><tr><th scope="row">Map type</th><td>dcterms:type</td></tr><tr><th scope="row">Map condition</th><td>No direct equivalent</td></tr><tr><th scope="row">Description</th><td>dcterms:description</td></tr><tr><th scope="row">Digital file name</th><td>dcterms:identifier</td></tr><tr><th scope="row">Digital file path</th><td>No direct equivalent</td></tr><tr><th scope="row">Physical file place</th><td>No direct equivalent</td></tr><tr><th scope="row">Publisher</th><td>dcterms:publisher</td></tr><tr><th scope="row">Publication year</th><td>dcterms:date</td></tr><tr><th scope="row">Sheet history</th><td>dcterms:provenance</td></tr><tr><th scope="row">Grid</th><td>dcterms:relation</td></tr><tr><th scope="row">Projection</th><td>No direct equivalent</td></tr><tr><th scope="row">Ellipsoid</th><td>No direct equivalent</td></tr><tr><th scope="row">Unit of measure</th><td>dcterms:format</td></tr><tr><th scope="row">Meridian of</th><td>No direct equivalent</td></tr><tr><th scope="row">Latitude of</th><td>No direct equivalent</td></tr><tr><th scope="row">Scale factor</th><td>No direct equivalent</td></tr><tr><th scope="row">False co-ords</th><td>No direct equivalent</td></tr><tr><th scope="row">False co-ords of origin</th><td>No direct equivalent</td></tr><tr><th scope="row">Datum</th><td>No direct equivalent</td></tr><tr><th scope="row">Annotation</th><td>dcterms:description</td></tr><tr><th scope="row">Is digitised?</th><td>No direct equivalent</td></tr><tr><th scope="row">Digitisation person</th><td>dcterms:contributor</td></tr><tr><th scope="row">Digitisation date</th><td>dcterms:date</td></tr><tr><th scope="row">Is georeferenced?</th><td>No direct equivalent</td></tr><tr><th scope="row">Georeference person</th><td>dcterms:contributor</td></tr><tr><th scope="row">Georeference date</th><td>dcterms:date</td></tr><tr><th scope="row">Is clipped?</th><td>No direct equivalent</td></tr><tr><th scope="row">Clipping person</th><td>dcterms:contributor</td></tr><tr><th scope="row">Clipping date</th><td>dcterms:date</td></tr><tr><th scope="row">Digitisation method</th><td>dcterms:format</td></tr><tr><th scope="row">Digitisation tool</th><td>dcterms:format</td></tr><tr><th scope="row">Color detail</th><td>dcterms:format</td></tr><tr><th scope="row">File resolution</th><td>dcterms:extent</td></tr><tr><th scope="row">Licence</th><td>dcterms:license</td></tr><tr><th scope="row">Access level</th><td>dcterms:accessRights</td></tr><tr><th scope="row">Rights holder</th><td>dcterms:rightsHolder</td></tr><tr><th scope="row">Rights Notes</th><td>dcterms:rights</td></tr><tr><th scope="row">Preferred Citation</th><td>dcterms:bibliographicCitation</td></tr><tr><th scope="row">Recorder</th><td>dcterms:contributor</td></tr><tr><th scope="row">Comment</th><td>dcterms:description</td></tr><tr><th scope="row">Created at</th><td>dcterms:created</td></tr><tr><th scope="row">Uploader</th><td>dcterms:contributor</td></tr><tr><th scope="row">Uploaded at</th><td>dcterms:dateSubmitted</td></tr><tr><th scope="row">Last modified at</th><td>dcterms:modified</td></tr></tbody>
+    </table></div>
+  </section>
+
+  <section id="check">
+    <div class="sec-head"><h2>Things to check</h2><span class="count">tasks for reviewers</span></div>
+    <ul class="tasks">
+      <li class="k-cidoc"><span class="t">Every CIDOC CRM choice in Map <span class="tag cidoc">CIDOC by us</span></span><span class="who">Renier &amp; Anto · Task #14</span>
+        <span class="d">No part of Map's CIDOC modelling has been reviewed by the CIDOC team: the 52 Node Classes in the template, all classes and properties in Map.json, and the 2026-09-25 change of Datum/Ellipsoid/Unit of measure to <code>E55 Type</code> via <code>P2 has type</code> (Site models the same Datum and Ellipsoid as <code>E94 Space Primitive</code>). Also: 52 of 54 scope notes are empty, and the yes/no fields (Is digitised?, Is georeferenced?, Is clipped?) are typed <code>E62 String</code>.</span></li>
+      <li class="k-ai"><span class="t">French, Arabic and Portuguese <span class="tag ai">AI draft</span></span><span class="who">native speakers · Task #13</span>
+        <span class="d"><b>Arabic and Portuguese definitions</b>: retranslated by Claude on 2026-09-25 (105 cells including pt-PT labels) — the old versions described different things (Grid as "the map's grid reference system", Recorder as "a metadata cataloguer"). <b>French definitions</b>: added 2026-09-14, author not recorded; three (Geographical identifier, Map type, Grid) rewritten by Claude on 2026-09-25 to follow the new English. <b>Labels</b>: Ellipsoid (Fr/Ar/Pt) and Unit of measure (Fr) updated; the other labels date from the first upload.</span></li>
+      <li class="k-us"><span class="t">Re-import Map.json into Arches</span><span class="who">Orhun / Renier</span>
+        <span class="d">Three fields changed type (free text → concept list, with a new widget), 96 names changed case and 21 descriptions changed. Existing Map records with free-text Datum, Spheroid or Unit of values will need mapping to the vocabulary terms (e.g. "New (1960) Arc" → "Arc 1960", "Metre" → "Metre (m)").</span></li>
+      <li class="k-open"><span class="t">Reviewer notes from the template</span><span class="who">team · Task #106</span>
+        <span class="d">"Information not available" option for eight cartographic fields (parked with a question mark); multiple grid values for maps bigger than 1:50,000; "Is clipped?" wording; "Created at" wording (all models); truncated names "Meridian of" and "Latitude of" kept for now.</span></li>
+      <li class="k-us"><span class="t">Review decisions <span class="tag us">Decision</span></span><span class="who">team</span>
+        <span class="d">Sentence case for all field and group names in every model; Portuguese standardized on pt-PT; Datum, Ellipsoid and Unit of measure use the same vocabularies as the Site template; Map type and Is clipped? Cardinality 1 → 0..1; example IDs without the <code>MAEASAM-</code> prefix.</span></li>
+      <li class="k-open"><span class="t">Legend block below the template</span><span class="who">Task #102</span>
+        <span class="d">Still lists "Geometry" and "Concept-list (name of CV)" instead of the rule names, and no EDTF.</span></li>
+    </ul>
+  </section>
+
+  <footer>Generated 2026-09-25 from <code>git show 87986b1</code> / <code>4824f80</code> compared with the working copy. Bulk fills (translations, Input Instructions, Operational Info, Dublin Core, Collection N/A, sentence-case renames) are summarized, not listed per cell.</footer>
+</div>

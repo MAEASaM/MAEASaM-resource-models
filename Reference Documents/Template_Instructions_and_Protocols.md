@@ -8,7 +8,7 @@ Supersedes `template_instructions.csv` (see note at the end) - every rule below 
 
 1. Font: Calibri, 12pt, for all characters.
 2. Bold only for the row-label columns (A-C: Arches terminology / Universal terminology / User form) - everything else normal weight.
-3. Wrap text on for every cell.
+3. Wrap text **off** for every cell - rows stay one line high and the sheet stays compact. (Changed 2026-09-24; the earlier rule was "wrap text on for every cell".)
 4. All Borders on every cell.
 5. **Colour-coding (corrected 2026-09-15):** the Metadata (En/Fr/Ar/Pt) rows are coloured per-field using `data_type_colors`, keyed by that field's own Data Type. The two CIDOC CRM ontology-class rows (`CIDOC CRM Semantic Node Class` / `CIDOC CRM Node Class`) get a fixed colour from `cidoc_class_row_colors`, regardless of Data Type. The `Data Type` and `Collection` rows themselves, and every row below `Collection`, are **not** coloured. (This replaces an earlier, less precise version of the rule that said to colour "until Collection row, inclusive" - confirmed wrong against the real reference workbook.)
 

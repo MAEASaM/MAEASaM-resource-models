@@ -1,0 +1,248 @@
+<title>Grid Change Log</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#ede7d8; --paper-raised:#f7f3e7; --ink:#262218; --ink-soft:#6f6852; --rule:#cdbd9a;
+    --accent:#2f4a5c; --accent-ink:#eef2ee; --brass:#8a6a34;
+    --ok:#3f6b46; --ok-bg:#e3ecdf; --warn:#9c5a1e; --warn-bg:#f3e3cd; --bad:#a23a2c; --bad-bg:#f3dad3;
+    --ai:#6a4a8c; --ai-bg:#ebe2f2; --cidoc:#2f5f6e; --cidoc-bg:#dcebee;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme:dark;
+      --paper:#1c1a15; --paper-raised:#262319; --ink:#ece4d0; --ink-soft:#a89d84; --rule:#4a4330;
+      --accent:#7fa8bd; --accent-ink:#14202a; --brass:#c9a568;
+      --ok:#7fb489; --ok-bg:#24352a; --warn:#d99a55; --warn-bg:#3a2d1c; --bad:#e2897a; --bad-bg:#3a2521;
+      --ai:#c3a6e0; --ai-bg:#30263b; --cidoc:#86c1d0; --cidoc-bg:#1f3137;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --paper:#1c1a15; --paper-raised:#262319; --ink:#ece4d0; --ink-soft:#a89d84; --rule:#4a4330;
+    --accent:#7fa8bd; --accent-ink:#14202a; --brass:#c9a568;
+    --ok:#7fb489; --ok-bg:#24352a; --warn:#d99a55; --warn-bg:#3a2d1c; --bad:#e2897a; --bad-bg:#3a2521;
+    --ai:#c3a6e0; --ai-bg:#30263b; --cidoc:#86c1d0; --cidoc-bg:#1f3137;
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--paper); color:var(--ink); font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif; line-height:1.5; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1080px; margin:0 auto; padding-inline:24px; padding-block:48px 80px;}
+  @media (max-width:600px){ .wrap{padding-inline:16px; padding-block:32px 56px;} }
+  .eyebrow{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--brass); margin:0 0 10px;}
+  h1{font-family:"Fraunces", Georgia, serif; font-weight:600; font-size:clamp(1.9rem,4vw,2.6rem); line-height:1.08; margin:0 0 14px; text-wrap:balance; letter-spacing:-.01em;}
+  h2{font-family:"Fraunces", Georgia, serif; font-weight:600; font-size:1.55rem; margin:0; text-wrap:balance;}
+  h3{font-size:.8rem; font-family:"IBM Plex Mono", ui-monospace, monospace; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin:28px 0 10px; font-weight:500;}
+  .lede{max-width:72ch; color:var(--ink-soft); margin:0 0 8px;}
+  .lede strong, .lede code{color:var(--ink);}
+  code{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.86em;}
+  header.page{border-bottom:1px solid var(--rule); padding-bottom:28px; margin-bottom:12px;}
+  .facts{display:flex; flex-wrap:wrap; gap:1px; background:var(--rule); border:1px solid var(--rule); margin:22px 0 0;}
+  .facts div{flex:1 1 150px; background:var(--paper-raised); padding:12px 14px;}
+  .facts b{display:block; font-family:"Fraunces", Georgia, serif; font-size:1.5rem; font-weight:600; font-variant-numeric:tabular-nums;}
+  .facts span{font-size:.8rem; color:var(--ink-soft);}
+  .legend{display:flex; gap:10px 18px; flex-wrap:wrap; margin-top:18px; font-size:.82rem; color:var(--ink-soft); align-items:center;}
+  section{padding-top:40px;}
+  .sec-head{display:flex; align-items:baseline; gap:14px; border-bottom:2px solid var(--ink); padding-bottom:8px; margin-bottom:6px; flex-wrap:wrap;}
+  .sec-head .count{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.78rem; color:var(--ink-soft);}
+  ul.plain{margin:0; padding-left:1.1rem; max-width:80ch;}
+  ul.plain li{margin:6px 0;}
+  .tablebox{overflow-x:auto; border:1px solid var(--rule); background:var(--paper-raised);}
+  table{border-collapse:collapse; width:100%; font-size:.86rem;}
+  thead th{position:sticky; top:0; background:var(--accent); color:var(--accent-ink); text-align:left; font-weight:500; font-size:.76rem; letter-spacing:.06em; text-transform:uppercase; padding:9px 12px;}
+  td, tbody th{padding:8px 12px; vertical-align:top; border-top:1px solid var(--rule); text-align:left;}
+  tbody th{font-weight:600; white-space:nowrap;}
+  td.attr{color:var(--ink-soft); white-space:nowrap; font-size:.8rem;}
+  td.old{color:var(--ink-soft); text-decoration:line-through; text-decoration-color:color-mix(in srgb, var(--bad) 55%, transparent); min-width:180px;}
+  td.new{min-width:220px;}
+  .empty{font-style:italic; text-decoration:none; opacity:.75;}
+  .tag{display:inline-block; font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.68rem; letter-spacing:.04em; padding:1px 7px; border-radius:3px; margin-left:4px; white-space:nowrap; text-decoration:none; vertical-align:1px;}
+  .tag.ai{background:var(--ai-bg); color:var(--ai);}
+  .tag.cidoc{background:var(--cidoc-bg); color:var(--cidoc);}
+  .tag.us{background:var(--warn-bg); color:var(--warn);}
+  .tag.open{background:var(--bad-bg); color:var(--bad);}
+  .tag.json{background:var(--paper); color:var(--ink-soft); border:1px solid var(--rule);}
+  .tag.done{background:var(--ok-bg); color:var(--ok);}
+  .added{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px; margin-top:14px;}
+  .added article{background:var(--paper-raised); border:1px solid var(--rule); padding:14px 16px;}
+  .added h4{margin:0 0 6px; font-size:1rem;}
+  .added p{margin:0; font-size:.88rem; color:var(--ink-soft);}
+  .added dl{margin:8px 0 0; display:grid; grid-template-columns:auto 1fr; gap:3px 10px; font-size:.82rem;}
+  .added dt{color:var(--ink-soft);} .added dd{margin:0;}
+  .tasks{list-style:none; margin:14px 0 0; padding:0; display:grid; gap:10px;}
+  .tasks li{background:var(--paper-raised); border:1px solid var(--rule); border-left:4px solid var(--rule); padding:12px 16px; display:grid; grid-template-columns:1fr auto; gap:4px 16px;}
+  .tasks li.k-ai{border-left-color:var(--ai);} .tasks li.k-cidoc{border-left-color:var(--cidoc);} .tasks li.k-us{border-left-color:var(--warn);} .tasks li.k-open{border-left-color:var(--bad);}
+  .tasks .t{font-weight:600;}
+  .tasks .who{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.74rem; color:var(--ink-soft); text-align:right; white-space:nowrap;}
+  .tasks .d{grid-column:1 / -1; font-size:.88rem; color:var(--ink-soft); max-width:92ch;}
+  .tasks .d b{color:var(--ink); font-weight:500;}
+  @media (max-width:600px){ .tasks li{grid-template-columns:1fr;} .tasks .who{text-align:left;} }
+  footer{margin-top:48px; padding-top:16px; border-top:1px solid var(--rule); font-size:.8rem; color:var(--ink-soft);}
+</style>
+
+<div class="wrap">
+  <header class="page">
+    <p class="eyebrow">MAEASaM · Grid resource model · Metadata Template + Grid.json</p>
+    <h1>Grid Change Log</h1>
+    <p class="lede">Everything that changed in <code>Grid_MetadataTemplate.csv</code> since its first version in the repository (<strong>2026-09-01</strong>, commit <code>d1214a1</code>) and in <code>Grid.json</code> since <strong>2026-08-28</strong> (commit <code>f4ae792</code>), up to the working copy of <strong>2026-09-25</strong>. The most recent changes (2026-09-25 review) are not committed yet.</p>
+    <div class="facts">
+      <div><b>19 → 24</b><span>template fields</span></div>
+      <div><b>5</b><span>fields added (Copyright/Access block)</span></div>
+      <div><b>4</b><span>fields renamed</span></div>
+      <div><b>52</b><span>field values changed (excl. bulk fills)</span></div>
+      <div><b>139</b><span>translation cells filled</span></div>
+    </div>
+    <div class="legend">
+      <span><span class="tag ai">AI draft</span> written by Claude, needs a human check</span>
+      <span><span class="tag cidoc">CIDOC by us</span> CIDOC CRM changed by the project team, not the CIDOC reviewers</span>
+      <span><span class="tag us">Decision</span> content decision made in review</span>
+    </div>
+  </header>
+
+  <section id="changed">
+    <div class="sec-head"><h2>Things changed</h2><span class="count">structure, groups, field values, Grid.json</span></div>
+
+    <h3>Template-wide</h3>
+    <ul class="plain">
+      <li>Row labels normalized to the shared 22-row schema (e.g. <code>Language 1: en (node)</code> → <code>Node (En)</code>).</li>
+      <li><b>MAEASaM ID format corrected from 9 to 8 digits</b> to match the real dataset (<code>Datasets/20260914_GridDefault.csv</code>, 18,922 records, e.g. <code>GRID-00016993</code>), in the template and in <code>Grid.json</code>. <span class="tag us">Decision</span></li>
+      <li>Every English definition rewritten: Arches-internal wording ("The node is a resource-instance-list node…"), "This is a required field" and "Please write…" instructions removed; typos fixed (<i>precion</i>, <i>Standarized</i>, <i>uplaoded</i>); definitions that still said "grid square instance" for the standard Recording/Uploading fields replaced with the shared wording.</li>
+      <li>Data Type spelling aligned with the rules (<code>Resource-instance-list</code> → <code>Resource-Instance-List</code>).</li>
+    </ul>
+
+    <h3>Groups and field names</h3>
+    <div class="tablebox"><table>
+      <thead><tr><th>What</th><th>Before</th><th>After</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Group</th><td class="old">Identifier</td><td class="new">Identifiers</td></tr>
+        <tr><th scope="row">Group</th><td class="old">Arches upload details</td><td class="new">Uploading details</td></tr>
+        <tr><th scope="row">Group</th><td class="old">—</td><td class="new"><b>Copyright/Access</b> (new, shared block)</td></tr>
+        <tr><th scope="row">Field</th><td class="old">Resource created at</td><td class="new">Created at</td></tr>
+        <tr><th scope="row">Field</th><td class="old">Uploader name</td><td class="new">Uploader</td></tr>
+        <tr><th scope="row">Field</th><td class="old">Upload date</td><td class="new">Uploaded at</td></tr>
+        <tr><th scope="row">Field</th><td class="old">Resource last modified at</td><td class="new">Last modified at</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Field values</h3>
+    <div class="tablebox"><table>
+      <thead><tr><th>Field</th><th>Attribute</th><th>Before</th><th>After</th></tr></thead>
+      <tbody>
+<tr><th scope="row">MAEASaM ID</th><td class="attr">Definition (En)</td><td class="old">A unique ID given to each resource entered. This is a required field</td><td class="new">A unique identifier assigned to each resource. Format: GRID-8-digit number (e.g. GRID-00016993). </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">GRID-000016993</td><td class="new">GRID-00016993 <span class="tag us">Decision</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">GRID-000017131</td><td class="new">GRID-00017131 <span class="tag us">Decision</span></td></tr>
+<tr><th scope="row">Grid square long</th><td class="attr">Definition (En)</td><td class="old">This value represents the name of the relevant grid and is based on the centroid of each grid square, with a precion of 3. This is a required field</td><td class="new">The name of the grid square, based on the coordinates of its centroid at a precision of 3 decimal places (e.g. E32.625S18.125). </td></tr>
+<tr><th scope="row">Grid square short</th><td class="attr">Definition (En)</td><td class="old">This value represents the name of the relevant grid and is based on the centroid of each grid square, with a precion of 1. This is a required field</td><td class="new">The name of the grid square, based on the coordinates of its centroid at a precision of 1 decimal place (e.g. E32.6S18.1). </td></tr>
+<tr><th scope="row">SASES ID</th><td class="attr">Definition (En)</td><td class="old">The value is the relevant Standarized Site Enumeration System (SASES) id for the relevant grid square. This is a required field</td><td class="new">The Standardised Site Enumeration System (SASES) identifier of the grid square. </td></tr>
+<tr><th scope="row">Geometry (WKT)</th><td class="attr">Definition (En)</td><td class="old"> The geometry of the square is provided in WKT format. This is used for upload and display in Arches for each grid square entry. This is a required field</td><td class="new">The geometry of the grid square in WKT format, used to upload and display the square in Arches. </td></tr>
+<tr><th scope="row">Remote sensing survey progress status</th><td class="attr">Definition (En)</td><td class="old">A controlled vocabulary node that indicates the current status of the remote sensing survey located within the relevant grid square. Please write the term exactly as recorded in the &quot;Remote sensing survey progress&quot; contr…</td><td class="new">The current status of the remote sensing survey within the grid square. </td></tr>
+<tr><th scope="row">Map status</th><td class="attr">Definition (En)</td><td class="old">This value is a controlled vocabulary that indicates the digitisation status of the map associated with the grid square. Please write the term exactly as recorded in the &quot;Map status&quot; controlled vocabulary.</td><td class="new">The digitisation status of the map associated with the grid square. </td></tr>
+<tr><th scope="row">Related maps</th><td class="attr">Data Type</td><td class="old">Resource-instance-list</td><td class="new">Resource-Instance-List </td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old">Maps (rm)</td><td class="new">Map (rm) </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The node is a resource-instance-list node and links to the MAEASaM ID of the relevant map/s. Please write the MAEASaM ID of the relevant record from the &quot;Maps&quot; resource instance.</td><td class="new">The map or maps associated with the grid square. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">SE-36-10 (MAEASaM ID of resource model)</td><td class="new">ZWE-MAP-000001 </td></tr>
+<tr><th scope="row">Number of maps</th><td class="attr">Data Type</td><td class="old">String</td><td class="new">Number <span class="tag us">Decision</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Cardinality</td><td class="old">0..n</td><td class="new">0..1 <span class="tag us">Decision</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">This indicates the number of maps that are associated with the relevant grid square</td><td class="new">The number of maps associated with the grid square. </td></tr>
+<tr><th scope="row">Related sites</th><td class="attr">Data Type</td><td class="old">Resource-instance-list</td><td class="new">Resource-Instance-List </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Another resource-instance-list node that links to the MAEASaM ID of all relevant Site resource instances linked to the map associated with the grid square. </td><td class="new">The site records linked to the map associated with the grid square. </td></tr>
+<tr><th scope="row">Number of sites</th><td class="attr">Data Type</td><td class="old">String</td><td class="new">Number <span class="tag us">Decision</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Cardinality</td><td class="old">0..n</td><td class="new">0..1 <span class="tag us">Decision</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">This value indicates the number of sites that are present within the relevant grid square.</td><td class="new">The number of sites within the grid square. </td></tr>
+<tr><th scope="row">Related remote sensing sites</th><td class="attr">Data Type</td><td class="old">Resource-instance-list</td><td class="new">Resource-Instance-List </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">A resource-instance-list node that lists the MAEASaM ID of all the identified remote sensing sites located within the relevant square.</td><td class="new">The remote sensing sites identified within the grid square. </td></tr>
+<tr><th scope="row">Number of remote sensing sites</th><td class="attr">Data Type</td><td class="old">String</td><td class="new">Number <span class="tag us">Decision</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Cardinality</td><td class="old">0..n</td><td class="new">0..1 <span class="tag us">Decision</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Indicates the number of remote sensing sites that have been identified within the relevant grid square. </td><td class="new">The number of remote sensing sites identified within the grid square. </td></tr>
+<tr><th scope="row">Recorder</th><td class="attr">CIDOC CRM Node Class</td><td class="old">E82 Actor Appellation</td><td class="new">E39 Actor <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">CIDOC CRM Scope note</td><td class="old">This class comprises any sort of name, number, code or symbol characteristically used to identify an E39 Actor. An E39 Actor will typically have more than one E82 Actor Appellation, and instances of E82 Actor Appellation…</td><td class="new">This class comprises people, either individually or in groups, who have the potential to perform intentional actions of kinds for which someone may be held responsible.  (Definition of the CIDOC Conceptual Reference Mode… </td></tr>
+<tr><th scope="row"></th><td class="attr">Data Type</td><td class="old">String</td><td class="new">Resource-Instance-List </td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old"><span class=empty>empty</span></td><td class="new">Actor (rm) </td></tr>
+<tr><th scope="row"></th><td class="attr">Cardinality</td><td class="old">1</td><td class="new">1..n </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The name of the person who recorded the relevant grid square. This is a required field</td><td class="new">The name of the individual responsible for creating the resource record. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">Renier Hendrik van der Merwe</td><td class="new">ACT-00000056 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Renier Hendrik van der Merwe</td><td class="new">ACT-00000056 </td></tr>
+<tr><th scope="row">Comment</th><td class="attr">Necessity</td><td class="old">If applicable</td><td class="new">Optional </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">A general free text node in which any information can be recorded that the recorder feels should be documented. </td><td class="new">Any additional information relevant to this resource that the recorder feels should be documented. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">Remember to avoid special characters as far as possible.</td><td class="new">Grid square split at the country border; see the neighbouring square for the rest of the area. <span class="tag ai">AI draft</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Remember to avoid special characters as far as possible.</td><td class="new"><span class=empty>empty</span> </td></tr>
+<tr><th scope="row">Created at</th><td class="attr">CIDOC CRM Node Class</td><td class="old">E63 Beginning of Existence</td><td class="new">E50 Date <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">CIDOC CRM Scope note</td><td class="old">This class comprises events that bring into existence any E77 Persistent Item. It may be used for temporal reasoning about things (intellectual products, physical items, groups of people, living beings) beginning to exis…</td><td class="new">This class comprises specific forms of E49 Time Appellation. Dates may vary in their degree of precision. </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The date on which the grid square was created. This is a required field. Please enter the date using the Extended Date/Time Format (EDTF) standard. See the EDTF specification &quot;https://www.loc.gov/standards/datetime/&quot;  fo…</td><td class="new">The date on which the resource record was created in the database. </td></tr>
+<tr><th scope="row">Uploader</th><td class="attr">Data Type</td><td class="old">String</td><td class="new">Resource-Instance-List </td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old"><span class=empty>empty</span></td><td class="new">Actor (rm) </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The name of the individual that uplaoded the grid square instance ot Arches. This is a required field</td><td class="new">The name of the individual that uploaded this resource record to Arches. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">Renier Hendrik van der Merwe</td><td class="new">ACT-00000056 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Renier Hendrik van der Merwe</td><td class="new">ACT-00000056 </td></tr>
+<tr><th scope="row">Uploaded at</th><td class="attr">Definition (En)</td><td class="old">The date on which the grid square instance was added to Arches. This is a required field</td><td class="new">The date on which this resource record was added to Arches. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">2026-02-10</td><td class="new">This field is automatically populated by the system. Leave this field blank </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">2026-02-10</td><td class="new"><span class=empty>empty</span> </td></tr>
+<tr><th scope="row">Last modified at</th><td class="attr">Definition (En)</td><td class="old">The date of the latest modification that has been made to the relevant grid square instance in Arches. This is a required field</td><td class="new">The most recent date on which the resource record was modified. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">2026-02-10</td><td class="new">This field is automatically populated by the system. Leave this field blank </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">2026-02-10</td><td class="new"><span class=empty>empty</span> </td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Grid.json (Arches resource model)</h3>
+    <ul class="plain">
+      <li>Copyright/Access card added (Licence, Access level, Rights holder, Rights Notes, Preferred Citation), plus a <code>Number of maps</code> node that was missing.</li>
+      <li>Recording/Uploading fields renamed to the shared names; 18 node descriptions written or synced with the template's Definition (En).</li>
+      <li><code>exportable</code> switched on for 18 fields (Task #90).</li>
+      <li><b>2026-09-25:</b> Number of maps, Number of sites and Number of remote sensing sites changed from <code>string</code> to <code>number</code>; 14 descriptions updated (new definitions, 8-digit ID format). <b>A re-import is needed.</b></li>
+      <li>Related maps still has no target model in Grid.json (any resource can be linked); the template now says <code>Map (rm)</code>. Left as is on purpose (Task #109).</li>
+    </ul>
+  </section>
+
+  <section id="added">
+    <div class="sec-head"><h2>Things added</h2><span class="count">new fields, rows and mappings</span></div>
+    <div class="added">
+      <article>
+        <h4>Copyright/Access block</h4>
+        <p>Licence, Access level, Rights holder, Rights Notes, Preferred Citation — the shared five-field block used by Map, Admin, Chronology, RS and Site. Examples copied from Map on 2026-09-25.</p>
+      </article>
+      <article>
+        <h4>Translations <span class="tag ai">AI draft</span></h4>
+        <p>All empty French, Arabic and Portuguese labels and definitions filled on 2026-09-25: 73 cells drafted by Claude, 30 copied from Map (Copyright/Access), 36 from Actor (Recording/Uploading/Comment).</p>
+      </article>
+      <article>
+        <h4>Input Instructions (En)</h4>
+        <p>Filled for all 24 fields from the rules in <code>metadata_rules.json</code>; the seven Related/Number fields use the "automatically derived" text.</p>
+      </article>
+      <article>
+        <h4>Dublin Core Equivalent</h4>
+        <p>Was empty for every field; now mapped for all 24 (table below). <span class="tag us">Decision</span></p>
+      </article>
+      <article>
+        <h4>Operational Info</h4>
+        <p>MAEASaM ID → Primary Key; the seven Related/Number fields → Derived; Recorder, Uploader, Rights holder → Foreign Key; Uploaded at, Last modified at, Preferred Citation → Auto-Populated.</p>
+      </article>
+    </div>
+    <h3>Dublin Core mappings (current)</h3>
+    <div class="tablebox"><table>
+      <thead><tr><th>Field</th><th>Dublin Core Equivalent</th></tr></thead>
+      <tbody><tr><th scope="row">MAEASaM ID</th><td>dcterms:identifier</td></tr><tr><th scope="row">Grid square long</th><td>dcterms:identifier</td></tr><tr><th scope="row">Grid square short</th><td>dcterms:identifier</td></tr><tr><th scope="row">SASES ID</th><td>dcterms:identifier</td></tr><tr><th scope="row">Geometry (WKT)</th><td>dcterms:spatial</td></tr><tr><th scope="row">Remote sensing survey progress status</th><td>No direct equivalent</td></tr><tr><th scope="row">Map status</th><td>No direct equivalent</td></tr><tr><th scope="row">Related maps</th><td>dcterms:relation</td></tr><tr><th scope="row">Number of maps</th><td>No direct equivalent</td></tr><tr><th scope="row">Related sites</th><td>dcterms:relation</td></tr><tr><th scope="row">Number of sites</th><td>No direct equivalent</td></tr><tr><th scope="row">Related remote sensing sites</th><td>dcterms:relation</td></tr><tr><th scope="row">Number of remote sensing sites</th><td>No direct equivalent</td></tr><tr><th scope="row">Licence</th><td>dcterms:license</td></tr><tr><th scope="row">Access level</th><td>dcterms:accessRights</td></tr><tr><th scope="row">Rights holder</th><td>dcterms:rightsHolder</td></tr><tr><th scope="row">Rights Notes</th><td>dcterms:rights</td></tr><tr><th scope="row">Preferred Citation</th><td>dcterms:bibliographicCitation</td></tr><tr><th scope="row">Recorder</th><td>dcterms:contributor</td></tr><tr><th scope="row">Comment</th><td>dcterms:description</td></tr><tr><th scope="row">Created at</th><td>dcterms:created</td></tr><tr><th scope="row">Uploader</th><td>dcterms:contributor</td></tr><tr><th scope="row">Uploaded at</th><td>dcterms:dateSubmitted</td></tr><tr><th scope="row">Last modified at</th><td>dcterms:modified</td></tr></tbody>
+    </table></div>
+  </section>
+
+  <section id="check">
+    <div class="sec-head"><h2>Things to check</h2><span class="count">tasks for reviewers</span></div>
+    <ul class="tasks">
+      <li class="k-ai"><span class="t">French, Arabic and Portuguese translations <span class="tag ai">AI draft</span></span><span class="who">native speakers · Task #13</span>
+        <span class="d"><b>73 cells drafted by Claude on 2026-09-25</b> from the English definitions (all Grid-specific fields). <b>30 cells copied from Map</b> (Copyright/Access block — its Arabic and Portuguese are also AI drafts from the same day) and <b>36 from Actor</b> (Recording/Uploading/Comment — AI drafts or copied from Map). The only older French texts are the MAEASaM ID and Geometry (WKT) labels and the MAEASaM ID definition, whose author is not recorded. Portuguese uses pt-PT (<i>grelha</i>, <i>registo</i>, <i>deteção remota</i>).</span></li>
+      <li class="k-cidoc"><span class="t">CIDOC classes changed by the team <span class="tag cidoc">CIDOC by us</span></span><span class="who">Renier &amp; Anto · Task #14</span>
+        <span class="d">Grid's CIDOC was marked complete by the CIDOC reviewers, but two classes were changed afterwards by the team: <b>Recorder</b> <code>E82 Actor Appellation</code> → <code>E39 Actor</code> and <b>Created at</b> <code>E63 Beginning of Existence</code> → <code>E50 Date</code>; their scope notes were replaced on 2026-09-25 to match. Also please check: <b>Related maps</b> is typed <code>E84 Information Carrier</code> (a physical object) while Related sites and Related remote sensing sites are <code>E53 Place</code>.</span></li>
+      <li class="k-open"><span class="t">Derived fields: Necessity and Cardinality</span><span class="who">team · Task #109</span>
+        <span class="d">Map status, Related maps, Related sites, Related remote sensing sites and the three Number fields are filled automatically (Derived), yet they carry "Mandatory if applicable", and Map status has Cardinality 1..n. Parked with a question mark: decide what Necessity means for a field nobody types into.</span></li>
+      <li class="k-us"><span class="t">Re-import Grid.json into Arches</span><span class="who">Orhun / Renier</span>
+        <span class="d">Three fields changed from string to number, and 14 descriptions changed.</span></li>
+      <li class="k-us"><span class="t">Definitions rewritten by us</span><span class="who">team</span>
+        <span class="d">All 19 original English definitions were rewritten during September and on 2026-09-25 (see the Field values table). Check that the meaning is still right — in particular Related sites ("site records linked to the map associated with the grid square") and the two grid-square name fields (precision of 3 vs 1 decimal places).</span></li>
+      <li class="k-open"><span class="t">Vocabularies only in live Arches</span><span class="who">CV-6</span>
+        <span class="d"><code>Remote sensing survey progress</code> and <code>Map status</code> exist in the live Arches thesaurus but have no sheet in the master workbook or CSV in the repository.</span></li>
+      <li class="k-open"><span class="t">Necessity vs Arches "required" setting</span><span class="who">Task #79 / #95</span>
+        <span class="d">Mandatory fields in the template are not required in Grid.json (<code>isrequired = false</code>).</span></li>
+      <li class="k-open"><span class="t">Legend block below the template</span><span class="who">Task #102</span>
+        <span class="d">The language table still spells "Portugeuse"; the Data Type legend lists <code>Date</code> without <code>EDTF</code>.</span></li>
+    </ul>
+  </section>
+
+  <footer>Generated 2026-09-25 from <code>git show d1214a1</code> / <code>f4ae792</code> compared with the working copy. Bulk fills (translations, Input Instructions, Operational Info, Dublin Core, Collection N/A) are summarized, not listed per cell.</footer>
+</div>

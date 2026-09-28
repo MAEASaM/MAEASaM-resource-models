@@ -24,6 +24,15 @@ Same rule, applied to each `Term (En)` value: capitalize only the first word (pl
 
 This one was already being followed consistently everywhere it was checked (`CV_Reference_Schema.csv`'s own worked example uses `Radiocarbon dating`, not `Radiocarbon Dating`) - this section formalizes it as a rule rather than an unwritten habit, so it survives being copied into new vocabs.
 
+## Rule 3: Vocab (CV) names are plural (decided 2026-09-24)
+
+A vocab's name is written in the plural, since it names the list of allowed values: `Site types`, `Measurement units`, `Access levels`, `Licences`, `Threat probabilities`. Same "applies everywhere" scope as Rule 1 - xlsx sheet name, csv filename, the `Name (cv)` value in a Metadata Template's `Collection` row, and any vocab name quoted in a Resource Model JSON description must read identically.
+
+- **Decided by the user 2026-09-24** while mapping the Site template's Collection names to the Thesaurus. At that point the repo was mixed: ~8 newer vocabs (created for Map/Admin/Info) were already plural (`Access levels`, `Countries`, `Languages`, `Licences`, `Map types`, `Digitisation methods`, `Document conditions`), while the older xlsx/Arches vocabs were mostly singular. The plural form was chosen as the standard going forward; the remaining singular vocabs are a tracked rollout (`CV_Task_List.md` CV-21), not yet renamed.
+- **Excel's 31-character sheet-name limit:** a vocab name must fit in 31 characters so the xlsx sheet tab can carry it exactly. If the natural plural is longer, pick a shorter name rather than letting the tab silently truncate (e.g. `Probability of threat affecting site` -> `Threat probabilities`, 2026-09-24).
+- **`/` in a vocab name:** Excel forbids `/` in sheet names, so a vocab like `Material/object types` has the tab `Materialobject types` (slash dropped, no space) - the one permitted difference between the sheet tab and the vocab name. Everywhere else (Metadata Template `Collection`, Input Instructions, the sheet's own vocab-name header cell, csv filename where the OS allows) the name keeps its `/`.
+- **How renames are applied to the xlsx master:** edit the sheet `name` attribute in `xl/workbook.xml` (and the vocab-name header cell's shared string in `xl/sharedStrings.xml`, only if that string is used by that one sheet) directly inside the zip - never open-and-save in Excel. Same method as the 2026-09-15 casing fix below.
+
 ## 2026-09-15: the 3 legacy outliers are fixed too - no more exceptions
 
 `Coordinate System`, `Ownership Type`, `Survey Type` were the only 3 sheet names in the xlsx master workbook that broke Rule 1. Fixed the same day: `xl/workbook.xml` inside `Thesaurus/xlsx/20260317_Thesaurus_AllSites_CURRENT.xlsx` was edited directly (sheet-tab `name` attribute only, via a small script - not opened in Excel, so none of this machine's Excel/CSV-export corruption risk applies) to `Coordinate system`, `Ownership type`, `Survey type`. No Metadata Template or Resource Model JSON referenced these 3 by name, so nothing else needed updating there.

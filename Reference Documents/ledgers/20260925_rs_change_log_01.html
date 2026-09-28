@@ -1,0 +1,292 @@
+<title>RS Change Log</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#ede7d8; --paper-raised:#f7f3e7; --ink:#262218; --ink-soft:#6f6852; --rule:#cdbd9a;
+    --accent:#2f4a5c; --accent-ink:#eef2ee; --brass:#8a6a34;
+    --ok:#3f6b46; --ok-bg:#e3ecdf; --warn:#9c5a1e; --warn-bg:#f3e3cd; --bad:#a23a2c; --bad-bg:#f3dad3;
+    --ai:#6a4a8c; --ai-bg:#ebe2f2; --cidoc:#2f5f6e; --cidoc-bg:#dcebee;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme:dark;
+      --paper:#1c1a15; --paper-raised:#262319; --ink:#ece4d0; --ink-soft:#a89d84; --rule:#4a4330;
+      --accent:#7fa8bd; --accent-ink:#14202a; --brass:#c9a568;
+      --ok:#7fb489; --ok-bg:#24352a; --warn:#d99a55; --warn-bg:#3a2d1c; --bad:#e2897a; --bad-bg:#3a2521;
+      --ai:#c3a6e0; --ai-bg:#30263b; --cidoc:#86c1d0; --cidoc-bg:#1f3137;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --paper:#1c1a15; --paper-raised:#262319; --ink:#ece4d0; --ink-soft:#a89d84; --rule:#4a4330;
+    --accent:#7fa8bd; --accent-ink:#14202a; --brass:#c9a568;
+    --ok:#7fb489; --ok-bg:#24352a; --warn:#d99a55; --warn-bg:#3a2d1c; --bad:#e2897a; --bad-bg:#3a2521;
+    --ai:#c3a6e0; --ai-bg:#30263b; --cidoc:#86c1d0; --cidoc-bg:#1f3137;
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--paper); color:var(--ink); font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif; line-height:1.5; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1080px; margin:0 auto; padding-inline:24px; padding-block:48px 80px;}
+  @media (max-width:600px){ .wrap{padding-inline:16px; padding-block:32px 56px;} }
+  .eyebrow{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--brass); margin:0 0 10px;}
+  h1{font-family:"Fraunces", Georgia, serif; font-weight:600; font-size:clamp(1.9rem,4vw,2.6rem); line-height:1.08; margin:0 0 14px; text-wrap:balance; letter-spacing:-.01em;}
+  h2{font-family:"Fraunces", Georgia, serif; font-weight:600; font-size:1.55rem; margin:0; text-wrap:balance;}
+  h3{font-size:.8rem; font-family:"IBM Plex Mono", ui-monospace, monospace; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin:28px 0 10px; font-weight:500;}
+  .lede{max-width:72ch; color:var(--ink-soft); margin:0 0 8px;}
+  .lede strong, .lede code{color:var(--ink);}
+  code{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.86em;}
+  header.page{border-bottom:1px solid var(--rule); padding-bottom:28px; margin-bottom:12px;}
+  .facts{display:flex; flex-wrap:wrap; gap:1px; background:var(--rule); border:1px solid var(--rule); margin:22px 0 0;}
+  .facts div{flex:1 1 150px; background:var(--paper-raised); padding:12px 14px;}
+  .facts b{display:block; font-family:"Fraunces", Georgia, serif; font-size:1.5rem; font-weight:600; font-variant-numeric:tabular-nums;}
+  .facts span{font-size:.8rem; color:var(--ink-soft);}
+  .legend{display:flex; gap:10px 18px; flex-wrap:wrap; margin-top:18px; font-size:.82rem; color:var(--ink-soft); align-items:center;}
+  section{padding-top:40px;}
+  .sec-head{display:flex; align-items:baseline; gap:14px; border-bottom:2px solid var(--ink); padding-bottom:8px; margin-bottom:6px; flex-wrap:wrap;}
+  .sec-head .count{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.78rem; color:var(--ink-soft);}
+  ul.plain{margin:0; padding-left:1.1rem; max-width:80ch;}
+  ul.plain li{margin:6px 0;}
+  .tablebox{overflow-x:auto; border:1px solid var(--rule); background:var(--paper-raised);}
+  table{border-collapse:collapse; width:100%; font-size:.86rem;}
+  thead th{position:sticky; top:0; background:var(--accent); color:var(--accent-ink); text-align:left; font-weight:500; font-size:.76rem; letter-spacing:.06em; text-transform:uppercase; padding:9px 12px;}
+  td, tbody th{padding:8px 12px; vertical-align:top; border-top:1px solid var(--rule); text-align:left;}
+  tbody th{font-weight:600; white-space:nowrap;}
+  td.attr{color:var(--ink-soft); white-space:nowrap; font-size:.8rem;}
+  td.old{color:var(--ink-soft); text-decoration:line-through; text-decoration-color:color-mix(in srgb, var(--bad) 55%, transparent); min-width:180px;}
+  td.new{min-width:220px;}
+  .empty{font-style:italic; text-decoration:none; opacity:.75;}
+  .tag{display:inline-block; font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.68rem; letter-spacing:.04em; padding:1px 7px; border-radius:3px; margin-left:4px; white-space:nowrap; text-decoration:none; vertical-align:1px;}
+  .tag.ai{background:var(--ai-bg); color:var(--ai);}
+  .tag.cidoc{background:var(--cidoc-bg); color:var(--cidoc);}
+  .tag.us{background:var(--warn-bg); color:var(--warn);}
+  .tag.open{background:var(--bad-bg); color:var(--bad);}
+  .tag.json{background:var(--paper); color:var(--ink-soft); border:1px solid var(--rule);}
+  .tag.done{background:var(--ok-bg); color:var(--ok);}
+  .added{display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px; margin-top:14px;}
+  .added article{background:var(--paper-raised); border:1px solid var(--rule); padding:14px 16px;}
+  .added h4{margin:0 0 6px; font-size:1rem;}
+  .added p{margin:0; font-size:.88rem; color:var(--ink-soft);}
+  .added dl{margin:8px 0 0; display:grid; grid-template-columns:auto 1fr; gap:3px 10px; font-size:.82rem;}
+  .added dt{color:var(--ink-soft);} .added dd{margin:0;}
+  .tasks{list-style:none; margin:14px 0 0; padding:0; display:grid; gap:10px;}
+  .tasks li{background:var(--paper-raised); border:1px solid var(--rule); border-left:4px solid var(--rule); padding:12px 16px; display:grid; grid-template-columns:1fr auto; gap:4px 16px;}
+  .tasks li.k-ai{border-left-color:var(--ai);} .tasks li.k-cidoc{border-left-color:var(--cidoc);} .tasks li.k-us{border-left-color:var(--warn);} .tasks li.k-open{border-left-color:var(--bad);}
+  .tasks .t{font-weight:600;}
+  .tasks .who{font-family:"IBM Plex Mono", ui-monospace, monospace; font-size:.74rem; color:var(--ink-soft); text-align:right; white-space:nowrap;}
+  .tasks .d{grid-column:1 / -1; font-size:.88rem; color:var(--ink-soft); max-width:92ch;}
+  .tasks .d b{color:var(--ink); font-weight:500;}
+  @media (max-width:600px){ .tasks li{grid-template-columns:1fr;} .tasks .who{text-align:left;} }
+  footer{margin-top:48px; padding-top:16px; border-top:1px solid var(--rule); font-size:.8rem; color:var(--ink-soft);}
+</style>
+
+<div class="wrap">
+  <header class="page">
+    <p class="eyebrow">MAEASaM · Remote Sensing resource model · Metadata Template</p>
+    <h1>RS Change Log</h1>
+    <p class="lede">Everything that changed in <code>RS_MetadataTemplate.csv</code> since its first version in the repository (<strong>2026-09-01</strong>, commit <code>87986b1</code>), up to the working copy of <strong>2026-09-25</strong>. The 2026-09-25 review changes are not committed yet. <strong>Remote Sensing.json was not changed</strong>: the template is the master, and the JSON — which has drifted a long way from it — is to be rebuilt from the template.</p>
+    <div class="facts">
+      <div><b>59 → 61</b><span>template fields</span></div>
+      <div><b>3 + 1</b><span>fields added / removed</span></div>
+      <div><b>6</b><span>fields renamed</span></div>
+      <div><b>112</b><span>values listed below (excl. bulk fills)</span></div>
+      <div><b>57</b><span>English definitions rewritten</span></div>
+    </div>
+    <div class="legend">
+      <span><span class="tag ai">AI draft</span> written by Claude, needs a human check</span>
+      <span><span class="tag cidoc">CIDOC by us</span> CIDOC CRM chosen by the project team, not the CIDOC reviewers</span>
+      <span><span class="tag us">Decision</span> content decision made in review</span>
+    </div>
+  </header>
+
+  <section id="changed">
+    <div class="sec-head"><h2>Things changed</h2><span class="count">structure, names, vocabularies, definitions</span></div>
+
+    <h3>Template-wide</h3>
+    <ul class="plain">
+      <li><b>Every English definition rewritten to the shared style</b> (2026-09-25): 23 copied from the matching Site fields approved the same day (measurements, condition, disturbance and threat fields), 25 RS-specific ones approved one by one; earlier September work had already standardised the Recording/Uploading/Copyright ones. Question-form definitions ("What is the land use…", "How certain are you…"), "This node records / It records", EDTF instructions and typos are gone. <span class="tag us">Decision</span></li>
+      <li>Collection notation changed from "Vocabulary: X" / "Resource model: X" to <code>X (cv)</code> / <code>X (rm)</code>, and vocabulary names aligned with the Thesaurus (e.g. <code>Dimension type/unit</code> → <code>Measurement types (cv)</code> / <code>Measurement units (cv)</code>, <code>Official division</code> → <code>Geometry qualifiers (cv)</code>).</li>
+      <li>Activity, survey, assessment and image dates moved from <code>Date</code> to <code>EDTF</code>.</li>
+      <li>Leftover notes in row 22 ("Site Resource Model", "Actor Model"…) removed.</li>
+    </ul>
+
+    <h3>Groups and field names</h3>
+    <div class="tablebox"><table>
+      <thead><tr><th>What</th><th>Before</th><th>After</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Group</th><td class="old">MAEASaM ID</td><td class="new">Identifiers (as in the other models)</td></tr>
+        <tr><th scope="row">Group</th><td class="old">Activity Summary</td><td class="new">Activity summary</td></tr>
+        <tr><th scope="row">Group</th><td class="old">Threats started at Basis of threat assessment</td><td class="new">starts at Threat assessment date (Task #51) <span class="tag us">Decision</span></td></tr>
+        <tr><th scope="row">Group</th><td class="old">Copyright/access node · Resource version control</td><td class="new">Copyright/Access · Recording details + Uploading details</td></tr>
+        <tr><th scope="row">Field</th><td class="old">Copyright info · Reference institution</td><td class="new">Rights Notes · Preferred Citation</td></tr>
+        <tr><th scope="row">Field</th><td class="old">Name of the recorder · Resource created at · Resource last modified at</td><td class="new">Recorder · Created at · Last modified at</td></tr>
+        <tr><th scope="row">Field</th><td class="old">Spatial resolution m</td><td class="new">Spatial resolution <span class="tag us">Decision</span></td></tr>
+        <tr><th scope="row">Field</th><td class="old">Nodes modified</td><td class="new">removed</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>Field values</h3>
+    <div class="tablebox"><table>
+      <thead><tr><th>Field</th><th>Attribute</th><th>Before</th><th>After</th></tr></thead>
+      <tbody>
+<tr><th scope="row">MAEASaM ID</th><td class="attr">Definition (En)</td><td class="old">A unique ID is given to each resource entered. Every resource must have exactly one unique MAEASaM ID. The ID starts with RS-the country code-8-digit number, with no duplication</td><td class="new">A unique identifier assigned to each resource. Format: RS-[3-letter country code]-8-digit number (e.g. RS-SEN-00000001). </td></tr>
+<tr><th scope="row">Activity type</th><td class="attr">Collection</td><td class="old">Vocabulary: Activity/event type</td><td class="new">Activity/event types (cv) </td></tr>
+<tr><th scope="row">Activity date</th><td class="attr">Data Type</td><td class="old">Date</td><td class="new">EDTF </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Each activity may be related to a specific date. For example, for a complete date: YYYY-MM-DD. Follow the EDTF guidelines on date entry here: https://www.loc.gov/standards/datetime/  </td><td class="new">The date on which the activity took place. </td></tr>
+<tr><th scope="row">Activity actor</th><td class="attr">Definition (En)</td><td class="old">The name of the actor involved in carrying out, contributing to, or supporting an activity documented in the Remote Sensing (RS) Resource Model. </td><td class="new">The person or organisation involved in carrying out, contributing to or supporting the activity. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">Nicolas Sagna</td><td class="new">ACT-00000034 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Assane Ndiaye</td><td class="new">ACT-00000037 </td></tr>
+<tr><th scope="row">Geometry (WKT)</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E53 Place <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">This node records the spatial geometry of the identified site using Well-Known Text (WKT) format. </td><td class="new">The spatial geometry of the identified site in Well-Known Text (WKT) format. </td></tr>
+<tr><th scope="row">Geometry qualifier</th><td class="attr">Collection</td><td class="old">Vocabulary: Official division</td><td class="new">Geometry qualifiers (cv) </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Report the nature of the geometry captured (ie centre point, outer boundary, buffer zone, centroid, etc)</td><td class="new">The nature of the recorded geometry (e.g. centre point, outer boundary, buffer zone, centroid). </td></tr>
+<tr><th scope="row">Evidence</th><td class="attr">Definition (En)</td><td class="old">The visible physical features on the landscape that were used to identify an area as a potential archaeological or heritage site. It uses a controlled list of terms to specify</td><td class="new">The visible physical features in the landscape used to identify the area as a potential archaeological or heritage site. </td></tr>
+<tr><th scope="row">Evidence shape</th><td class="attr">Definition (En)</td><td class="old">What is the overall geometric shape (such as circular rectangular, oval etc) of the site.</td><td class="new">The overall geometric shape of the site (e.g. circular, rectangular, oval). </td></tr>
+<tr><th scope="row">Interpretation</th><td class="attr">Definition (En)</td><td class="old">Based on the evidence that is visible on the imagery, wat interpretation can be made of the nature or function of the visible features.</td><td class="new">The interpretation of the nature or function of the visible features, based on the evidence seen on the imagery. </td></tr>
+<tr><th scope="row">Interpretation certainty</th><td class="attr">Definition (En)</td><td class="old">Based on the evidence visible on the imagery, how certain are you of your interpretation of the physical feature.</td><td class="new">The level of confidence in the interpretation of the visible features. </td></tr>
+<tr><th scope="row">Ground truthing</th><td class="attr">Definition (En)</td><td class="old">Has the existence of this site or its interpretation been verified by ground observations or surveys.</td><td class="new">Whether the existence or interpretation of the site has been verified by ground observation or survey. </td></tr>
+<tr><th scope="row">Land use land cover</th><td class="attr">Definition (En)</td><td class="old">What is the land use or land cover that is present in the area, at the time of recording, in which the site is located.</td><td class="new">The land use or land cover in the area where the site is located, at the time of recording. </td></tr>
+<tr><th scope="row">Climatic zone</th><td class="attr">Definition (En)</td><td class="old">What is the climatic zone in which the site is located</td><td class="new">The climatic zone in which the site is located. </td></tr>
+<tr><th scope="row">Related site</th><td class="attr">Definition (En)</td><td class="old">Can this site be linked to any other known site located within the records of the database</td><td class="new">A known site record in the database to which this site is linked. </td></tr>
+<tr><th scope="row">Chronology</th><td class="attr">Definition (En)</td><td class="old">To which chronological period can this site be connected to</td><td class="new">The chronological period to which the site can be assigned. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">Khami</td><td class="new">CHRN-00000343 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Iron Age (Senegal)</td><td class="new">CHRN-00000368 </td></tr>
+<tr><th scope="row">Measurement type</th><td class="attr">Collection</td><td class="old">Vocabulary: Dimension type/unit</td><td class="new">Measurement types (cv) </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old"> The measurement type describes what aspect of the site is being measured, such as length, width, height, area, or depth. Recording the measurement type helps clarify the meaning of the recorded value…</td><td class="new">The aspect of the site or feature being measured, such as length, width, height, area or depth. </td></tr>
+<tr><th scope="row">Measurement unit</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E55 Type <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old">Vocabulary: Dimension type/unit</td><td class="new">Measurement units (cv) </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">This node records the unit in which the measurement value is expressed. The measurement unit specifies the scale used for the recorded dimension, such as metres, centimetres, kilometres, or hectares.…</td><td class="new">The unit in which the measurement value is expressed, such as metres, centimetres, kilometres or hectares. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">m</td><td class="new">Metre (m) </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">cm</td><td class="new">Centimetre (cm) </td></tr>
+<tr><th scope="row">Measurement value</th><td class="attr">Definition (En)</td><td class="old">This node records the numeric value of the measurement for the site or feature. The measurement value represents the quantitative dimension of the site or feature and must be interpreted in conjunctio…</td><td class="new">The numeric value of the measurement, read together with the measurement type and unit. </td></tr>
+<tr><th scope="row">Grid level 1</th><td class="attr">Definition (En)</td><td class="old">In which segment of the first level MAEASaM grid is the site located</td><td class="new">The first-level MAEASaM grid square in which the site is located. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">W14.4N13.9</td><td class="new">GRID-00004117 </td></tr>
+<tr><th scope="row">Grid level 2</th><td class="attr">Definition (En)</td><td class="old">In which segment of the second level MAEASaM grid is the site located</td><td class="new">The second-level MAEASaM grid square in which the site is located. </td></tr>
+<tr><th scope="row">Administrative area name</th><td class="attr">Definition (En)</td><td class="old">What is the name of the administration area in which the site is located</td><td class="new">The administrative area in which the site is located. </td></tr>
+<tr><th scope="row">Administrative area type</th><td class="attr">Definition (En)</td><td class="old">This node records the official designation of the administrative unit in which the site is located. It identifies the formal administrative category assigned to the area by the national administrative…</td><td class="new">The official type of the administrative unit in which the site is located (e.g. department, province). </td></tr>
+<tr><th scope="row">Administrative area level</th><td class="attr">Collection</td><td class="old">Vocabulary: Administration area level</td><td class="new">Administrative area level (cv) </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">This node records the hierarchical administrative level of the administrative unit in which the site is located.</td><td class="new">The hierarchical level of the administrative unit in which the site is located. </td></tr>
+<tr><th scope="row">Survey type</th><td class="attr">Definition (En)</td><td class="old">Records how the site was surveyed or identified (Systematic or unsystematic methods). The user must select the survey type from the controlled vocabulary list provided in the database. </td><td class="new">How the site was surveyed or identified (e.g. systematic or unsystematic methods). </td></tr>
+<tr><th scope="row">Survey date</th><td class="attr">Data Type</td><td class="old">Date</td><td class="new">EDTF </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">The date on which the survey was undertaken Follow the EDTF guidelines on date entry here: https://www.loc.gov/standards/datetime/  </td><td class="new">The date on which the survey was carried out. </td></tr>
+<tr><th scope="row">Surveyor name</th><td class="attr">Definition (En)</td><td class="old">The name of the individual or organisation which undertook the survey</td><td class="new">The person or organisation that carried out the survey. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">Nicolas Sagna</td><td class="new">ACT-00000034 </td></tr>
+<tr><th scope="row">Image type</th><td class="attr">Collection</td><td class="old">Image type</td><td class="new">Imagery dataset type (cv) <span class="tag us">Decision</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">This node records the type of imagery used to identify, analyse, or document the site during the remote sensing process.</td><td class="new">The type of imagery used to identify, analyse or document the site. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">CNES Airbus</td><td class="new">Google Earth Pro </td></tr>
+<tr><th scope="row">Date of image</th><td class="attr">Definition (En)</td><td class="old">Date on which the image was acquired</td><td class="new">The date on which the image used in the survey was acquired. </td></tr>
+<tr><th scope="row">Spatial resolution</th><td class="attr">Definition (En)</td><td class="old">This node records the spatial resolution of the imagery used in the analysis, expressed in metres per pixel. </td><td class="new">The spatial resolution of the imagery used in the analysis, in metres per pixel. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">30 m</td><td class="new">30 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">N/A</td><td class="new"><span class=empty>empty</span> </td></tr>
+<tr><th scope="row">Overall condition</th><td class="attr">Collection</td><td class="old">Vocabulary: Overall condition</td><td class="new">Overall site conditions (cv) </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Records the current overall physical state of the site. </td><td class="new">The overall state of preservation of the site at the time of assessment. </td></tr>
+<tr><th scope="row">Assessment date</th><td class="attr">Data Type</td><td class="old">Date</td><td class="new">EDTF </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">This node records the date on which the condition assessment of the site was carried out. It documents the time at which the overall condition state was observed and evaluated.  Follow the EDTF guidel…</td><td class="new">The date on which the condition assessment was carried out. </td></tr>
+<tr><th scope="row">Assessor name</th><td class="attr">Definition (En)</td><td class="old">Who was the individual or organisation that undertook the assessment</td><td class="new">The person or organisation that carried out the condition assessment. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">Assane Ndiaye</td><td class="new">ACT-00000037 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Nicolas Sagna</td><td class="new">ACT-00000034 </td></tr>
+<tr><th scope="row">Date of image used</th><td class="attr">Data Type</td><td class="old">Date</td><td class="new">EDTF </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">What is the date on which this images was taken</td><td class="new">The date on which the image used for the condition assessment was taken. </td></tr>
+<tr><th scope="row">Disturbance cause</th><td class="attr">Definition (En)</td><td class="old">This node records the main activity or process responsible for disturbing or damaging the site.</td><td class="new">The main activity or process responsible for disturbing or damaging the site. </td></tr>
+<tr><th scope="row">Disturbance frequency</th><td class="attr">Definition (En)</td><td class="old">It records how often the disturbance or impact occurs. The frequency describes whether the disturbance is a single event, repeated activity, or a continuous process affecting the site. </td><td class="new">How often the disturbance occurs - a single event, a repeated activity or a continuous process. </td></tr>
+<tr><th scope="row">Disturbance effect</th><td class="attr">Definition (En)</td><td class="old">It records the type of physical effect that the disturbance has on the site. The effect describes what the disturbance is doing to the archaeological remains, such as removal, damage, or alteration of…</td><td class="new">The physical effect of the disturbance on the archaeological remains, such as removal, damage or alteration of site features. </td></tr>
+<tr><th scope="row">Extent of impact</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E17 Type Assignment <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">It records how much of the site area is affected by the disturbance. The extent describes the spatial coverage of the disturbance across the site, helping to indicate whether the impact is localized o…</td><td class="new">How much of the site area is affected by the disturbance, from localised to widespread. </td></tr>
+<tr><th scope="row">Severity of impact</th><td class="attr">Definition (En)</td><td class="old">It records how serious the impact of the disturbance is on the site. Severity reflects the degree of damage or degradation caused by the disturbance, helping to evaluate the level of threat to the sit…</td><td class="new">How serious the damage or degradation caused by the disturbance is. </td></tr>
+<tr><th scope="row">Condition comments</th><td class="attr">Definition (En)</td><td class="old">additional comments or information</td><td class="new">Additional comments or information on the condition of the site. </td></tr>
+<tr><th scope="row">Recommendation for management of disturbance</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">What recommendation can you make to the national authorities as to what they can do to improve the state of the site</td><td class="new">Recommendations to the national heritage authorities on measures to address the disturbance and improve the state of the site. </td></tr>
+<tr><th scope="row">Threat assessment date</th><td class="attr">Data Type</td><td class="old">Date</td><td class="new">EDTF </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">Date on which the original or first assessment of the site was undertaken Follow the EDTF guidelines on date entry here: https://www.loc.gov/standards/datetime/</td><td class="new">The date on which the threat assessment was carried out. </td></tr>
+<tr><th scope="row">Threat assessor name</th><td class="attr">Definition (En)</td><td class="old">It records the person or organisation responsible for conducting the threat assessment.</td><td class="new">The person or organisation that carried out the threat assessment. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">Renier van der Merwe</td><td class="new">ACT-00000056 </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 2</td><td class="old">Assane Ndiaye</td><td class="new">ACT-00000037 </td></tr>
+<tr><th scope="row">Date of image used #2</th><td class="attr">Data Type</td><td class="old">Date</td><td class="new">EDTF </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">What is the date on which this images was taken</td><td class="new">The date on which the image used for the threat assessment was taken. </td></tr>
+<tr><th scope="row">Basis of threat assessment</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E17 Type Assignment <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">This node records the method or source used to assess the identified threat(s) affecting the site. </td><td class="new">The method or source used to assess the threat or threats affecting the site. </td></tr>
+<tr><th scope="row">Threat type</th><td class="attr">Definition (En)</td><td class="old">It records the type or category of threat that may affect the site, identified through the interpretation of satellite, aerial, or other remote sensing imagery, and supported where possible by context…</td><td class="new">The type of threat identified that may affect the site. </td></tr>
+<tr><th scope="row">Threat severity</th><td class="attr">Collection</td><td class="old">Vocabulary: Disturbance cause</td><td class="new">Severity of impact (cv) <span class="tag us">Decision</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">records the degree to which the identified threat is affecting the site. It describes the intensity or seriousness of the threat’s impact. </td><td class="new">The degree to which the identified threat is affecting the site. </td></tr>
+<tr><th scope="row">Probability of threat affecting site</th><td class="attr">Collection</td><td class="old">Vocabulary: Probability of threat affecting site</td><td class="new">Threat probabilities (cv) </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">It records the estimated likelihood that the identified threat will impact the site, based on the analyst’s interpretation of available evidence.</td><td class="new">The estimated likelihood that the identified threat will affect the site, based on the analyst&#x27;s interpretation of the available evidence. </td></tr>
+<tr><th scope="row">Threat comments</th><td class="attr">Definition (En)</td><td class="old">addetional comments</td><td class="new">Additional comments or information on the threats to the site. </td></tr>
+<tr><th scope="row">Recommendation for management of threat</th><td class="attr">Definition (En)</td><td class="old">What recommendation can you make to the national authorities as to what they can do to improve the state of the site</td><td class="new">Recommendations to the national heritage authorities on measures to address the threat and protect the site. </td></tr>
+<tr><th scope="row">Additional information</th><td class="attr">Definition (En)</td><td class="old">Any additional information that needs to be recorded in relation to this entry</td><td class="new">Any additional information to be recorded about this site. </td></tr>
+<tr><th scope="row">Licence</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E55 Type <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Data Type</td><td class="old">String</td><td class="new">Concept-list </td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old"><span class=empty>empty</span></td><td class="new">Licences (cv) </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old"><span class=empty>empty</span></td><td class="new">The licence under which the digital resource may be used or reused. </td></tr>
+<tr><th scope="row">Access level</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E55 Type <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Data Type</td><td class="old">String</td><td class="new">Concept-list </td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old"><span class=empty>empty</span></td><td class="new">Access levels (cv) </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old"><span class=empty>empty</span></td><td class="new">The level of access permitted for the digital resource. </td></tr>
+<tr><th scope="row">Rights holder</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E1 CRM Entity <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Data Type</td><td class="old">String</td><td class="new">Resource-Instance-List </td></tr>
+<tr><th scope="row"></th><td class="attr">Collection</td><td class="old"><span class=empty>empty</span></td><td class="new">Actor (rm) </td></tr>
+<tr><th scope="row"></th><td class="attr">Cardinality</td><td class="old">1</td><td class="new">1..n </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old"><span class=empty>empty</span></td><td class="new">The person or organisation holding or managing rights associated with the resource. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">IFAN</td><td class="new">ACT-00000062 </td></tr>
+<tr><th scope="row">Rights Notes</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Necessity</td><td class="old">Mandatory</td><td class="new">Optional </td></tr>
+<tr><th scope="row"></th><td class="attr">Cardinality</td><td class="old">1</td><td class="new">0..1 </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old"><span class=empty>empty</span></td><td class="new">Additional information about rights, permissions, restrictions, or copyright status that is not captured by the other rights and access fields. </td></tr>
+<tr><th scope="row">Preferred Citation</th><td class="attr">CIDOC CRM Node Class</td><td class="old"><span class=empty>empty</span></td><td class="new">E62 String <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old"><span class=empty>empty</span></td><td class="new">The recommended citation to use when referring to or reusing the resource. </td></tr>
+<tr><th scope="row">Recorder</th><td class="attr">CIDOC CRM Node Class</td><td class="old">E82 Actor Appellation</td><td class="new">E39 Actor <span class="tag cidoc">CIDOC by us</span></td></tr>
+<tr><th scope="row"></th><td class="attr">Cardinality</td><td class="old">1</td><td class="new">1..n </td></tr>
+<tr><th scope="row"></th><td class="attr">Definition (En)</td><td class="old">This node records the name of the individual responsible for creating the resource record. </td><td class="new">The name of the individual responsible for creating the resource record. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">Assane Ndiaye</td><td class="new">ACT-00000037 </td></tr>
+<tr><th scope="row">Created at</th><td class="attr">Definition (En)</td><td class="old">This node records the date on which the resource record was created in the database.</td><td class="new">The date on which the resource record was created in the database. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">27/7/2022</td><td class="new">2022-07-27 </td></tr>
+<tr><th scope="row">Last modified at</th><td class="attr">Definition (En)</td><td class="old">This node records the most recent date on which the resource record was modified.</td><td class="new">The most recent date on which the resource record was modified. </td></tr>
+<tr><th scope="row"></th><td class="attr">Example 1</td><td class="old">2/7/2025</td><td class="new">This field is automatically populated by the system. Leave this field blank </td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="added">
+    <div class="sec-head"><h2>Things added</h2><span class="count">new fields and values that were empty before</span></div>
+    <div class="added">
+      <article>
+        <h4>Comment, Uploader, Uploaded at</h4>
+        <p>Added with the shared Recording details / Uploading details blocks (September), identical to the other models.</p>
+      </article>
+      <article>
+        <h4>Translations <span class="tag ai">AI draft</span></h4>
+        <p>All French, Arabic and Portuguese definitions replaced on 2026-09-25: 81 cells drafted by Claude, 69 copied from Site (also AI drafts), 33 from Map. 13 empty labels filled and 9 existing label errors fixed (e.g. Related site "Estação relacionada" → "Sítio relacionado").</p>
+      </article>
+      <article>
+        <h4>CIDOC classes <span class="tag cidoc">CIDOC by us</span></h4>
+        <p>12 empty Node Classes and 13 scope notes filled from the same fields in Site, Map and Grid; Recorder's scope note (E82's text) replaced with the E39 Actor note.</p>
+      </article>
+      <article>
+        <h4>Dublin Core, Operational Info, Input Instructions</h4>
+        <p>Dublin Core moved from <code>N/A</code> to real terms or "No direct equivalent"; Operational Info and Input Instructions completed for every field.</p>
+      </article>
+    </div>
+    <h3>Dublin Core mappings (current)</h3>
+    <div class="tablebox"><table>
+      <thead><tr><th>Field</th><th>Dublin Core Equivalent</th></tr></thead>
+      <tbody><tr><th scope="row">MAEASaM ID</th><td>dcterms:identifier</td></tr><tr><th scope="row">Activity type</th><td>dcterms:type</td></tr><tr><th scope="row">Activity date</th><td>dcterms:date</td></tr><tr><th scope="row">Activity actor</th><td>dcterms:contributor</td></tr><tr><th scope="row">Geometry (WKT)</th><td>dcterms:spatial</td></tr><tr><th scope="row">Geometry qualifier</th><td>dcterms:spatial</td></tr><tr><th scope="row">Evidence</th><td>dcterms:description</td></tr><tr><th scope="row">Evidence shape</th><td>No direct equivalent</td></tr><tr><th scope="row">Interpretation</th><td>dcterms:description</td></tr><tr><th scope="row">Interpretation certainty</th><td>No direct equivalent</td></tr><tr><th scope="row">Ground truthing</th><td>No direct equivalent</td></tr><tr><th scope="row">Land use land cover</th><td>No direct equivalent</td></tr><tr><th scope="row">Climatic zone</th><td>No direct equivalent</td></tr><tr><th scope="row">Related site</th><td>dcterms:relation</td></tr><tr><th scope="row">Chronology</th><td>dcterms:temporal</td></tr><tr><th scope="row">Measurement type</th><td>No direct equivalent</td></tr><tr><th scope="row">Measurement unit</th><td>No direct equivalent</td></tr><tr><th scope="row">Measurement value</th><td>No direct equivalent</td></tr><tr><th scope="row">Grid level 1</th><td>dcterms:relation</td></tr><tr><th scope="row">Grid level 2</th><td>dcterms:relation</td></tr><tr><th scope="row">Administrative area name</th><td>dcterms:relation</td></tr><tr><th scope="row">Administrative area type</th><td>dcterms:type</td></tr><tr><th scope="row">Administrative area level</th><td>dcterms:type</td></tr><tr><th scope="row">Survey type</th><td>dcterms:type</td></tr><tr><th scope="row">Survey date</th><td>dcterms:date</td></tr><tr><th scope="row">Surveyor name</th><td>dcterms:contributor</td></tr><tr><th scope="row">Image type</th><td>dcterms:type</td></tr><tr><th scope="row">Date of image</th><td>dcterms:date</td></tr><tr><th scope="row">Spatial resolution</th><td>No direct equivalent</td></tr><tr><th scope="row">Overall condition</th><td>No direct equivalent</td></tr><tr><th scope="row">Assessment date</th><td>dcterms:date</td></tr><tr><th scope="row">Assessor name</th><td>dcterms:contributor</td></tr><tr><th scope="row">Date of image used</th><td>dcterms:date</td></tr><tr><th scope="row">Disturbance cause</th><td>dcterms:description</td></tr><tr><th scope="row">Disturbance frequency</th><td>dcterms:description</td></tr><tr><th scope="row">Disturbance effect</th><td>dcterms:description</td></tr><tr><th scope="row">Extent of impact</th><td>No direct equivalent</td></tr><tr><th scope="row">Severity of impact</th><td>No direct equivalent</td></tr><tr><th scope="row">Condition comments</th><td>dcterms:description</td></tr><tr><th scope="row">Recommendation for management of disturbance</th><td>dcterms:description</td></tr><tr><th scope="row">Threat assessment date</th><td>dcterms:date</td></tr><tr><th scope="row">Threat assessor name</th><td>dcterms:contributor</td></tr><tr><th scope="row">Date of image used</th><td>dcterms:date</td></tr><tr><th scope="row">Basis of threat assessment</th><td>No direct equivalent</td></tr><tr><th scope="row">Threat type</th><td>dcterms:type</td></tr><tr><th scope="row">Threat severity</th><td>No direct equivalent</td></tr><tr><th scope="row">Probability of threat affecting site</th><td>No direct equivalent</td></tr><tr><th scope="row">Threat comments</th><td>dcterms:description</td></tr><tr><th scope="row">Recommendation for management of threat</th><td>dcterms:description</td></tr><tr><th scope="row">Additional information</th><td>dcterms:description</td></tr><tr><th scope="row">Licence</th><td>dcterms:license</td></tr><tr><th scope="row">Access level</th><td>dcterms:accessRights</td></tr><tr><th scope="row">Rights holder</th><td>dcterms:rightsHolder</td></tr><tr><th scope="row">Rights Notes</th><td>dcterms:rights</td></tr><tr><th scope="row">Preferred Citation</th><td>dcterms:bibliographicCitation</td></tr><tr><th scope="row">Recorder</th><td>dcterms:contributor</td></tr><tr><th scope="row">Comment</th><td>dcterms:description</td></tr><tr><th scope="row">Created at</th><td>dcterms:created</td></tr><tr><th scope="row">Uploader</th><td>dcterms:contributor</td></tr><tr><th scope="row">Uploaded at</th><td>dcterms:dateSubmitted</td></tr><tr><th scope="row">Last modified at</th><td>dcterms:modified</td></tr></tbody>
+    </table></div>
+  </section>
+
+  <section id="check">
+    <div class="sec-head"><h2>Things to check</h2><span class="count">tasks for reviewers</span></div>
+    <ul class="tasks">
+      <li class="k-ai"><span class="t">French, Arabic and Portuguese definitions <span class="tag ai">AI draft</span></span><span class="who">native speakers · Task #13</span>
+        <span class="d">All 183 definition cells are now AI drafts or copies of AI drafts (from Site and Map). The earlier translations translated the old English and several were wrong (a Portuguese cell still in English, French "Ce nœud…"). The existing labels were kept except for 9 clear errors.</span></li>
+      <li class="k-us"><span class="t">English definitions rewritten</span><span class="who">team</span>
+        <span class="d">57 definitions reworded — check the RS-specific ones in particular: Evidence (was cut off mid-sentence), Ground truthing, Related site, Grid level 1/2, Survey type, Date of image (now "the image used in the survey").</span></li>
+      <li class="k-cidoc"><span class="t">CIDOC CRM filled by the team <span class="tag cidoc">CIDOC by us</span></span><span class="who">Renier &amp; Anto · Task #14</span>
+        <span class="d">Geometry (WKT) E53 Place, Measurement unit E55 Type (Site has E54 Dimension for the same field — please decide), Extent of impact and Basis of threat assessment E17 Type Assignment, Recommendation E62 String, and the Copyright/Access block, Comment and Uploaded at. Recorder was changed from E82 Actor Appellation to E39 Actor earlier in September.</span></li>
+      <li class="k-us"><span class="t">Rebuild Remote Sensing.json</span><span class="who">Orhun / Renier · Tasks #57, #61, #85</span>
+        <span class="d">The JSON has 13 fields the template does not (misspelt "Measurment type/unit", old Copyright info / Site data reference institution, etc.) and lacks 14 the template has; no descriptions; and Recorder fails CIDOC validation (its group is E1, the property needs an E5 Event). Rebuild from the template.</span></li>
+      <li class="k-us"><span class="t">Review decisions <span class="tag us">Decision</span></span><span class="who">team</span>
+        <span class="d">Threat severity now uses Severity of impact (cv) (closes #7); Image type uses Imagery dataset type (cv); the two "Date of image used" names kept (as in Site); example values replaced with real IDs from the Actor, Chronology and Grid datasets.</span></li>
+      <li class="k-open"><span class="t">Necessity vs Arches "required" setting</span><span class="who">Task #79 / #95</span>
+        <span class="d">To be set when the JSON is rebuilt.</span></li>
+    </ul>
+  </section>
+
+  <footer>Generated 2026-09-25 from <code>git show 87986b1</code> compared with the working copy. Bulk changes (translations, Input Instructions, Operational Info, Dublin Core, notation-only Collection changes) are summarized, not listed per cell.</footer>
+</div>
