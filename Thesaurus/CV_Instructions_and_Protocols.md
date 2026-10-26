@@ -41,6 +41,29 @@ A vocab's name is written in the plural, since it names the list of allowed valu
 
 One more Title Case name is known to exist live in Arches - `Resource To Resource Relationship Types` (per `CV_Task_List.md` CV-6) - but it has no xlsx sheet or csv file at all to fix here; same "needs a real Arches rename" caveat applies whenever someone gets to it. Aside from that single live-Arches-only case, there is no longer a documented exception to Rule 1 - every vocab and term name in `Thesaurus/csv/` and `Thesaurus/xlsx/`, old or new, is sentence case.
 
+## Comparison protocol: checking whether a term exists (added 2026-10-26)
+
+Whenever someone asks "is this term / vocab in our thesaurus?", or before a model is ingested, compare **all** sources and report what each one says - never answer from a single file.
+
+1. **The four sources**
+   - `xml/` - the Arches export. **Always read both files together:**
+     - `_collections.xml` lists only each collection's **top-level** members (e.g. Resource type: 9).
+     - The narrower terms (e.g. Journal article, Thesis) come from the `skos:narrower` hierarchy in `_thesauri.xml`.
+
+     A collection's real term list = its top-level members + every narrower descendant (Resource type: 126). Counting only `_collections.xml` has produced the same false "terms missing from Arches" finding twice (`CV_Task_List.md` CV-10, `Reference Documents/Task_List.md` #118).
+   - `csv/` - the per-vocab files (`CV_Reference_Schema.csv` layout). Compare by `Term ID` first, then by `Term (En)`, because a csv can carry the same term under an id from another Arches instance.
+   - `xlsx/` - the master workbook, one sheet per vocab. Also report terms that differ only in capitalisation.
+   - The running Arches (`http://localhost:8000`), when it is up - the collection dropdown endpoint returns exactly what a data-entry form offers.
+2. **Tool:** `python Scripts/compare_cv_sources.py --models <Model> ... [--live] [--out Scripts/exports/<date>_CV_SourceComparison_NN.md]`. It reads every concept-list node's `rdmCollection` in the chosen Resource Model JSONs and prints, per vocab:
+   - xml term count (top-level + narrower)
+   - csv: rows without an id, ids that differ for the same term, terms in only one source, label differences per language, parent differences
+   - xlsx: terms missing from the sheet
+   - live Arches count, when `--live` is given
+
+   It is read-only.
+3. **Report to the user** per vocab: present / missing in each source. Do not "fix" a difference without asking - the user decides which source is right (see `CV_Task_List.md` CV-1 on which source is the master).
+4. **Log every change** made to any of these sources in `CV_Change_Log.md` (date, file, what changed, why, who decided). Open differences that are not fixed go to `CV_Task_List.md`.
+
 ## Where this doesn't apply
 
 - Acronyms and initialisms stay fully capitalized: `LULC`, `EPSG`, `CC BY`, `ISO 3166-1`.
