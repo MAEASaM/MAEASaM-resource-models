@@ -33,6 +33,15 @@ A vocab's name is written in the plural, since it names the list of allowed valu
 - **`/` in a vocab name:** Excel forbids `/` in sheet names, so a vocab like `Material/object types` has the tab `Materialobject types` (slash dropped, no space) - the one permitted difference between the sheet tab and the vocab name. Everywhere else (Metadata Template `Collection`, Input Instructions, the sheet's own vocab-name header cell, csv filename where the OS allows) the name keeps its `/`.
 - **How renames are applied to the xlsx master:** edit the sheet `name` attribute in `xl/workbook.xml` (and the vocab-name header cell's shared string in `xl/sharedStrings.xml`, only if that string is used by that one sheet) directly inside the zip - never open-and-save in Excel. Same method as the 2026-09-15 casing fix below.
 
+## Rule 4: Every vocab has a 2-digit CV ID (decided 2026-10-28)
+
+- **`CV_Registry.csv` is the list of all vocabs and their IDs:** CV ID, vocab name (as written in the Metadata Templates), Arches collection name + id, xlsx sheet tab, csv file, and which template fields use it.
+- **Numbering follows the order of first use in the Metadata Templates:** Actor → Admin → Info → Grid → Map → Chronology → RS → Site, field by field; vocabs no template uses come last, alphabetically. So `01` = Name type (Actor's first concept-list field). A new vocab gets the next free number; numbers are never reused or reordered.
+- **The ID is a prefix on the csv file name and the xlsx sheet tab only:** `01_Name type.csv`, sheet `01_Name type`.
+- **The vocab name itself does not change.** Templates still write `Name type (cv)`, and the Arches collection is still `Name type`, because those names are lookup keys.
+- **31-character tab limit:** if `NN_` + name is longer than 31 characters, the tab name is shortened and the registry records it. So far: `20_Descriptive start-end date`, `33_Collection sampling method`.
+- Sheets that are not vocabs (`Legend`, `Copy of 9.Activity`, `54.OTHER THESAURII PROPOSALS`) get no ID.
+
 ## 2026-09-15: the 3 legacy outliers are fixed too - no more exceptions
 
 `Coordinate System`, `Ownership Type`, `Survey Type` were the only 3 sheet names in the xlsx master workbook that broke Rule 1. Fixed the same day: `xl/workbook.xml` inside `Thesaurus/xlsx/20260317_Thesaurus_AllSites_CURRENT.xlsx` was edited directly (sheet-tab `name` attribute only, via a small script - not opened in Excel, so none of this machine's Excel/CSV-export corruption risk applies) to `Coordinate system`, `Ownership type`, `Survey type`. No Metadata Template or Resource Model JSON referenced these 3 by name, so nothing else needed updating there.
@@ -63,6 +72,7 @@ Whenever someone asks "is this term / vocab in our thesaurus?", or before a mode
    It is read-only.
 3. **Report to the user** per vocab: present / missing in each source. Do not "fix" a difference without asking - the user decides which source is right (see `CV_Task_List.md` CV-1 on which source is the master).
 4. **Log every change** made to any of these sources in `CV_Change_Log.md` (date, file, what changed, why, who decided). Open differences that are not fixed go to `CV_Task_List.md`.
+5. **When writing xml by hand or by script**, every label/note value must be a properly JSON-encoded `{"id": ..., "value": ...}` (use `json.dumps`, which escapes double quotes and line breaks). If the JSON is invalid, Arches' SKOS import does not fail - it silently stores the whole raw string as the label, and Arches then displays `{"id": ..., "value": ...}` (this is the cause of CV-28).
 
 ## Where this doesn't apply
 
