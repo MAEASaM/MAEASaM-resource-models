@@ -65,4 +65,33 @@ E94 Space Primitive is not further elaborated upon within this model. Statement 
     <rdfs:range rdf:resource="E53_Place"/>
 </rdf:Property>
 
+<!--
+MAEASaM-specific: the exported Map.json (and likely other MAEASaM resource models) uses
+P3_has_note as a generic grouping/field-linking property throughout the graph, connecting
+container nodes (typed E1_CRM_Entity or one of its subclasses, e.g. E42_Identifier,
+E41_Appellation, E82_Actor_Appellation) rather than only literal note text (the base CRM
+range for P3_has_note is rdfs:Literal). This additional declaration widens P3_has_note's
+allowed range to E1_CRM_Entity (and, transitively, every CIDOC-CRM class, since they all
+descend from E1_CRM_Entity) so these graphs validate, without removing the original
+Literal-range rule above.
+-->
+<rdf:Property rdf:about="P3_has_note">
+    <rdfs:label xml:lang="en">has note (MAEASaM widened range)</rdfs:label>
+    <rdfs:domain rdf:resource="E1_CRM_Entity"/>
+    <rdfs:range rdf:resource="E1_CRM_Entity"/>
+</rdf:Property>
+
+<!-- MAEASaM-specific: same widening as P3_has_note above, for the same reason. -->
+<rdf:Property rdf:about="P106_is_composed_of">
+    <rdfs:label xml:lang="en">is composed of (MAEASaM widened domain/range)</rdfs:label>
+    <rdfs:domain rdf:resource="E1_CRM_Entity"/>
+    <rdfs:range rdf:resource="E1_CRM_Entity"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="P67_refers_to">
+    <rdfs:label xml:lang="en">refers to (MAEASaM widened domain)</rdfs:label>
+    <rdfs:domain rdf:resource="E1_CRM_Entity"/>
+    <rdfs:range rdf:resource="E1_CRM_Entity"/>
+</rdf:Property>
+
 </rdf:RDF>
