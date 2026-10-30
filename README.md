@@ -5,7 +5,7 @@ This repository contains the resources required to set up and populate the MAEAS
 - **Templates** - CSV schemas for data entry
 - **Guidelines** - written documentation and PDF guidance on how to complete the schemas
 - **Thesaurus** - JSON files containing thesauri and collections
-- **JSON Resource Models** - ready-to-ingest JSON structures for each resource model
+- **Resource Models** - ready-to-ingest JSON structures for each resource model
 - **Datasets** - default and initial setup datasets for each resource model
 
 These resources define the core data structures used to represent archaeological sites, actors, chronology, information, maps, grids, remote sensing data, and administrative boundaries within the MAEASaM Arches instance.
@@ -15,6 +15,8 @@ These resources define the core data structures used to represent archaeological
 The datasets and resource models must be ingested into Arches in a specific order. It is important to follow the setup sequence because some resource models and datasets are interdependent and rely on resources created during earlier steps.
 
 Follow the setup instructions in the order provided to ensure that all dependencies are correctly established before ingesting the related datasets.
+
+**Before ingesting the datasets, apply the Arches patches in [ARCHES_PATCHES.md](ARCHES_PATCHES.md).** Without them the Administrative dataset does not load or index on a stock Arches 8.1.x install. The file also covers the ontology/thesaurus load order and Celery.
 
 ### Importing Resource Models into Arches
 
@@ -38,7 +40,7 @@ Follow the setup instructions in the order provided to ensure that all dependenc
    - After importing, check that each model appears in the list and is correctly configured.
 
 
-## Files
+## Resource Model Files
 
 - `Actor.json` — Defines actors and organizations.
 - `Administrative.json` — Administrative boundaries and regions.

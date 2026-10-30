@@ -1,7 +1,7 @@
 {
     "graph": [
         {
-            "author": "Renier van der Merwe",
+            "author": "MAEASaM",
             "cards": [
                 {
                     "active": true,
@@ -687,7 +687,7 @@
                     "edgeid": "ecf8cb0b-25f3-4f50-ad49-01f05c8a4b3a",
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "name": null,
-                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P67_refers_to",
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P104_is_subject_to",
                     "rangenode_id": "34046ff4-61e7-4c7c-ab43-b9b3ba596b91",
                     "source_identifier_id": null
                 },
@@ -1800,7 +1800,7 @@
                     "nodegroup_id": "34046ff4-61e7-4c7c-ab43-b9b3ba596b91",
                     "nodeid": "34046ff4-61e7-4c7c-ab43-b9b3ba596b91",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E30_Right",
-                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P67_refers_to",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P104_is_subject_to",
                     "sortorder": 0,
                     "source_identifier_id": null,
                     "sourcebranchpublication_id": null

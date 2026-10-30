@@ -1,7 +1,7 @@
 {
     "graph": [
         {
-            "author": "Renier van der Merwe",
+            "author": "MAEASaM",
             "cards": [
                 {
                     "active": true,
@@ -483,7 +483,7 @@
                     "edgeid": "e07af66c-a032-4774-9c7e-7f7d212b379e",
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
                     "name": null,
-                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P67_refers_to",
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P104_is_subject_to",
                     "rangenode_id": "c88f9738-6799-453d-9826-f9eeb03e7b61",
                     "source_identifier_id": null
                 },
@@ -1046,7 +1046,7 @@
                     "name": "Grid",
                     "nodegroup_id": null,
                     "nodeid": "6af84876-ba83-11ee-aa09-4fdea520d3ce",
-                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object",
                     "parentproperty": "",
                     "sortorder": 0,
                     "source_identifier_id": null,
@@ -1287,7 +1287,7 @@
                     "nodegroup_id": "c88f9738-6799-453d-9826-f9eeb03e7b61",
                     "nodeid": "c88f9738-6799-453d-9826-f9eeb03e7b61",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E30_Right",
-                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P67_refers_to",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P104_is_subject_to",
                     "sortorder": 0,
                     "source_identifier_id": null,
                     "sourcebranchpublication_id": null
@@ -1538,7 +1538,7 @@
                 "name": "Grid",
                 "nodegroup_id": null,
                 "nodeid": "6af84876-ba83-11ee-aa09-4fdea520d3ce",
-                "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object",
+                "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object",
                 "sortorder": 0,
                 "source_identifier_id": null,
                 "sourcebranchpublication_id": null
