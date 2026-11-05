@@ -23,7 +23,7 @@
                         "en": ""
                     },
                     "name": {
-                        "en": "Resource version control"
+                        "en": "Recording details"
                     },
                     "nodegroup_id": "5b9cc101-c270-4123-9ffb-c778fb013511",
                     "sortorder": 10,
@@ -113,33 +113,6 @@
                 },
                 {
                     "active": true,
-                    "cardid": "40330547-6a57-42f6-b1d9-162c68f0483c",
-                    "component_id": "f05e4d3a-53c1-11e8-b0ea-784f435179ea",
-                    "config": null,
-                    "constraints": [],
-                    "cssclass": null,
-                    "description": null,
-                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
-                    "helpenabled": false,
-                    "helptext": {
-                        "en": ""
-                    },
-                    "helptitle": {
-                        "en": ""
-                    },
-                    "instructions": {
-                        "en": ""
-                    },
-                    "name": {
-                        "en": "Description"
-                    },
-                    "nodegroup_id": "f9a035be-e380-45c4-9dc1-204b7047cbea",
-                    "sortorder": 5,
-                    "source_identifier_id": null,
-                    "visible": true
-                },
-                {
-                    "active": true,
                     "cardid": "50c534f5-3276-4443-9c3a-89e1012d8287",
                     "component_id": "f05e4d3a-53c1-11e8-b0ea-784f435179ea",
                     "config": null,
@@ -185,7 +158,7 @@
                         "en": ""
                     },
                     "name": {
-                        "en": "Identifier"
+                        "en": "Identifiers"
                     },
                     "nodegroup_id": "e1ddb87e-d169-4f65-bbf4-6c3f4261bced",
                     "sortorder": 0,
@@ -239,7 +212,7 @@
                         "en": ""
                     },
                     "name": {
-                        "en": "Time Span"
+                        "en": "Time span"
                     },
                     "nodegroup_id": "6cc12755-5e27-11f0-b9ba-00505683efec",
                     "sortorder": 4,
@@ -272,11 +245,65 @@
                     "sortorder": 6,
                     "source_identifier_id": null,
                     "visible": true
+                },
+                {
+                    "active": true,
+                    "cardid": "95d226f5-e021-4dda-8b72-c919bf8f951d",
+                    "component_id": "f05e4d3a-53c1-11e8-b0ea-784f435179ea",
+                    "config": null,
+                    "constraints": [],
+                    "cssclass": null,
+                    "description": null,
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "helpenabled": false,
+                    "helptext": {
+                        "en": ""
+                    },
+                    "helptitle": {
+                        "en": ""
+                    },
+                    "instructions": {
+                        "en": ""
+                    },
+                    "is_editable": false,
+                    "name": {
+                        "en": "Uploading details"
+                    },
+                    "nodegroup_id": "e3ba9d1d-fdc5-4bc7-9f14-fe996fca4dae",
+                    "sortorder": 11,
+                    "visible": true
+                },
+                {
+                    "active": true,
+                    "cardid": "2b2defa9-c860-4554-be16-9f581630bafb",
+                    "component_id": "f05e4d3a-53c1-11e8-b0ea-784f435179ea",
+                    "config": null,
+                    "constraints": [],
+                    "cssclass": null,
+                    "description": null,
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "helpenabled": false,
+                    "helptext": {
+                        "en": ""
+                    },
+                    "helptitle": {
+                        "en": ""
+                    },
+                    "instructions": {
+                        "en": ""
+                    },
+                    "is_editable": false,
+                    "name": {
+                        "en": "Copyright/Access"
+                    },
+                    "nodegroup_id": "34046ff4-61e7-4c7c-ab43-b9b3ba596b91",
+                    "sortorder": 9,
+                    "visible": true
                 }
             ],
             "cards_x_nodes_x_widgets": [
                 {
-                    "card_id": "40330547-6a57-42f6-b1d9-162c68f0483c",
+                    "card_id": "ccbe01c3-83ec-44d0-9dd3-b7b266620f0c",
                     "config": {
                         "defaultValue": {
                             "en": {
@@ -360,7 +387,7 @@
                     "edgeid": "2a27a605-218b-4a49-8c3f-3f7765122346",
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "name": null,
-                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P161i_is_spatial_projection_of",
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by",
                     "rangenode_id": "c5e33cc8-89b5-452c-a70e-0cac6d9b6028",
                     "source_identifier_id": null
                 },
@@ -406,16 +433,6 @@
                 },
                 {
                     "description": null,
-                    "domainnode_id": "f47923d2-f0be-4013-84be-c25ff88746e4",
-                    "edgeid": "434f9544-75d8-44d1-b1b6-f4b45ee05f41",
-                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
-                    "name": null,
-                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
-                    "rangenode_id": "e7aa5e60-1646-4170-8d17-9f90f6e0ce1a",
-                    "source_identifier_id": null
-                },
-                {
-                    "description": null,
                     "domainnode_id": "19670d43-5e22-11f0-be5e-00505683efec",
                     "edgeid": "45adc7e7-f52a-49c2-8c2f-7dd5c74baaa3",
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
@@ -426,32 +443,12 @@
                 },
                 {
                     "description": null,
-                    "domainnode_id": "5b9cc101-c270-4123-9ffb-c778fb013511",
-                    "edgeid": "5e9333b1-75bf-459f-9fee-60736e42c03b",
-                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
-                    "name": null,
-                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
-                    "rangenode_id": "818af7dd-8bbb-4830-b208-dfaa38a6ff1b",
-                    "source_identifier_id": null
-                },
-                {
-                    "description": null,
                     "domainnode_id": "19670d43-5e22-11f0-be5e-00505683efec",
                     "edgeid": "6e7966f4-c868-4a67-8c16-cddc5afdd32d",
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "name": null,
-                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P19i_was_made_for",
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P92i_was_brought_into_existence_by",
                     "rangenode_id": "5b9cc101-c270-4123-9ffb-c778fb013511",
-                    "source_identifier_id": null
-                },
-                {
-                    "description": null,
-                    "domainnode_id": "5b9cc101-c270-4123-9ffb-c778fb013511",
-                    "edgeid": "71635e31-979e-41da-a237-8e942fc3bf24",
-                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
-                    "name": null,
-                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P92_brought_into_existence",
-                    "rangenode_id": "aedaa4ff-fc45-48a4-9bb2-3bfa82ab713d",
                     "source_identifier_id": null
                 },
                 {
@@ -576,7 +573,7 @@
                 },
                 {
                     "description": null,
-                    "domainnode_id": "19670d43-5e22-11f0-be5e-00505683efec",
+                    "domainnode_id": "f47923d2-f0be-4013-84be-c25ff88746e4",
                     "edgeid": "db6d8ab4-c9ae-42a6-aea3-0dda4ed167a5",
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "name": null,
@@ -632,6 +629,116 @@
                     "name": null,
                     "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P67_refers_to",
                     "rangenode_id": "254e79fc-a2a3-4c85-bb82-317586e8f04e",
+                    "source_identifier_id": null
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "5b9cc101-c270-4123-9ffb-c778fb013511",
+                    "edgeid": "f0401b5d-6ed6-40b0-93bf-8a3323e0c045",
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
+                    "rangenode_id": "e7aa5e60-1646-4170-8d17-9f90f6e0ce1a",
+                    "source_identifier_id": null
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "19670d43-5e22-11f0-be5e-00505683efec",
+                    "edgeid": "fff041c4-1ea0-4617-bf80-bcdd0cc7a5d2",
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P92i_was_brought_into_existence_by",
+                    "rangenode_id": "e3ba9d1d-fdc5-4bc7-9f14-fe996fca4dae",
+                    "source_identifier_id": null
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "e3ba9d1d-fdc5-4bc7-9f14-fe996fca4dae",
+                    "edgeid": "0b3a0ce3-fb0f-4d2a-838d-be0b6e0a6c2e",
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P92_brought_into_existence",
+                    "rangenode_id": "aedaa4ff-fc45-48a4-9bb2-3bfa82ab713d",
+                    "source_identifier_id": null
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "e3ba9d1d-fdc5-4bc7-9f14-fe996fca4dae",
+                    "edgeid": "6e701de2-9d11-41a2-bd93-d4eb1afe5c3b",
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by",
+                    "rangenode_id": "bc28ddc8-7a71-4b2a-9545-53a0e3814e94",
+                    "source_identifier_id": null
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "e3ba9d1d-fdc5-4bc7-9f14-fe996fca4dae",
+                    "edgeid": "25af17a0-82a7-4005-b4b4-9c70da649799",
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P92_brought_into_existence",
+                    "rangenode_id": "66c0fdee-fee2-450e-90eb-0aa520e91d11",
+                    "source_identifier_id": null
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "19670d43-5e22-11f0-be5e-00505683efec",
+                    "edgeid": "ecf8cb0b-25f3-4f50-ad49-01f05c8a4b3a",
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by",
+                    "rangenode_id": "34046ff4-61e7-4c7c-ab43-b9b3ba596b91",
+                    "source_identifier_id": null
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "34046ff4-61e7-4c7c-ab43-b9b3ba596b91",
+                    "edgeid": "f58b3d9d-521c-4034-a0fa-8dfd5f939aef",
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P2_has_type",
+                    "rangenode_id": "d07415de-448a-4567-a025-90ce3ea2511a",
+                    "source_identifier_id": null
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "34046ff4-61e7-4c7c-ab43-b9b3ba596b91",
+                    "edgeid": "471b67bd-c1ea-4180-8382-957ab66d8af7",
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P2_has_type",
+                    "rangenode_id": "7830ecec-03a7-4a8a-88b8-e551dc30e6c8",
+                    "source_identifier_id": null
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "34046ff4-61e7-4c7c-ab43-b9b3ba596b91",
+                    "edgeid": "530d2744-40a0-4f75-87c5-5d2e67ba76aa",
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P67_refers_to",
+                    "rangenode_id": "e1a767a6-3f4c-41a5-8951-d72c78a359b8",
+                    "source_identifier_id": null
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "34046ff4-61e7-4c7c-ab43-b9b3ba596b91",
+                    "edgeid": "6d0b1d7a-bb37-475a-b0a6-ae924a351601",
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
+                    "rangenode_id": "8978b4aa-f73d-43dd-a5de-9250506cae27",
+                    "source_identifier_id": null
+                },
+                {
+                    "description": null,
+                    "domainnode_id": "34046ff4-61e7-4c7c-ab43-b9b3ba596b91",
+                    "edgeid": "d827cfb8-71a1-449a-a1d9-76e974d60c16",
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "name": null,
+                    "ontologyproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
+                    "rangenode_id": "201c2bc4-b772-4b0e-abb2-317b95ea4cf3",
                     "source_identifier_id": null
                 }
             ],
@@ -693,7 +800,7 @@
                     "parentnodegroup_id": null
                 },
                 {
-                    "cardinality": "n",
+                    "cardinality": "1",
                     "grouping_node_id": "6cc12755-5e27-11f0-b9ba-00505683efec",
                     "legacygroupid": null,
                     "nodegroupid": "6cc12755-5e27-11f0-b9ba-00505683efec",
@@ -736,9 +843,14 @@
                 },
                 {
                     "cardinality": "1",
-                    "grouping_node_id": "f9a035be-e380-45c4-9dc1-204b7047cbea",
                     "legacygroupid": null,
-                    "nodegroupid": "f9a035be-e380-45c4-9dc1-204b7047cbea",
+                    "nodegroupid": "e3ba9d1d-fdc5-4bc7-9f14-fe996fca4dae",
+                    "parentnodegroup_id": null
+                },
+                {
+                    "cardinality": "1",
+                    "legacygroupid": null,
+                    "nodegroupid": "34046ff4-61e7-4c7c-ab43-b9b3ba596b91",
                     "parentnodegroup_id": null
                 }
             ],
@@ -774,7 +886,7 @@
                         "rdmCollection": "877a3910-57b3-4f3d-8cb6-61aa1e28026c"
                     },
                     "datatype": "concept-list",
-                    "description": null,
+                    "description": "This field uses a concept list to describe the calendrical system that the original end date was reported in before being converted to EDTF.",
                     "exportable": true,
                     "fieldname": "DesEndType",
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
@@ -806,8 +918,8 @@
                         "searchString": ""
                     },
                     "datatype": "resource-instance-list",
-                    "description": null,
-                    "exportable": false,
+                    "description": "This field refers to a relationship created with another connected Chronology resource. The unique MAEASaM ID for the related resource will be entered into this field.",
+                    "exportable": true,
                     "fieldname": null,
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "hascustomalias": false,
@@ -829,8 +941,8 @@
                     "alias": "maeasam_id",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
-                    "exportable": false,
+                    "description": "A unique identifier assigned to each resource. Format: CHRN-8-digit number (e.g. CHRN-00000001).",
+                    "exportable": true,
                     "fieldname": null,
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "hascustomalias": false,
@@ -872,7 +984,7 @@
                     "sourcebranchpublication_id": null
                 },
                 {
-                    "alias": "resource_version_control",
+                    "alias": "recording_details",
                     "config": {},
                     "datatype": "semantic",
                     "description": null,
@@ -885,11 +997,11 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Resource version control",
+                    "name": "Recording details",
                     "nodegroup_id": "5b9cc101-c270-4123-9ffb-c778fb013511",
                     "nodeid": "5b9cc101-c270-4123-9ffb-c778fb013511",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E66_Formation",
-                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P19i_was_made_for",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P92i_was_brought_into_existence_by",
                     "sortorder": 0,
                     "source_identifier_id": null,
                     "sourcebranchpublication_id": null
@@ -919,10 +1031,23 @@
                 },
                 {
                     "alias": "name_of_recorder",
-                    "config": {},
-                    "datatype": "string",
-                    "description": null,
-                    "exportable": false,
+                    "config": {
+                        "graphs": [
+                            {
+                                "graphid": "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",
+                                "inverseRelationshipConcept": "ac41d9be-79db-4256-b368-2f4559cfbe55",
+                                "name": "Actor",
+                                "relationshipCollection": "00000000-0000-0000-0000-000000000005",
+                                "relationshipConcept": "ac41d9be-79db-4256-b368-2f4559cfbe55",
+                                "useOntologyRelationship": false
+                            }
+                        ],
+                        "searchDsl": "",
+                        "searchString": ""
+                    },
+                    "datatype": "resource-instance-list",
+                    "description": "The name of the individual responsible for creating the resource record.",
+                    "exportable": true,
                     "fieldname": null,
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "hascustomalias": false,
@@ -931,7 +1056,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Name of recorder",
+                    "name": "Recorder",
                     "nodegroup_id": "5b9cc101-c270-4123-9ffb-c778fb013511",
                     "nodeid": "6a095682-af6d-44da-9eb7-d3e2a4ba839b",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E39_Actor",
@@ -956,7 +1081,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Time Span",
+                    "name": "Time span",
                     "nodegroup_id": "6cc12755-5e27-11f0-b9ba-00505683efec",
                     "nodeid": "6cc12755-5e27-11f0-b9ba-00505683efec",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E4_Period",
@@ -971,8 +1096,8 @@
                         "rdmCollection": "e580b702-d165-4e3e-9892-a1cfe8dde9b2"
                     },
                     "datatype": "concept-list",
-                    "description": null,
-                    "exportable": false,
+                    "description": "The name value is the name of the chronology entry.",
+                    "exportable": true,
                     "fieldname": null,
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "hascustomalias": false,
@@ -991,35 +1116,18 @@
                     "sourcebranchpublication_id": null
                 },
                 {
-                    "alias": "nodes_modified",
-                    "config": {},
-                    "datatype": "string",
-                    "description": null,
-                    "exportable": false,
-                    "fieldname": null,
-                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
-                    "hascustomalias": false,
-                    "is_collector": false,
-                    "is_immutable": false,
-                    "isrequired": false,
-                    "issearchable": true,
-                    "istopnode": false,
-                    "name": "Nodes modified",
-                    "nodegroup_id": "5b9cc101-c270-4123-9ffb-c778fb013511",
-                    "nodeid": "818af7dd-8bbb-4830-b208-dfaa38a6ff1b",
-                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
-                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
-                    "sortorder": 0,
-                    "source_identifier_id": null,
-                    "sourcebranchpublication_id": null
-                },
-                {
                     "alias": "start_date",
                     "config": {
-                        "rdmCollection": null
+                        "fuzzy_day_padding": 1,
+                        "fuzzy_month_padding": 1,
+                        "fuzzy_season_padding": 12,
+                        "fuzzy_year_padding": 1,
+                        "multiplier_if_approximate": 1,
+                        "multiplier_if_both": 1,
+                        "multiplier_if_uncertain": 1
                     },
-                    "datatype": "string",
-                    "description": null,
+                    "datatype": "edtf",
+                    "description": "This field refers to the earliest known occurrence of the period. The date must be reported using the Extended Date/Time Format (EDTF): https://www.loc.gov/standards/datetime/. Where multiple dates are reported for the same period in the same geographic region, the earliest date reported should be entered in this field.",
                     "exportable": true,
                     "fieldname": "StartDate",
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
@@ -1044,7 +1152,7 @@
                         "rdmCollection": null
                     },
                     "datatype": "string",
-                    "description": null,
+                    "description": "The descriptive start date reports on the original date that was converted to the EDTF.",
                     "exportable": true,
                     "fieldname": "DesStarDat",
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
@@ -1069,8 +1177,8 @@
                         "rdmCollection": "af661167-6587-4616-9bfe-e0447cd02373"
                     },
                     "datatype": "concept-list",
-                    "description": null,
-                    "exportable": false,
+                    "description": "Relationship type refers to the connections between related chronology resources. This is described using a controlled vocabulary list.",
+                    "exportable": true,
                     "fieldname": null,
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "hascustomalias": false,
@@ -1092,8 +1200,8 @@
                     "alias": "digital_provenance",
                     "config": {},
                     "datatype": "url",
-                    "description": null,
-                    "exportable": false,
+                    "description": "This field refers to the persistent identifier from which the original term has been used. It only captures this information when an online thesaurus (i.e. Getty AAT, ChronOntology) has been used to create the resource.",
+                    "exportable": true,
                     "fieldname": null,
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "hascustomalias": false,
@@ -1115,8 +1223,8 @@
                     "alias": "editorial_note",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
-                    "exportable": false,
+                    "description": "This field refers to how the definition, geometry and/or start and end dates were modified for entry. Examples include: Modification of definition or description: entry was adapted after GETTY AAT (include URL link). Modification of Geometry (Location): Spatial extent modified from Lane, P. 2013 The Archaeology of Pastoralism and Stock keeping in East Africa; In: Oxford Handbook of African Archaeology, Eds Peter Mitchell and Paul Lane, OUP; Causey; Spatial extent not reported. Modification of Start or End Date: start date calibrated (SHC20) at 2 sigma, 98% probability (enter the range) with original date reported 1980\u00b150 (PTA-1100), charcoal, Pit 3, from the site, Toteng, Botswana. Alternative Dates: list of dates and source. Modifications made by recorder (Metadata entry history): indication of what has been modified in the entry with a date (follow EDTF standard for date in string for consistency).",
+                    "exportable": true,
                     "fieldname": null,
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "hascustomalias": false,
@@ -1130,7 +1238,7 @@
                     "nodeid": "a88cca78-c41f-47c3-9556-c8107bf545ee",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
                     "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
-                    "sortorder": 0,
+                    "sortorder": 1,
                     "source_identifier_id": null,
                     "sourcebranchpublication_id": null
                 },
@@ -1140,8 +1248,8 @@
                         "dateFormat": "YYYY-MM-DD"
                     },
                     "datatype": "date",
-                    "description": null,
-                    "exportable": false,
+                    "description": "The most recent date on which the resource record was modified.",
+                    "exportable": true,
                     "fieldname": null,
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "hascustomalias": false,
@@ -1150,8 +1258,8 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Resource modified at",
-                    "nodegroup_id": "5b9cc101-c270-4123-9ffb-c778fb013511",
+                    "name": "Last modified at",
+                    "nodegroup_id": "e3ba9d1d-fdc5-4bc7-9f14-fe996fca4dae",
                     "nodeid": "aedaa4ff-fc45-48a4-9bb2-3bfa82ab713d",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E50_Date",
                     "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P92_brought_into_existence",
@@ -1165,7 +1273,7 @@
                         "rdmCollection": "877a3910-57b3-4f3d-8cb6-61aa1e28026c"
                     },
                     "datatype": "concept-list",
-                    "description": null,
+                    "description": "This field uses a concept list to describe the calendrical system that the original start date was reported in before being converted to EDTF.",
                     "exportable": true,
                     "fieldname": "StarDateTy",
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
@@ -1220,8 +1328,8 @@
                         "searchString": ""
                     },
                     "datatype": "resource-instance-list",
-                    "description": null,
-                    "exportable": false,
+                    "description": "This field is related to the Information Resource Model containing original source information (i.e. publications) from which the chronology resource is derived. Multiple sources may be used.",
+                    "exportable": true,
                     "fieldname": null,
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "hascustomalias": false,
@@ -1241,10 +1349,23 @@
                 },
                 {
                     "alias": "region",
-                    "config": {},
-                    "datatype": "string",
-                    "description": null,
-                    "exportable": false,
+                    "config": {
+                        "graphs": [
+                            {
+                                "graphid": "809f0b43-a066-482f-bd2c-e62bc51e04cb",
+                                "inverseRelationshipConcept": "ac41d9be-79db-4256-b368-2f4559cfbe55",
+                                "name": "Administrative",
+                                "relationshipCollection": "00000000-0000-0000-0000-000000000005",
+                                "relationshipConcept": "ac41d9be-79db-4256-b368-2f4559cfbe55",
+                                "useOntologyRelationship": false
+                            }
+                        ],
+                        "searchDsl": "",
+                        "searchString": ""
+                    },
+                    "datatype": "resource-instance-list",
+                    "description": "A particular geographical area defined by the cardinal points in terms of East, West, South, Central and North Africa, or part of a state, country, or district or local area. The MAEASaM regional chronology has been broadly developed based on the 6 regions described by the African Union (source: https://www.oecd.org/swac/maps/48-six-regions-African-Union.pdf).",
+                    "exportable": true,
                     "fieldname": null,
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "hascustomalias": false,
@@ -1256,8 +1377,8 @@
                     "name": "Region",
                     "nodegroup_id": "c2baf2f3-00cc-45cd-9412-893974f94742",
                     "nodeid": "c5e33cc8-89b5-452c-a70e-0cac6d9b6028",
-                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E93_Presence",
-                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P161i_is_spatial_projection_of",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E48_Place_Name",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by",
                     "sortorder": 0,
                     "source_identifier_id": null,
                     "sourcebranchpublication_id": null
@@ -1289,8 +1410,8 @@
                         "weight": 2
                     },
                     "datatype": "geojson-feature-collection",
-                    "description": null,
-                    "exportable": false,
+                    "description": "This field records the spatial geometry of the known distribution of the chronological term as a polygon or multi-polygon. The geometry is recorded in Well Known Text (WKT) format.",
+                    "exportable": true,
                     "fieldname": null,
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "hascustomalias": false,
@@ -1314,8 +1435,8 @@
                         "rdmCollection": "d0adb1d5-d63f-4fff-b16f-1ec8723122dd"
                     },
                     "datatype": "concept-list",
-                    "description": null,
-                    "exportable": false,
+                    "description": "Name type defines the name as either primary, alternative, local, or other and derives from a concept list.",
+                    "exportable": true,
                     "fieldname": null,
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "hascustomalias": false,
@@ -1336,10 +1457,16 @@
                 {
                     "alias": "end_date",
                     "config": {
-                        "rdmCollection": null
+                        "fuzzy_day_padding": 1,
+                        "fuzzy_month_padding": 1,
+                        "fuzzy_season_padding": 12,
+                        "fuzzy_year_padding": 1,
+                        "multiplier_if_approximate": 1,
+                        "multiplier_if_both": 1,
+                        "multiplier_if_uncertain": 1
                     },
-                    "datatype": "string",
-                    "description": null,
+                    "datatype": "edtf",
+                    "description": "This field refers to the latest or most current occurrence of the period. The date must be reported using the Extended Date/Time Format (EDTF): https://www.loc.gov/standards/datetime/. Where multiple end dates are reported for the same period in the same geographic region, the latest date reported should be entered in this field.",
                     "exportable": true,
                     "fieldname": "EndDate",
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
@@ -1372,7 +1499,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Identifier",
+                    "name": "Identifiers",
                     "nodegroup_id": "e1ddb87e-d169-4f65-bbf4-6c3f4261bced",
                     "nodeid": "e1ddb87e-d169-4f65-bbf4-6c3f4261bced",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E42_Identifier",
@@ -1431,8 +1558,8 @@
                     "alias": "comment",
                     "config": {},
                     "datatype": "string",
-                    "description": null,
-                    "exportable": false,
+                    "description": "Any additional information relevant to this resource that the recorder feels should be documented.",
+                    "exportable": true,
                     "fieldname": null,
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "hascustomalias": false,
@@ -1442,7 +1569,7 @@
                     "issearchable": true,
                     "istopnode": false,
                     "name": "Comment",
-                    "nodegroup_id": "f47923d2-f0be-4013-84be-c25ff88746e4",
+                    "nodegroup_id": "5b9cc101-c270-4123-9ffb-c778fb013511",
                     "nodeid": "e7aa5e60-1646-4170-8d17-9f90f6e0ce1a",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
                     "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
@@ -1456,8 +1583,8 @@
                         "rdmCollection": "a7c91f5b-db98-4147-b6c3-04815f69ec2d"
                     },
                     "datatype": "concept-list",
-                    "description": null,
-                    "exportable": false,
+                    "description": "Chronology type is a field where the defining characteristic of a period or chronological resource entry is specified in simple terms. More than one chronology type can be selected for a chronology resource entry. In case the defining characteristic of the time period is not clear in the original source (i.e. not stated or undefined) the type \u201cNon-specified\u201d can be used. However, this is best avoided. MAEASaM has compiled 8 broad chronology types, each of which may contain subgroupings; these include 1. Geological timescale, 2. Archaeological period, 3. Architectural style, 4. Local sequence, 5. Material culture, 6. Oral or documented marker, 7. Polity, and 8. Palaeoclimatic or palaeoenvironmental reconstruction. The description of each concept may be used as a guide for the general characteristics from which the chronology resource entry has been determined. Multiple chronology types can be used.",
+                    "exportable": true,
                     "fieldname": null,
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "hascustomalias": false,
@@ -1504,7 +1631,7 @@
                         "rdmCollection": null
                     },
                     "datatype": "string",
-                    "description": null,
+                    "description": "The descriptive end date reports on the original date that was converted to the EDTF.",
                     "exportable": true,
                     "fieldname": "DescpEndDt",
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
@@ -1529,8 +1656,8 @@
                         "dateFormat": "YYYY-MM-DD"
                     },
                     "datatype": "date",
-                    "description": null,
-                    "exportable": false,
+                    "description": "The date on which the resource record was created in the database.",
+                    "exportable": true,
                     "fieldname": null,
                     "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
                     "hascustomalias": false,
@@ -1539,7 +1666,7 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Resource creation at",
+                    "name": "Created at",
                     "nodegroup_id": "5b9cc101-c270-4123-9ffb-c778fb013511",
                     "nodeid": "f6275fac-eba3-4a0f-bdc0-74b70a6002cc",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E50_Date",
@@ -1552,6 +1679,29 @@
                     "alias": "description",
                     "config": {},
                     "datatype": "string",
+                    "description": "This field requires text entry of the definition and/or defining characteristics of the period. When the text has been directly extracted from the source, the author name, date of publication, and page number need to be provided at the end of the definition.",
+                    "exportable": true,
+                    "fieldname": null,
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "hascustomalias": false,
+                    "is_collector": false,
+                    "is_immutable": false,
+                    "isrequired": false,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "Description",
+                    "nodegroup_id": "f47923d2-f0be-4013-84be-c25ff88746e4",
+                    "nodeid": "f9a035be-e380-45c4-9dc1-204b7047cbea",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
+                    "sortorder": 0,
+                    "source_identifier_id": null,
+                    "sourcebranchpublication_id": null
+                },
+                {
+                    "alias": "uploading_details",
+                    "config": {},
+                    "datatype": "semantic",
                     "description": null,
                     "exportable": false,
                     "fieldname": null,
@@ -1562,9 +1712,229 @@
                     "isrequired": false,
                     "issearchable": true,
                     "istopnode": false,
-                    "name": "Description",
-                    "nodegroup_id": "f9a035be-e380-45c4-9dc1-204b7047cbea",
-                    "nodeid": "f9a035be-e380-45c4-9dc1-204b7047cbea",
+                    "name": "Uploading details",
+                    "nodegroup_id": "e3ba9d1d-fdc5-4bc7-9f14-fe996fca4dae",
+                    "nodeid": "e3ba9d1d-fdc5-4bc7-9f14-fe996fca4dae",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E66_Formation",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P92i_was_brought_into_existence_by",
+                    "sortorder": 0,
+                    "source_identifier_id": null,
+                    "sourcebranchpublication_id": null
+                },
+                {
+                    "alias": "uploader",
+                    "config": {
+                        "graphs": [
+                            {
+                                "graphid": "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",
+                                "inverseRelationshipConcept": "ac41d9be-79db-4256-b368-2f4559cfbe55",
+                                "name": "Actor",
+                                "relationshipCollection": "00000000-0000-0000-0000-000000000005",
+                                "relationshipConcept": "ac41d9be-79db-4256-b368-2f4559cfbe55",
+                                "useOntologyRelationship": false
+                            }
+                        ],
+                        "searchDsl": "",
+                        "searchString": ""
+                    },
+                    "datatype": "resource-instance-list",
+                    "description": "The name of the individual that uploaded this resource record to Arches.",
+                    "exportable": true,
+                    "fieldname": null,
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "hascustomalias": false,
+                    "is_collector": false,
+                    "is_immutable": false,
+                    "isrequired": false,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "Uploader",
+                    "nodegroup_id": "e3ba9d1d-fdc5-4bc7-9f14-fe996fca4dae",
+                    "nodeid": "bc28ddc8-7a71-4b2a-9545-53a0e3814e94",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E82_Actor_Appellation",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by",
+                    "sortorder": 0,
+                    "source_identifier_id": null,
+                    "sourcebranchpublication_id": null
+                },
+                {
+                    "alias": "uploaded_at",
+                    "config": {
+                        "dateFormat": "YYYY-MM-DD"
+                    },
+                    "datatype": "date",
+                    "description": "The date on which this resource record was added to Arches.",
+                    "exportable": true,
+                    "fieldname": null,
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "hascustomalias": false,
+                    "is_collector": false,
+                    "is_immutable": false,
+                    "isrequired": false,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "Uploaded at",
+                    "nodegroup_id": "e3ba9d1d-fdc5-4bc7-9f14-fe996fca4dae",
+                    "nodeid": "66c0fdee-fee2-450e-90eb-0aa520e91d11",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E50_Date",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P92_brought_into_existence",
+                    "sortorder": 0,
+                    "source_identifier_id": null,
+                    "sourcebranchpublication_id": null
+                },
+                {
+                    "alias": "copyright_access",
+                    "config": {},
+                    "datatype": "semantic",
+                    "description": null,
+                    "exportable": false,
+                    "fieldname": null,
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "hascustomalias": false,
+                    "is_collector": true,
+                    "is_immutable": false,
+                    "isrequired": false,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "Copyright/Access",
+                    "nodegroup_id": "34046ff4-61e7-4c7c-ab43-b9b3ba596b91",
+                    "nodeid": "34046ff4-61e7-4c7c-ab43-b9b3ba596b91",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E30_Right",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P67i_is_referred_to_by",
+                    "sortorder": 0,
+                    "source_identifier_id": null,
+                    "sourcebranchpublication_id": null
+                },
+                {
+                    "alias": "licence",
+                    "config": {
+                        "rdmCollection": "51cf655a-5cc0-4cac-aab6-3df46b6a644b"
+                    },
+                    "datatype": "concept-list",
+                    "description": "The licence under which the digital resource may be used or reused.",
+                    "exportable": true,
+                    "fieldname": null,
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "hascustomalias": false,
+                    "is_collector": false,
+                    "is_immutable": false,
+                    "isrequired": true,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "Licence",
+                    "nodegroup_id": "34046ff4-61e7-4c7c-ab43-b9b3ba596b91",
+                    "nodeid": "d07415de-448a-4567-a025-90ce3ea2511a",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E55_Type",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P2_has_type",
+                    "sortorder": 0,
+                    "source_identifier_id": null,
+                    "sourcebranchpublication_id": null
+                },
+                {
+                    "alias": "access_level",
+                    "config": {
+                        "rdmCollection": "da2fcae9-4e3c-4cc1-96e5-fff65cb66a1d"
+                    },
+                    "datatype": "concept-list",
+                    "description": "The level of access permitted for the digital resource.",
+                    "exportable": true,
+                    "fieldname": null,
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "hascustomalias": false,
+                    "is_collector": false,
+                    "is_immutable": false,
+                    "isrequired": true,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "Access level",
+                    "nodegroup_id": "34046ff4-61e7-4c7c-ab43-b9b3ba596b91",
+                    "nodeid": "7830ecec-03a7-4a8a-88b8-e551dc30e6c8",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E55_Type",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P2_has_type",
+                    "sortorder": 0,
+                    "source_identifier_id": null,
+                    "sourcebranchpublication_id": null
+                },
+                {
+                    "alias": "rights_holder",
+                    "config": {
+                        "graphs": [
+                            {
+                                "graphid": "e5f7355e-b5d7-4cc1-b2a6-b333820d2054",
+                                "inverseRelationshipConcept": "ac41d9be-79db-4256-b368-2f4559cfbe55",
+                                "name": "Actor",
+                                "relationshipCollection": "00000000-0000-0000-0000-000000000005",
+                                "relationshipConcept": "ac41d9be-79db-4256-b368-2f4559cfbe55",
+                                "useOntologyRelationship": false
+                            }
+                        ],
+                        "searchDsl": "",
+                        "searchString": ""
+                    },
+                    "datatype": "resource-instance-list",
+                    "description": "The person or organisation holding or managing rights associated with the resource.",
+                    "exportable": true,
+                    "fieldname": null,
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "hascustomalias": false,
+                    "is_collector": false,
+                    "is_immutable": false,
+                    "isrequired": true,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "Rights holder",
+                    "nodegroup_id": "34046ff4-61e7-4c7c-ab43-b9b3ba596b91",
+                    "nodeid": "e1a767a6-3f4c-41a5-8951-d72c78a359b8",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P67_refers_to",
+                    "sortorder": 0,
+                    "source_identifier_id": null,
+                    "sourcebranchpublication_id": null
+                },
+                {
+                    "alias": "rights_notes",
+                    "config": {
+                        "en": ""
+                    },
+                    "datatype": "string",
+                    "description": "Additional information about rights, permissions, restrictions, or copyright status that is not captured by the other rights and access fields.",
+                    "exportable": true,
+                    "fieldname": null,
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "hascustomalias": false,
+                    "is_collector": false,
+                    "is_immutable": false,
+                    "isrequired": false,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "Rights Notes",
+                    "nodegroup_id": "34046ff4-61e7-4c7c-ab43-b9b3ba596b91",
+                    "nodeid": "8978b4aa-f73d-43dd-a5de-9250506cae27",
+                    "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
+                    "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
+                    "sortorder": 0,
+                    "source_identifier_id": null,
+                    "sourcebranchpublication_id": null
+                },
+                {
+                    "alias": "preferred_citation",
+                    "config": {
+                        "en": ""
+                    },
+                    "datatype": "string",
+                    "description": "The recommended citation to use when referring to or reusing the resource.",
+                    "exportable": true,
+                    "fieldname": null,
+                    "graph_id": "aa6f74eb-1cc3-405a-b36e-ad9c1342b1bb",
+                    "hascustomalias": false,
+                    "is_collector": false,
+                    "is_immutable": false,
+                    "isrequired": true,
+                    "issearchable": true,
+                    "istopnode": false,
+                    "name": "Preferred Citation",
+                    "nodegroup_id": "34046ff4-61e7-4c7c-ab43-b9b3ba596b91",
+                    "nodeid": "201c2bc4-b772-4b0e-abb2-317b95ea4cf3",
                     "ontologyclass": "http://www.cidoc-crm.org/cidoc-crm/E62_String",
                     "parentproperty": "http://www.cidoc-crm.org/cidoc-crm/P3_has_note",
                     "sortorder": 0,
