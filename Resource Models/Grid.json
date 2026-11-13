@@ -857,7 +857,7 @@
                         "searchString": ""
                     },
                     "datatype": "resource-instance-list",
-                    "description": "The name of the individual responsible for creating the resource record.",
+                    "description": "The individual or organisation responsible for creating the resource record.",
                     "exportable": true,
                     "fieldname": null,
                     "graph_id": "be34acd5-33ac-46a2-89c0-fb7034ba68ea",
